@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Afdeling]
+﻿CREATE TABLE [dbo].[Department]
 (
 	[id] INT NOT NULL PRIMARY KEY, 
     [name] NVARCHAR(MAX) NULL, 

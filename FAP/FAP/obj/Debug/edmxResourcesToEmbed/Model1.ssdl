@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FestiSpecModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__RefactorLog">
+    <Key>
+      <PropertyRef Name="OperationKey" />
+    </Key>
+    <Property Name="OperationKey" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Afdeling">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bank_Account">
+    <Key>
+      <PropertyRef Name="account_number" />
+    </Key>
+    <Property Name="account_number" Type="int" Nullable="false" />
+    <Property Name="employee_id" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="customer_id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="customer_id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="surname" Type="nvarchar(max)" />
+    <Property Name="telephone_nr" Type="int" />
+    <Property Name="email" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="telephone_nr" Type="int" />
+    <Property Name="postcode" Type="nvarchar" MaxLength="6" />
+    <Property Name="house number" Type="nvarchar" MaxLength="10" />
+    <Property Name="email" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="contact_id" Type="int" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="date" Type="nvarchar(max)" />
+    <Property Name="amount_visitors" Type="int" />
+    <Property Name="surface area_m2" Type="int" />
+    <Property Name="description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Factuur">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="employee_id" Type="int" />
+    <Property Name="quotation_id" Type="int" />
+    <Property Name="payment_status" Type="int" />
+    <Property Name="sum" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="deadline" Type="datetime" />
+    <Property Name="date" Type="date" />
+  </EntityType>
+  <EntityType Name="ID">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Inloggegevens">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="24" />
+  </EntityType>
+  <EntityType Name="Inspector">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="surname" Type="nvarchar(max)" />
+    <Property Name="telephone_nr" Type="int" />
+    <Property Name="postcode" Type="nvarchar" MaxLength="6" />
+    <Property Name="house number" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Inspector_shedule">
+    <Key>
+      <PropertyRef Name="inspector_id" />
+    </Key>
+    <Property Name="inspector_id" Type="int" Nullable="false" />
+    <Property Name="date" Type="date" />
+    <Property Name="available_from" Type="datetime" />
+    <Property Name="available_until" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Medewerker">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="department_id" Type="int" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="surname" Type="nvarchar(max)" />
+    <Property Name="acces level" Type="int" />
+    <Property Name="position" Type="nvarchar(max)" />
+    <Property Name="postcode" Type="nvarchar" MaxLength="6" />
+    <Property Name="house number" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Payment_status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="descriptiom" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Plan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="customer_id" Type="int" />
+    <Property Name="event_id" Type="int" />
+    <Property Name="questionnaire_id" Type="int" />
+    <Property Name="start_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Plan_inspector">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="questionnaire_id" Type="int" Nullable="false" />
+    <Property Name="question" Type="nvarchar(max)" />
+    <Property Name="answer" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Questionnaire">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Quotation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="plan_id" Type="int" />
+    <Property Name="customer_id" Type="int" />
+    <Property Name="employee_id" Type="int" />
+    <Property Name="event_id" Type="int" />
+    <Property Name="sum" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="deadline" Type="datetime" />
+    <Property Name="date" Type="date" />
+  </EntityType>
+  <EntityType Name="StandardQuestion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="question" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="StandardQuestionsList">
+    <Key>
+      <PropertyRef Name="standardquestion_id" />
+      <PropertyRef Name="questionnaire_id" />
+    </Key>
+    <Property Name="standardquestion_id" Type="int" Nullable="false" />
+    <Property Name="questionnaire_id" Type="int" Nullable="false" />
+    <Property Name="answer" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="FestiSpecModelStoreContainer">
+    <EntitySet Name="__RefactorLog" EntityType="Self.__RefactorLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Afdeling" EntityType="Self.Afdeling" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bank_Account" EntityType="Self.Bank_Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Factuur" EntityType="Self.Factuur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ID" EntityType="Self.ID" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inloggegevens" EntityType="Self.Inloggegevens" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inspector" EntityType="Self.Inspector" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inspector_shedule" EntityType="Self.Inspector_shedule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Medewerker" EntityType="Self.Medewerker" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment_status" EntityType="Self.Payment_status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Plan" EntityType="Self.Plan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Plan_inspector" EntityType="Self.Plan_inspector" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Questionnaire" EntityType="Self.Questionnaire" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Quotation" EntityType="Self.Quotation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StandardQuestion" EntityType="Self.StandardQuestion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StandardQuestionsList" EntityType="Self.StandardQuestionsList" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
