@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FAP"
         mc:Ignorable="d"
+        DataContext="{Binding Main, Source={StaticResource Locator}}"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <DataGrid ItemsSource="{Binding Data}">
+        </DataGrid>
+        <Label Content="Naam PDF:" Margin="0,10,0,0"/>
+        <TextBox Text="{Binding PDFName}" Width="160" HorizontalAlignment="Left"/>
+        <Button Command="{Binding Export}" Content="Export to PDF" Margin="0,10,0,0" Width="160" Height="36" HorizontalAlignment="Left" Background="#FF81FF00"/>
+
+    </StackPanel>
 </Window>
