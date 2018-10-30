@@ -1,0 +1,33 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Afdeling] (Table)
+       [dbo].[Bank_Account] (Table)
+       [dbo].[Contact] (Table)
+       [dbo].[Customer] (Table)
+       [dbo].[Event] (Table)
+       [dbo].[Factuur] (Table)
+       [dbo].[ID] (Table)
+       [dbo].[Inloggegevens] (Table)
+       [dbo].[Inspector] (Table)
+       [dbo].[Inspector_shedule] (Table)
+       [dbo].[Medewerker] (Table)
+       [dbo].[Payment_status] (Table)
+       [dbo].[Plan] (Table)
+       [dbo].[Plan_inspector] (Table)
+       [dbo].[Question] (Table)
+       [dbo].[Questionnaire] (Table)
+       [dbo].[Quotation] (Table)
+       [dbo].[StandardQuestion] (Table)
+       [dbo].[StandardQuestionsList] (Table)
+
+** Supporting actions
