@@ -7,5 +7,5 @@
     [amount_visitors] INT NULL, 
     [surface area_m2] INT NULL, 
     [description] NVARCHAR(MAX) NULL,
-	FOREIGN KEY (contact_id) REFERENCES Contact(id)
+	FOREIGN KEY (contact_id) REFERENCES Contact([contact_id])
 )
