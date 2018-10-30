@@ -1,5 +1,0 @@
-C:\Users\Martijn\Documents\GitHub\FAP\FAP\Database1\bin\Debug\Database.dacpac
-C:\Users\Martijn\Documents\GitHub\FAP\FAP\Database1\bin\Debug\Database1.dll
-C:\Users\Martijn\Documents\GitHub\FAP\FAP\Database1\bin\Debug\Database1.pdb
-C:\Users\Martijn\Documents\GitHub\FAP\FAP\Database1\obj\Debug\Database1.dll
-C:\Users\Martijn\Documents\GitHub\FAP\FAP\Database1\obj\Debug\Database1.pdb
