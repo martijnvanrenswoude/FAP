@@ -4,45 +4,45 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="074f3a1175ed45ddbe191a6f11c14954" Name="Diagram1">
-        <EntityTypeShape EntityType="Database1Model.Bank_Account" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Contact" Width="1.5" PointX="10.5" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Customer" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Department" Width="1.5" PointX="3.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Employee" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Event" Width="1.5" PointX="8.25" PointY="16.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.ID" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Inlogdata" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Inspector" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Inspector_shedule" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Invoice" Width="1.5" PointX="8.25" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Payment_status" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Planning" Width="1.5" PointX="8.25" PointY="11.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Question" Width="1.5" PointX="8.25" PointY="20.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Questionnaire" Width="1.5" PointX="6" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Quotation" Width="1.5" PointX="10.5" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.StandardQuestion" Width="1.5" PointX="9" PointY="23.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.StandardQuestionsList" Width="1.5" PointX="11.25" PointY="14.375" IsExpanded="true" />
-        <AssociationConnector Association="Database1Model.FK__Bank_Acco__emplo__5AEE82B9" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__Contact__custome__5BE2A6F2" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__Planning__custom__656C112C" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__Quotation__custo__6B24EA82" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__Employee__depart__5DCAEF64" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__Employee__id__5CD6CB2B" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__Invoice__employe__619B8048" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__Planning__employ__66603565" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__Quotation__emplo__6C190EBB" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__Planning__event___68487DD7" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__Quotation__event__6D0D32F4" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__Inlogdata__Id__5FB337D6" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__Inspector__Id__60A75C0F" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__Invoice__quotati__628FA481" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__Planning__questi__6754599E" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__Quotation__plan___6A30C649" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__Question__questi__693CA210" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__StandardQ__quest__6EF57B66" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__StandardQ__stand__6E01572D" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.Plan_inspector" ManuallyRouted="false" />
+      <Diagram DiagramId="afbc4f13398d4c1687e24f0332f9b357" Name="Diagram1">
+        <EntityTypeShape EntityType="FAPModel.Bank_Account" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPModel.Contact" Width="1.5" PointX="10.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPModel.Customer" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPModel.Department" Width="1.5" PointX="3.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPModel.Employee" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPModel.Event" Width="1.5" PointX="8.25" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPModel.ID" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPModel.Inlogdata" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPModel.Inspector" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPModel.Inspector_shedule" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPModel.Invoice" Width="1.5" PointX="8.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPModel.Payment_status" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPModel.Planning" Width="1.5" PointX="8.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPModel.Question" Width="1.5" PointX="8.25" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPModel.Questionnaire" Width="1.5" PointX="6" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPModel.Quotation" Width="1.5" PointX="10.5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPModel.StandardQuestion" Width="1.5" PointX="9" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPModel.StandardQuestionsList" Width="1.5" PointX="11.25" PointY="14.375" IsExpanded="true" />
+        <AssociationConnector Association="FAPModel.FK__Bank_Acco__emplo__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.FK__Contact__custome__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.FK__Planning__custom__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.FK__Quotation__custo__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.FK__Employee__depart__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.FK__Employee__id__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.FK__Invoice__employe__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.FK__Planning__employ__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.FK__Quotation__emplo__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.FK__Planning__event___68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.FK__Quotation__event__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.FK__Inlogdata__Id__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.FK__Inspector__Id__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.FK__Invoice__quotati__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.FK__Planning__questi__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.FK__Quotation__plan___6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.FK__Question__questi__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.FK__StandardQ__quest__6EF57B66" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.FK__StandardQ__stand__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPModel.Plan_inspector" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="FAPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bank_Account">
           <Key>
             <PropertyRef Name="account_number" />
@@ -440,7 +440,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Database1ModelStoreContainer">
+        <EntityContainer Name="FAPModelStoreContainer">
           <EntitySet Name="Bank_Account" EntityType="Self.Bank_Account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
@@ -549,7 +549,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="FAPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Bank_Account">
           <Key>
             <PropertyRef Name="account_number" />
@@ -994,7 +994,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
           <End Role="Inspector" Type="Self.Inspector" Multiplicity="*" />
           <End Role="Planning" Type="Self.Planning" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="FAPEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Bank_Account" EntityType="Self.Bank_Account" />
           <EntitySet Name="Contact" EntityType="Self.Contact" />
           <EntitySet Name="Customer" EntityType="Self.Customer" />
@@ -1099,9 +1099,9 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+        <EntityContainerMapping StorageEntityContainer="FAPModelStoreContainer" CdmEntityContainer="FAPEntities">
           <EntitySetMapping Name="Bank_Account">
-            <EntityTypeMapping TypeName="Database1Model.Bank_Account">
+            <EntityTypeMapping TypeName="FAPModel.Bank_Account">
               <MappingFragment StoreEntitySet="Bank_Account">
                 <ScalarProperty Name="account_number" ColumnName="account_number" />
                 <ScalarProperty Name="employee_id" ColumnName="employee_id" />
@@ -1109,7 +1109,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Contact">
-            <EntityTypeMapping TypeName="Database1Model.Contact">
+            <EntityTypeMapping TypeName="FAPModel.Contact">
               <MappingFragment StoreEntitySet="Contact">
                 <ScalarProperty Name="contact_id" ColumnName="contact_id" />
                 <ScalarProperty Name="customer_id" ColumnName="customer_id" />
@@ -1121,7 +1121,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Customer">
-            <EntityTypeMapping TypeName="Database1Model.Customer">
+            <EntityTypeMapping TypeName="FAPModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -1133,7 +1133,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Department">
-            <EntityTypeMapping TypeName="Database1Model.Department">
+            <EntityTypeMapping TypeName="FAPModel.Department">
               <MappingFragment StoreEntitySet="Department">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -1142,7 +1142,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Employee">
-            <EntityTypeMapping TypeName="Database1Model.Employee">
+            <EntityTypeMapping TypeName="FAPModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="department_id" ColumnName="department_id" />
@@ -1156,7 +1156,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Event">
-            <EntityTypeMapping TypeName="Database1Model.Event">
+            <EntityTypeMapping TypeName="FAPModel.Event">
               <MappingFragment StoreEntitySet="Event">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="contact_id" ColumnName="contact_id" />
@@ -1169,14 +1169,14 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ID">
-            <EntityTypeMapping TypeName="Database1Model.ID">
+            <EntityTypeMapping TypeName="FAPModel.ID">
               <MappingFragment StoreEntitySet="ID">
                 <ScalarProperty Name="Id1" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Inlogdata">
-            <EntityTypeMapping TypeName="Database1Model.Inlogdata">
+            <EntityTypeMapping TypeName="FAPModel.Inlogdata">
               <MappingFragment StoreEntitySet="Inlogdata">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="username" ColumnName="username" />
@@ -1185,7 +1185,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Inspector">
-            <EntityTypeMapping TypeName="Database1Model.Inspector">
+            <EntityTypeMapping TypeName="FAPModel.Inspector">
               <MappingFragment StoreEntitySet="Inspector">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -1197,7 +1197,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Inspector_shedule">
-            <EntityTypeMapping TypeName="Database1Model.Inspector_shedule">
+            <EntityTypeMapping TypeName="FAPModel.Inspector_shedule">
               <MappingFragment StoreEntitySet="Inspector_shedule">
                 <ScalarProperty Name="inspector_id" ColumnName="inspector_id" />
                 <ScalarProperty Name="date" ColumnName="date" />
@@ -1207,7 +1207,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Invoice">
-            <EntityTypeMapping TypeName="Database1Model.Invoice">
+            <EntityTypeMapping TypeName="FAPModel.Invoice">
               <MappingFragment StoreEntitySet="Invoice">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="employee_id" ColumnName="employee_id" />
@@ -1220,7 +1220,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Payment_status">
-            <EntityTypeMapping TypeName="Database1Model.Payment_status">
+            <EntityTypeMapping TypeName="FAPModel.Payment_status">
               <MappingFragment StoreEntitySet="Payment_status">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -1229,7 +1229,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Planning">
-            <EntityTypeMapping TypeName="Database1Model.Planning">
+            <EntityTypeMapping TypeName="FAPModel.Planning">
               <MappingFragment StoreEntitySet="Planning">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="customer_id" ColumnName="customer_id" />
@@ -1241,7 +1241,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Question">
-            <EntityTypeMapping TypeName="Database1Model.Question">
+            <EntityTypeMapping TypeName="FAPModel.Question">
               <MappingFragment StoreEntitySet="Question">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="questionnaire_id" ColumnName="questionnaire_id" />
@@ -1251,14 +1251,14 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Questionnaire">
-            <EntityTypeMapping TypeName="Database1Model.Questionnaire">
+            <EntityTypeMapping TypeName="FAPModel.Questionnaire">
               <MappingFragment StoreEntitySet="Questionnaire">
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Quotation">
-            <EntityTypeMapping TypeName="Database1Model.Quotation">
+            <EntityTypeMapping TypeName="FAPModel.Quotation">
               <MappingFragment StoreEntitySet="Quotation">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="plan_id" ColumnName="plan_id" />
@@ -1272,7 +1272,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="StandardQuestion">
-            <EntityTypeMapping TypeName="Database1Model.StandardQuestion">
+            <EntityTypeMapping TypeName="FAPModel.StandardQuestion">
               <MappingFragment StoreEntitySet="StandardQuestion">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="question" ColumnName="question" />
@@ -1280,7 +1280,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="StandardQuestionsList">
-            <EntityTypeMapping TypeName="Database1Model.StandardQuestionsList">
+            <EntityTypeMapping TypeName="FAPModel.StandardQuestionsList">
               <MappingFragment StoreEntitySet="StandardQuestionsList">
                 <ScalarProperty Name="standardquestion_id" ColumnName="standardquestion_id" />
                 <ScalarProperty Name="questionnaire_id" ColumnName="questionnaire_id" />
@@ -1288,7 +1288,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="Plan_inspector" TypeName="Database1Model.Plan_inspector" StoreEntitySet="Plan_inspector">
+          <AssociationSetMapping Name="Plan_inspector" TypeName="FAPModel.Plan_inspector" StoreEntitySet="Plan_inspector">
             <EndProperty Name="Inspector">
               <ScalarProperty Name="Id" ColumnName="inspector_id" />
             </EndProperty>
