@@ -214,10 +214,9 @@ project.lock.json
 *.Specs_*.html
 
 packages
-kwisspel/obj
-kwisspel/bin
+FAP/obj
+FAP/bin
 .vs
-Database1/Kwisspel.Database.dbmdl
 
 #####
 # End of core ignore list, below put you custom 'per project' settings (patterns or path)
