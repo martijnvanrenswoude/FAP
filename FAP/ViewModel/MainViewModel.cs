@@ -48,9 +48,11 @@ namespace FAP.ViewModel
                 return;
 
             Document pdfDocument = new Document();
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-            PdfWriter.GetInstance(pdfDocument, new FileStream("C:\\Users\\sjors\\Desktop\\PDF\\" + PDFName + ".PDF", FileMode.Create));
+            PdfWriter.GetInstance(pdfDocument, new FileStream(path + "\\PDF\\" + PDFName + ".PDF", FileMode.Create));
             pdfDocument.Open();
+
             pdfDocument.Add(new Paragraph("Naam     Startdatum"));
             foreach (var item in Data)
             {
