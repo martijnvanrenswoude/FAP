@@ -5,5 +5,6 @@
     [surname] NVARCHAR(MAX) NULL, 
     [telephone_nr] INT NULL, 
     [postcode] NVARCHAR(6) NULL, 
-    [house number] NVARCHAR(5) NULL
+    [house number] NVARCHAR(5) NULL,
+	FOREIGN KEY (Id) REFERENCES Id(Id)
 )
