@@ -221,3 +221,4 @@ FAP/bin
 #####
 # End of core ignore list, below put you custom 'per project' settings (patterns or path)
 #####
+Database1/Database1.jfm

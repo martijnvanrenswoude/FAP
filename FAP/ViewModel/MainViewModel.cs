@@ -18,10 +18,17 @@ namespace FAP.ViewModel
         public ObservableCollection<DataVM> Data { get; set; }
         public string PDFName { get; set; }
         public ICommand Export { get; set; }
+        public FAPEntities context;
 
         public MainViewModel()
         {
             Data = new ObservableCollection<DataVM>();
+
+             context = new FAPEntities();
+            using (context)
+            {
+
+            }
 
             Data.Add(new DataVM("Noah", "30-10-2018"));
             Data.Add(new DataVM("Sem", "12-02-2018"));
