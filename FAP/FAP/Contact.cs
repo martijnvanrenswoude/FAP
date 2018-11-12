@@ -14,11 +14,13 @@ namespace FAP
     
     public partial class Contact
     {
-        public int Id { get; set; }
+        public int contact_id { get; set; }
         public int customer_id { get; set; }
         public string name { get; set; }
         public string surname { get; set; }
         public Nullable<int> telephone_nr { get; set; }
         public string email { get; set; }
+    
+        public virtual Customer Customer { get; set; }
     }
 }

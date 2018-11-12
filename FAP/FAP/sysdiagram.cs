@@ -12,12 +12,12 @@ namespace FAP
     using System;
     using System.Collections.Generic;
     
-    public partial class Plan
+    public partial class sysdiagram
     {
-        public int id { get; set; }
-        public Nullable<int> customer_id { get; set; }
-        public Nullable<int> event_id { get; set; }
-        public Nullable<int> questionnaire_id { get; set; }
-        public Nullable<System.DateTime> start_date { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

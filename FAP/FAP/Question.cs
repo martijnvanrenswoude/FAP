@@ -18,5 +18,7 @@ namespace FAP
         public int questionnaire_id { get; set; }
         public string question1 { get; set; }
         public string answer { get; set; }
+    
+        public virtual Questionnaire Questionnaire { get; set; }
     }
 }

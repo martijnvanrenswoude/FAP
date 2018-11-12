@@ -12,7 +12,7 @@ namespace FAP
     using System;
     using System.Collections.Generic;
     
-    public partial class Factuur
+    public partial class Invoice
     {
         public int id { get; set; }
         public Nullable<int> employee_id { get; set; }
@@ -21,5 +21,9 @@ namespace FAP
         public Nullable<decimal> sum { get; set; }
         public Nullable<System.DateTime> deadline { get; set; }
         public Nullable<System.DateTime> date { get; set; }
+    
+        public virtual Employee Employee { get; set; }
+        public virtual Payment_status Payment_status1 { get; set; }
+        public virtual Quotation Quotation { get; set; }
     }
 }

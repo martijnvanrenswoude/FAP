@@ -13,10 +13,10 @@ namespace FAP
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FestiSpecEntities : DbContext
+    public partial class FAPDbEntities : DbContext
     {
-        public FestiSpecEntities()
-            : base("name=FestiSpecEntities")
+        public FAPDbEntities()
+            : base("name=FAPDbEntities")
         {
         }
     
@@ -26,24 +26,24 @@ namespace FAP
         }
     
         public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
-        public virtual DbSet<Afdeling> Afdelings { get; set; }
         public virtual DbSet<Bank_Account> Bank_Account { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Event> Events { get; set; }
-        public virtual DbSet<Factuur> Factuurs { get; set; }
         public virtual DbSet<ID> IDs { get; set; }
-        public virtual DbSet<Inloggegeven> Inloggegevens { get; set; }
+        public virtual DbSet<Inlogdata> Inlogdatas { get; set; }
         public virtual DbSet<Inspector> Inspectors { get; set; }
         public virtual DbSet<Inspector_shedule> Inspector_shedule { get; set; }
-        public virtual DbSet<Medewerker> Medewerkers { get; set; }
+        public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<Payment_status> Payment_status { get; set; }
-        public virtual DbSet<Plan> Plans { get; set; }
-        public virtual DbSet<Plan_inspector> Plan_inspector { get; set; }
+        public virtual DbSet<Planning> Plannings { get; set; }
         public virtual DbSet<Question> Questions { get; set; }
         public virtual DbSet<Questionnaire> Questionnaires { get; set; }
         public virtual DbSet<Quotation> Quotations { get; set; }
         public virtual DbSet<StandardQuestion> StandardQuestions { get; set; }
         public virtual DbSet<StandardQuestionsList> StandardQuestionsLists { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

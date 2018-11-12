@@ -15,6 +15,8 @@ namespace FAP
     public partial class Bank_Account
     {
         public int account_number { get; set; }
-        public string employee_id { get; set; }
+        public Nullable<int> employee_id { get; set; }
+    
+        public virtual ID ID { get; set; }
     }
 }

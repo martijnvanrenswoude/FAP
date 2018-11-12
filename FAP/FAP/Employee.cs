@@ -12,24 +12,32 @@ namespace FAP
     using System;
     using System.Collections.Generic;
     
-    public partial class Inspector
+    public partial class Employee
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Inspector()
+        public Employee()
         {
+            this.Invoices = new HashSet<Invoice>();
             this.Plannings = new HashSet<Planning>();
+            this.Quotations = new HashSet<Quotation>();
         }
     
-        public int Id { get; set; }
+        public int id { get; set; }
+        public Nullable<int> department_id { get; set; }
         public string name { get; set; }
         public string surname { get; set; }
-        public Nullable<int> telephone_nr { get; set; }
+        public Nullable<int> acces_level { get; set; }
+        public string position { get; set; }
         public string postcode { get; set; }
         public string house_number { get; set; }
     
+        public virtual Department Department { get; set; }
         public virtual ID ID1 { get; set; }
-        public virtual Inspector_shedule Inspector_shedule { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Invoice> Invoices { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Planning> Plannings { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Quotation> Quotations { get; set; }
     }
 }

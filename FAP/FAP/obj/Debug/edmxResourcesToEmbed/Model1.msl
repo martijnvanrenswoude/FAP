@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="FestiSpecModelStoreContainer" CdmEntityContainer="FestiSpecEntities">
+  <EntityContainerMapping StorageEntityContainer="FestiSpecModelStoreContainer" CdmEntityContainer="FestiSpecEntities1">
     <EntitySetMapping Name="C__RefactorLog">
       <EntityTypeMapping TypeName="FestiSpecModel.C__RefactorLog">
         <MappingFragment StoreEntitySet="__RefactorLog">
@@ -28,7 +28,7 @@
     <EntitySetMapping Name="Contacts">
       <EntityTypeMapping TypeName="FestiSpecModel.Contact">
         <MappingFragment StoreEntitySet="Contact">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="contact_id" ColumnName="contact_id" />
           <ScalarProperty Name="customer_id" ColumnName="customer_id" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="surname" ColumnName="surname" />
@@ -46,6 +46,29 @@
           <ScalarProperty Name="postcode" ColumnName="postcode" />
           <ScalarProperty Name="house_number" ColumnName="house number" />
           <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="FestiSpecModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="FestiSpecModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="acces_level" ColumnName="acces level" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="postcode" ColumnName="postcode" />
+          <ScalarProperty Name="house_number" ColumnName="house number" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -82,6 +105,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Inlogdatas">
+      <EntityTypeMapping TypeName="FestiSpecModel.Inlogdata">
+        <MappingFragment StoreEntitySet="Inlogdata">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Inloggegevens">
       <EntityTypeMapping TypeName="FestiSpecModel.Inloggegeven">
         <MappingFragment StoreEntitySet="Inloggegevens">
@@ -110,6 +142,19 @@
           <ScalarProperty Name="date" ColumnName="date" />
           <ScalarProperty Name="available_from" ColumnName="available_from" />
           <ScalarProperty Name="available_until" ColumnName="available_until" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoices">
+      <EntityTypeMapping TypeName="FestiSpecModel.Invoice">
+        <MappingFragment StoreEntitySet="Invoice">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="quotation_id" ColumnName="quotation_id" />
+          <ScalarProperty Name="payment_status" ColumnName="payment_status" />
+          <ScalarProperty Name="sum" ColumnName="sum" />
+          <ScalarProperty Name="deadline" ColumnName="deadline" />
+          <ScalarProperty Name="date" ColumnName="date" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -147,10 +192,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Plan_inspector">
-      <EntityTypeMapping TypeName="FestiSpecModel.Plan_inspector">
-        <MappingFragment StoreEntitySet="Plan_inspector">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+    <EntitySetMapping Name="Plannings">
+      <EntityTypeMapping TypeName="FestiSpecModel.Planning">
+        <MappingFragment StoreEntitySet="Planning">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="event_id" ColumnName="event_id" />
+          <ScalarProperty Name="questionnaire_id" ColumnName="questionnaire_id" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -202,5 +252,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <AssociationSetMapping Name="Plan_inspector" TypeName="FestiSpecModel.Plan_inspector" StoreEntitySet="Plan_inspector">
+      <EndProperty Name="Inspector">
+        <ScalarProperty Name="Id" ColumnName="inspector_id" />
+      </EndProperty>
+      <EndProperty Name="Planning">
+        <ScalarProperty Name="id" ColumnName="plan_id" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

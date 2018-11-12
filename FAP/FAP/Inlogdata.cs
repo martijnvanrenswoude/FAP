@@ -12,10 +12,12 @@ namespace FAP
     using System;
     using System.Collections.Generic;
     
-    public partial class Inloggegeven
+    public partial class Inlogdata
     {
         public int Id { get; set; }
         public string username { get; set; }
         public string password { get; set; }
+    
+        public virtual ID ID1 { get; set; }
     }
 }

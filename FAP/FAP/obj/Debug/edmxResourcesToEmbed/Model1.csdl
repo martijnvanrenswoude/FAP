@@ -19,19 +19,21 @@
       <PropertyRef Name="account_number" />
     </Key>
     <Property Name="account_number" Type="Int32" Nullable="false" />
-    <Property Name="employee_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="employee_id" Type="Int32" />
+    <NavigationProperty Name="ID" Relationship="Self.FK__Bank_Acco__emplo__72C60C4A" FromRole="Bank_Account" ToRole="ID" />
   </EntityType>
   <EntityType Name="Contact">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="contact_id" />
       <PropertyRef Name="customer_id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="contact_id" Type="Int32" Nullable="false" />
     <Property Name="customer_id" Type="Int32" Nullable="false" />
     <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="telephone_nr" Type="Int32" />
     <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__Contact__custome__73BA3083" FromRole="Contact" ToRole="Customer" />
   </EntityType>
   <EntityType Name="Customer">
     <Key>
@@ -43,18 +45,50 @@
     <Property Name="postcode" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
     <Property Name="house_number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Contacts" Relationship="Self.FK__Contact__custome__73BA3083" FromRole="Customer" ToRole="Contact" />
+    <NavigationProperty Name="Plannings" Relationship="Self.FK__Planning__custom__6EF57B66" FromRole="Customer" ToRole="Planning" />
+    <NavigationProperty Name="Quotations" Relationship="Self.FK__Quotation__custo__787EE5A0" FromRole="Customer" ToRole="Quotation" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK__Employee__depart__6B24EA82" FromRole="Department" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="department_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="acces_level" Type="Int32" />
+    <Property Name="position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="postcode" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="house_number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Department" Relationship="Self.FK__Employee__depart__6B24EA82" FromRole="Employee" ToRole="Department" />
+    <NavigationProperty Name="ID1" Relationship="Self.FK__Employee__id__6A30C649" FromRole="Employee" ToRole="ID" />
+    <NavigationProperty Name="Invoices" Relationship="Self.FK__Invoice__employe__6D0D32F4" FromRole="Employee" ToRole="Invoice" />
+    <NavigationProperty Name="Plannings" Relationship="Self.FK__Planning__employ__6FE99F9F" FromRole="Employee" ToRole="Planning" />
+    <NavigationProperty Name="Quotations" Relationship="Self.FK__Quotation__emplo__797309D9" FromRole="Employee" ToRole="Quotation" />
   </EntityType>
   <EntityType Name="Event">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="contact_id" Type="Int32" />
+    <Property Name="contact_id" Type="Int32" Nullable="false" />
     <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="amount_visitors" Type="Int32" />
     <Property Name="surface_area_m2" Type="Int32" />
     <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Plannings" Relationship="Self.FK__Planning__event___71D1E811" FromRole="Event" ToRole="Planning" />
+    <NavigationProperty Name="Quotations" Relationship="Self.FK__Quotation__event__7A672E12" FromRole="Event" ToRole="Quotation" />
   </EntityType>
   <EntityType Name="Factuur">
     <Key>
@@ -73,6 +107,19 @@
       <PropertyRef Name="Id1" />
     </Key>
     <Property Name="Id1" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Bank_Account" Relationship="Self.FK__Bank_Acco__emplo__72C60C4A" FromRole="ID" ToRole="Bank_Account" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__Employee__id__6A30C649" FromRole="ID" ToRole="Employee" />
+    <NavigationProperty Name="Inlogdata" Relationship="Self.FK__Inlogdata__Id__6C190EBB" FromRole="ID" ToRole="Inlogdata" />
+    <NavigationProperty Name="Inspector" Relationship="Self.FK__Inspector__Id__75A278F5" FromRole="ID" ToRole="Inspector" />
+  </EntityType>
+  <EntityType Name="Inlogdata">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ID1" Relationship="Self.FK__Inlogdata__Id__6C190EBB" FromRole="Inlogdata" ToRole="ID" />
   </EntityType>
   <EntityType Name="Inloggegeven">
     <Key>
@@ -92,6 +139,9 @@
     <Property Name="telephone_nr" Type="Int32" />
     <Property Name="postcode" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
     <Property Name="house_number" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ID1" Relationship="Self.FK__Inspector__Id__75A278F5" FromRole="Inspector" ToRole="ID" />
+    <NavigationProperty Name="Inspector_shedule" Relationship="Self.FK__Inspector__inspe__7D439ABD" FromRole="Inspector" ToRole="Inspector_shedule" />
+    <NavigationProperty Name="Plannings" Relationship="Self.Plan_inspector" FromRole="Inspector" ToRole="Planning" />
   </EntityType>
   <EntityType Name="Inspector_shedule">
     <Key>
@@ -101,6 +151,21 @@
     <Property Name="date" Type="DateTime" Precision="0" />
     <Property Name="available_from" Type="DateTime" Precision="3" />
     <Property Name="available_until" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Inspector" Relationship="Self.FK__Inspector__inspe__7D439ABD" FromRole="Inspector_shedule" ToRole="Inspector" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="employee_id" Type="Int32" />
+    <Property Name="quotation_id" Type="Int32" />
+    <Property Name="payment_status" Type="Int32" />
+    <Property Name="sum" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="deadline" Type="DateTime" Precision="3" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__Invoice__employe__6D0D32F4" FromRole="Invoice" ToRole="Employee" />
+    <NavigationProperty Name="Quotation" Relationship="Self.FK__Invoice__quotati__6E01572D" FromRole="Invoice" ToRole="Quotation" />
   </EntityType>
   <EntityType Name="Medewerker">
     <Key>
@@ -133,11 +198,22 @@
     <Property Name="questionnaire_id" Type="Int32" />
     <Property Name="start_date" Type="DateTime" Precision="3" />
   </EntityType>
-  <EntityType Name="Plan_inspector">
+  <EntityType Name="Planning">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="customer_id" Type="Int32" />
+    <Property Name="event_id" Type="Int32" />
+    <Property Name="questionnaire_id" Type="Int32" />
+    <Property Name="start_date" Type="DateTime" Precision="3" />
+    <Property Name="employee_id" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__Planning__custom__6EF57B66" FromRole="Planning" ToRole="Customer" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__Planning__employ__6FE99F9F" FromRole="Planning" ToRole="Employee" />
+    <NavigationProperty Name="Event" Relationship="Self.FK__Planning__event___71D1E811" FromRole="Planning" ToRole="Event" />
+    <NavigationProperty Name="Questionnaire" Relationship="Self.FK__Planning__questi__70DDC3D8" FromRole="Planning" ToRole="Questionnaire" />
+    <NavigationProperty Name="Quotations" Relationship="Self.FK__Quotation__plan___778AC167" FromRole="Planning" ToRole="Quotation" />
+    <NavigationProperty Name="Inspectors" Relationship="Self.Plan_inspector" FromRole="Planning" ToRole="Inspector" />
   </EntityType>
   <EntityType Name="Question">
     <Key>
@@ -147,12 +223,16 @@
     <Property Name="questionnaire_id" Type="Int32" Nullable="false" />
     <Property Name="question1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Questionnaire" Relationship="Self.FK__Question__questi__76969D2E" FromRole="Question" ToRole="Questionnaire" />
   </EntityType>
   <EntityType Name="Questionnaire">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Plannings" Relationship="Self.FK__Planning__questi__70DDC3D8" FromRole="Questionnaire" ToRole="Planning" />
+    <NavigationProperty Name="Questions" Relationship="Self.FK__Question__questi__76969D2E" FromRole="Questionnaire" ToRole="Question" />
+    <NavigationProperty Name="StandardQuestionsLists" Relationship="Self.FK__StandardQ__quest__7C4F7684" FromRole="Questionnaire" ToRole="StandardQuestionsList" />
   </EntityType>
   <EntityType Name="Quotation">
     <Key>
@@ -166,6 +246,11 @@
     <Property Name="sum" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="deadline" Type="DateTime" Precision="3" />
     <Property Name="date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__Quotation__custo__787EE5A0" FromRole="Quotation" ToRole="Customer" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__Quotation__emplo__797309D9" FromRole="Quotation" ToRole="Employee" />
+    <NavigationProperty Name="Event" Relationship="Self.FK__Quotation__event__7A672E12" FromRole="Quotation" ToRole="Event" />
+    <NavigationProperty Name="Invoices" Relationship="Self.FK__Invoice__quotati__6E01572D" FromRole="Quotation" ToRole="Invoice" />
+    <NavigationProperty Name="Planning" Relationship="Self.FK__Quotation__plan___778AC167" FromRole="Quotation" ToRole="Planning" />
   </EntityType>
   <EntityType Name="StandardQuestion">
     <Key>
@@ -173,6 +258,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="StandardQuestionsLists" Relationship="Self.FK__StandardQ__stand__7B5B524B" FromRole="StandardQuestion" ToRole="StandardQuestionsList" />
   </EntityType>
   <EntityType Name="StandardQuestionsList">
     <Key>
@@ -182,27 +268,361 @@
     <Property Name="standardquestion_id" Type="Int32" Nullable="false" />
     <Property Name="questionnaire_id" Type="Int32" Nullable="false" />
     <Property Name="answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Questionnaire" Relationship="Self.FK__StandardQ__quest__7C4F7684" FromRole="StandardQuestionsList" ToRole="Questionnaire" />
+    <NavigationProperty Name="StandardQuestion" Relationship="Self.FK__StandardQ__stand__7B5B524B" FromRole="StandardQuestionsList" ToRole="StandardQuestion" />
   </EntityType>
-  <EntityContainer Name="FestiSpecEntities" annotation:LazyLoadingEnabled="true">
+  <Association Name="FK__Bank_Acco__emplo__72C60C4A">
+    <End Role="ID" Type="Self.ID" Multiplicity="0..1" />
+    <End Role="Bank_Account" Type="Self.Bank_Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ID">
+        <PropertyRef Name="Id1" />
+      </Principal>
+      <Dependent Role="Bank_Account">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Contact__custome__73BA3083">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Planning__custom__6EF57B66">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Planning" Type="Self.Planning" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Planning">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Quotation__custo__787EE5A0">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Quotation" Type="Self.Quotation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Quotation">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__depart__6B24EA82">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__id__6A30C649">
+    <End Role="ID" Type="Self.ID" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ID">
+        <PropertyRef Name="Id1" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Invoice__employe__6D0D32F4">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Planning__employ__6FE99F9F">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Planning" Type="Self.Planning" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Planning">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Quotation__emplo__797309D9">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Quotation" Type="Self.Quotation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Quotation">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Planning__event___71D1E811">
+    <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
+    <End Role="Planning" Type="Self.Planning" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Planning">
+        <PropertyRef Name="event_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Quotation__event__7A672E12">
+    <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
+    <End Role="Quotation" Type="Self.Quotation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Quotation">
+        <PropertyRef Name="event_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Inlogdata__Id__6C190EBB">
+    <End Role="ID" Type="Self.ID" Multiplicity="1" />
+    <End Role="Inlogdata" Type="Self.Inlogdata" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ID">
+        <PropertyRef Name="Id1" />
+      </Principal>
+      <Dependent Role="Inlogdata">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Inspector__Id__75A278F5">
+    <End Role="ID" Type="Self.ID" Multiplicity="1" />
+    <End Role="Inspector" Type="Self.Inspector" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ID">
+        <PropertyRef Name="Id1" />
+      </Principal>
+      <Dependent Role="Inspector">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Inspector__inspe__7D439ABD">
+    <End Role="Inspector" Type="Self.Inspector" Multiplicity="1" />
+    <End Role="Inspector_shedule" Type="Self.Inspector_shedule" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Inspector">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Inspector_shedule">
+        <PropertyRef Name="inspector_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Invoice__quotati__6E01572D">
+    <End Role="Quotation" Type="Self.Quotation" Multiplicity="0..1" />
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quotation">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="quotation_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Planning__questi__70DDC3D8">
+    <End Role="Questionnaire" Type="Self.Questionnaire" Multiplicity="0..1" />
+    <End Role="Planning" Type="Self.Planning" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questionnaire">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Planning">
+        <PropertyRef Name="questionnaire_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Quotation__plan___778AC167">
+    <End Role="Planning" Type="Self.Planning" Multiplicity="0..1" />
+    <End Role="Quotation" Type="Self.Quotation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planning">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Quotation">
+        <PropertyRef Name="plan_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Question__questi__76969D2E">
+    <End Role="Questionnaire" Type="Self.Questionnaire" Multiplicity="1" />
+    <End Role="Question" Type="Self.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questionnaire">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Question">
+        <PropertyRef Name="questionnaire_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StandardQ__quest__7C4F7684">
+    <End Role="Questionnaire" Type="Self.Questionnaire" Multiplicity="1" />
+    <End Role="StandardQuestionsList" Type="Self.StandardQuestionsList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questionnaire">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StandardQuestionsList">
+        <PropertyRef Name="questionnaire_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StandardQ__stand__7B5B524B">
+    <End Role="StandardQuestion" Type="Self.StandardQuestion" Multiplicity="1" />
+    <End Role="StandardQuestionsList" Type="Self.StandardQuestionsList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StandardQuestion">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StandardQuestionsList">
+        <PropertyRef Name="standardquestion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Plan_inspector">
+    <End Role="Inspector" Type="Self.Inspector" Multiplicity="*" />
+    <End Role="Planning" Type="Self.Planning" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="FestiSpecEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="C__RefactorLog" EntityType="Self.C__RefactorLog" />
     <EntitySet Name="Afdelings" EntityType="Self.Afdeling" />
     <EntitySet Name="Bank_Account" EntityType="Self.Bank_Account" />
     <EntitySet Name="Contacts" EntityType="Self.Contact" />
     <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
     <EntitySet Name="Events" EntityType="Self.Event" />
     <EntitySet Name="Factuurs" EntityType="Self.Factuur" />
     <EntitySet Name="IDs" EntityType="Self.ID" />
+    <EntitySet Name="Inlogdatas" EntityType="Self.Inlogdata" />
     <EntitySet Name="Inloggegevens" EntityType="Self.Inloggegeven" />
     <EntitySet Name="Inspectors" EntityType="Self.Inspector" />
     <EntitySet Name="Inspector_shedule" EntityType="Self.Inspector_shedule" />
+    <EntitySet Name="Invoices" EntityType="Self.Invoice" />
     <EntitySet Name="Medewerkers" EntityType="Self.Medewerker" />
     <EntitySet Name="Payment_status" EntityType="Self.Payment_status" />
     <EntitySet Name="Plans" EntityType="Self.Plan" />
-    <EntitySet Name="Plan_inspector" EntityType="Self.Plan_inspector" />
+    <EntitySet Name="Plannings" EntityType="Self.Planning" />
     <EntitySet Name="Questions" EntityType="Self.Question" />
     <EntitySet Name="Questionnaires" EntityType="Self.Questionnaire" />
     <EntitySet Name="Quotations" EntityType="Self.Quotation" />
     <EntitySet Name="StandardQuestions" EntityType="Self.StandardQuestion" />
     <EntitySet Name="StandardQuestionsLists" EntityType="Self.StandardQuestionsList" />
+    <AssociationSet Name="FK__Bank_Acco__emplo__72C60C4A" Association="Self.FK__Bank_Acco__emplo__72C60C4A">
+      <End Role="ID" EntitySet="IDs" />
+      <End Role="Bank_Account" EntitySet="Bank_Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Contact__custome__73BA3083" Association="Self.FK__Contact__custome__73BA3083">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Contact" EntitySet="Contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Planning__custom__6EF57B66" Association="Self.FK__Planning__custom__6EF57B66">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Planning" EntitySet="Plannings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Quotation__custo__787EE5A0" Association="Self.FK__Quotation__custo__787EE5A0">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Quotation" EntitySet="Quotations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__depart__6B24EA82" Association="Self.FK__Employee__depart__6B24EA82">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__id__6A30C649" Association="Self.FK__Employee__id__6A30C649">
+      <End Role="ID" EntitySet="IDs" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Invoice__employe__6D0D32F4" Association="Self.FK__Invoice__employe__6D0D32F4">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Invoice" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Planning__employ__6FE99F9F" Association="Self.FK__Planning__employ__6FE99F9F">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Planning" EntitySet="Plannings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Quotation__emplo__797309D9" Association="Self.FK__Quotation__emplo__797309D9">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Quotation" EntitySet="Quotations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Planning__event___71D1E811" Association="Self.FK__Planning__event___71D1E811">
+      <End Role="Event" EntitySet="Events" />
+      <End Role="Planning" EntitySet="Plannings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Quotation__event__7A672E12" Association="Self.FK__Quotation__event__7A672E12">
+      <End Role="Event" EntitySet="Events" />
+      <End Role="Quotation" EntitySet="Quotations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Inlogdata__Id__6C190EBB" Association="Self.FK__Inlogdata__Id__6C190EBB">
+      <End Role="ID" EntitySet="IDs" />
+      <End Role="Inlogdata" EntitySet="Inlogdatas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Inspector__Id__75A278F5" Association="Self.FK__Inspector__Id__75A278F5">
+      <End Role="ID" EntitySet="IDs" />
+      <End Role="Inspector" EntitySet="Inspectors" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Inspector__inspe__7D439ABD" Association="Self.FK__Inspector__inspe__7D439ABD">
+      <End Role="Inspector" EntitySet="Inspectors" />
+      <End Role="Inspector_shedule" EntitySet="Inspector_shedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Invoice__quotati__6E01572D" Association="Self.FK__Invoice__quotati__6E01572D">
+      <End Role="Quotation" EntitySet="Quotations" />
+      <End Role="Invoice" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Planning__questi__70DDC3D8" Association="Self.FK__Planning__questi__70DDC3D8">
+      <End Role="Questionnaire" EntitySet="Questionnaires" />
+      <End Role="Planning" EntitySet="Plannings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Quotation__plan___778AC167" Association="Self.FK__Quotation__plan___778AC167">
+      <End Role="Planning" EntitySet="Plannings" />
+      <End Role="Quotation" EntitySet="Quotations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Question__questi__76969D2E" Association="Self.FK__Question__questi__76969D2E">
+      <End Role="Questionnaire" EntitySet="Questionnaires" />
+      <End Role="Question" EntitySet="Questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StandardQ__quest__7C4F7684" Association="Self.FK__StandardQ__quest__7C4F7684">
+      <End Role="Questionnaire" EntitySet="Questionnaires" />
+      <End Role="StandardQuestionsList" EntitySet="StandardQuestionsLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StandardQ__stand__7B5B524B" Association="Self.FK__StandardQ__stand__7B5B524B">
+      <End Role="StandardQuestion" EntitySet="StandardQuestions" />
+      <End Role="StandardQuestionsList" EntitySet="StandardQuestionsLists" />
+    </AssociationSet>
+    <AssociationSet Name="Plan_inspector" Association="Self.Plan_inspector">
+      <End Role="Inspector" EntitySet="Inspectors" />
+      <End Role="Planning" EntitySet="Plannings" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

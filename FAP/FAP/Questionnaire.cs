@@ -14,6 +14,21 @@ namespace FAP
     
     public partial class Questionnaire
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Questionnaire()
+        {
+            this.Plannings = new HashSet<Planning>();
+            this.Questions = new HashSet<Question>();
+            this.StandardQuestionsLists = new HashSet<StandardQuestionsList>();
+        }
+    
         public int Id { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Planning> Plannings { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Question> Questions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<StandardQuestionsList> StandardQuestionsLists { get; set; }
     }
 }
