@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a783576b9f2b41c2a0fca0f408eb04e2" Name="Diagram1" ZoomLevel="29">
+      <Diagram DiagramId="a783576b9f2b41c2a0fca0f408eb04e2" Name="Diagram1" ZoomLevel="69">
         <EntityTypeShape EntityType="FAPDbModel.C__RefactorLog" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FAPDbModel.Bank_Account" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="FAPDbModel.Contact" Width="1.5" PointX="10.5" PointY="4.25" IsExpanded="true" />
