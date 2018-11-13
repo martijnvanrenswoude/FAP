@@ -1,0 +1,12 @@
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Domain\bin\Debug\FAP.Domain.dll.config
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Domain\bin\Debug\FAP.Domain.dll
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Domain\bin\Debug\FAP.Domain.pdb
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Domain\bin\Debug\EntityFramework.dll
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Domain\bin\Debug\EntityFramework.xml
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Domain\obj\Debug\FAP.Domain.csprojAssemblyReference.cache
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Domain\obj\Debug\FAP.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Domain\obj\Debug\FAP.Domain.csproj.CopyComplete
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Domain\obj\Debug\FAP.Domain.dll
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Domain\obj\Debug\FAP.Domain.pdb

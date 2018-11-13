@@ -69,18 +69,21 @@
     <Build Include="db\Tables\Department.sql" />
     <Build Include="db\Tables\Employee.sql" />
     <Build Include="db\Tables\Event.sql" />
-    <Build Include="db\Tables\ID.sql" />
-    <Build Include="db\Tables\Inlogdata.sql" />
+    <Build Include="db\Tables\ID_lookup.sql" />
+    <Build Include="db\Tables\Inloggegevens.sql" />
     <Build Include="db\Tables\Inspector.sql" />
     <Build Include="db\Tables\Inspector_shedule.sql" />
     <Build Include="db\Tables\Invoice.sql" />
     <Build Include="db\Tables\Payment_status.sql" />
     <Build Include="db\Tables\Plan_inspector.sql" />
-    <Build Include="db\Tables\Planning.sql" />
+    <Build Include="db\Tables\Plan.sql" />
     <Build Include="db\Tables\Question.sql" />
     <Build Include="db\Tables\Questionnaire.sql" />
     <Build Include="db\Tables\Quotation.sql" />
     <Build Include="db\Tables\StandardQuestion.sql" />
     <Build Include="db\Tables\StandardQuestionsList.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FAP.Database.publish.xml" />
   </ItemGroup>
 </Project>
