@@ -1,0 +1,100 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FAP.Repository", "FAP.Repository\FAP.Repository.csproj", "{5EE8A4C5-F3B7-4B53-BAA7-D1E65943E33B}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FAP.Web", "FAP.Web\", "{FB1A6888-9E94-4885-858B-F98CE0256C94}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_65186"
+		Debug.AspNetCompiler.PhysicalPath = "FAP.Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65186\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_65186"
+		Release.AspNetCompiler.PhysicalPath = "FAP.Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65186\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "65186"
+		SlnRelativePath = "FAP.Web\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FAP.Domain", "FAP.Domain\FAP.Domain.csproj", "{37050C02-3991-4A17-A945-2299B061B7F9}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FAP.Database", "FAP.Database\FAP.Database.sqlproj", "{0F15E0BC-F583-4F90-BD3A-297788D0C064}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{F4B6EFFB-FCFF-4BF4-8F0E-9611781D4EA3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{3E6223F1-BF70-4A4C-8583-CE60F464B607}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logic", "Logic", "{8F885A91-B889-4E6E-9B3E-0C8AE9CE7840}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FAP.Desktop", "FAP.Desktop\FAP.Desktop.csproj", "{D04CBF13-EFA2-43D7-B7C2-085585FEF279}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{32464258-5CF8-4DE4-A3DD-6A304BB7FC54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FAP.Sandbox", "FAP.Sandbox\FAP.Sandbox.csproj", "{44005EA4-7E7A-4065-B15E-DA27D295240E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FAP.Test", "FAP.Test\FAP.Test.csproj", "{672D6D5C-1A28-480A-A0C7-3277A3149D6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5EE8A4C5-F3B7-4B53-BAA7-D1E65943E33B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EE8A4C5-F3B7-4B53-BAA7-D1E65943E33B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EE8A4C5-F3B7-4B53-BAA7-D1E65943E33B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EE8A4C5-F3B7-4B53-BAA7-D1E65943E33B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB1A6888-9E94-4885-858B-F98CE0256C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB1A6888-9E94-4885-858B-F98CE0256C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB1A6888-9E94-4885-858B-F98CE0256C94}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB1A6888-9E94-4885-858B-F98CE0256C94}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{37050C02-3991-4A17-A945-2299B061B7F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37050C02-3991-4A17-A945-2299B061B7F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37050C02-3991-4A17-A945-2299B061B7F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37050C02-3991-4A17-A945-2299B061B7F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F15E0BC-F583-4F90-BD3A-297788D0C064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F15E0BC-F583-4F90-BD3A-297788D0C064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F15E0BC-F583-4F90-BD3A-297788D0C064}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0F15E0BC-F583-4F90-BD3A-297788D0C064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F15E0BC-F583-4F90-BD3A-297788D0C064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F15E0BC-F583-4F90-BD3A-297788D0C064}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D04CBF13-EFA2-43D7-B7C2-085585FEF279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D04CBF13-EFA2-43D7-B7C2-085585FEF279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D04CBF13-EFA2-43D7-B7C2-085585FEF279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D04CBF13-EFA2-43D7-B7C2-085585FEF279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44005EA4-7E7A-4065-B15E-DA27D295240E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44005EA4-7E7A-4065-B15E-DA27D295240E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44005EA4-7E7A-4065-B15E-DA27D295240E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44005EA4-7E7A-4065-B15E-DA27D295240E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{672D6D5C-1A28-480A-A0C7-3277A3149D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{672D6D5C-1A28-480A-A0C7-3277A3149D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{672D6D5C-1A28-480A-A0C7-3277A3149D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{672D6D5C-1A28-480A-A0C7-3277A3149D6E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5EE8A4C5-F3B7-4B53-BAA7-D1E65943E33B} = {8F885A91-B889-4E6E-9B3E-0C8AE9CE7840}
+		{FB1A6888-9E94-4885-858B-F98CE0256C94} = {F4B6EFFB-FCFF-4BF4-8F0E-9611781D4EA3}
+		{37050C02-3991-4A17-A945-2299B061B7F9} = {3E6223F1-BF70-4A4C-8583-CE60F464B607}
+		{0F15E0BC-F583-4F90-BD3A-297788D0C064} = {3E6223F1-BF70-4A4C-8583-CE60F464B607}
+		{D04CBF13-EFA2-43D7-B7C2-085585FEF279} = {F4B6EFFB-FCFF-4BF4-8F0E-9611781D4EA3}
+		{44005EA4-7E7A-4065-B15E-DA27D295240E} = {32464258-5CF8-4DE4-A3DD-6A304BB7FC54}
+		{672D6D5C-1A28-480A-A0C7-3277A3149D6E} = {32464258-5CF8-4DE4-A3DD-6A304BB7FC54}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40EE127B-F7E6-4DE6-89F6-C6ABADDBEA74}
+	EndGlobalSection
+EndGlobal
