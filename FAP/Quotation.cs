@@ -17,7 +17,11 @@ namespace FAP
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Quotation()
         {
+<<<<<<< HEAD:FAP/Quotation.cs
             this.Invoice = new HashSet<Invoice>();
+=======
+            this.Invoices = new HashSet<Invoice>();
+>>>>>>> Martijn:FAP/FAP/Quotation.cs
         }
     
         public int id { get; set; }
@@ -33,7 +37,11 @@ namespace FAP
         public virtual Employee Employee { get; set; }
         public virtual Event Event { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+<<<<<<< HEAD:FAP/Quotation.cs
         public virtual ICollection<Invoice> Invoice { get; set; }
+=======
+        public virtual ICollection<Invoice> Invoices { get; set; }
+>>>>>>> Martijn:FAP/FAP/Quotation.cs
         public virtual Planning Planning { get; set; }
     }
 }

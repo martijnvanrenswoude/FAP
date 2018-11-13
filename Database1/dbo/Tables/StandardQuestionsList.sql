@@ -6,4 +6,8 @@
     [answer] NVARCHAR(MAX) NULL,
 	FOREIGN KEY (standardquestion_id) REFERENCES StandardQuestion(Id),
 	FOREIGN KEY (questionnaire_id) REFERENCES Questionnaire(Id)
+<<<<<<< HEAD:Database1/dbo/Tables/StandardQuestionsList.sql
 )
+=======
+)
+>>>>>>> Martijn:FAP/Database1/StandardQuestionsList.sql

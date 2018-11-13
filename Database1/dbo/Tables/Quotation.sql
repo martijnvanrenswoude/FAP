@@ -12,4 +12,8 @@
 	FOREIGN KEY (customer_id) REFERENCES Customer(Id),
 	FOREIGN KEY (employee_id) REFERENCES Employee(Id),
 	FOREIGN KEY (event_id) REFERENCES Event(Id)
+<<<<<<< HEAD:Database1/dbo/Tables/Quotation.sql
 )
+=======
+)
+>>>>>>> Martijn:FAP/Database1/Quotation.sql

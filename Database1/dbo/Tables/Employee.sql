@@ -10,4 +10,8 @@
     [house number] NVARCHAR(10) NULL
 	FOREIGN KEY (id) REFERENCES ID(Id),
 	FOREIGN KEY (department_id) REFERENCES Department(id)
+<<<<<<< HEAD:Database1/dbo/Tables/Employee.sql
 )
+=======
+)
+>>>>>>> Martijn:FAP/Database1/Employee.sql

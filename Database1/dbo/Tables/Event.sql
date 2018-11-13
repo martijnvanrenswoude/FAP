@@ -8,4 +8,8 @@
     [surface area_m2] INT NULL, 
     [description] NVARCHAR(MAX) NULL,
 	FOREIGN KEY (contact_id) REFERENCES Contact([contact_id])
+<<<<<<< HEAD:Database1/dbo/Tables/Event.sql
 )
+=======
+)
+>>>>>>> Martijn:FAP/Database1/Event.sql

@@ -18,5 +18,7 @@ namespace FAP
         public Nullable<System.DateTime> date { get; set; }
         public Nullable<System.DateTime> available_from { get; set; }
         public Nullable<System.DateTime> available_until { get; set; }
+    
+        public virtual Inspector Inspector { get; set; }
     }
 }

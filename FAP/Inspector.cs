@@ -17,7 +17,11 @@ namespace FAP
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Inspector()
         {
+<<<<<<< HEAD:FAP/Inspector.cs
             this.Planning = new HashSet<Planning>();
+=======
+            this.Plannings = new HashSet<Planning>();
+>>>>>>> Martijn:FAP/FAP/Inspector.cs
         }
     
         public int Id { get; set; }
@@ -28,7 +32,13 @@ namespace FAP
         public string house_number { get; set; }
     
         public virtual ID ID1 { get; set; }
+<<<<<<< HEAD:FAP/Inspector.cs
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Planning> Planning { get; set; }
+=======
+        public virtual Inspector_shedule Inspector_shedule { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Planning> Plannings { get; set; }
+>>>>>>> Martijn:FAP/FAP/Inspector.cs
     }
 }

@@ -7,4 +7,8 @@
     [postcode] NVARCHAR(6) NULL, 
     [house number] NVARCHAR(5) NULL,
 	FOREIGN KEY (Id) REFERENCES Id(Id)
+<<<<<<< HEAD:Database1/dbo/Tables/Inspector.sql
 )
+=======
+)
+>>>>>>> Martijn:FAP/Database1/Inspector.sql

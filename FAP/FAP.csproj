@@ -94,6 +94,12 @@
     <Compile Include="Department.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD:FAP/FAP.csproj
+=======
+    <Compile Include="Department.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+>>>>>>> Martijn:FAP/FAP/FAP.csproj
     <Compile Include="Employee.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -130,9 +136,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+<<<<<<< HEAD:FAP/FAP.csproj
     <Compile Include="Payment_status.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+=======
+>>>>>>> Martijn:FAP/FAP/FAP.csproj
     <Compile Include="Planning.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -151,10 +160,17 @@
     <Compile Include="StandardQuestionsList.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD:FAP/FAP.csproj
     <Compile Include="ViewModel\DataVM.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="View\MainWindow.xaml">
+=======
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+>>>>>>> Martijn:FAP/FAP/FAP.csproj
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

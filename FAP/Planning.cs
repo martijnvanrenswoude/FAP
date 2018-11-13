@@ -17,8 +17,8 @@ namespace FAP
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Planning()
         {
-            this.Quotation = new HashSet<Quotation>();
-            this.Inspector = new HashSet<Inspector>();
+            this.Quotations = new HashSet<Quotation>();
+            this.Inspectors = new HashSet<Inspector>();
         }
     
         public int id { get; set; }
@@ -33,8 +33,8 @@ namespace FAP
         public virtual Event Event { get; set; }
         public virtual Questionnaire Questionnaire { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Quotation> Quotation { get; set; }
+        public virtual ICollection<Quotation> Quotations { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Inspector> Inspector { get; set; }
+        public virtual ICollection<Inspector> Inspectors { get; set; }
     }
 }

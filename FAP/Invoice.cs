@@ -23,6 +23,10 @@ namespace FAP
         public Nullable<System.DateTime> date { get; set; }
     
         public virtual Employee Employee { get; set; }
+<<<<<<< HEAD:FAP/Invoice.cs
+=======
+        public virtual Payment_status Payment_status1 { get; set; }
+>>>>>>> Martijn:FAP/Invoice.cs
         public virtual Quotation Quotation { get; set; }
     }
 }
