@@ -13,10 +13,10 @@ namespace FAP.Domain
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FAPDatabaseEntities : DbContext
+    public partial class FAPEntities : DbContext
     {
-        public FAPDatabaseEntities()
-            : base("name=FAPDatabaseEntities")
+        public FAPEntities()
+            : base("name=FAPEntities")
         {
         }
     

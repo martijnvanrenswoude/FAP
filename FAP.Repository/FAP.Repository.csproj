@@ -49,16 +49,22 @@
   <ItemGroup>
     <Compile Include="Generic\GenericRepository.cs" />
     <Compile Include="Generic\MasterRepository.cs" />
-    <Compile Include="Customer\CustomerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Customer\" />
     <Folder Include="Employee\" />
     <Folder Include="Event\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FAP.Domain\FAP.Domain.csproj">
+      <Project>{37050C02-3991-4A17-A945-2299B061B7F9}</Project>
+      <Name>FAP.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
