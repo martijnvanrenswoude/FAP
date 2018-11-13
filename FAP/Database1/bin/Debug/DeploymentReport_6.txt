@@ -1,0 +1,75 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Contact]
+       [dbo].[Customer]
+       [dbo].[Department]
+       [dbo].[ID]
+       [dbo].[Invoice]
+       [dbo].[Payment_status]
+       [dbo].[Planning]
+       [dbo].[Question]
+       [dbo].[Questionnaire]
+       [dbo].[StandardQuestion]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[Contact] (Foreign Key)
+       unnamed constraint on [dbo].[Event] (Foreign Key)
+       unnamed constraint on [dbo].[Planning] (Foreign Key)
+       unnamed constraint on [dbo].[Quotation] (Foreign Key)
+       unnamed constraint on [dbo].[Employee] (Foreign Key)
+       unnamed constraint on [dbo].[Bank_Account] (Foreign Key)
+       unnamed constraint on [dbo].[Employee] (Foreign Key)
+       unnamed constraint on [dbo].[Inlogdata] (Foreign Key)
+       unnamed constraint on [dbo].[Inspector] (Foreign Key)
+       unnamed constraint on [dbo].[Invoice] (Foreign Key)
+       unnamed constraint on [dbo].[Invoice] (Foreign Key)
+       unnamed constraint on [dbo].[Invoice] (Foreign Key)
+       unnamed constraint on [dbo].[Plan_inspector] (Foreign Key)
+       unnamed constraint on [dbo].[Planning] (Foreign Key)
+       unnamed constraint on [dbo].[Planning] (Foreign Key)
+       unnamed constraint on [dbo].[Planning] (Foreign Key)
+       unnamed constraint on [dbo].[Quotation] (Foreign Key)
+       unnamed constraint on [dbo].[Question] (Foreign Key)
+       unnamed constraint on [dbo].[StandardQuestionsList] (Foreign Key)
+       unnamed constraint on [dbo].[StandardQuestionsList] (Foreign Key)
+     Table rebuild
+       [dbo].[Contact] (Table)
+       [dbo].[Customer] (Table)
+       [dbo].[Department] (Table)
+       [dbo].[ID] (Table)
+       [dbo].[Invoice] (Table)
+       [dbo].[Payment_status] (Table)
+       [dbo].[Planning] (Table)
+       [dbo].[Question] (Table)
+       [dbo].[Questionnaire] (Table)
+       [dbo].[StandardQuestion] (Table)
+
+** Supporting actions
+     Create
+       Foreign Key: unnamed constraint on [dbo].[Contact] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Event] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Planning] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Quotation] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Employee] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Bank_Account] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Employee] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Inlogdata] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Inspector] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Invoice] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Invoice] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Invoice] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Plan_inspector] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Planning] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Planning] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Planning] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Quotation] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Question] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[StandardQuestionsList] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[StandardQuestionsList] (Foreign Key)

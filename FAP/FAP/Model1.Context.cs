@@ -13,10 +13,10 @@ namespace FAP
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FAPDbEntities : DbContext
+    public partial class FAPDbEntities1 : DbContext
     {
-        public FAPDbEntities()
-            : base("name=FAPDbEntities")
+        public FAPDbEntities1()
+            : base("name=FAPDbEntities1")
         {
         }
     

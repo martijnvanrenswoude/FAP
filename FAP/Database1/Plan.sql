@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Planning]
 (
-	[id] INT NOT NULL PRIMARY KEY, 
+	[id] INT NOT NULL PRIMARY KEY Identity(1,1), 
     [customer_id] INT NULL, 
     [event_id] INT NULL, 
     [questionnaire_id] INT NULL, 

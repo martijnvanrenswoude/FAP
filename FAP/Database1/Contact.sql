@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Contact]
 (
-	[contact_id] INT NOT NULL,
+	[contact_id] INT NOT NULL Identity(1,1),
     [customer_id] INT NOT NULL, 
     [name] NVARCHAR(MAX) NULL, 
     [surname] NVARCHAR(MAX) NULL, 
