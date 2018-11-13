@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kwisspel.Repository.Generic
+namespace FAP.Repository.Generic
 {
     public class MasterRepository : IDisposable
     {

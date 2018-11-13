@@ -75,6 +75,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Message\NavigationMessage.cs" />
+    <Compile Include="Navigation\ViewNavigator.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="View\MainWindow.xaml">
@@ -120,7 +122,16 @@
   <ItemGroup>
     <Folder Include="Command\" />
     <Folder Include="Converters\" />
-    <Folder Include="Message\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FAP.Domain\FAP.Domain.csproj">
+      <Project>{37050C02-3991-4A17-A945-2299B061B7F9}</Project>
+      <Name>FAP.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FAP.Repository\FAP.Repository.csproj">
+      <Project>{5EE8A4C5-F3B7-4B53-BAA7-D1E65943E33B}</Project>
+      <Name>FAP.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

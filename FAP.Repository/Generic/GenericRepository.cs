@@ -5,7 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Kwisspel.Repository.Generic
+namespace FAP.Repository.Generic
 {
     public class GenericRepository<TEntity>
         where TEntity : class
