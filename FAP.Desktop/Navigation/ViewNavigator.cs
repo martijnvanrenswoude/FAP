@@ -46,15 +46,19 @@ namespace FAP.Desktop.Navigation
     {
         private readonly UniqueStack<View> _viewHistory;
 
-        public View CurrentView => _viewHistory.Peek();
+        public View CurrentView => (_viewHistory.Count > 0) ? _viewHistory.Peek() : null;
+            
 
-        public ViewNavigator()
+        public ViewNavigator(string viewname)
         {
             _viewHistory = new UniqueStack<View>();
+            ChangeView(viewname);
         }
 
         public void ChangeView(string view)
         {
+            HideView();
+
             //Als je hier een exception krijgt over TargetInvocation, check dan ff of het repository object geregistreert staat in de ViewModelLocator
             switch (view)
             {
@@ -76,6 +80,24 @@ namespace FAP.Desktop.Navigation
                     break;
 
                 default: throw new ArgumentException("Non existend view passed in arguments.");
+            }
+
+            ShowView();
+        }
+
+        private void HideView()
+        {
+            if (CurrentView != null)
+            {
+                (CurrentView.DataContext as ITransitionable)?.Hide();
+            }
+        }
+
+        private void ShowView()
+        {
+            if (CurrentView != null)
+            {
+                (CurrentView.DataContext as ITransitionable)?.Show();
             }
         }
 

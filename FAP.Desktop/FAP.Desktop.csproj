@@ -81,6 +81,7 @@
     <Compile Include="ViewModel\TestOtherViewModel.cs" />
     <Compile Include="ViewModel\TestViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="Navigation\ITransitionable.cs" />
     <Compile Include="View\TestViewOther.xaml.cs">
       <DependentUpon>TestViewOther.xaml</DependentUpon>
     </Compile>
