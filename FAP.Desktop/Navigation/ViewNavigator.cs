@@ -12,6 +12,7 @@ using FAP.Repository.Generic;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
+using FAP.Desktop.View;
 
 namespace FAP.Desktop.Navigation
 {
@@ -47,26 +48,34 @@ namespace FAP.Desktop.Navigation
 
         public View CurrentView => _viewHistory.Peek();
 
-        public ViewNavigator(string homeView)
+        public ViewNavigator()
         {
             _viewHistory = new UniqueStack<View>();
-            ChangeView(homeView);
         }
 
         public void ChangeView(string view)
         {
+            //Als je hier een exception krijgt over TargetInvocation, check dan ff of het repository object geregistreert staat in de ViewModelLocator
             switch (view)
             {
                 case "Back": Back(); break;
                 case "back": Back(); break;
 
-                //case nameof(EventView):
-                //    _viewHistory.Push(new EventView
-                //    {
-                //        DataContext = new EventViewModel(
-                //          SimpleIoc.Default.GetInstance<GenericRepository<Event>>())
-                //    });
-                //    break;
+                case nameof(TestView):
+                    _viewHistory.Push(new TestView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<TestViewModel>()
+                    });
+                    break;
+
+                case nameof(TestViewOther):
+                    _viewHistory.Push(new TestViewOther
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<TestOtherViewModel>()
+                    });
+                    break;
+
+                default: throw new ArgumentException("Non existend view passed in arguments.");
             }
         }
 
@@ -76,6 +85,14 @@ namespace FAP.Desktop.Navigation
             {
                 _viewHistory.Pop();
             }
+        }
+        
+        public static void Navigate(string name)
+        {
+            Messenger.Default.Send(new NavigationMessage
+            {
+                View = name
+            });
         }
     }
 }

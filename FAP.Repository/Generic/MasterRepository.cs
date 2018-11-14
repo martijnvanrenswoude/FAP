@@ -27,9 +27,9 @@ namespace FAP.Repository.Generic
             {
                 throw new ObjectDisposedException("Master repository was disposed");
             }
-
-            var entityType = typeof(GenericRepository<TEntity>);
-            var repository = _repositories.FirstOrDefault(o => o.GetType() == entityType);
+            
+            var repository = _repositories
+                .FirstOrDefault(o => o.GetType() == typeof(GenericRepository<TEntity>));
 
             if (repository == null)
             {

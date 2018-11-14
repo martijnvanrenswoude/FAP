@@ -48,5 +48,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FAP.Domain\FAP.Domain.csproj">
+      <Project>{37050C02-3991-4A17-A945-2299B061B7F9}</Project>
+      <Name>FAP.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FAP.Repository\FAP.Repository.csproj">
+      <Project>{5EE8A4C5-F3B7-4B53-BAA7-D1E65943E33B}</Project>
+      <Name>FAP.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

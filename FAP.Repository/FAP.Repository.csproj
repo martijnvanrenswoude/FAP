@@ -47,15 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Explicit\CustomerRepository.cs" />
     <Compile Include="Generic\GenericRepository.cs" />
     <Compile Include="Generic\MasterRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Customer\" />
-    <Folder Include="Employee\" />
-    <Folder Include="Event\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

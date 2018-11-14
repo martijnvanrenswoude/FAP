@@ -31,3 +31,45 @@ C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\obj\Debug\FAP.Desktop.csproj.C
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\obj\Debug\FAP.Desktop.csproj.CopyComplete
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\obj\Debug\FAP.Desktop.exe
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\obj\Debug\FAP.Desktop.pdb
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\obj\Debug\FAP.Desktop.csprojResolveAssemblyReference.cache
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\obj\Debug\View\MainWindow.g.cs
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\obj\Debug\View\TestViewOther.g.cs
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\obj\Debug\View\TestView.g.cs
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\obj\Debug\App.g.cs
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\obj\Debug\FAP.Desktop_MarkupCompile.cache
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\obj\Debug\FAP.Desktop_MarkupCompile.lref
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\obj\Debug\FAP.Desktop.exe
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\obj\Debug\FAP.Desktop.pdb
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\FAP.Desktop.exe.config
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\FAP.Desktop.exe
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\FAP.Desktop.pdb
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\CommonServiceLocator.dll
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\EntityFramework.dll
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\EntityFramework.SqlServer.dll
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\FAP.Domain.dll
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\FAP.Repository.dll
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\GalaSoft.MvvmLight.dll
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\System.Windows.Interactivity.dll
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\FAP.Domain.pdb
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\FAP.Domain.dll.config
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\FAP.Repository.pdb
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\FAP.Repository.dll.config
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\EntityFramework.xml
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\EntityFramework.SqlServer.xml
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\GalaSoft.MvvmLight.pdb
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\GalaSoft.MvvmLight.xml
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\obj\Debug\App.baml
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\obj\Debug\View\MainWindow.baml
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\obj\Debug\View\TestViewOther.baml
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\obj\Debug\View\TestView.baml
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\obj\Debug\FAP.Desktop.g.resources
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\obj\Debug\FAP.Desktop.Properties.Resources.resources
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\obj\Debug\FAP.Desktop.csproj.GenerateResource.Cache
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Desktop\obj\Debug\FAP.Desktop.csproj.CoreCompileInputs.cache

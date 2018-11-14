@@ -1,2 +1,16 @@
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Repository\obj\Debug\FAP.Repository.csprojAssemblyReference.cache
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Repository\obj\Debug\FAP.Repository.csproj.CoreCompileInputs.cache
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Repository\bin\Debug\FAP.Repository.dll.config
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Repository\bin\Debug\FAP.Repository.dll
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Repository\bin\Debug\FAP.Repository.pdb
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Repository\bin\Debug\EntityFramework.dll
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Repository\bin\Debug\EntityFramework.SqlServer.dll
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Repository\bin\Debug\FAP.Domain.dll
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Repository\bin\Debug\FAP.Domain.pdb
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Repository\bin\Debug\FAP.Domain.dll.config
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Repository\bin\Debug\EntityFramework.xml
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Repository\bin\Debug\EntityFramework.SqlServer.xml
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Repository\obj\Debug\FAP.Repository.csprojResolveAssemblyReference.cache
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Repository\obj\Debug\FAP.Repository.csproj.CoreCompileInputs.cache
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Repository\obj\Debug\FAP.Repository.dll
+E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Repository\obj\Debug\FAP.Repository.pdb
