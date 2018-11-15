@@ -334,3 +334,9 @@ ASALocalRun/
 
 .cache
 *.cache
+.vs
+FAP.Desktop/obj
+FAP.Domain/obj
+FAP.Repository/obj
+FAP.Sandbox/obj
+FAP.Test/obj
