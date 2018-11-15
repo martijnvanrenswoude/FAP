@@ -82,8 +82,15 @@
     <Build Include="db\Tables\Quotation.sql" />
     <Build Include="db\Tables\StandardQuestion.sql" />
     <Build Include="db\Tables\StandardQuestionsList.sql" />
+    <Build Include="db\Tables\ComboQuestion.sql" />
+    <Build Include="db\Tables\MultipleChoice.sql" />
+    <Build Include="db\Tables\MultiplechoiceAnswers.sql" />
+    <Build Include="db\Tables\OpenSubjectQuestion.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FAP.Database.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="FAP.Database.refactorlog" />
   </ItemGroup>
 </Project>

@@ -31,3 +31,9 @@ C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\obj\Debug\FAP.Desktop.csproj.C
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\obj\Debug\FAP.Desktop.csproj.CopyComplete
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\obj\Debug\FAP.Desktop.exe
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\obj\Debug\FAP.Desktop.pdb
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\bin\Debug\FAP.Domain.dll
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\bin\Debug\FAP.Repository.dll
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\bin\Debug\FAP.Domain.pdb
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\bin\Debug\FAP.Domain.dll.config
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\bin\Debug\FAP.Repository.pdb
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\bin\Debug\FAP.Repository.dll.config
