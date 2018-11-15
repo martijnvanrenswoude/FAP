@@ -1,7 +1,0 @@
-C:\Users\Martijn\Documents\GitHub\FAP\FAP.Sandbox\bin\Debug\FAP.Sandbox.exe.config
-C:\Users\Martijn\Documents\GitHub\FAP\FAP.Sandbox\bin\Debug\FAP.Sandbox.exe
-C:\Users\Martijn\Documents\GitHub\FAP\FAP.Sandbox\bin\Debug\FAP.Sandbox.pdb
-C:\Users\Martijn\Documents\GitHub\FAP\FAP.Sandbox\obj\Debug\FAP.Sandbox.csprojAssemblyReference.cache
-C:\Users\Martijn\Documents\GitHub\FAP\FAP.Sandbox\obj\Debug\FAP.Sandbox.csproj.CoreCompileInputs.cache
-C:\Users\Martijn\Documents\GitHub\FAP\FAP.Sandbox\obj\Debug\FAP.Sandbox.exe
-C:\Users\Martijn\Documents\GitHub\FAP\FAP.Sandbox\obj\Debug\FAP.Sandbox.pdb
