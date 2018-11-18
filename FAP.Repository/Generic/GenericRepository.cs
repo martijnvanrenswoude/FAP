@@ -10,10 +10,10 @@ namespace FAP.Repository.Generic
     public class GenericRepository<TEntity>
         where TEntity : class
     {
-        protected FAPEntities       Context { get; }
+        protected FAPDatabaseEntities       Context { get; }
         protected DbSet<TEntity>    DbSet   { get; }
 
-        public GenericRepository(FAPEntities context)
+        public GenericRepository(FAPDatabaseEntities context)
         {
             Context = context;
             DbSet = Context.Set<TEntity>();

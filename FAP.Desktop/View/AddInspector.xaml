@@ -1,0 +1,22 @@
+﻿<Window x:Class="FAP.Desktop.View.AddInspector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FAP.Desktop.View"
+        mc:Ignorable="d"
+        Title="AddInspector" Height="450" Width="800">
+    <StackPanel>
+        <TextBlock Text="Voeg een inspecteur toe!"/>
+        <StackPanel>
+            <TextBox Name="Naam" Margin="5"></TextBox>
+            <TextBox Name="Ächternaam" Margin="5"/>
+            <TextBox Name="Straatnaam" Margin="5"/>
+            <TextBox Name="Huisnummer" Margin="5"/>
+            <TextBox Name="Postcode" Margin="5"/>
+            <TextBox Name="Woonplaats" Margin="5"/>
+            <Button Content ="Voeg Toe" Height="25" Name="Add"></Button>
+        </StackPanel>
+        
+    </StackPanel>
+</Window>
