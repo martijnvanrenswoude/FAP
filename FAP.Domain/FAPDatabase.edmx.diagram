@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="add62265759b48128bdbab89c4d63d85" Name="Diagram1" ZoomLevel="40">
+        <EntityTypeShape EntityType="FAPDatabaseModel.C__RefactorLog" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.Answer" Width="1.5" PointX="5.25" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.Bank_Account" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.ComboQuestion" Width="1.5" PointX="5.25" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.Contact" Width="1.5" PointX="13.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.Customer" Width="1.5" PointX="11.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.Department" Width="1.5" PointX="3.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.Employee" Width="1.5" PointX="6" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.Event" Width="1.5" PointX="11.25" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.ID" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.Inlogdata" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.Inspector" Width="1.5" PointX="3" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.Inspector_shedule" Width="1.5" PointX="5.25" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.Invoice" Width="1.5" PointX="8.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.MultipleChoice" Width="1.5" PointX="5.25" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.MultiplechoiceAnswer" Width="1.5" PointX="7.5" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.OpenSubjectQuestion" Width="1.5" PointX="8.25" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.Payment_status" Width="1.5" PointX="6" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.Planning" Width="1.5" PointX="11.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.Question" Width="1.5" PointX="3" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.Questionnaire" Width="1.5" PointX="9" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.Quotation" Width="1.5" PointX="13.5" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.StandardQuestion" Width="1.5" PointX="9" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.StandardQuestionsList" Width="1.5" PointX="11.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Answers__Inspect__1DB06A4F" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Answers__Questio__1CBC4616" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Bank_Acco__emplo__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__ComboQues__inspe__1EA48E88" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__ComboQues__quest__1F98B2C1" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Contact__custome__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Planning__custom__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Quotation__custo__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Employee__depart__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Employee__id__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Invoice__employe__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Planning__employ__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Quotation__emplo__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Planning__event___6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Quotation__event__6EF57B66" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Inlogdata__Id__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Inspector__Id__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Inspector__inspe__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__MultipleC__inspe__17036CC0" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__OpenSubje__inspe__245D67DE" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Invoice__payment__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Invoice__quotati__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__MultipleC__quest__17F790F9" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Multiplec__quest__208CD6FA" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__OpenSubje__quest__236943A5" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Planning__questi__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Quotation__plan___6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Question__questi__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__StandardQ__quest__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__StandardQ__stand__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="FAPDatabaseModel.Plan_inspector" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

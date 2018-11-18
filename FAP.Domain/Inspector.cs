@@ -17,6 +17,10 @@ namespace FAP.Domain
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Inspector()
         {
+            this.Answers = new HashSet<Answer>();
+            this.ComboQuestions = new HashSet<ComboQuestion>();
+            this.MultipleChoices = new HashSet<MultipleChoice>();
+            this.OpenSubjectQuestions = new HashSet<OpenSubjectQuestion>();
             this.Plannings = new HashSet<Planning>();
         }
     
@@ -27,8 +31,16 @@ namespace FAP.Domain
         public string postcode { get; set; }
         public string house_number { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Answer> Answers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ComboQuestion> ComboQuestions { get; set; }
         public virtual ID ID1 { get; set; }
         public virtual Inspector_shedule Inspector_shedule { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MultipleChoice> MultipleChoices { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OpenSubjectQuestion> OpenSubjectQuestions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Planning> Plannings { get; set; }
     }

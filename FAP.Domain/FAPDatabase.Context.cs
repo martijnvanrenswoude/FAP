@@ -13,10 +13,10 @@ namespace FAP.Domain
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FAPEntities : DbContext
+    public partial class FAPDatabaseEntities : DbContext
     {
-        public FAPEntities()
-            : base("name=FAPEntities")
+        public FAPDatabaseEntities()
+            : base("name=FAPDatabaseEntities")
         {
         }
     
@@ -25,7 +25,10 @@ namespace FAP.Domain
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
+        public virtual DbSet<Answer> Answers { get; set; }
         public virtual DbSet<Bank_Account> Bank_Account { get; set; }
+        public virtual DbSet<ComboQuestion> ComboQuestions { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
@@ -36,6 +39,9 @@ namespace FAP.Domain
         public virtual DbSet<Inspector> Inspectors { get; set; }
         public virtual DbSet<Inspector_shedule> Inspector_shedule { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
+        public virtual DbSet<MultipleChoice> MultipleChoices { get; set; }
+        public virtual DbSet<MultiplechoiceAnswer> MultiplechoiceAnswers { get; set; }
+        public virtual DbSet<OpenSubjectQuestion> OpenSubjectQuestions { get; set; }
         public virtual DbSet<Payment_status> Payment_status { get; set; }
         public virtual DbSet<Planning> Plannings { get; set; }
         public virtual DbSet<Question> Questions { get; set; }
@@ -43,5 +49,6 @@ namespace FAP.Domain
         public virtual DbSet<Quotation> Quotations { get; set; }
         public virtual DbSet<StandardQuestion> StandardQuestions { get; set; }
         public virtual DbSet<StandardQuestionsList> StandardQuestionsLists { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

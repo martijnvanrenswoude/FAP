@@ -86,6 +86,7 @@
     <Build Include="db\Tables\MultipleChoice.sql" />
     <Build Include="db\Tables\MultiplechoiceAnswers.sql" />
     <Build Include="db\Tables\OpenSubjectQuestion.sql" />
+    <Build Include="db\Tables\Answers.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FAP.Database.publish.xml" />
