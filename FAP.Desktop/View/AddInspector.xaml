@@ -8,13 +8,19 @@
         DataContext ="{Binding Inspector ,Source={StaticResource Locator}}"
         Title="AddInspector" Height="450" Width="800">
     <StackPanel>
-        <TextBlock Text="Voeg een inspecteur toe!"/>
+        <TextBlock Text="Voeg een inspecteur toe." Margin="10" HorizontalAlignment="Center" FontSize="36" Background="CadetBlue"/>
         <StackPanel>
+            <TextBlock Text="Vooraam"/>
             <TextBox Name="Naam" Margin="5" Text="{Binding Name}"></TextBox>
+            <TextBlock Text="Achternaam"/>
             <TextBox Name="Ächternaam" Margin="5" Text="{Binding Surname}"/>
+            <TextBlock Text="Straatnaam"/>
             <TextBox Name="Straatnaam" Margin="5"/>
+            <TextBlock Text="Huisnummer"/>
             <TextBox Name="Huisnummer" Margin="5"/>
+            <TextBlock Text="Postcode"/>
             <TextBox Name="Postcode" Margin="5"/>
+            <TextBlock Text="Woonplaats"/>
             <TextBox Name="Woonplaats" Margin="5"/>
             <Button Content ="Voeg Toe" Height="25" Name="Add" Command="{Binding AddInspectorCommand}" CommandParameter="{Binding AddInspectorCommand}" ></Button>
         </StackPanel>

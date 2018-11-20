@@ -75,13 +75,14 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="department_id" Type="int" />
-          <Property Name="name" Type="nvarchar(max)" />
-          <Property Name="surname" Type="nvarchar(max)" />
+          <Property Name="department_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="surname" Type="nvarchar(max)" Nullable="false" />
           <Property Name="acces level" Type="int" />
           <Property Name="position" Type="nvarchar(max)" />
-          <Property Name="postcode" Type="nvarchar" MaxLength="6" />
-          <Property Name="house number" Type="nvarchar" MaxLength="10" />
+          <Property Name="postcode" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="house number" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="date_of_birth" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="Event">
           <Key>
@@ -110,9 +111,10 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="surname" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="telephone_nr" Type="int" />
-          <Property Name="postcode" Type="nvarchar" MaxLength="6" />
-          <Property Name="house number" Type="nvarchar" MaxLength="5" />
+          <Property Name="telephone_nr" Type="int" Nullable="false" />
+          <Property Name="postcode" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="house number" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="date_of_birth" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="Inspector_Bank_Account">
           <Key>
@@ -329,8 +331,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Employee__depart__2DE6D218">
-          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+        <Association Name="FK__Employee__depart__395884C4">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
           <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Department">
@@ -683,7 +685,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Contact" EntitySet="Contact" />
           </AssociationSet>
-          <AssociationSet Name="FK__Employee__depart__2DE6D218" Association="Self.FK__Employee__depart__2DE6D218">
+          <AssociationSet Name="FK__Employee__depart__395884C4" Association="Self.FK__Employee__depart__395884C4">
             <End Role="Department" EntitySet="Department" />
             <End Role="Employee" EntitySet="Employee" />
           </AssociationSet>
@@ -868,19 +870,20 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="department_id" Type="Int32" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="department_id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="acces_level" Type="Int32" />
           <Property Name="position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="postcode" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="house_number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="postcode" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="house_number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Bank_Account" Relationship="Self.FK__Bank_Acco__emplo__2CF2ADDF" FromRole="Employee" ToRole="Bank_Account" />
           <NavigationProperty Name="Department" Relationship="Self.FK__Employee__depart__2DE6D218" FromRole="Employee" ToRole="Department" />
           <NavigationProperty Name="Inlogdata" Relationship="Self.FK__Inlogdata__Id__37703C52" FromRole="Employee" ToRole="Inlogdata" />
           <NavigationProperty Name="Invoices" Relationship="Self.FK__Invoice__employe__2EDAF651" FromRole="Employee" ToRole="Invoice" />
           <NavigationProperty Name="Plannings" Relationship="Self.FK__Planning__employ__2FCF1A8A" FromRole="Employee" ToRole="Planning" />
           <NavigationProperty Name="Quotations" Relationship="Self.FK__Quotation__emplo__30C33EC3" FromRole="Employee" ToRole="Quotation" />
+          <Property Name="date_of_birth" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="Event">
           <Key>
@@ -912,9 +915,9 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="telephone_nr" Type="Int32" />
-          <Property Name="postcode" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="house_number" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="telephone_nr" Type="Int32" Nullable="false" />
+          <Property Name="postcode" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="house_number" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Answers" Relationship="Self.FK__Answers__Inspect__339FAB6E" FromRole="Inspector" ToRole="Answers" />
           <NavigationProperty Name="ComboQuestions" Relationship="Self.FK__ComboQues__inspe__31B762FC" FromRole="Inspector" ToRole="ComboQuestion" />
           <NavigationProperty Name="Inspector_shedule" Relationship="Self.FK__Inspector__inspe__3587F3E0" FromRole="Inspector" ToRole="Inspector_shedule" />
@@ -922,6 +925,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
           <NavigationProperty Name="MultipleChoices" Relationship="Self.FK__MultipleC__inspe__32AB8735" FromRole="Inspector" ToRole="MultipleChoice" />
           <NavigationProperty Name="OpenSubjectQuestions" Relationship="Self.FK__OpenSubje__inspe__3493CFA7" FromRole="Inspector" ToRole="OpenSubjectQuestion" />
           <NavigationProperty Name="Plannings" Relationship="Self.Plan_inspector" FromRole="Inspector" ToRole="Planning" />
+          <Property Name="date_of_birth" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="Inspector_Bank_Account">
           <Key>
@@ -1669,6 +1673,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="FAPDatabaseModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="date_of_birth" ColumnName="date_of_birth" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="department_id" ColumnName="department_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -1705,6 +1710,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
           <EntitySetMapping Name="Inspectors">
             <EntityTypeMapping TypeName="FAPDatabaseModel.Inspector">
               <MappingFragment StoreEntitySet="Inspector">
+                <ScalarProperty Name="date_of_birth" ColumnName="date_of_birth" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="surname" ColumnName="surname" />
