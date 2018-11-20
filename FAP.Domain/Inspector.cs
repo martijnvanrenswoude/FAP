@@ -35,8 +35,8 @@ namespace FAP.Domain
         public virtual ICollection<Answer> Answers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ComboQuestion> ComboQuestions { get; set; }
-        public virtual ID ID1 { get; set; }
         public virtual Inspector_shedule Inspector_shedule { get; set; }
+        public virtual Inspector_Bank_Account Inspector_Bank_Account { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MultipleChoice> MultipleChoices { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

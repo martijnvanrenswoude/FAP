@@ -18,6 +18,6 @@ namespace FAP.Domain
         public string username { get; set; }
         public string password { get; set; }
     
-        public virtual ID ID1 { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }

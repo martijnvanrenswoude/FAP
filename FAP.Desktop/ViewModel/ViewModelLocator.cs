@@ -25,11 +25,14 @@ namespace FAP.Desktop.ViewModel
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<InspectorViewModel>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
-            
-        
+
+        public InspectorViewModel Inspector => ServiceLocator.Current.GetInstance<InspectorViewModel>();
+
+
         public static void Cleanup()
         {
         }

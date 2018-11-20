@@ -34,9 +34,9 @@ namespace FAP.Domain
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Event> Events { get; set; }
-        public virtual DbSet<ID> IDs { get; set; }
         public virtual DbSet<Inlogdata> Inlogdatas { get; set; }
         public virtual DbSet<Inspector> Inspectors { get; set; }
+        public virtual DbSet<Inspector_Bank_Account> Inspector_Bank_Account { get; set; }
         public virtual DbSet<Inspector_shedule> Inspector_shedule { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<MultipleChoice> MultipleChoices { get; set; }

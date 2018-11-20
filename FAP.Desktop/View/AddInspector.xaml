@@ -5,17 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FAP.Desktop.View"
         mc:Ignorable="d"
+        DataContext ="{Binding Inspector ,Source={StaticResource Locator}}"
         Title="AddInspector" Height="450" Width="800">
     <StackPanel>
         <TextBlock Text="Voeg een inspecteur toe!"/>
         <StackPanel>
-            <TextBox Name="Naam" Margin="5"></TextBox>
-            <TextBox Name="Ächternaam" Margin="5"/>
+            <TextBox Name="Naam" Margin="5" Text="{Binding Name}"></TextBox>
+            <TextBox Name="Ächternaam" Margin="5" Text="{Binding Surname}"/>
             <TextBox Name="Straatnaam" Margin="5"/>
             <TextBox Name="Huisnummer" Margin="5"/>
             <TextBox Name="Postcode" Margin="5"/>
             <TextBox Name="Woonplaats" Margin="5"/>
-            <Button Content ="Voeg Toe" Height="25" Name="Add"></Button>
+            <Button Content ="Voeg Toe" Height="25" Name="Add" Command="{Binding AddInspectorCommand}" CommandParameter="{Binding AddInspectorCommand}" ></Button>
         </StackPanel>
         
     </StackPanel>

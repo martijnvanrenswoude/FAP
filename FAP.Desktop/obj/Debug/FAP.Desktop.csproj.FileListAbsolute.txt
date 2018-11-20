@@ -37,3 +37,5 @@ C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\bin\Debug\FAP.Domain.pdb
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\bin\Debug\FAP.Domain.dll.config
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\bin\Debug\FAP.Repository.pdb
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\bin\Debug\FAP.Repository.dll.config
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\obj\Debug\View\AddInspector.g.cs
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Desktop\obj\Debug\View\AddInspector.baml

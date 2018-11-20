@@ -28,6 +28,7 @@ namespace FAP.Domain
         public Nullable<decimal> sum { get; set; }
         public Nullable<System.DateTime> deadline { get; set; }
         public Nullable<System.DateTime> date { get; set; }
+        public byte[] image { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual Employee Employee { get; set; }

@@ -1,20 +1,24 @@
 ﻿using FAP.Domain;
 using FAP.Repository.Generic;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace FAP.Desktop.ViewModel
 {
-    class InspectorViewModel : ViewModelBase
+    public class InspectorViewModel : ViewModelBase
 
     {
         private Inspector inspector;
 
         private GenericRepository<Inspector> genericRepository;
+
+        public ICommand AddInspectorCommand { get; set; }
 
         public string Name
         {
@@ -24,8 +28,8 @@ namespace FAP.Desktop.ViewModel
 
         public string Surname
         {
-            get { return inspector.name; }
-            set { inspector.name = value; }
+            get { return inspector.surname; }
+            set { inspector.surname = value; }
         }
 
         public string Postcode
@@ -41,7 +45,8 @@ namespace FAP.Desktop.ViewModel
 
         public InspectorViewModel()
         {
-            genericRepository = new GenericRepository<Inspector>(new FAPDatabaseEntities);
+            genericRepository = new GenericRepository<Inspector>(new FAPDatabaseEntities());
+            AddInspectorCommand = new RelayCommand(AddInspector);
             inspector = new Inspector();
         }
 

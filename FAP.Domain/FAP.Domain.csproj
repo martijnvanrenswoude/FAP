@@ -91,13 +91,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FAPDatabase.edmx</DependentUpon>
     </Compile>
-    <Compile Include="ID.cs">
-      <DependentUpon>FAPDatabase.tt</DependentUpon>
-    </Compile>
     <Compile Include="Inlogdata.cs">
       <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Inspector.cs">
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Inspector_Bank_Account.cs">
       <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Inspector_shedule.cs">

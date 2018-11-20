@@ -31,8 +31,9 @@ namespace FAP.Domain
         public string postcode { get; set; }
         public string house_number { get; set; }
     
+        public virtual Bank_Account Bank_Account { get; set; }
         public virtual Department Department { get; set; }
-        public virtual ID ID1 { get; set; }
+        public virtual Inlogdata Inlogdata { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice> Invoices { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
