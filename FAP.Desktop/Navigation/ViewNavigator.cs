@@ -65,19 +65,6 @@ namespace FAP.Desktop.Navigation
                 case "Back": Back(); break;
                 case "back": Back(); break;
 
-                case nameof(TestView):
-                    _viewHistory.Push(new TestView
-                    {
-                        DataContext = SimpleIoc.Default.GetInstance<TestViewModel>()
-                    });
-                    break;
-
-                case nameof(TestViewOther):
-                    _viewHistory.Push(new TestViewOther
-                    {
-                        DataContext = SimpleIoc.Default.GetInstance<TestOtherViewModel>()
-                    });
-                    break;
                 case nameof(HomeView):
                     _viewHistory.Push(new HomeView
                     {
@@ -90,6 +77,19 @@ namespace FAP.Desktop.Navigation
                         DataContext = SimpleIoc.Default.GetInstance<SettingsViewModel>()
                     });
                     break;
+                case nameof(RapportagesView):
+                    _viewHistory.Push(new RapportagesView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<RapportagesViewModel>()
+                    });
+                    break;
+                case nameof(FormulierenView):
+                    _viewHistory.Push(new FormulierenView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<NieuweDataViewModel>()
+                    });
+                    break;
+
 
                 default: throw new ArgumentException("Non existend view passed in arguments.");
             }

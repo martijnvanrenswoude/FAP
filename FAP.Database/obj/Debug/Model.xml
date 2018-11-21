@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="FAP.Database.dll" />
-			<Metadata Name="FileName" Value="E:\AVANS\JAAR 2\PERIODE 1\BLOK 6\PROJ_FESTISPEC\FAP\FAP.DATABASE\OBJ\DEBUG\FAP.DATABASE.DLL" />
+			<Metadata Name="FileName" Value="C:\USERS\WESSEL\DOCUMENTS\,SCHOOL\JAAR 2\GITHUB\FAP\FAP.DATABASE\OBJ\DEBUG\FAP.DATABASE.DLL" />
 			<Metadata Name="AssemblyName" Value="FAP.Database" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Database\obj\Debug\FAP.Database.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\obj\Debug\FAP.Database.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>

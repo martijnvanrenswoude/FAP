@@ -50,19 +50,17 @@ namespace FAP.Desktop.ViewModel
             SimpleIoc.Default.Register(_master.GetRepository<StandardQuestionsList>);
 
             SimpleIoc.Default.Register<MainViewModel>();
-            SimpleIoc.Default.Register<TestViewModel>();
-            SimpleIoc.Default.Register<TestOtherViewModel>();
+            SimpleIoc.Default.Register<RapportagesViewModel>();
             SimpleIoc.Default.Register<HomeViewModel>();
             SimpleIoc.Default.Register<SettingsViewModel>();
+            SimpleIoc.Default.Register<NieuweDataViewModel>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
-        public TestViewModel TestView => ServiceLocator.Current.GetInstance<TestViewModel>();
-        public TestOtherViewModel TestViewOther => ServiceLocator.Current.GetInstance<TestOtherViewModel>();
-
         public HomeViewModel HomeView => ServiceLocator.Current.GetInstance<HomeViewModel>();
         public SettingsViewModel SettingsView => ServiceLocator.Current.GetInstance<SettingsViewModel>();
-
+        public RapportagesViewModel RapportagesView => ServiceLocator.Current.GetInstance<RapportagesViewModel>();
+        public NieuweDataViewModel FormulierenView => ServiceLocator.Current.GetInstance<NieuweDataViewModel>();
 
         public static void Cleanup()
         {

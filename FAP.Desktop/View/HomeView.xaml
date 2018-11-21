@@ -7,9 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-
-    <StackPanel Orientation="Horizontal" Background="blue">
-        <Button Width="100" Height="100" Margin="50 0 50 0"  Content="Settings" FontSize="24"  Command="{Binding GoToSettingsViewCommand }"/>
-
+    <StackPanel Orientation="Vertical" Background="Blue">
+        <Label Content="Home" FontSize="50"/>
+        <StackPanel Orientation="Horizontal">
+            <Button Width="100" Height="100" Margin="25 100 25 50"  Content="Rapportages"           FontSize="12"  Command="{Binding GoToRapportagesViewCommand}"/>
+            <Button Width="100" Height="100" Margin="25 100 25 50"  Content="Settings"              FontSize="12"  Command="{Binding GoToSettingsViewCommand}"/>
+            <Button Width="100" Height="100" Margin="25 100 25 50"  Content="Invul formulieren"     FontSize="12"  Command="{Binding GoToFormulierenViewCommand}"/>
+        </StackPanel>
     </StackPanel>
 </UserControl>

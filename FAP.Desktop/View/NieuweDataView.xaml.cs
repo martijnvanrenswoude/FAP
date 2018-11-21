@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace FAP.Desktop.View
 {
     /// <summary>
-    /// Interaction logic for TestView.xaml
+    /// Interaction logic for FormulierenView.xaml
     /// </summary>
-    public partial class TestViewOther : UserControl
+    public partial class FormulierenView : UserControl
     {
-        public TestViewOther()
+        public FormulierenView()
         {
             InitializeComponent();
         }

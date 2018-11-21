@@ -13,19 +13,33 @@ namespace FAP.Desktop.ViewModel
 {
     public class HomeViewModel
     {
-        GenericRepository<Customer> _repository;
+        //commands
         public RelayCommand GoToSettingsViewCommand { get; set; }
+        public RelayCommand GoToRapportagesViewCommand { get; set; }
+        public RelayCommand GoToFormulierenViewCommand { get; set; }
 
+        //constructor
         public HomeViewModel(GenericRepository<Customer> repository)
         {
             GoToSettingsViewCommand = new RelayCommand(GoToSettingsView);
-            _repository = repository;
-            _repository.Get();
+            GoToRapportagesViewCommand = new RelayCommand(GoToRapportagesView);
+            GoToFormulierenViewCommand = new RelayCommand(GoToFormulierenView);
+  
+
         }
 
+        //command functions
         private void GoToSettingsView()
         {
             ViewNavigator.Navigate(nameof(SettingsView));
+        }
+        private void GoToRapportagesView()
+        {
+            ViewNavigator.Navigate(nameof(RapportagesView));
+        }
+        private void GoToFormulierenView()
+        {
+            ViewNavigator.Navigate(nameof(FormulierenView));
         }
     }
 }
