@@ -20,7 +20,7 @@ namespace FAP.Desktop.ViewModel
 
         private void GoToSettingsView()
         {
-            ViewNavigator.Navigate(nameof(HomeView));
+            ViewNavigator.Navigate("back");
         }
     }
 }

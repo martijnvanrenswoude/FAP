@@ -21,9 +21,5 @@ C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\bin\Debug\FAP.D
 C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\bin\Debug\FAP.Database.dll
 C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\bin\Debug\FAP.Database.pdb
 C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\obj\Debug\FAP.Database.sqlprojAssemblyReference.cache
-C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\obj\Debug\Model.xml
-C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\obj\Debug\refactor.xml
-C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\obj\Debug\postdeploy.sql
-C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\obj\Debug\predeploy.sql
 C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\obj\Debug\FAP.Database.dll
 C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\obj\Debug\FAP.Database.pdb

@@ -7,9 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel Orientation="Vertical" Background="Green">
-        <Label Content="Rapportages" FontSize="50"/>
         <StackPanel Orientation="Horizontal">
-            <Button Width="100" Height="100" Margin="25 100 25 50"  Content="Home"    FontSize="15"  Command="{Binding GoToHomeViewCommand}"/>
+            <Label Content="Rapportages" FontSize="50"/>
+            <Button Width="100" Height="100"   Content="Back" Margin="400 10 0 0"   FontSize="30"  Command="{Binding GoToHomeViewCommand}"/>
         </StackPanel>
     </StackPanel>
 </UserControl>

@@ -9,18 +9,25 @@ using System.Threading.Tasks;
 
 namespace FAP.Desktop.ViewModel
 {
-    public class RapportagesViewModel
+    public class DataBeheerViewModel
     {
+        //command
         public RelayCommand GoToHomeViewCommand { get; set; }
+        public RelayCommand GoToKlantBeheerViewCommand { get; set; }
 
-        public RapportagesViewModel()
+        public DataBeheerViewModel()
         {
             GoToHomeViewCommand = new RelayCommand(GoToHomeView);
+            GoToKlantBeheerViewCommand = new RelayCommand(GoToKlantBeheerView);
         }
 
         private void GoToHomeView()
         {
-            ViewNavigator.Navigate("back");
+            ViewNavigator.Navigate(nameof(HomeView));
+        }
+        private void GoToKlantBeheerView()
+        {
+            ViewNavigator.Navigate(nameof(KlantBeheerView));
         }
     }
 }

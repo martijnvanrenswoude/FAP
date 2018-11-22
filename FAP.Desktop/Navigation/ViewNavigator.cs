@@ -83,10 +83,22 @@ namespace FAP.Desktop.Navigation
                         DataContext = SimpleIoc.Default.GetInstance<RapportagesViewModel>()
                     });
                     break;
-                case nameof(FormulierenView):
-                    _viewHistory.Push(new FormulierenView
+                case nameof(DataBeheerView):
+                    _viewHistory.Push(new DataBeheerView
                     {
-                        DataContext = SimpleIoc.Default.GetInstance<NieuweDataViewModel>()
+                        DataContext = SimpleIoc.Default.GetInstance<DataBeheerViewModel>()
+                    });
+                    break;
+                case nameof(KlantBeheerView):
+                    _viewHistory.Push(new KlantBeheerView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<KlantBeheerViewModel>()
+                    });
+                    break;
+                case nameof(LoginView):
+                    _viewHistory.Push(new LoginView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<LoginViewModel>()
                     });
                     break;
 

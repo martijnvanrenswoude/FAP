@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace FAP.Desktop.ViewModel
 {
-    public class RapportagesViewModel
+    public class KlantBeheerViewModel
     {
-        public RelayCommand GoToHomeViewCommand { get; set; }
+        public RelayCommand GoBackViewCommand { get; set; }
 
-        public RapportagesViewModel()
+        public KlantBeheerViewModel()
         {
-            GoToHomeViewCommand = new RelayCommand(GoToHomeView);
+            GoBackViewCommand = new RelayCommand(GoBackView);
         }
 
-        private void GoToHomeView()
+        private void GoBackView()
         {
             ViewNavigator.Navigate("back");
         }

@@ -10,9 +10,9 @@
     <StackPanel Orientation="Vertical" Background="Blue">
         <Label Content="Home" FontSize="50"/>
         <StackPanel Orientation="Horizontal">
-            <Button Width="100" Height="100" Margin="25 100 25 50"  Content="Rapportages"           FontSize="12"  Command="{Binding GoToRapportagesViewCommand}"/>
-            <Button Width="100" Height="100" Margin="25 100 25 50"  Content="Settings"              FontSize="12"  Command="{Binding GoToSettingsViewCommand}"/>
-            <Button Width="100" Height="100" Margin="25 100 25 50"  Content="Invul formulieren"     FontSize="12"  Command="{Binding GoToFormulierenViewCommand}"/>
+            <Button Width="100" Height="100" Margin="25 100 25 50"  Content="Rapportages"           FontSize="16"  Command="{Binding GoToRapportagesViewCommand}"/>
+            <Button Width="100" Height="100" Margin="25 100 25 50"  Content="Settings"              FontSize="16"  Command="{Binding GoToSettingsViewCommand}"/>
+            <Button Width="100" Height="100" Margin="25 100 25 50"  Content="Databeheer"            FontSize="16"  Command="{Binding GoToDataBeheerViewCommand}"/>
         </StackPanel>
     </StackPanel>
 </UserControl>
