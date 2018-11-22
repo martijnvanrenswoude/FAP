@@ -18,6 +18,7 @@ namespace FAP.Desktop.ViewModel
          * variables 
          */
         private List<Inspector> _inspectors;
+
         private Inspector inspector;
 
         private Inspector selectedInspector;

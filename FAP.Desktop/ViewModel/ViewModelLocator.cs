@@ -26,11 +26,14 @@ namespace FAP.Desktop.ViewModel
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<InspectorViewModel>();
+            SimpleIoc.Default.Register<RouteCalculationViewModel>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
 
         public InspectorViewModel Inspector => ServiceLocator.Current.GetInstance<InspectorViewModel>();
+
+        public RouteCalculationViewModel RouteCalculation => ServiceLocator.Current.GetInstance<RouteCalculationViewModel>();
 
 
         public static void Cleanup()
