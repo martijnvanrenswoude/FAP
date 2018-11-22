@@ -13,3 +13,5 @@ C:\Users\Martijn\Documents\GitHub\FAP\FAP.Repository\bin\Debug\EntityFramework.S
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Repository\obj\Debug\FAP.Repository.csproj.CopyComplete
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Repository\obj\Debug\FAP.Repository.dll
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Repository\obj\Debug\FAP.Repository.pdb
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Repository\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Repository\bin\Debug\Newtonsoft.Json.xml

@@ -12,17 +12,17 @@
         <StackPanel Width="616">
             <TextBlock Text="Hier komt een kaart ooit maybe" Margin="10"/>
         </StackPanel>
-        <StackPanel Margin="10" Width="159">
+        <StackPanel Margin="10" Width="146">
             <TextBlock Text="Selecteer Inspecteur"/>
-            <ComboBox Margin="10,5,20,5" Padding ="1"/>
+            <ComboBox Margin="10,5,20,5" Padding ="1" ItemsSource="{Binding Inspectors}"/>
             <TextBlock Text="Selecteer evenement"/>
-            <ComboBox Margin="10,5,20,5" Padding ="1"/>
+            <ComboBox Margin="10,5,20,5" Padding ="1" ItemsSource="{Binding Inspectors}"/>
             <TextBlock Text="Vervoersmiddel"/>
-            <ComboBox Margin="10,5,20,5" Padding ="1"/>
+            <ComboBox Margin="10,5,20,5" Padding ="1" ItemsSource="{Binding Transport}"/>
 
-            <Button Margin="38,5" Padding="1" x:Name="Bereken" Content="Bereken!"/>
+            <Button Margin="38,5" Padding="1" x:Name="Bereken" Content="Bereken!" Command="{Binding Calculate}"/>
 
-            <TextBox Text=" Hier komt de berekende waarde" Height="63"/>
+            <TextBlock Text="{Binding TravelTime}" Height="63"/>
 
         </StackPanel>
     </StackPanel>

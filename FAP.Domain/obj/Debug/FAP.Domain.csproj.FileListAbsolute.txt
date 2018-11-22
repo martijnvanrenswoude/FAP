@@ -10,3 +10,5 @@ C:\Users\Martijn\Documents\GitHub\FAP\FAP.Domain\obj\Debug\FAP.Domain.csproj.Cor
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Domain\obj\Debug\FAP.Domain.csproj.CopyComplete
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Domain\obj\Debug\FAP.Domain.dll
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Domain\obj\Debug\FAP.Domain.pdb
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Domain\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Domain\bin\Debug\Newtonsoft.Json.xml

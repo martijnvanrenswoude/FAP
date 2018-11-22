@@ -21,18 +21,30 @@ namespace FAP.Desktop.ViewModel
          * 
          */
         private string _key;
+        private List<Inspector> inspectors;
+        private List<Event> events;
 
         /*
         * 
         * Properties
         * 
         */
-        public List<Inspector> Inspectors { get { return this._inspectors; } }
+        public List<Inspector> Inspectors { get; set; }
         public Inspector SelectedInspector { get; set; }
+        public Event SelectedEvent { get; set; }
+        public List<Event> Events { get; set; }
+        //Volgens mij niet nodig
+    
+        //public GenericRepository<Inspector> inspectorRepository;
+        //public GenericRepository<Event> eventRepository;
+
+            //-- eind of niet nodig, denk ik #martijn
+
         public string SelectedTransport { get; set; }
         public List<string> Transport { get; set; }
         public string TravelTime { get; set; }
         public ICommand Calculate { get; set; }
+
         
         /*
         * 
@@ -43,6 +55,7 @@ namespace FAP.Desktop.ViewModel
         {
             Transport = new List<string> { "Auto", "Fiets" };
             Calculate = new RelayCommand(CalculateTravelTime);
+            getAllFromDatabase();
         }
 
         /*
@@ -52,8 +65,8 @@ namespace FAP.Desktop.ViewModel
         */
         public void CalculateTravelTime()
         {
-
-            var url = $"https://services.geodan.nl/routing/addressroute?from={SelectedInspector}&to={to}&networkType={vervoersmiddel}&servicekey={_key}";
+            //This method uses the GeoDan API to calculate based on postcodes
+            var url = $"https://services.geodan.nl/routing/addressroute?from={SelectedInspector}&to={SelectedEvent}&networkType={SelectedTransport}&servicekey={_key}";
 
             using (var httpClient = new HttpClient())
             {
@@ -63,6 +76,15 @@ namespace FAP.Desktop.ViewModel
                 TravelTime = ("De reistijd is " + "JSON int waarde" + "JSON tijdseenheid");
             }
 
+        }
+
+        public void getAllFromDatabase()
+        {
+            using(var context = new FAPDatabaseEntities())
+            {
+                Events = context.Events.ToList();
+                Inspectors = context.Inspectors.ToList();
+            }
         }
 
     }
