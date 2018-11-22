@@ -36,6 +36,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -49,85 +52,106 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Answer.cs">
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
+    </Compile>
     <Compile Include="Bank_Account.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComboQuestion.cs">
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Contact.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__RefactorLog.cs">
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Department.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Event.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="FAPEntities.Context.cs">
+    <Compile Include="FAPDatabase.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FAPEntities.Context.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="FAPEntities.cs">
+    <Compile Include="FAPDatabase.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="FAPEntities.Designer.cs">
+    <Compile Include="FAPDatabase.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FAPEntities.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="ID.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.edmx</DependentUpon>
     </Compile>
     <Compile Include="Inlogdata.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Inspector.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Inspector_Bank_Account.cs">
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Inspector_shedule.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Invoice.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MultipleChoice.cs">
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MultiplechoiceAnswer.cs">
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OpenSubjectQuestion.cs">
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Payment_status.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Planning.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Questionnaire.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Quotation.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="StandardQuestion.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="StandardQuestionsList.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="FAPEntities.edmx">
+    <EntityDeploy Include="FAPDatabase.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FAPEntities.Designer.cs</LastGenOutput>
+      <LastGenOutput>FAPDatabase.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="FAPEntities.edmx.diagram">
-      <DependentUpon>FAPEntities.edmx</DependentUpon>
+    <None Include="FAPDatabase.edmx.diagram">
+      <DependentUpon>FAPDatabase.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -135,15 +159,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FAPEntities.Context.tt">
+    <Content Include="FAPDatabase.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FAPEntities.edmx</DependentUpon>
-      <LastGenOutput>FAPEntities.Context.cs</LastGenOutput>
+      <DependentUpon>FAPDatabase.edmx</DependentUpon>
+      <LastGenOutput>FAPDatabase.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="FAPEntities.tt">
+    <Content Include="FAPDatabase.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FAPEntities.edmx</DependentUpon>
-      <LastGenOutput>FAPEntities.cs</LastGenOutput>
+      <DependentUpon>FAPDatabase.edmx</DependentUpon>
+      <LastGenOutput>FAPDatabase.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

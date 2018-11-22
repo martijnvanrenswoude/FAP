@@ -12,20 +12,22 @@ namespace FAP.Domain
     using System;
     using System.Collections.Generic;
     
-    public partial class ID
+    public partial class MultipleChoice
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ID()
+        public MultipleChoice()
         {
-            this.Bank_Account = new HashSet<Bank_Account>();
+            this.MultiplechoiceAnswers = new HashSet<MultiplechoiceAnswer>();
         }
     
-        public int Id1 { get; set; }
+        public int Id { get; set; }
+        public Nullable<int> questionnaire_id { get; set; }
+        public string answer { get; set; }
+        public Nullable<int> inspector_id { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Bank_Account> Bank_Account { get; set; }
-        public virtual Employee Employee { get; set; }
-        public virtual Inlogdata Inlogdata { get; set; }
         public virtual Inspector Inspector { get; set; }
+        public virtual Questionnaire Questionnaire { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MultiplechoiceAnswer> MultiplechoiceAnswers { get; set; }
     }
 }
