@@ -1,0 +1,29 @@
+﻿<Window x:Class="FAP.Desktop.View.RouteCalculationVew"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FAP.Desktop.View"
+        mc:Ignorable="d"
+         DataContext ="{Binding RouteCalculation ,Source={StaticResource Locator}}"
+        
+        Title="RouteCalculationVew" Height="450" Width="800">
+    <StackPanel Orientation="Horizontal" Margin="10">
+        <StackPanel Width="616">
+            <TextBlock Text="Hier komt een kaart ooit maybe" Margin="10"/>
+        </StackPanel>
+        <StackPanel Margin="10" Width="146">
+            <TextBlock Text="Selecteer Inspecteur"/>
+            <ComboBox Margin="10,5,20,5" Padding ="1" ItemsSource="{Binding Inspectors}"/>
+            <TextBlock Text="Selecteer evenement"/>
+            <ComboBox Margin="10,5,20,5" Padding ="1" ItemsSource="{Binding Inspectors}"/>
+            <TextBlock Text="Vervoersmiddel"/>
+            <ComboBox Margin="10,5,20,5" Padding ="1" ItemsSource="{Binding Transport}"/>
+
+            <Button Margin="38,5" Padding="1" x:Name="Bereken" Content="Bereken!" Command="{Binding Calculate}"/>
+
+            <TextBlock Text="{Binding TravelTime}" Height="63"/>
+
+        </StackPanel>
+    </StackPanel>
+</Window>

@@ -79,15 +79,23 @@
     </ApplicationDefinition>
     <Compile Include="Message\NavigationMessage.cs" />
     <Compile Include="Navigation\ViewNavigator.cs" />
+    <Compile Include="ViewModel\InspectorViewModel.cs" />
     <Compile Include="ViewModel\KlantBeheerViewModel.cs" />
     <Compile Include="ViewModel\DataBeheerViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\RapportagesViewModel.cs" />
+    <Compile Include="ViewModel\RouteCalculationViewModel.cs" />
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="Navigation\ITransitionable.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\AddInspector.xaml.cs">
+      <DependentUpon>AddInspector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AlterInspector.xaml.cs">
+      <DependentUpon>AlterInspector.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DataBeheerView.xaml.cs">
       <DependentUpon>DataBeheerView.xaml</DependentUpon>
     </Compile>
@@ -103,9 +111,20 @@
     <Compile Include="View\RapportagesView.xaml.cs">
       <DependentUpon>RapportagesView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\RouteCalculationVew.xaml.cs">
+      <DependentUpon>RouteCalculationVew.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\AddInspector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AlterInspector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\DataBeheerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,6 +156,10 @@
     <Page Include="View\RapportagesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RouteCalculationVew.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\SettingsView.xaml">
       <SubType>Designer</SubType>
