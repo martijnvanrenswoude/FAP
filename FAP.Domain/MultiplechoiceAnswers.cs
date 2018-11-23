@@ -12,12 +12,15 @@ namespace FAP.Domain
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class MultiplechoiceAnswers
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int Id { get; set; }
+        public string Answer1 { get; set; }
+        public string Answer2 { get; set; }
+        public string Answer3 { get; set; }
+        public string Answer4 { get; set; }
+        public int question_id { get; set; }
+    
+        public virtual MultipleChoice MultipleChoice { get; set; }
     }
 }

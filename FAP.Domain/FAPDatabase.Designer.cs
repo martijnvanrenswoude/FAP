@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\wessel\Desktop\FAP\FAP.Domain\FAPDatabase.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Domain\FAPDatabase.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -13,11 +13,14 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Wachtwoord:"/>
-            <TextBox Width="150" Height="25" Text="{Binding Username}" Margin="19 0 0 0 "/>
+            <TextBox Width="150" Height="25" Text="{Binding Password}" Margin="19 0 0 0 "/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Button Content="Login als inspecteur" Margin="10 10 10 10"/>
-            <Button Content="Login als medewerker" Margin="10 10 10 10"/>
+            <Button Content="Bypass" Margin="10 10 10 10" Command="{Binding InlogAsInspectorCommand}"/>
+            <Button Content="Login als medewerker" Margin="10 10 10 10" Command="{Binding InlogAsUserCommand}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Foreground="Red" Content="{Binding LoginMessage}"/>
         </StackPanel>
 
     </StackPanel>

@@ -17,11 +17,11 @@ namespace FAP.Domain
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Inspector()
         {
-            this.Answers = new HashSet<Answer>();
-            this.ComboQuestions = new HashSet<ComboQuestion>();
-            this.MultipleChoices = new HashSet<MultipleChoice>();
-            this.OpenSubjectQuestions = new HashSet<OpenSubjectQuestion>();
-            this.Plannings = new HashSet<Planning>();
+            this.Answers = new HashSet<Answers>();
+            this.ComboQuestion = new HashSet<ComboQuestion>();
+            this.MultipleChoice = new HashSet<MultipleChoice>();
+            this.OpenSubjectQuestion = new HashSet<OpenSubjectQuestion>();
+            this.Planning = new HashSet<Planning>();
         }
     
         public int Id { get; set; }
@@ -33,16 +33,16 @@ namespace FAP.Domain
         public System.DateTime date_of_birth { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Answer> Answers { get; set; }
+        public virtual ICollection<Answers> Answers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ComboQuestion> ComboQuestions { get; set; }
-        public virtual Inspector_shedule Inspector_shedule { get; set; }
+        public virtual ICollection<ComboQuestion> ComboQuestion { get; set; }
         public virtual Inspector_Bank_Account Inspector_Bank_Account { get; set; }
+        public virtual Inspector_shedule Inspector_shedule { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MultipleChoice> MultipleChoices { get; set; }
+        public virtual ICollection<MultipleChoice> MultipleChoice { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OpenSubjectQuestion> OpenSubjectQuestions { get; set; }
+        public virtual ICollection<OpenSubjectQuestion> OpenSubjectQuestion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Planning> Plannings { get; set; }
+        public virtual ICollection<Planning> Planning { get; set; }
     }
 }

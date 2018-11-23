@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Answer.cs">
+    <Compile Include="Answers.cs">
       <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Bank_Account.cs">
@@ -85,9 +85,9 @@
       <DependentUpon>FAPDatabase.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="FAPDatabase.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>FAPDatabase.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="FAPDatabase.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -112,7 +112,7 @@
     <Compile Include="MultipleChoice.cs">
       <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="MultiplechoiceAnswer.cs">
+    <Compile Include="MultiplechoiceAnswers.cs">
       <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="OpenSubjectQuestion.cs">
@@ -140,9 +140,6 @@
     <Compile Include="StandardQuestionsList.cs">
       <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>FAPDatabase.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -166,8 +163,8 @@
     </Content>
     <Content Include="FAPDatabase.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FAPDatabase.edmx</DependentUpon>
       <LastGenOutput>FAPDatabase.cs</LastGenOutput>
+      <DependentUpon>FAPDatabase.edmx</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

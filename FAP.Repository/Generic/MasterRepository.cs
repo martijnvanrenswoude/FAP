@@ -9,14 +9,14 @@ namespace FAP.Repository.Generic
 {
     public class MasterRepository : IDisposable
     {
-        private readonly FAPEntities    _context;
+        private readonly FAPDatabaseEntities    _context;
         private HashSet<object>         _repositories;
 
         public bool IsDisposed { get; private set; } = false;
 
         public MasterRepository()
         {
-            _context = new FAPEntities();
+            _context = new FAPDatabaseEntities();
             _repositories = new HashSet<object>();
         }
 

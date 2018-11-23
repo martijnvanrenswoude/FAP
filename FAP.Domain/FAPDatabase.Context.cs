@@ -26,29 +26,28 @@ namespace FAP.Domain
         }
     
         public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
-        public virtual DbSet<Answer> Answers { get; set; }
+        public virtual DbSet<Answers> Answers { get; set; }
         public virtual DbSet<Bank_Account> Bank_Account { get; set; }
-        public virtual DbSet<ComboQuestion> ComboQuestions { get; set; }
-        public virtual DbSet<Contact> Contacts { get; set; }
-        public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<Department> Departments { get; set; }
-        public virtual DbSet<Employee> Employees { get; set; }
-        public virtual DbSet<Event> Events { get; set; }
-        public virtual DbSet<Inlogdata> Inlogdatas { get; set; }
-        public virtual DbSet<Inspector> Inspectors { get; set; }
+        public virtual DbSet<ComboQuestion> ComboQuestion { get; set; }
+        public virtual DbSet<Contact> Contact { get; set; }
+        public virtual DbSet<Customer> Customer { get; set; }
+        public virtual DbSet<Department> Department { get; set; }
+        public virtual DbSet<Employee> Employee { get; set; }
+        public virtual DbSet<Event> Event { get; set; }
+        public virtual DbSet<Inlogdata> Inlogdata { get; set; }
+        public virtual DbSet<Inspector> Inspector { get; set; }
         public virtual DbSet<Inspector_Bank_Account> Inspector_Bank_Account { get; set; }
         public virtual DbSet<Inspector_shedule> Inspector_shedule { get; set; }
-        public virtual DbSet<Invoice> Invoices { get; set; }
-        public virtual DbSet<MultipleChoice> MultipleChoices { get; set; }
-        public virtual DbSet<MultiplechoiceAnswer> MultiplechoiceAnswers { get; set; }
-        public virtual DbSet<OpenSubjectQuestion> OpenSubjectQuestions { get; set; }
+        public virtual DbSet<Invoice> Invoice { get; set; }
+        public virtual DbSet<MultipleChoice> MultipleChoice { get; set; }
+        public virtual DbSet<MultiplechoiceAnswers> MultiplechoiceAnswers { get; set; }
+        public virtual DbSet<OpenSubjectQuestion> OpenSubjectQuestion { get; set; }
         public virtual DbSet<Payment_status> Payment_status { get; set; }
-        public virtual DbSet<Planning> Plannings { get; set; }
-        public virtual DbSet<Question> Questions { get; set; }
-        public virtual DbSet<Questionnaire> Questionnaires { get; set; }
-        public virtual DbSet<Quotation> Quotations { get; set; }
-        public virtual DbSet<StandardQuestion> StandardQuestions { get; set; }
-        public virtual DbSet<StandardQuestionsList> StandardQuestionsLists { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Planning> Planning { get; set; }
+        public virtual DbSet<Question> Question { get; set; }
+        public virtual DbSet<Questionnaire> Questionnaire { get; set; }
+        public virtual DbSet<Quotation> Quotation { get; set; }
+        public virtual DbSet<StandardQuestion> StandardQuestion { get; set; }
+        public virtual DbSet<StandardQuestionsList> StandardQuestionsList { get; set; }
     }
 }

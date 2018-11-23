@@ -11,19 +11,20 @@ namespace FAP.Desktop.ViewModel
 {
     public class DataBeheerViewModel
     {
+        
         //command
-        public RelayCommand GoToHomeViewCommand { get; set; }
+        public RelayCommand GoBackViewCommand { get; set; }
         public RelayCommand GoToKlantBeheerViewCommand { get; set; }
 
         public DataBeheerViewModel()
         {
-            GoToHomeViewCommand = new RelayCommand(GoToHomeView);
+            GoBackViewCommand = new RelayCommand(GoBackView);
             GoToKlantBeheerViewCommand = new RelayCommand(GoToKlantBeheerView);
         }
 
-        private void GoToHomeView()
+        private void GoBackView()
         {
-            ViewNavigator.Navigate(nameof(HomeView));
+            ViewNavigator.Navigate("back");
         }
         private void GoToKlantBeheerView()
         {

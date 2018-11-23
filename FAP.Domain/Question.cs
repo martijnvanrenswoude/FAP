@@ -17,7 +17,7 @@ namespace FAP.Domain
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Question()
         {
-            this.Answers = new HashSet<Answer>();
+            this.Answers = new HashSet<Answers>();
         }
     
         public int Id { get; set; }
@@ -26,7 +26,7 @@ namespace FAP.Domain
         public Nullable<int> inspector_id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Answer> Answers { get; set; }
+        public virtual ICollection<Answers> Answers { get; set; }
         public virtual Questionnaire Questionnaire { get; set; }
     }
 }

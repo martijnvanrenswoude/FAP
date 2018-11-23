@@ -12,12 +12,12 @@ namespace FAP.Domain
     using System;
     using System.Collections.Generic;
     
-    public partial class Answer
+    public partial class Answers
     {
         public int AnswerID { get; set; }
         public int QuestionID { get; set; }
         public int InspectorID { get; set; }
-        public string Answer1 { get; set; }
+        public string Answer { get; set; }
     
         public virtual Inspector Inspector { get; set; }
         public virtual Question Question { get; set; }
