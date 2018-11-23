@@ -95,6 +95,8 @@
           <Property Name="amount_visitors" Type="int" />
           <Property Name="surface area_m2" Type="int" />
           <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="postcode" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="housenumber" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Inlogdata">
           <Key>
@@ -897,6 +899,8 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
           <Property Name="amount_visitors" Type="Int32" />
           <Property Name="surface_area_m2" Type="Int32" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="postcode" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="housenumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Plannings" Relationship="Self.FK__Planning__event___6A30C649" FromRole="Event" ToRole="Planning" />
           <NavigationProperty Name="Quotations" Relationship="Self.FK__Quotation__event__6EF57B66" FromRole="Event" ToRole="Quotation" />
         </EntityType>
@@ -1696,6 +1700,8 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
                 <ScalarProperty Name="amount_visitors" ColumnName="amount_visitors" />
                 <ScalarProperty Name="surface_area_m2" ColumnName="surface area_m2" />
                 <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+                <ScalarProperty Name="housenumber" ColumnName="housenumber" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
