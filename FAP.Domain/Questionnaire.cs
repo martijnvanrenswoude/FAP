@@ -17,13 +17,24 @@ namespace FAP.Domain
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Questionnaire()
         {
+            this.ComboQuestions = new HashSet<ComboQuestion>();
+            this.MultipleChoices = new HashSet<MultipleChoice>();
+            this.OpenSubjectQuestions = new HashSet<OpenSubjectQuestion>();
             this.Plannings = new HashSet<Planning>();
             this.Questions = new HashSet<Question>();
             this.StandardQuestionsLists = new HashSet<StandardQuestionsList>();
         }
     
         public int Id { get; set; }
+        public byte[] image { get; set; }
+        public string comment { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ComboQuestion> ComboQuestions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MultipleChoice> MultipleChoices { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OpenSubjectQuestion> OpenSubjectQuestions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Planning> Plannings { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

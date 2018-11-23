@@ -14,9 +14,9 @@ namespace FAP.Domain
     
     public partial class Bank_Account
     {
-        public int account_number { get; set; }
-        public Nullable<int> employee_id { get; set; }
+        public string account_number { get; set; }
+        public int employee_id { get; set; }
     
-        public virtual ID ID { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }

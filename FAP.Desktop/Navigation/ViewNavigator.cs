@@ -65,19 +65,43 @@ namespace FAP.Desktop.Navigation
                 case "Back": Back(); break;
                 case "back": Back(); break;
 
-                case nameof(TestView):
-                    _viewHistory.Push(new TestView
+                case nameof(HomeView):
+                    _viewHistory.Push(new HomeView
                     {
-                        DataContext = SimpleIoc.Default.GetInstance<TestViewModel>()
+                        DataContext = SimpleIoc.Default.GetInstance<HomeViewModel>()
+                    });
+                    break;
+                case nameof(SettingsView):
+                    _viewHistory.Push(new SettingsView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<SettingsViewModel>()
+                    });
+                    break;
+                case nameof(RapportagesView):
+                    _viewHistory.Push(new RapportagesView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<RapportagesViewModel>()
+                    });
+                    break;
+                case nameof(DataBeheerView):
+                    _viewHistory.Push(new DataBeheerView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<DataBeheerViewModel>()
+                    });
+                    break;
+                case nameof(KlantBeheerView):
+                    _viewHistory.Push(new KlantBeheerView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<KlantBeheerViewModel>()
+                    });
+                    break;
+                case nameof(LoginView):
+                    _viewHistory.Push(new LoginView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<LoginViewModel>()
                     });
                     break;
 
-                case nameof(TestViewOther):
-                    _viewHistory.Push(new TestViewOther
-                    {
-                        DataContext = SimpleIoc.Default.GetInstance<TestOtherViewModel>()
-                    });
-                    break;
 
                 default: throw new ArgumentException("Non existend view passed in arguments.");
             }
