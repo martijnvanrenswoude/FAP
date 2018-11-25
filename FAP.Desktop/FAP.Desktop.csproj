@@ -79,6 +79,7 @@
     </ApplicationDefinition>
     <Compile Include="Message\NavigationMessage.cs" />
     <Compile Include="Navigation\ViewNavigator.cs" />
+    <Compile Include="ViewModel\AlterInspectorAvailabilityViewModel.cs" />
     <Compile Include="ViewModel\InspectorViewModel.cs" />
     <Compile Include="ViewModel\KlantBeheerViewModel.cs" />
     <Compile Include="ViewModel\DataBeheerViewModel.cs" />
