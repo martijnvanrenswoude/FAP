@@ -1,4 +1,5 @@
 ﻿using FAP.Domain;
+using FAP.Repository.Explicit;
 using FAP.Repository.Generic;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -24,7 +25,7 @@ namespace FAP.Desktop.ViewModel
 
         private Inspector selectedInspector;
 
-        private GenericRepository<Inspector> genericRepository;
+        private InspectorRepository repository;
 
 
         /*
@@ -36,6 +37,9 @@ namespace FAP.Desktop.ViewModel
         public ICommand AlterInspectorCommand { get; set; }
 
         public Inspector SelectedInspector { get; set; }
+        public List<Inspector> SelectedInspectors { get; set; }
+
+        public string SearchKey { get; set; }
 
         public string Name
         {
@@ -67,7 +71,8 @@ namespace FAP.Desktop.ViewModel
 
         public InspectorViewModel()
         {
-            genericRepository = new GenericRepository<Inspector>(new FAPDatabaseEntities());
+            repository = new InspectorRepository(new FAPDatabaseEntities());
+
 
             //Alle mogelijke inspectors instantieren
             inspector = new Inspector();
@@ -84,17 +89,17 @@ namespace FAP.Desktop.ViewModel
 
         private void AddInspector()
         {
-            genericRepository.Insert(inspector);
+            repository.Insert(inspector);
         }
 
         private void DeleteInspector()
         {
-
+            repository.Delete(SelectedInspector);
         }
 
         private void AlterInspector()
         {
-            genericRepository.Update(SelectedInspector);
+            repository.Update(SelectedInspector);
         }
 
         private void GetAllInspectors()
@@ -102,9 +107,12 @@ namespace FAP.Desktop.ViewModel
             using(var context = new FAPDatabaseEntities())
             {
                _inspectors = context.Inspectors.ToList();
-            }
-
-            
+            }     
+        }
+        
+        public void SearchInspector(string searchkey)
+        {
+            SelectedInspectors = repository.SearchInspector(searchkey);
         }
     }
 }
