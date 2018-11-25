@@ -97,6 +97,9 @@
     <Compile Include="View\AlterInspector.xaml.cs">
       <DependentUpon>AlterInspector.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\AvailabilityView.xaml.cs">
+      <DependentUpon>AvailabilityView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DataBeheerView.xaml.cs">
       <DependentUpon>DataBeheerView.xaml</DependentUpon>
     </Compile>
@@ -131,6 +134,10 @@
     <Page Include="View\AlterInspector.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AvailabilityView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DataBeheerView.xaml">
       <SubType>Designer</SubType>

@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace FAP.Desktop.ViewModel
 {
-    class AlterInspectorAvailabilityViewModel : ViewModelBase
+    public class AlterInspectorAvailabilityViewModel : ViewModelBase
     {
         //Variables
         private Inspector_shedule InspectorShedule;
