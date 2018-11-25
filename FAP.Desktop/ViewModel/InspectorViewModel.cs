@@ -35,7 +35,7 @@ namespace FAP.Desktop.ViewModel
         public ICommand AddInspectorCommand { get; set; }
         public ICommand DeleteInspectorCommand { get; set; }
         public ICommand AlterInspectorCommand { get; set; }
-
+        public ICommand SearchInspectorCommand { get; set; }
         public Inspector SelectedInspector { get; set; }
         public List<Inspector> SelectedInspectors { get; set; }
 
@@ -81,6 +81,7 @@ namespace FAP.Desktop.ViewModel
             AddInspectorCommand = new RelayCommand(AddInspector);
             DeleteInspectorCommand = new RelayCommand(DeleteInspector);
             AlterInspectorCommand = new RelayCommand(AlterInspector);
+            SearchInspectorCommand = new RelayCommand(SearchInspector);
         }
 
         /*
@@ -110,9 +111,9 @@ namespace FAP.Desktop.ViewModel
             }     
         }
         
-        public void SearchInspector(string searchkey)
+        public void SearchInspector()
         {
-            SelectedInspectors = repository.SearchInspector(searchkey);
+            SelectedInspectors = repository.SearchInspector(SearchKey);
         }
     }
 }

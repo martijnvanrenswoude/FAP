@@ -102,6 +102,9 @@
     <Compile Include="View\DeleteInspector.xaml.cs">
       <DependentUpon>DeleteInspector.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DeleteInspectorView.xaml.cs">
+      <DependentUpon>DeleteInspectorView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
@@ -133,6 +136,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DeleteInspector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DeleteInspectorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

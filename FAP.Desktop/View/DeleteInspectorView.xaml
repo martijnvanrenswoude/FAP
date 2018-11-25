@@ -1,0 +1,22 @@
+﻿<Window x:Class="FAP.Desktop.View.DeleteInspectorView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FAP.Desktop.View"
+        mc:Ignorable="d"
+        DataContext="{Binding Inspector ,Source={StaticResource Locator}}"
+        Title="DeleteInspectorView" Height="450" Width="800">
+
+    <StackPanel Margin="5">
+        <TextBlock Text="Verwijder Inspecteur" HorizontalAlignment="Center" FontSize="38"/>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding SearchKey}" Margin="10" Width="320"/>
+            <Button x:Name="ZoekKnop" Content="Zoek" Command="{Binding SearchInspectorCommand}" Height="20"/>
+        </StackPanel>
+        
+        <ComboBox Name="Selectie" Text="Selecteer inspecteur" ItemsSource="{Binding SelectedInspectors}" SelectedItem="{Binding SelectedInspector}"/>
+
+        <Button Name="DeleteButton" Content="Verwijderen" Margin="10" Command="{Binding DeleteInspectorCommand}"/>
+    </StackPanel>
+</Window>
