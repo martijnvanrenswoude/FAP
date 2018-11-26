@@ -54,11 +54,12 @@ namespace FAP.Desktop.ViewModel
                 return inspector;
             }
         }
+
         public List<Event> GetUpcomingEvents()
         {
             using (var context = new FAPDatabaseEntities())
             {
-                var list = context.Events.Where(e => e.date > DateTime.Now);
+                var list = context.Events.Where(e => e.date > DateTime.Now).ToList();
                 return list;
             }
         }

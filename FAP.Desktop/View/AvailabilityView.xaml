@@ -14,6 +14,22 @@
             <TextBlock Text="Welkom "/>
             <TextBlock Text="{Binding Name}"/>
         </StackPanel>
-        <DataGrid AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Songs}"/>
+        <StackPanel Orientation="Horizontal">
+            <DataGrid Name="Event" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding UpcomingEvents}" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Eventnaam" Binding="{Binding UpcomingEvents.name}"/>
+                    <DataGridTextColumn Header="Datum" Binding="{Binding UpcomingEvents.date}"  />
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <DataGrid AutoGenerateColumns="False" IsReadOnly="True" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Beschikbaar van" Binding="{Binding AvailableFrom}"/>
+                    <DataGridTextColumn Header="Beschikbaar tot" Binding="{Binding AvailableTo}"  />
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </StackPanel>
+       
     </StackPanel>
 </Window>

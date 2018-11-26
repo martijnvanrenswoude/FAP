@@ -24,7 +24,7 @@ namespace FAP.Domain
         public int Id { get; set; }
         public int contact_id { get; set; }
         public string name { get; set; }
-        public string date { get; set; }
+        public Nullable<System.DateTime> date { get; set; }
         public Nullable<int> amount_visitors { get; set; }
         public Nullable<int> surface_area_m2 { get; set; }
         public string description { get; set; }

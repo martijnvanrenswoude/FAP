@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="FAPDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="FAPDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__RefactorLog">
           <Key>
             <PropertyRef Name="OperationKey" />
@@ -786,7 +786,8 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <End Role="StandardQuestionsList" EntitySet="StandardQuestionsList" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FAPDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -892,12 +893,12 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="contact_id" Type="Int32" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="date" Type="String" />
+          <Property Name="date" Type="DateTime" Precision="3" />
           <Property Name="amount_visitors" Type="Int32" />
           <Property Name="surface_area_m2" Type="Int32" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Plannings" Relationship="Self.FK__Planning__event___6A30C649" FromRole="Event" ToRole="Planning" />
-          <NavigationProperty Name="Quotations" Relationship="Self.FK__Quotation__event__6EF57B66" FromRole="Event" ToRole="Quotation" />
+          <NavigationProperty Name="Plannings" Relationship="Self.FK__Planning__event___3D2915A8" FromRole="Event" ToRole="Planning" />
+          <NavigationProperty Name="Quotations" Relationship="Self.FK__Quotation__event__3E1D39E1" FromRole="Event" ToRole="Quotation" />
         </EntityType>
         <EntityType Name="Inlogdata">
           <Key>
@@ -1018,7 +1019,7 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
           <Property Name="employee_id" Type="Int32" />
           <NavigationProperty Name="Customer" Relationship="Self.FK__Planning__custom__6754599E" FromRole="Planning" ToRole="Customer" />
           <NavigationProperty Name="Employee" Relationship="Self.FK__Planning__employ__2FCF1A8A" FromRole="Planning" ToRole="Employee" />
-          <NavigationProperty Name="Event" Relationship="Self.FK__Planning__event___6A30C649" FromRole="Planning" ToRole="Event" />
+          <NavigationProperty Name="Event" Relationship="Self.FK__Planning__event___3D2915A8" FromRole="Planning" ToRole="Event" />
           <NavigationProperty Name="Questionnaire" Relationship="Self.FK__Planning__questi__693CA210" FromRole="Planning" ToRole="Questionnaire" />
           <NavigationProperty Name="Quotations" Relationship="Self.FK__Quotation__plan___6C190EBB" FromRole="Planning" ToRole="Quotation" />
           <NavigationProperty Name="Inspectors" Relationship="Self.Plan_inspector" FromRole="Planning" ToRole="Inspector" />
@@ -1063,7 +1064,7 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
           <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Customer" Relationship="Self.FK__Quotation__custo__6D0D32F4" FromRole="Quotation" ToRole="Customer" />
           <NavigationProperty Name="Employee" Relationship="Self.FK__Quotation__emplo__30C33EC3" FromRole="Quotation" ToRole="Employee" />
-          <NavigationProperty Name="Event" Relationship="Self.FK__Quotation__event__6EF57B66" FromRole="Quotation" ToRole="Event" />
+          <NavigationProperty Name="Event" Relationship="Self.FK__Quotation__event__3E1D39E1" FromRole="Quotation" ToRole="Event" />
           <NavigationProperty Name="Invoices" Relationship="Self.FK__Invoice__quotati__6383C8BA" FromRole="Quotation" ToRole="Invoice" />
           <NavigationProperty Name="Planning" Relationship="Self.FK__Quotation__plan___6C190EBB" FromRole="Quotation" ToRole="Planning" />
         </EntityType>
@@ -1252,7 +1253,7 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Planning__event___6A30C649">
+        <Association Name="FK__Planning__event___3D2915A8">
           <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
           <End Role="Planning" Type="Self.Planning" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1264,7 +1265,7 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quotation__event__6EF57B66">
+        <Association Name="FK__Quotation__event__3E1D39E1">
           <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
           <End Role="Quotation" Type="Self.Quotation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1526,11 +1527,11 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <End Role="Employee" EntitySet="Employees" />
             <End Role="Quotation" EntitySet="Quotations" />
           </AssociationSet>
-          <AssociationSet Name="FK__Planning__event___6A30C649" Association="Self.FK__Planning__event___6A30C649">
+          <AssociationSet Name="FK__Planning__event___3D2915A8" Association="Self.FK__Planning__event___3D2915A8">
             <End Role="Event" EntitySet="Events" />
             <End Role="Planning" EntitySet="Plannings" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quotation__event__6EF57B66" Association="Self.FK__Quotation__event__6EF57B66">
+          <AssociationSet Name="FK__Quotation__event__3E1D39E1" Association="Self.FK__Quotation__event__3E1D39E1">
             <End Role="Event" EntitySet="Events" />
             <End Role="Quotation" EntitySet="Quotations" />
           </AssociationSet>
