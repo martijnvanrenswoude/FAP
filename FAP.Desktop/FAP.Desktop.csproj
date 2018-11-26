@@ -79,6 +79,7 @@
     </ApplicationDefinition>
     <Compile Include="Message\NavigationMessage.cs" />
     <Compile Include="Navigation\ViewNavigator.cs" />
+    <Compile Include="ViewModel\ContactpersoonBeheerViewModel.cs" />
     <Compile Include="ViewModel\KlantBeheerViewModel.cs" />
     <Compile Include="ViewModel\DataBeheerViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
@@ -88,6 +89,9 @@
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="Navigation\ITransitionable.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\ContactpersoonBeheerView.xaml.cs">
+      <DependentUpon>ContactpersoonBeheerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DataBeheerView.xaml.cs">
       <DependentUpon>DataBeheerView.xaml</DependentUpon>
     </Compile>
@@ -106,6 +110,10 @@
     <Compile Include="View\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\ContactpersoonBeheerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DataBeheerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

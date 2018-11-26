@@ -101,6 +101,12 @@ namespace FAP.Desktop.Navigation
                         DataContext = SimpleIoc.Default.GetInstance<LoginViewModel>()
                     });
                     break;
+                case nameof(ContactpersoonBeheerView):
+                    _viewHistory.Push(new ContactpersoonBeheerView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<ContactpersoonBeheerViewModel>()
+                    });
+                    break;
 
 
                 default: throw new ArgumentException("Non existend view passed in arguments.");

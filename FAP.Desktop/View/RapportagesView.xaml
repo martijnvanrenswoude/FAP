@@ -9,7 +9,7 @@
     <StackPanel Orientation="Vertical" Background="Green">
         <StackPanel Orientation="Horizontal">
             <Label Content="Rapportages" FontSize="50"/>
-            <Button Width="100" Height="100"   Content="Back" Margin="400 10 0 0"   FontSize="30"  Command="{Binding GoToHomeViewCommand}"/>
+            <Button Width="100" Height="50"   Content="Back" Margin="400 10 0 0"   FontSize="30"  Command="{Binding GoToHomeViewCommand}"/>
         </StackPanel>
     </StackPanel>
 </UserControl>
