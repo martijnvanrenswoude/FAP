@@ -50,14 +50,27 @@ namespace FAP.Desktop.ViewModel
         //commands
         public RelayCommand InlogAsUserCommand { get; set; }
         public RelayCommand InlogAsInspectorCommand { get; set; }
+        public RelayCommand BypassLoginCommand { get; set; }
+        
         //constructor
         public LoginViewModel()
         {
             GetAllLoginData();
             //set commands
-            InlogAsInspectorCommand = new RelayCommand(InlogAsInspector);
-            InlogAsUserCommand       = new RelayCommand(InlogAsUser);
+            InlogAsInspectorCommand =   new RelayCommand(InlogAsInspector);
+            InlogAsUserCommand =        new RelayCommand(InlogAsUser);
+            BypassLoginCommand =        new RelayCommand(BypassLogin);
         }
+        //functions
+        private void GetAllLoginData()
+        {
+            using (var context = new FAPDatabaseEntities())
+            {
+
+                inlogdata = context.Inlogdata.ToList();
+            }
+        }
+
         //command fuctions
         private void InlogAsUser()
         {
@@ -67,7 +80,10 @@ namespace FAP.Desktop.ViewModel
                 {
                     if (username.Equals(i.username) && password.Equals(i.password))
                     {
+                        username = null;
+                        password = null;
                         ViewNavigator.Navigate(nameof(HomeView));
+                        return;
                     }
                     LoginMessage = "Gebruikersnaam of wachtwoord is incorrect";
                     return;
@@ -77,17 +93,14 @@ namespace FAP.Desktop.ViewModel
         }
         private void InlogAsInspector()
         {
+            
+        }
+        private void BypassLogin()
+        {
             ViewNavigator.Navigate(nameof(HomeView));
         }
 
 
-        private void GetAllLoginData()
-        {
-            using (var context = new FAPDatabaseEntities())
-            {
 
-                inlogdata = context.Inlogdata.ToList();
-            }
-        }
     }
 }

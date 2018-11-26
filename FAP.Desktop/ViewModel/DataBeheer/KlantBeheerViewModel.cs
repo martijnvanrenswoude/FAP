@@ -31,7 +31,7 @@ namespace FAP.Desktop.ViewModel
         }
 
         //Commands
-        public RelayCommand GoBackViewCommand { get; set; }
+        public RelayCommand GoBackCommand { get; set; }
         public RelayCommand GoToContactViewCommand { get; set; }
         public RelayCommand DeleteCustomerCommand { get; set; }
       
@@ -40,7 +40,7 @@ namespace FAP.Desktop.ViewModel
         {
             GetAllCustomers();
             //commands
-            GoBackViewCommand =         new RelayCommand(GoBackView);
+            GoBackCommand =         new RelayCommand(GoBackView);
             GoToContactViewCommand =    new RelayCommand(GoToContactpersoonBeheerView);
             DeleteCustomerCommand =     new RelayCommand(DeleteCustomer);
         }

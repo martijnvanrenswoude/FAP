@@ -11,14 +11,14 @@ namespace FAP.Desktop.ViewModel
 {
     public class SettingsViewModel
     {
-        public RelayCommand GoToHomeViewCommand { get; set; }
+        public RelayCommand GoBackCommand { get; set; }
 
         public SettingsViewModel()
         {
-            GoToHomeViewCommand = new RelayCommand(GoToSettingsView);
+            GoBackCommand = new RelayCommand(GoBackView);
         }
 
-        private void GoToSettingsView()
+        private void GoBackView()
         {
             ViewNavigator.Navigate("back");
         }

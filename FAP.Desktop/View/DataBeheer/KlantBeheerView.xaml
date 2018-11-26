@@ -9,7 +9,7 @@
     <StackPanel Orientation="Vertical" Background="GreenYellow">
         <StackPanel Orientation="Horizontal">
             <Label Content="Klantbeheer" FontSize="50"/>
-            <Button Width="100" Height="50"   Content="Back" Margin="410 10 0 0"   FontSize="30"  Command="{Binding GoBackViewCommand}"/>
+            <Button Width="100" Height="50"   Content="Back" Margin="410 10 0 0"   FontSize="30"  Command="{Binding GoBackCommand}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <DataGrid CanUserAddRows="false" AutoGenerateColumns="False" Width="710" SelectedItem="{Binding SelectedCustomer, Mode=TwoWay}" ItemsSource="{Binding AllCustomers}">

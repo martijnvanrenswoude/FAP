@@ -13,12 +13,12 @@ namespace FAP.Desktop.ViewModel
     {
         
         //command
-        public RelayCommand GoBackViewCommand { get; set; }
+        public RelayCommand GoBackCommand { get; set; }
         public RelayCommand GoToKlantBeheerViewCommand { get; set; }
 
         public DataBeheerViewModel()
         {
-            GoBackViewCommand = new RelayCommand(GoBackView);
+            GoBackCommand = new RelayCommand(GoBackView);
             GoToKlantBeheerViewCommand = new RelayCommand(GoToKlantBeheerView);
         }
 

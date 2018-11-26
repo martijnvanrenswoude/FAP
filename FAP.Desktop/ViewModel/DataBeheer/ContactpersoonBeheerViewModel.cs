@@ -27,14 +27,14 @@ namespace FAP.Desktop.ViewModel
             }
         }
         //commands
-        public RelayCommand GoBackViewCommand { get; set; }
+        public RelayCommand GoBackCommand { get; set; }
         
         //constructor
         public ContactpersoonBeheerViewModel()
         {
             customerID = 1;
             getContact();            
-            GoBackViewCommand = new RelayCommand(GoBackView);
+            GoBackCommand = new RelayCommand(GoBackView);
 
         }
         //functions

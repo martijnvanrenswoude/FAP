@@ -79,42 +79,42 @@
     </ApplicationDefinition>
     <Compile Include="Message\NavigationMessage.cs" />
     <Compile Include="Navigation\ViewNavigator.cs" />
-    <Compile Include="ViewModel\ContactpersoonBeheerViewModel.cs" />
-    <Compile Include="ViewModel\KlantBeheerViewModel.cs" />
-    <Compile Include="ViewModel\DataBeheerViewModel.cs" />
+    <Compile Include="ViewModel\DataBeheer\ContactpersoonBeheerViewModel.cs" />
+    <Compile Include="ViewModel\DataBeheer\KlantBeheerViewModel.cs" />
+    <Compile Include="ViewModel\DataBeheer\DataBeheerViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\RapportagesViewModel.cs" />
-    <Compile Include="ViewModel\SettingsViewModel.cs" />
+    <Compile Include="ViewModel\Rapportages\RapportagesViewModel.cs" />
+    <Compile Include="ViewModel\Settings\SettingsViewModel.cs" />
     <Compile Include="Navigation\ITransitionable.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Compile Include="View\ContactpersoonBeheerView.xaml.cs">
+    <Compile Include="View\DataBeheer\ContactpersoonBeheerView.xaml.cs">
       <DependentUpon>ContactpersoonBeheerView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\DataBeheerView.xaml.cs">
+    <Compile Include="View\DataBeheer\DataBeheerView.xaml.cs">
       <DependentUpon>DataBeheerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\KlantBeheerView.xaml.cs">
+    <Compile Include="View\DataBeheer\KlantBeheerView.xaml.cs">
       <DependentUpon>KlantBeheerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RapportagesView.xaml.cs">
+    <Compile Include="View\Rapportages\RapportagesView.xaml.cs">
       <DependentUpon>RapportagesView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SettingsView.xaml.cs">
+    <Compile Include="View\Settings\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\ContactpersoonBeheerView.xaml">
+    <Page Include="View\DataBeheer\ContactpersoonBeheerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\DataBeheerView.xaml">
+    <Page Include="View\DataBeheer\DataBeheerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -122,7 +122,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\KlantBeheerView.xaml">
+    <Page Include="View\DataBeheer\KlantBeheerView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -130,7 +130,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MainWindow.xaml">
+    <Page Include="ViewModel\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -138,15 +138,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="View\MainWindow.xaml.cs">
+    <Compile Include="ViewModel\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\RapportagesView.xaml">
+    <Page Include="View\Rapportages\RapportagesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\SettingsView.xaml">
+    <Page Include="View\Settings\SettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
