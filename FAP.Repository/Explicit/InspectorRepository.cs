@@ -14,10 +14,12 @@ namespace FAP.Repository.Explicit
         {
 
         }
-        public static implicit operator InspectorRepository(GenericRepository<Inspector> i)
-        {
-            return new InspectorRepository(i.Context);
-        }
+
+
+        //public static implicit operator InspectorRepository(GenericRepository<Inspector> i)
+        //{
+        //    return new InspectorRepository(i.Context);
+        //}
 
         public List<Inspector> SearchInspector(string searchkey)
         {

@@ -10,7 +10,7 @@ namespace FAP.Repository.Customer
 {
     public class CustomerRepository : GenericRepository<Domain.Customer>
     {
-        public CustomerRepository(FAPEntities context) : base(context)
+        public CustomerRepository(FAPDatabaseEntities context) : base(context)
         {
 
         }

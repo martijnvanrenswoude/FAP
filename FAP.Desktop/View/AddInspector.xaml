@@ -14,14 +14,14 @@
             <TextBox Name="Naam" Margin="5" Text="{Binding Name}"></TextBox>
             <TextBlock Text="Achternaam"/>
             <TextBox Name="Ächternaam" Margin="5" Text="{Binding Surname}"/>
-            <TextBlock Text="Straatnaam"/>
-            <TextBox Name="Straatnaam" Margin="5"/>
+            <TextBlock Text="Telefoonnummer"/>
+            <TextBox Name="Telefoonnummer" Margin="5" Text="{Binding TelephoneNumber}"/>
             <TextBlock Text="Huisnummer"/>
-            <TextBox Name="Huisnummer" Margin="5"/>
+            <TextBox Name="Huisnummer" Margin="5" Text="{Binding Housenumber}"/>
             <TextBlock Text="Postcode"/>
-            <TextBox Name="Postcode" Margin="5"/>
-            <TextBlock Text="Woonplaats"/>
-            <TextBox Name="Woonplaats" Margin="5"/>
+            <TextBox Name="Postcode" Margin="5" Text="{Binding Postcode}"/>
+            <TextBlock Text="Geboortedatum"/>
+            <TextBox Name="Geboortedatum" Margin="5" Text="{Binding DateOfBirth}"/>
             <Button Content ="Voeg Toe" Height="25" Name="Add" Command="{Binding AddInspectorCommand}" CommandParameter="{Binding AddInspectorCommand}" ></Button>
         </StackPanel>
         

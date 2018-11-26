@@ -36,7 +36,6 @@ namespace FAP.Desktop.ViewModel
             SimpleIoc.Default.Register(_master.GetRepository<Department>);
             SimpleIoc.Default.Register(_master.GetRepository<Employee>);
             SimpleIoc.Default.Register(_master.GetRepository<Event>);
-            //SimpleIoc.Default.Register(_master.GetRepository<ID>);
             SimpleIoc.Default.Register(_master.GetRepository<Inlogdata>);
             SimpleIoc.Default.Register(_master.GetRepository<Inspector>);
             SimpleIoc.Default.Register(_master.GetRepository<Inspector_shedule>);

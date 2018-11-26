@@ -25,7 +25,7 @@ namespace FAP.Desktop.ViewModel
 
         private Inspector selectedInspector;
 
-        private InspectorRepository repository;
+        private GenericRepository<Inspector> repository;
 
 
         /*
@@ -63,7 +63,14 @@ namespace FAP.Desktop.ViewModel
         {
             set { inspector.telephone_nr = value; }
         }
-
+    
+        public DateTime DateOfBirth { 
+            set {inspector.date_of_birth = value; }
+        }
+        public string Housenumber
+        {
+            set { inspector.house_number = value; }
+        }
         public List<Inspector> Inspectors { get { return this._inspectors; }}
         /*
          * Constructor
@@ -71,7 +78,7 @@ namespace FAP.Desktop.ViewModel
 
         public InspectorViewModel()
         {
-            repository = new InspectorRepository(new FAPDatabaseEntities());
+            repository = new GenericRepository<Inspector>(new FAPDatabaseEntities());
 
 
             //Alle mogelijke inspectors instantieren
@@ -81,7 +88,7 @@ namespace FAP.Desktop.ViewModel
             AddInspectorCommand = new RelayCommand(AddInspector);
             DeleteInspectorCommand = new RelayCommand(DeleteInspector);
             AlterInspectorCommand = new RelayCommand(AlterInspector);
-            SearchInspectorCommand = new RelayCommand(SearchInspector);
+          //  SearchInspectorCommand = new RelayCommand(SearchInspector);
         }
 
         /*
@@ -111,9 +118,9 @@ namespace FAP.Desktop.ViewModel
             }     
         }
         
-        public void SearchInspector()
-        {
-            SelectedInspectors = repository.SearchInspector(SearchKey);
-        }
+        //////public void SearchInspector()
+        //////{
+        //////    SelectedInspectors = repository.SearchInspector(SearchKey);
+        //////}
     }
 }
