@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using FAP.Domain;
 
-namespace FAP.Repository.Customer
+namespace FAP.Repository.Explicit
 {
-    public class CustomerRepository : GenericRepository<Domain.Customer>
+    public class CustomerRepository : GenericRepository<Customer>
     {
         public CustomerRepository(FAPDatabaseEntities context) : base(context)
         {

@@ -14,6 +14,7 @@
 
 using CommonServiceLocator;
 using FAP.Domain;
+using FAP.Repository.Explicit;
 using FAP.Repository.Generic;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
@@ -30,6 +31,7 @@ namespace FAP.Desktop.ViewModel
 
             _master = new MasterRepository();
 
+            // Implicit
             SimpleIoc.Default.Register(_master.GetRepository<Bank_Account>);
             SimpleIoc.Default.Register(_master.GetRepository<Contact>);
             SimpleIoc.Default.Register(_master.GetRepository<Customer>);
@@ -47,6 +49,14 @@ namespace FAP.Desktop.ViewModel
             SimpleIoc.Default.Register(_master.GetRepository<Quotation>);
             SimpleIoc.Default.Register(_master.GetRepository<StandardQuestion>);
             SimpleIoc.Default.Register(_master.GetRepository<StandardQuestionsList>);
+            SimpleIoc.Default.Register(_master.GetRepository<Inspector_Bank_Account>);
+            SimpleIoc.Default.Register(_master.GetRepository<MultipleChoice>);
+            SimpleIoc.Default.Register(_master.GetRepository<MultiplechoiceAnswers>);
+            SimpleIoc.Default.Register(_master.GetRepository<OpenSubjectQuestion>);
+            SimpleIoc.Default.Register(_master.GetRepository<ComboQuestion>);
+
+            // Explicit
+            //SimpleIoc.Default.Register<CustomerRepository>();
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<RapportagesViewModel>();
@@ -55,6 +65,7 @@ namespace FAP.Desktop.ViewModel
             SimpleIoc.Default.Register<DataBeheerViewModel>();
             SimpleIoc.Default.Register<KlantBeheerViewModel>();
             SimpleIoc.Default.Register<LoginViewModel>();
+            SimpleIoc.Default.Register<PlanningBeheerViewModel>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
@@ -63,8 +74,10 @@ namespace FAP.Desktop.ViewModel
         public RapportagesViewModel RapportagesView => ServiceLocator.Current.GetInstance<RapportagesViewModel>();
         public DataBeheerViewModel NieuweDataView => ServiceLocator.Current.GetInstance<DataBeheerViewModel>();
         public KlantBeheerViewModel KlantBeheerView => ServiceLocator.Current.GetInstance<KlantBeheerViewModel>();
+        public PlanningBeheerViewModel PlanningBeheerViewModel => ServiceLocator.Current.GetInstance<PlanningBeheerViewModel>();
 
         public LoginViewModel LoginView => ServiceLocator.Current.GetInstance<LoginViewModel>();
+
         public static void Cleanup()
         {
         }

@@ -101,7 +101,9 @@ namespace FAP.Desktop.Navigation
                         DataContext = SimpleIoc.Default.GetInstance<LoginViewModel>()
                     });
                     break;
-
+                case nameof(PlanningBeheerView):
+                    _viewHistory.Push(new PlanningBeheerView());
+                    break;
 
                 default: throw new ArgumentException("Non existend view passed in arguments.");
             }
