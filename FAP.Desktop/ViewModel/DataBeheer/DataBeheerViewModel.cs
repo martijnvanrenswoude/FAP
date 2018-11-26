@@ -15,11 +15,13 @@ namespace FAP.Desktop.ViewModel
         //command
         public RelayCommand GoBackCommand { get; set; }
         public RelayCommand GoToKlantBeheerViewCommand { get; set; }
+        public RelayCommand GoToContactpersoonBeheerViewCommand { get; set; }
 
         public DataBeheerViewModel()
         {
-            GoBackCommand = new RelayCommand(GoBackView);
-            GoToKlantBeheerViewCommand = new RelayCommand(GoToKlantBeheerView);
+            GoToContactpersoonBeheerViewCommand =   new RelayCommand(GoToContactpersoonBeheerView);
+            GoBackCommand =                         new RelayCommand(GoBackView);
+            GoToKlantBeheerViewCommand =            new RelayCommand(GoToKlantBeheerView);
         }
 
         private void GoBackView()
@@ -29,6 +31,10 @@ namespace FAP.Desktop.ViewModel
         private void GoToKlantBeheerView()
         {
             ViewNavigator.Navigate(nameof(KlantBeheerView));
+        }
+        private void GoToContactpersoonBeheerView()
+        {
+            ViewNavigator.Navigate(nameof(ContactpersoonBeheerView));
         }
     }
 }

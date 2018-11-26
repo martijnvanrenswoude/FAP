@@ -14,7 +14,7 @@ namespace FAP.Desktop.ViewModel
     public class ContactpersoonBeheerViewModel : ViewModelBase
     {
         //vars
-        private int customerID;
+        private Customer selectedCustomer;
         private Contact contact;
         //properties
         public Contact Contact
@@ -26,30 +26,48 @@ namespace FAP.Desktop.ViewModel
                 base.RaisePropertyChanged();
             }
         }
+        public Customer SelectedCustomer
+        {
+            get { return selectedCustomer; }
+            set
+            {
+                selectedCustomer = value;
+                SetContact();
+                base.RaisePropertyChanged();
+            }
+        }
+        public ObservableCollection<Customer> AllCustomers { get; set; }
         //commands
         public RelayCommand GoBackCommand { get; set; }
-        
+          
         //constructor
         public ContactpersoonBeheerViewModel()
         {
-            customerID = 1;
-            getContact();            
+            GetAllCustomers();
             GoBackCommand = new RelayCommand(GoBackView);
-
         }
         //functions
-        private void getContact()
+        private void GetAllCustomers()
         {
             using (var context = new FAPDatabaseEntities())
             {
-                List<Contact> tempList = context.Contact.ToList();
+                AllCustomers = new ObservableCollection<Customer>(context.Customer.ToList());
+            }
+        }
+        private void SetContact()
+        {
+            using (var context = new FAPDatabaseEntities())
+            {
+                List<Contact> tempList = new List<Contact>(context.Contact.ToList());
                 foreach(Contact c in tempList)
                 {
-                    if(c.customer_id == customerID)
+                    if(c.customer_id == selectedCustomer.id)
                     {
-                        Contact = c;
+                        Contact= c;
+                        return;
                     }
                 }
+                Contact = null;
             }
         }
         //command functions

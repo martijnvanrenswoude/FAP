@@ -17,10 +17,11 @@ namespace FAP.Desktop.ViewModel
     {
         //vars
         private Customer selectedCustomer;
-        public ObservableCollection<Customer> AllCustomers { get; set; }
-
+        private GenericRepository<Customer> repository;
+        
         //properties
         public Customer SelectedCustomer
+
         {
             get { return selectedCustomer; }
             set
@@ -29,20 +30,23 @@ namespace FAP.Desktop.ViewModel
                 base.RaisePropertyChanged();
             }
         }
+        public ObservableCollection<Customer> AllCustomers { get; set; }
 
         //Commands
+        public RelayCommand NewCustomerCommand { get; set; }
         public RelayCommand GoBackCommand { get; set; }
-        public RelayCommand GoToContactViewCommand { get; set; }
         public RelayCommand DeleteCustomerCommand { get; set; }
       
         //constructor
         public KlantBeheerViewModel()
         {
             GetAllCustomers();
+            repository = new GenericRepository<Customer>(new FAPDatabaseEntities());
             //commands
-            GoBackCommand =         new RelayCommand(GoBackView);
-            GoToContactViewCommand =    new RelayCommand(GoToContactpersoonBeheerView);
+            NewCustomerCommand = new RelayCommand(NewCustomer);
+            GoBackCommand =             new RelayCommand(GoBackView);
             DeleteCustomerCommand =     new RelayCommand(DeleteCustomer);
+            
         }
 
         //functions
@@ -65,7 +69,10 @@ namespace FAP.Desktop.ViewModel
         }
         private void DeleteCustomer()
         {
+            repository.Delete(SelectedCustomer);
             AllCustomers.Remove(SelectedCustomer);
         }
+        
+        private void NewCustomer() { }
     }
 }
