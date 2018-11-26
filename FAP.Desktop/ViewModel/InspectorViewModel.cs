@@ -5,6 +5,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ using System.Windows.Input;
 
 namespace FAP.Desktop.ViewModel
 {
-    public class InspectorViewModel : ViewModelBase
+    public class InspectorViewModel : ViewModelBase, INotifyPropertyChanged
 
     {
         /*
@@ -104,7 +105,9 @@ namespace FAP.Desktop.ViewModel
 
         private void DeleteInspector()
         {
+            
             repository.Delete(inspector);
+            inspector = null;
         }
 
         private void AlterInspector()
@@ -130,6 +133,7 @@ namespace FAP.Desktop.ViewModel
 
             List<Inspector> list = context.Inspectors.Where(i => i.name == searchkey || i.surname == searchkey).ToList();
             SelectedInspectors = list;
+            RaisePropertyChanged("SelectedInspectors");
             return list;
 
         }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FAPDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FAPDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__RefactorLog">
           <Key>
             <PropertyRef Name="OperationKey" />
@@ -91,7 +91,7 @@
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="contact_id" Type="int" Nullable="false" />
           <Property Name="name" Type="nvarchar(max)" />
-          <Property Name="date" Type="nvarchar(max)" />
+          <Property Name="date" Type="datetime" />
           <Property Name="amount_visitors" Type="int" />
           <Property Name="surface area_m2" Type="int" />
           <Property Name="description" Type="nvarchar(max)" />
@@ -344,8 +344,8 @@
           </ReferentialConstraint>
         </Association>
         <!--Errors Found During Generation:
-warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
-        <Association Name="FK__Event__contact_i__5EBF139D" />-->
+warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK__Event__contact_i__3C34F16F" />-->
         <Association Name="FK__Inlogdata__Id__37703C52">
           <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
           <End Role="Inlogdata" Type="Self.Inlogdata" Multiplicity="0..1" />
@@ -526,7 +526,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Planning__event___6A30C649">
+        <Association Name="FK__Planning__event___3D2915A8">
           <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
           <End Role="Planning" Type="Self.Planning" Multiplicity="*" />
           <ReferentialConstraint>
@@ -586,7 +586,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quotation__event__6EF57B66">
+        <Association Name="FK__Quotation__event__3E1D39E1">
           <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
           <End Role="Quotation" Type="Self.Quotation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -749,7 +749,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Planning" EntitySet="Planning" />
           </AssociationSet>
-          <AssociationSet Name="FK__Planning__event___6A30C649" Association="Self.FK__Planning__event___6A30C649">
+          <AssociationSet Name="FK__Planning__event___3D2915A8" Association="Self.FK__Planning__event___3D2915A8">
             <End Role="Event" EntitySet="Event" />
             <End Role="Planning" EntitySet="Planning" />
           </AssociationSet>
@@ -769,7 +769,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Quotation" EntitySet="Quotation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quotation__event__6EF57B66" Association="Self.FK__Quotation__event__6EF57B66">
+          <AssociationSet Name="FK__Quotation__event__3E1D39E1" Association="Self.FK__Quotation__event__3E1D39E1">
             <End Role="Event" EntitySet="Event" />
             <End Role="Quotation" EntitySet="Quotation" />
           </AssociationSet>
@@ -786,8 +786,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
             <End Role="StandardQuestionsList" EntitySet="StandardQuestionsList" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FAPDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -893,7 +892,7 @@ warning 6035: The relationship 'FK__Event__contact_i__5EBF139D' has columns that
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="contact_id" Type="Int32" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="String" />
           <Property Name="amount_visitors" Type="Int32" />
           <Property Name="surface_area_m2" Type="Int32" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />

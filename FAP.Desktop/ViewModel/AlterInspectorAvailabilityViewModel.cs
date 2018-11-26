@@ -18,14 +18,19 @@ namespace FAP.Desktop.ViewModel
         GenericRepository<Inspector_shedule> repository;
         //Properties
         public Inspector Inspector { get; set; }
+        public string Name { get; set; }
         public ICommand UpdateAvailabilityCommand { get; set; }
         public DateTime AvailableDay { get; set; }
         public DateTime AvailableFrom { get; set; }
         public DateTime AvailableTo { get; set; }
+        public List<Event> UpcomingEvents { get; set; }
+        
 
         // Constructor
         public AlterInspectorAvailabilityViewModel()
         {
+            Inspector = GetInspector();
+            Name = Inspector.name;
             repository = new GenericRepository<Inspector_shedule>(new FAPDatabaseEntities());
             InspectorShedule = new Inspector_shedule();
             UpdateAvailabilityCommand = new RelayCommand(UpdateAvailability);
@@ -41,5 +46,21 @@ namespace FAP.Desktop.ViewModel
             repository.Insert(InspectorShedule);
         }
 
+        public Inspector GetInspector()
+        {
+            using(var context = new FAPDatabaseEntities())
+            {
+                Inspector inspector = (Inspector)context.Inspectors.First(i => i.Id == 1005);
+                return inspector;
+            }
+        }
+        public List<Event> GetUpcomingEvents()
+        {
+            using (var context = new FAPDatabaseEntities())
+            {
+                var list = context.Events.Where(e => e.date > DateTime.Now);
+                return list;
+            }
+        }
     }
 }

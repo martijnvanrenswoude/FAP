@@ -8,8 +8,12 @@
         DataContext ="{Binding AvailabilityViewModel ,Source={StaticResource Locator}}"
         Title="AvailabilityView" Height="450" Width="800">
 
-    <StackPanel>
+    <StackPanel Margin="10">
         <TextBlock Text="Wijzig beschikbaarheid" FontSize="38" HorizontalAlignment="center"/>
-        <TextBlock />
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <TextBlock Text="Welkom "/>
+            <TextBlock Text="{Binding Name}"/>
+        </StackPanel>
+        <DataGrid AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Songs}"/>
     </StackPanel>
 </Window>
