@@ -11,30 +11,30 @@
     <StackPanel Margin="5">
         <TextBlock Text="Wijzig Inspecteur" HorizontalAlignment="Center" FontSize="38"/>
 
-        <ComboBox Name="Select_Inspector" ItemsSource="{Binding Inspectors}" SelectedItem="{Binding SelectedInspector}"/>
+        <ComboBox Name="Select_Inspector" ItemsSource="{Binding Inspectors}" SelectedItem="{Binding SelectedInspector}" DisplayMemberPath="name"/>
         <StackPanel Margin="5">
             <TextBlock Text="Wijzig naam"/>
-            <TextBox Text="{Binding SelectedInspector.name}"/>
+            <TextBox Text="{Binding Name}"/>
         </StackPanel>
         <StackPanel Margin="5">
             <TextBlock Text="Wijzig achternaam"/>
-            <TextBox Text="{Binding SelectedInspector.surname}"/>
+            <TextBox Text="{Binding Surname}"/>
         </StackPanel>
         <StackPanel Margin="5">
             <TextBlock Text="Wijzig postcode"/>
-            <TextBox Text="{Binding SelectedInspector.postcode}"/>
+            <TextBox Text="{Binding Postcode}"/>
         </StackPanel>
         <StackPanel Margin="5">
             <TextBlock Text="Wijzig huisnummer"/>
-            <TextBox Text="{Binding SelectedInspector.house_number}"/>
+            <TextBox Text="{Binding HouseNumber}"/>
         </StackPanel>
         <StackPanel Margin="5">
             <TextBlock Text="Wijzig telefoonnummer"/>
-            <TextBox Text="{Binding SelectedInspector.telephone_nr}"/>
+            <TextBox Text="{Binding TelephoneNumber}"/>
         </StackPanel>
         <StackPanel Margin="5">
             <TextBlock Text="Wijzig geboortedatum"/>
-            <TextBox Text="{Binding SelectedInspector.date_of_birth}"/>
+            <TextBox Text="{Binding DateOfBirth}"/>
         </StackPanel>
 
         <Button Name="ConfirmAlteration" Content="Bevestig wijziging" Command="{Binding AlterInspectorCommand}" HorizontalAlignment="Center" Padding="5"/>

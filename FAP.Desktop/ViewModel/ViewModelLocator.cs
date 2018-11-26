@@ -49,6 +49,7 @@ namespace FAP.Desktop.ViewModel
             SimpleIoc.Default.Register(_master.GetRepository<StandardQuestionsList>);
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<InspectorViewModel>();
             SimpleIoc.Default.Register<RapportagesViewModel>();
             SimpleIoc.Default.Register<HomeViewModel>();
             SimpleIoc.Default.Register<SettingsViewModel>();
@@ -59,6 +60,7 @@ namespace FAP.Desktop.ViewModel
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
+        public InspectorViewModel Inspector => ServiceLocator.Current.GetInstance<InspectorViewModel>();
         public HomeViewModel HomeView => ServiceLocator.Current.GetInstance<HomeViewModel>();
         public SettingsViewModel SettingsView => ServiceLocator.Current.GetInstance<SettingsViewModel>();
         public RapportagesViewModel RapportagesView => ServiceLocator.Current.GetInstance<RapportagesViewModel>();

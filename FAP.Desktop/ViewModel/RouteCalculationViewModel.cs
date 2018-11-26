@@ -68,18 +68,18 @@ namespace FAP.Desktop.ViewModel
         public void CalculateTravelTime()
         {
 
-            string from = SelectedInspector.postcode + SelectedInspector.house_number;
-            string to = SelectedEvent.postcode + SelectedEvent.housenumber;
-            //This method uses the GeoDan API to calculate based on postcodes
-            var url = $"https://services.geodan.nl/routing/addressroute?from={from}&to={to}&networkType={SelectedTransport}&servicekey={_key}";
+            //string from = SelectedInspector.postcode + SelectedInspector.house_number;
+            //string to = //SelectedEvent.po + SelectedEvent.housenumber
+            ////This method uses the GeoDan API to calculate based on postcodes
+            //var url = $"https://services.geodan.nl/routing/addressroute?from={from}&to={to}&networkType={SelectedTransport}&servicekey={_key}";
 
-            using (var httpClient = new HttpClient())
-            {
-                var response = httpClient.GetStringAsync(url).Result;
-                dynamic json = Newtonsoft.Json.JsonConvert.DeserializeObject(response);
-                // Hier moet nog shit met die JSON gebeuren.
-                TravelTime = ("De reistijd is " + "JSON int waarde" + "JSON tijdseenheid");
-            }
+            //using (var httpClient = new HttpClient())
+            //{
+            //    var response = httpClient.GetStringAsync(url).Result;
+            //    dynamic json = Newtonsoft.Json.JsonConvert.DeserializeObject(response);
+            //    // Hier moet nog shit met die JSON gebeuren.
+            //    TravelTime = ("De reistijd is " + "JSON int waarde" + "JSON tijdseenheid");
+            //}
 
         }
 

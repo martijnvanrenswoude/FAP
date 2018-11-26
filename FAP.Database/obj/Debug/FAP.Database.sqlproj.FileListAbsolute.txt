@@ -18,8 +18,3 @@ C:\Users\wessel\Desktop\FAP\FAP.Database\bin\Debug\FAP.Database.pdb
 C:\Users\wessel\Desktop\FAP\FAP.Database\obj\Debug\FAP.Database.sqlprojAssemblyReference.cache
 C:\Users\wessel\Desktop\FAP\FAP.Database\obj\Debug\FAP.Database.dll
 C:\Users\wessel\Desktop\FAP\FAP.Database\obj\Debug\FAP.Database.pdb
-C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\Model.xml
-C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\refactor.xml
-C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\postdeploy.sql
-C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\predeploy.sql
-C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\FAP.Database.sqlprojAssemblyReference.cache

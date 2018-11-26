@@ -22,6 +22,7 @@
             <TextBox Name="Postcode" Margin="5" Text="{Binding Postcode}"/>
             <TextBlock Text="Geboortedatum"/>
             <TextBox Name="Geboortedatum" Margin="5" Text="{Binding DateOfBirth}"/>
+
             <Button Content ="Voeg Toe" Height="25" Name="Add" Command="{Binding AddInspectorCommand}" CommandParameter="{Binding AddInspectorCommand}" ></Button>
         </StackPanel>
         

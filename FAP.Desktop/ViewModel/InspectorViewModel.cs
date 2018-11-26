@@ -36,7 +36,9 @@ namespace FAP.Desktop.ViewModel
         public ICommand DeleteInspectorCommand { get; set; }
         public ICommand AlterInspectorCommand { get; set; }
         public ICommand SearchInspectorCommand { get; set; }
-        public Inspector SelectedInspector { get; set; }
+        public Inspector SelectedInspector { 
+            set { inspector = value; }
+            }
         public List<Inspector> SelectedInspectors { get; set; }
 
         public string SearchKey { get; set; }
@@ -88,7 +90,7 @@ namespace FAP.Desktop.ViewModel
             AddInspectorCommand = new RelayCommand(AddInspector);
             DeleteInspectorCommand = new RelayCommand(DeleteInspector);
             AlterInspectorCommand = new RelayCommand(AlterInspector);
-          //  SearchInspectorCommand = new RelayCommand(SearchInspector);
+            SearchInspectorCommand = new RelayCommand(SearchInspector);
         }
 
         /*
@@ -102,25 +104,34 @@ namespace FAP.Desktop.ViewModel
 
         private void DeleteInspector()
         {
-            repository.Delete(SelectedInspector);
+            repository.Delete(inspector);
         }
 
         private void AlterInspector()
         {
-            repository.Update(SelectedInspector);
+            repository.Update(inspector);
         }
 
-        private void GetAllInspectors()
+      private void GetAllInspectors()
+      {
+          using(var context = new FAPDatabaseEntities())
+          {
+             _inspectors = context.Inspectors.ToList();
+          }     
+      }
+
+        public void SearchInspector()
         {
-            using(var context = new FAPDatabaseEntities())
-            {
-               _inspectors = context.Inspectors.ToList();
-            }     
+            SearchInspector(SearchKey);
         }
-        
-        //////public void SearchInspector()
-        //////{
-        //////    SelectedInspectors = repository.SearchInspector(SearchKey);
-        //////}
+        public List<Inspector> SearchInspector(string searchkey)
+        {
+            var context = new FAPDatabaseEntities();
+
+            List<Inspector> list = context.Inspectors.Where(i => i.name == searchkey || i.surname == searchkey).ToList();
+            SelectedInspectors = list;
+            return list;
+
+        }
     }
 }

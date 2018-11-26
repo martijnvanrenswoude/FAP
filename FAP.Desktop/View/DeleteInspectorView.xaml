@@ -9,13 +9,14 @@
         Title="DeleteInspectorView" Height="450" Width="800">
 
     <StackPanel Margin="5">
+        
         <TextBlock Text="Verwijder Inspecteur" HorizontalAlignment="Center" FontSize="38"/>
         <StackPanel Orientation="Horizontal">
             <TextBox Text="{Binding SearchKey}" Margin="10" Width="320"/>
             <Button x:Name="ZoekKnop" Content="Zoek" Command="{Binding SearchInspectorCommand}" Height="20"/>
         </StackPanel>
         
-        <ComboBox Name="Selectie" Text="Selecteer inspecteur" ItemsSource="{Binding SelectedInspectors}" SelectedItem="{Binding SelectedInspector}"/>
+        <ComboBox Name="Selectie" Text="Selecteer inspecteur" ItemsSource="{Binding SelectedInspectors}" SelectedItem="{Binding SelectedInspector}" DisplayMemberPath="name"/>
 
         <Button Name="DeleteButton" Content="Verwijderen" Margin="10" Command="{Binding DeleteInspectorCommand}"/>
     </StackPanel>
