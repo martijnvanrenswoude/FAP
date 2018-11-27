@@ -340,3 +340,7 @@ FAP.Domain/obj
 FAP.Repository/obj
 FAP.Sandbox/obj
 FAP.Test/obj
+FAP.Database/FAP.Database.jfm
+FAP.Database/FAP.Database.jfm
+FAP.Database/bin
+FAP.Database/obj
