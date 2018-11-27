@@ -10,6 +10,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace FAP.Desktop.ViewModel
 {
@@ -18,7 +19,9 @@ namespace FAP.Desktop.ViewModel
         //vars
         private Customer selectedCustomer;
         private GenericRepository<Customer> repository;
-        
+        public Window addCustomerWindow;
+        public Window addContact;
+
         //properties
         public Customer SelectedCustomer
 
@@ -27,6 +30,7 @@ namespace FAP.Desktop.ViewModel
             set
             {
                 selectedCustomer = value;
+                repository.Update(selectedCustomer);
                 base.RaisePropertyChanged();
             }
         }
@@ -34,31 +38,39 @@ namespace FAP.Desktop.ViewModel
 
         //Commands
         public RelayCommand NewCustomerCommand { get; set; }
+        public RelayCommand ShowContactCommand { get; set; }
         public RelayCommand GoBackCommand { get; set; }
         public RelayCommand DeleteCustomerCommand { get; set; }
-      
+        
         //constructor
-        public KlantBeheerViewModel()
+        public KlantBeheerViewModel(GenericRepository<Customer> repository)
         {
+            this.repository = repository;
             GetAllCustomers();
-            repository = new GenericRepository<Customer>(new FAPDatabaseEntities());
+            
             //commands
-            NewCustomerCommand = new RelayCommand(NewCustomer);
+            NewCustomerCommand =        new RelayCommand(NewCustomer);
             GoBackCommand =             new RelayCommand(GoBackView);
             DeleteCustomerCommand =     new RelayCommand(DeleteCustomer);
-            
+            ShowContactCommand =        new RelayCommand(ShowContactView);
         }
 
         //functions
         private void GetAllCustomers()
         {
-            using (var context = new FAPDatabaseEntities())
-            {
-                AllCustomers = new ObservableCollection<Customer>(context.Customer.ToList());
-            }
+            AllCustomers = new ObservableCollection<Customer>(repository.Get());
         }
         
+        public void UpdateCustomer()
+        {
+            GetAllCustomers();
+            base.RaisePropertyChanged("AllCustomers");           
+        }
         //command functions
+        private void ShowContactView()
+        {
+   
+        }
         private void GoBackView()
         {
             ViewNavigator.Navigate("back");
@@ -72,7 +84,10 @@ namespace FAP.Desktop.ViewModel
             repository.Delete(SelectedCustomer);
             AllCustomers.Remove(SelectedCustomer);
         }
-        
-        private void NewCustomer() { }
+        private void NewCustomer()
+        {
+            addCustomerWindow = new AddCustomerWindow();
+            addCustomerWindow.Show();
+        }
     }
 }

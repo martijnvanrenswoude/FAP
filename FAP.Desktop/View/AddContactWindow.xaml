@@ -1,0 +1,33 @@
+﻿<Window x:Class="FAP.Desktop.View.AddContactWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FAP.Desktop.View"
+        mc:Ignorable="d"
+        Title="AddContactWindow" Height="450" Width="800">
+    <StackPanel Orientation="Vertical" Background="Firebrick">
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Contactpersoonbeheer" FontSize="50"/>
+            <Button Width="100" Height="50"   Content="Back" Margin="160 10 0 0"   FontSize="30"  Command="{Binding GoBackCommand}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
+                <Label Content="Klantnaam"/>
+                <ComboBox Width="200" ItemsSource="{Binding AllCustomers}" DisplayMemberPath="name" SelectedItem="{Binding SelectedCustomer}" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
+                <Label Content="Voornaam"/>
+                <TextBox Text="{Binding  Contact.name}"         Width="200" Height="25"/>
+                <Label Content="Achternaam"/>
+                <TextBox Text="{Binding  Contact.surname}"      Width="200" Height="25"/>
+                <Label Content="Telefoon"/>
+                <TextBox Text="{Binding  Contact.telephone_nr}" Width="200" Height="25"/>
+                <Label Content="Email"/>
+                <TextBox Text="{Binding  Contact.email}"        Width="200" Height="25"/>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>

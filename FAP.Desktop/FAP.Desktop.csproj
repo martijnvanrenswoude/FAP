@@ -79,6 +79,7 @@
     </ApplicationDefinition>
     <Compile Include="Message\NavigationMessage.cs" />
     <Compile Include="Navigation\ViewNavigator.cs" />
+    <Compile Include="ViewModel\DataBeheer\AddCustomerViewModel.cs" />
     <Compile Include="ViewModel\DataBeheer\ContactpersoonBeheerViewModel.cs" />
     <Compile Include="ViewModel\DataBeheer\KlantBeheerViewModel.cs" />
     <Compile Include="ViewModel\DataBeheer\DataBeheerViewModel.cs" />
@@ -89,6 +90,12 @@
     <Compile Include="ViewModel\Settings\SettingsViewModel.cs" />
     <Compile Include="Navigation\ITransitionable.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\AddContactWindow.xaml.cs">
+      <DependentUpon>AddContactWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataBeheer\AddCustomerWindow.xaml.cs">
+      <DependentUpon>AddCustomerWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DataBeheer\ContactpersoonBeheerView.xaml.cs">
       <DependentUpon>ContactpersoonBeheerView.xaml</DependentUpon>
     </Compile>
@@ -110,6 +117,14 @@
     <Compile Include="View\Settings\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\AddContactWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DataBeheer\AddCustomerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DataBeheer\ContactpersoonBeheerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

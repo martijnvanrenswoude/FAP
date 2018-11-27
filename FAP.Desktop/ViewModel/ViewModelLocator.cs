@@ -67,6 +67,14 @@ namespace FAP.Desktop.ViewModel
         public ContactpersoonBeheerViewModel ContactpersoonBeheerView => ServiceLocator.Current.GetInstance<ContactpersoonBeheerViewModel>();
 
         public LoginViewModel LoginView => ServiceLocator.Current.GetInstance<LoginViewModel>();
+
+        public AddCustomerViewModel AddCustomer
+        {
+            get
+            {
+                return new AddCustomerViewModel(_master.GetRepository<Customer>() ,KlantBeheerView);
+            }
+        }
         public static void Cleanup()
         {
         }
