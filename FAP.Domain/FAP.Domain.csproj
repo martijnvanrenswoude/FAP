@@ -49,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Answer.cs">
+      <DependentUpon>FAPEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Bank_Account.cs">
       <DependentUpon>FAPEntities.tt</DependentUpon>
     </Compile>
@@ -110,13 +113,10 @@
     <Compile Include="Questionnaire.cs">
       <DependentUpon>FAPEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="QuestionType.cs">
+      <DependentUpon>FAPEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Quotation.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="StandardQuestion.cs">
-      <DependentUpon>FAPEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="StandardQuestionsList.cs">
       <DependentUpon>FAPEntities.tt</DependentUpon>
     </Compile>
   </ItemGroup>

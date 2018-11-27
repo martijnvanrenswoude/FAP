@@ -90,6 +90,36 @@ namespace FAP.Desktop.Navigation
                         DataContext = SimpleIoc.Default.GetInstance<SettingsViewModel>()
                     });
                     break;
+                case nameof(QuestionnaireView):
+                    _viewHistory.Push(new QuestionnaireView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<QuestionnaireViewModel>()
+                    });
+                    break;
+                case nameof(QuestionView):
+                    _viewHistory.Push(new QuestionView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<QuestionViewModel>()
+                    });
+                    break;
+                case nameof(AddQuestionView):
+                    _viewHistory.Push(new AddQuestionView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<AddQuestionViewModel>()
+                    });
+                    break;
+                case nameof(EditQuestionView):
+                    _viewHistory.Push(new EditQuestionView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<EditQuestionViewModel>()
+                    });
+                    break;
+                case nameof(AddQuestionnaireView):
+                    _viewHistory.Push(new AddQuestionnaireView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<AddQuestionnaireViewModel>()
+                    });
+                    break;
 
                 default: throw new ArgumentException("Non existend view passed in arguments.");
             }

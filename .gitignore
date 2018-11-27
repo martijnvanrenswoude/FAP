@@ -87,6 +87,7 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+*.jfm
 
 # Chutzpah Test files
 _Chutzpah*
@@ -340,3 +341,4 @@ FAP.Domain/obj
 FAP.Repository/obj
 FAP.Sandbox/obj
 FAP.Test/obj
+FAP.Database.jfm

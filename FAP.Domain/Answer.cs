@@ -12,13 +12,14 @@ namespace FAP.Domain
     using System;
     using System.Collections.Generic;
     
-    public partial class StandardQuestionsList
+    public partial class Answer
     {
-        public int standardquestion_id { get; set; }
-        public int questionnaire_id { get; set; }
-        public string answer { get; set; }
+        public int Id { get; set; }
+        public Nullable<int> questionId { get; set; }
+        public string Subject { get; set; }
+        public string answer1 { get; set; }
+        public byte[] Image { get; set; }
     
-        public virtual Questionnaire Questionnaire { get; set; }
-        public virtual StandardQuestion StandardQuestion { get; set; }
+        public virtual Question Question { get; set; }
     }
 }

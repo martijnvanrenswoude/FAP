@@ -25,6 +25,7 @@ namespace FAP.Domain
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Answer> Answers { get; set; }
         public virtual DbSet<Bank_Account> Bank_Account { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
@@ -40,8 +41,7 @@ namespace FAP.Domain
         public virtual DbSet<Planning> Plannings { get; set; }
         public virtual DbSet<Question> Questions { get; set; }
         public virtual DbSet<Questionnaire> Questionnaires { get; set; }
+        public virtual DbSet<QuestionType> QuestionTypes { get; set; }
         public virtual DbSet<Quotation> Quotations { get; set; }
-        public virtual DbSet<StandardQuestion> StandardQuestions { get; set; }
-        public virtual DbSet<StandardQuestionsList> StandardQuestionsLists { get; set; }
     }
 }

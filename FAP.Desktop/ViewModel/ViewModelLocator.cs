@@ -46,23 +46,30 @@ namespace FAP.Desktop.ViewModel
             SimpleIoc.Default.Register(_master.GetRepository<Question>);
             SimpleIoc.Default.Register(_master.GetRepository<Questionnaire>);
             SimpleIoc.Default.Register(_master.GetRepository<Quotation>);
-            SimpleIoc.Default.Register(_master.GetRepository<StandardQuestion>);
-            SimpleIoc.Default.Register(_master.GetRepository<StandardQuestionsList>);
+            SimpleIoc.Default.Register(_master.GetRepository<QuestionType>);
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<TestViewModel>();
+            SimpleIoc.Default.Register<QuestionnaireViewModel>();
             SimpleIoc.Default.Register<TestOtherViewModel>();
             SimpleIoc.Default.Register<HomeViewModel>();
             SimpleIoc.Default.Register<SettingsViewModel>();
+            SimpleIoc.Default.Register<QuestionViewModel>();
+            SimpleIoc.Default.Register<AddQuestionViewModel>();
+            SimpleIoc.Default.Register<EditQuestionViewModel>();
+            SimpleIoc.Default.Register<AddQuestionnaireViewModel>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
         public TestViewModel TestView => ServiceLocator.Current.GetInstance<TestViewModel>();
         public TestOtherViewModel TestViewOther => ServiceLocator.Current.GetInstance<TestOtherViewModel>();
-
+        public QuestionnaireViewModel QuestionnaireView => ServiceLocator.Current.GetInstance<QuestionnaireViewModel>();
+        public QuestionViewModel QuestionView => ServiceLocator.Current.GetInstance<QuestionViewModel>();
         public HomeViewModel HomeView => ServiceLocator.Current.GetInstance<HomeViewModel>();
         public SettingsViewModel SettingsView => ServiceLocator.Current.GetInstance<SettingsViewModel>();
-
+        public AddQuestionViewModel AddQuestionView => ServiceLocator.Current.GetInstance<AddQuestionViewModel>();
+        public EditQuestionViewModel EditQuestionView => ServiceLocator.Current.GetInstance<EditQuestionViewModel>();
+        public AddQuestionnaireViewModel AddQuestionnaireView => ServiceLocator.Current.GetInstance<AddQuestionnaireViewModel>();
 
         public static void Cleanup()
         {

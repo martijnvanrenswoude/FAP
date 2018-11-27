@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="FAP.Desktop.View.EditQuestionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Background="White">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Column="0" Grid.ColumnSpan="2" Content="Voeg een nieuwe vraag toe" FontSize="32" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <Label Grid.Column="0" Grid.Row="1" Content="Selecteer het type vraag:" FontSize="16" FontWeight="Bold"/>
+            <ComboBox Grid.Column="1" Grid.Row="1" ItemsSource="{Binding QuestionTypes}" DisplayMemberPath="Name" SelectedItem="{Binding Question.QuestionType1}"/>
+
+            <Label Grid.Column="0" Grid.Row="2" Content="Vraag:" FontSize="16" FontWeight="Bold"/>
+            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Question.question1}"/>
+
+            <Label Grid.Column="0" Grid.Row="3" Content="Header voor Onderwerp:" FontSize="16" FontWeight="Bold" IsEnabled="{Binding AdvancedForm}"/>
+            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Question.Subject}" IsEnabled="{Binding AdvancedForm}"/>
+
+            <Label Grid.Column="0" Grid.Row="4" Content="Header voor antwoord:" FontSize="16" FontWeight="Bold" IsEnabled="{Binding AdvancedForm}"/>
+            <TextBox Grid.Column="1" Grid.Row="4" IsEnabled="{Binding AdvancedForm}" Text="{Binding Question.Answer}" />
+
+            <Button Grid.Column="1" Grid.Row="6" Content="Opslaan" FontSize="20" Command="{Binding SaveCommand }" Background="Beige" Width="200" HorizontalAlignment="Center" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Foreground="LightSeaGreen"/>
+        </Grid>
+    </StackPanel>
+</UserControl>

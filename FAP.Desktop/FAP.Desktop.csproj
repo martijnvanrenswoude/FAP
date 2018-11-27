@@ -79,15 +79,35 @@
     </ApplicationDefinition>
     <Compile Include="Message\NavigationMessage.cs" />
     <Compile Include="Navigation\ViewNavigator.cs" />
+    <Compile Include="ViewModel\AddQuestionnaireViewModel.cs" />
+    <Compile Include="ViewModel\AddQuestionViewModel.cs" />
+    <Compile Include="ViewModel\EditQuestionViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\QuestionnaireViewModel.cs" />
+    <Compile Include="ViewModel\QuestionViewModel.cs" />
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="ViewModel\TestOtherViewModel.cs" />
     <Compile Include="ViewModel\TestViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Navigation\ITransitionable.cs" />
+    <Compile Include="View\AddQuestionnaireView.xaml.cs">
+      <DependentUpon>AddQuestionnaireView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddQuestionView.xaml.cs">
+      <DependentUpon>AddQuestionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditQuestionView.xaml.cs">
+      <DependentUpon>EditQuestionView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuestionnaireView.xaml.cs">
+      <DependentUpon>QuestionnaireView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuestionView.xaml.cs">
+      <DependentUpon>QuestionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
@@ -98,6 +118,18 @@
     <Compile Include="View\TestView.xaml.cs">
       <DependentUpon>TestView.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\AddQuestionnaireView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddQuestionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditQuestionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\HomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -114,6 +146,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\QuestionnaireView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QuestionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\SettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

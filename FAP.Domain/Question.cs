@@ -14,11 +14,23 @@ namespace FAP.Domain
     
     public partial class Question
     {
-        public int Id { get; set; }
-        public int questionnaire_id { get; set; }
-        public string question1 { get; set; }
-        public string answer { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Question()
+        {
+            this.Answers = new HashSet<Answer>();
+            this.Questionnaires = new HashSet<Questionnaire>();
+        }
     
-        public virtual Questionnaire Questionnaire { get; set; }
+        public int Id { get; set; }
+        public string question1 { get; set; }
+        public string questionType { get; set; }
+        public string Subject { get; set; }
+        public string Answer { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Answer> Answers { get; set; }
+        public virtual QuestionType QuestionType1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Questionnaire> Questionnaires { get; set; }
     }
 }

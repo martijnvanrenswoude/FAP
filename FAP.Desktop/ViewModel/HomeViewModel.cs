@@ -18,9 +18,11 @@ namespace FAP.Desktop.ViewModel
 
         public HomeViewModel(GenericRepository<Customer> repository)
         {
-            GoToSettingsViewCommand = new RelayCommand(GoToSettingsView);
-            _repository = repository;
-            _repository.Get();
+            //GoToSettingsViewCommand = new RelayCommand(GoToSettingsView);
+            //_repository = repository;
+            //var kaas = _repository.Get().FirstOrDefault();
+            //Console.WriteLine("kaas.name");
+            //Console.WriteLine(kaas.name);
         }
 
         private void GoToSettingsView()

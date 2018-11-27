@@ -17,7 +17,7 @@ namespace FAP.Desktop.ViewModel
         
         public MainViewModel()
         {
-            _navigator = new ViewNavigator(nameof(HomeView));
+            _navigator = new ViewNavigator(nameof(QuestionnaireView));
 
             Messenger.Default.Register<NavigationMessage>(this, (message) =>
             {

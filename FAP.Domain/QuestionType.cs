@@ -12,18 +12,17 @@ namespace FAP.Domain
     using System;
     using System.Collections.Generic;
     
-    public partial class StandardQuestion
+    public partial class QuestionType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public StandardQuestion()
+        public QuestionType()
         {
-            this.StandardQuestionsLists = new HashSet<StandardQuestionsList>();
+            this.Questions = new HashSet<Question>();
         }
     
-        public int Id { get; set; }
-        public string question { get; set; }
+        public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<StandardQuestionsList> StandardQuestionsLists { get; set; }
+        public virtual ICollection<Question> Questions { get; set; }
     }
 }
