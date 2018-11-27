@@ -20,7 +20,7 @@ namespace FAP.Desktop.ViewModel
         private Customer selectedCustomer;
         private GenericRepository<Customer> repository;
         public Window addCustomerWindow;
-        public Window addContact;
+        public Window addContactWindow;
 
         //properties
         public Customer SelectedCustomer
@@ -60,29 +60,27 @@ namespace FAP.Desktop.ViewModel
         {
             AllCustomers = new ObservableCollection<Customer>(repository.Get());
         }
-        
         public void UpdateCustomer()
         {
+            AllCustomers = null;
             GetAllCustomers();
             base.RaisePropertyChanged("AllCustomers");           
         }
+        
         //command functions
         private void ShowContactView()
         {
-   
+            addContactWindow = new AddContactWindow();
+            addContactWindow.Show();
         }
         private void GoBackView()
         {
             ViewNavigator.Navigate("back");
         }
-        private void GoToContactpersoonBeheerView()
-        {
-            ViewNavigator.Navigate(nameof(ContactpersoonBeheerView));
-        }
-        private void DeleteCustomer()
+        public void DeleteCustomer()
         {
             repository.Delete(SelectedCustomer);
-            AllCustomers.Remove(SelectedCustomer);
+            UpdateCustomer();       
         }
         private void NewCustomer()
         {

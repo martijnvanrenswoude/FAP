@@ -5,29 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FAP.Desktop.View"
         mc:Ignorable="d"
-        Title="AddContactWindow" Height="450" Width="800">
+        Title="AddContactWindow" Height="300" Width="350"
+        DataContext="{Binding AddContact, Source={StaticResource Locator}}">
     <StackPanel Orientation="Vertical" Background="Firebrick">
-        <StackPanel Orientation="Horizontal">
-            <Label Content="Contactpersoonbeheer" FontSize="50"/>
-            <Button Width="100" Height="50"   Content="Back" Margin="160 10 0 0"   FontSize="30"  Command="{Binding GoBackCommand}"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <StackPanel Orientation="Vertical">
-                <Label Content="Klantnaam"/>
-                <ComboBox Width="200" ItemsSource="{Binding AllCustomers}" DisplayMemberPath="name" SelectedItem="{Binding SelectedCustomer}" />
-            </StackPanel>
-        </StackPanel>
         <StackPanel Orientation="Horizontal">
             <StackPanel Orientation="Vertical">
                 <Label Content="Voornaam"/>
-                <TextBox Text="{Binding  Contact.name}"         Width="200" Height="25"/>
+                <TextBox Text="{Binding  Name}"         Width="200" Height="25"/>
                 <Label Content="Achternaam"/>
-                <TextBox Text="{Binding  Contact.surname}"      Width="200" Height="25"/>
+                <TextBox Text="{Binding  Surname}"      Width="200" Height="25"/>
                 <Label Content="Telefoon"/>
-                <TextBox Text="{Binding  Contact.telephone_nr}" Width="200" Height="25"/>
+                <TextBox Text="{Binding  Telephone}" Width="200" Height="25"/>
                 <Label Content="Email"/>
-                <TextBox Text="{Binding  Contact.email}"        Width="200" Height="25"/>
+                <TextBox Text="{Binding  Email}"        Width="200" Height="25"/>
             </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Width="125" Height="50"   Content="Opslaan" Margin="0 20 0 0"   FontSize="20"  Command="{Binding SaveContactCommand}"/>
+            <Button Width="125" Height="50"   Content="Annuleren" Margin="0 20 0 0"   FontSize="20"  Command="{Binding CancelCommand}"/>
         </StackPanel>
     </StackPanel>
 </Window>

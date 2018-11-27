@@ -55,7 +55,7 @@ namespace FAP.Desktop.ViewModel
             SimpleIoc.Default.Register<DataBeheerViewModel>();
             SimpleIoc.Default.Register<KlantBeheerViewModel>();
             SimpleIoc.Default.Register<LoginViewModel>();
-            SimpleIoc.Default.Register<ContactpersoonBeheerViewModel>();
+            
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
@@ -64,7 +64,7 @@ namespace FAP.Desktop.ViewModel
         public RapportagesViewModel RapportagesView => ServiceLocator.Current.GetInstance<RapportagesViewModel>();
         public DataBeheerViewModel NieuweDataView => ServiceLocator.Current.GetInstance<DataBeheerViewModel>();
         public KlantBeheerViewModel KlantBeheerView => ServiceLocator.Current.GetInstance<KlantBeheerViewModel>();
-        public ContactpersoonBeheerViewModel ContactpersoonBeheerView => ServiceLocator.Current.GetInstance<ContactpersoonBeheerViewModel>();
+       
 
         public LoginViewModel LoginView => ServiceLocator.Current.GetInstance<LoginViewModel>();
 
@@ -73,6 +73,13 @@ namespace FAP.Desktop.ViewModel
             get
             {
                 return new AddCustomerViewModel(_master.GetRepository<Customer>() ,KlantBeheerView);
+            }
+        }
+        public AddContactViewModel AddContact
+        {
+            get
+            {
+                return new AddContactViewModel(_master.GetRepository<Contact>(), KlantBeheerView);
             }
         }
         public static void Cleanup()

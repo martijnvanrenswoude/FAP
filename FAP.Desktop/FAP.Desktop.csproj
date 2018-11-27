@@ -79,8 +79,8 @@
     </ApplicationDefinition>
     <Compile Include="Message\NavigationMessage.cs" />
     <Compile Include="Navigation\ViewNavigator.cs" />
+    <Compile Include="ViewModel\AddContactViewModel.cs" />
     <Compile Include="ViewModel\DataBeheer\AddCustomerViewModel.cs" />
-    <Compile Include="ViewModel\DataBeheer\ContactpersoonBeheerViewModel.cs" />
     <Compile Include="ViewModel\DataBeheer\KlantBeheerViewModel.cs" />
     <Compile Include="ViewModel\DataBeheer\DataBeheerViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
@@ -95,9 +95,6 @@
     </Compile>
     <Compile Include="View\DataBeheer\AddCustomerWindow.xaml.cs">
       <DependentUpon>AddCustomerWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\DataBeheer\ContactpersoonBeheerView.xaml.cs">
-      <DependentUpon>ContactpersoonBeheerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DataBeheer\DataBeheerView.xaml.cs">
       <DependentUpon>DataBeheerView.xaml</DependentUpon>
@@ -122,10 +119,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DataBeheer\AddCustomerWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\DataBeheer\ContactpersoonBeheerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
