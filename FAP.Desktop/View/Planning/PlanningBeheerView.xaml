@@ -20,7 +20,7 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
-            <Label Content="Planning id zoeken" Foreground="DarkSlateGray" FontWeight="Bold"/>
+            <Label Content="Zoeken op event naam" Foreground="DarkSlateGray" FontWeight="Bold"/>
             <TextBox Grid.Column="1" Foreground="Blue" Text="{Binding PlanningSearch, UpdateSourceTrigger=PropertyChanged}">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="TextChanged">

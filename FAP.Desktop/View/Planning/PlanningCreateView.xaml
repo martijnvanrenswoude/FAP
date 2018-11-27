@@ -23,7 +23,7 @@
 
             <Label Content="Werknemer nummer" Foreground="DarkSlateGray" FontWeight="Bold"/>
             <Label Grid.Column="1" Content="{Binding EmployeeId}" />
-            <Button Grid.Column="2" Content="Werknemer zoeken"/>
+            <Button Grid.Column="2" Content="Werknemer zoeken" Command="{Binding OpenEmployeeSelectorCommand}"/>
         </Grid>
         
         <Grid Margin="0 16 0 0">
@@ -35,7 +35,7 @@
 
             <Label Content="Klant" Foreground="DarkSlateGray" FontWeight="Bold"/>
             <Label Grid.Column="1" Content="{Binding CustomerName}" />
-            <Button Grid.Column="2" Content="Klant zoeken"/>
+            <Button Grid.Column="2" Content="Klant zoeken" Command="{Binding OpenCustomerSelectorCommand}"/>
         </Grid>
         
         <Grid Margin="0 16 0 0">
@@ -47,7 +47,7 @@
 
             <Label Content="Evenement" Foreground="DarkSlateGray" FontWeight="Bold"/>
             <Label Grid.Column="1" Content="{Binding EventName}" />
-            <Button Grid.Column="2" Content="Evenement zoeken"/>
+            <Button Grid.Column="2" Content="Evenement zoeken" Command="{Binding OpenEventSelectorCommand}"/>
         </Grid>
 
         <Grid Margin="0 16 0 0">
@@ -59,7 +59,7 @@
 
             <Label Content="Vragenlijst nummer" Foreground="DarkSlateGray" FontWeight="Bold"/>
             <Label Grid.Column="1" Content="{Binding QuestionnaireId}" />
-            <Button Grid.Column="2" Content="Vragenlijst zoeken"/>
+            <Button Grid.Column="2" Content="Vragenlijst zoeken"  Command="{Binding OpenQuestionnaireSelectorCommand}"/>
         </Grid>
 
         <Grid Margin="0 16 0 0">

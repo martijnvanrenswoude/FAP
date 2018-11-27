@@ -11,6 +11,8 @@ using FAP.Repository.Generic;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
+using FAP.Desktop.Navigation;
+using FAP.Desktop.View.Planning;
 
 namespace FAP.Desktop.ViewModel
 {
@@ -53,7 +55,17 @@ namespace FAP.Desktop.ViewModel
             }
         }
 
-        public RelayCommand<Planning> SelectedPlanningChangedCommand { get; }
+        public RelayCommand<Planning>   SelectedPlanningChangedCommand      { get; }
+        public RelayCommand             ResetSearchCommand                  { get; }
+        public RelayCommand             SearchPlanningCommand               { get; }
+        public RelayCommand             GoToEditPlanningViewCommand         { get; }
+        public RelayCommand             GoToNewPlanningViewCommand          { get; }
+        public RelayCommand             GoBackCommand                       { get; }
+
+        public RelayCommand             OpenEmployeeSelectorCommand         { get; }
+        public RelayCommand             OpenCustomerSelectorCommand         { get; }
+        public RelayCommand             OpenEventSelectorCommand            { get; }
+        public RelayCommand             OpenQuestionnaireSelectorCommand    { get; }
 
         public PlanningBeheerViewModel(GenericRepository<Planning> repository)
         {
@@ -62,8 +74,11 @@ namespace FAP.Desktop.ViewModel
             plannings = new ObservableCollection<Planning>();
 
             SelectedPlanningChangedCommand = new RelayCommand<Planning>(ChangeSelectedPlanning);
-
-            
+            SearchPlanningCommand = new RelayCommand(SearchPlanning);
+            GoToEditPlanningViewCommand = new RelayCommand(GoToEditPlanning);
+            GoToNewPlanningViewCommand = new RelayCommand(GoToCreatePlanning);
+            GoBackCommand = new RelayCommand(GoBack);
+            ResetSearchCommand = new RelayCommand(() => PlanningSearch = string.Empty);
         }
 
         private void RetrievePlanningData()
@@ -76,9 +91,42 @@ namespace FAP.Desktop.ViewModel
             }
         }
 
+        private void SearchPlanning()
+        {
+            plannings.Clear();
+
+            foreach (var planning in repository.Get(o => o.Event.name.Contains(PlanningSearch)))
+            {
+                plannings.Add(planning);
+            }
+        }
+
         private void ChangeSelectedPlanning(Planning planning)
         {
             SelectedPlanning = planning;
+        }
+
+        private void DeletePlanning()
+        {
+            if (SelectedPlanning != null)
+            {
+                repository.Delete(SelectedPlanning);
+            }
+        }
+        
+        private void GoToEditPlanning()
+        {
+            ViewNavigator.Navigate(nameof(PlanningUpdateView));
+        }
+        
+        private void GoToCreatePlanning()
+        {
+            ViewNavigator.Navigate(nameof(PlanningCreateView));
+        }
+
+        private void GoBack()
+        {
+            ViewNavigator.Navigate("Back");
         }
 
         public void Show()

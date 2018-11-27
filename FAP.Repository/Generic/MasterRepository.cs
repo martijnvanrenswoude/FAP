@@ -46,7 +46,6 @@ namespace FAP.Repository.Generic
             {
                 throw new ObjectDisposedException("Master repository was disposed");
             }
-
             _context.SaveChanges();
         }
         
