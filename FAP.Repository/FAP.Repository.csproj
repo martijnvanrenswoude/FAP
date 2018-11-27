@@ -51,7 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Explicit\CustomerRepository.cs" />
-    <Compile Include="Explicit\InspectorRepository.cs" />
     <Compile Include="Generic\GenericRepository.cs" />
     <Compile Include="Generic\MasterRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

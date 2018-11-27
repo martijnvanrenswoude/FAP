@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[Customer]
 (
 	[id] INT NOT NULL PRIMARY KEY Identity(1,1), 
-    [name] NVARCHAR(MAX) NULL, 
-    [telephone_nr] INT NULL, 
-    [postcode] NVARCHAR(6) NULL, 
-    [house number] NVARCHAR(10) NULL, 
-    [email] NVARCHAR(MAX) NULL
+    [name] NVARCHAR(MAX) NOT NULL, 
+    [telephone_nr] INT NOT NULL, 
+    [postcode] NVARCHAR(6) NOT NULL, 
+    [house number] NVARCHAR(10) NOT NULL, 
+    [email] NVARCHAR(MAX) NOT NULL
 )

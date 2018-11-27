@@ -1,5 +1,5 @@
 ﻿using FAP.Domain;
-using FAP.Repository.Explicit;
+
 using FAP.Repository.Generic;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -105,9 +105,8 @@ namespace FAP.Desktop.ViewModel
 
         private void DeleteInspector()
         {
-            
-            repository.Delete(inspector);
-            inspector = null;
+                repository.Delete(inspector);
+                inspector = null; 
         }
 
         private void AlterInspector()
@@ -117,23 +116,21 @@ namespace FAP.Desktop.ViewModel
 
       private void GetAllInspectors()
       {
-          using(var context = new FAPDatabaseEntities())
-          {
-             _inspectors = context.Inspectors.ToList();
-          }     
+            repository.Get();
       }
 
         public void SearchInspector()
         {
             SearchInspector(SearchKey);
+            RaisePropertyChanged("SelectedInspectors");
         }
         public List<Inspector> SearchInspector(string searchkey)
         {
-            var context = new FAPDatabaseEntities();
-
-            List<Inspector> list = context.Inspectors.Where(i => i.name == searchkey || i.surname == searchkey).ToList();
+            
+            List<Inspector> list = new List<Inspector>(repository.Get(i => i.name == searchkey || i.surname == searchkey));
             SelectedInspectors = list;
             RaisePropertyChanged("SelectedInspectors");
+            
             return list;
 
         }

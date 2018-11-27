@@ -11,25 +11,19 @@
     <StackPanel Margin="10">
         <TextBlock Text="Wijzig beschikbaarheid" FontSize="38" HorizontalAlignment="center"/>
         <StackPanel Orientation="Horizontal" Margin="5">
-            <TextBlock Text="Welkom "/>
+            <TextBlock Text="Welkom " Width="45"/>
             <TextBlock Text="{Binding Name}"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <DataGrid Name="Event" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding UpcomingEvents}" >
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Eventnaam" Binding="{Binding UpcomingEvents.name}"/>
-                    <DataGridTextColumn Header="Datum" Binding="{Binding UpcomingEvents.date}"  />
-                </DataGrid.Columns>
-            </DataGrid>
-
-            <DataGrid AutoGenerateColumns="False" IsReadOnly="True" >
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Beschikbaar van" Binding="{Binding AvailableFrom}"/>
-                    <DataGridTextColumn Header="Beschikbaar tot" Binding="{Binding AvailableTo}"  />
-                </DataGrid.Columns>
-            </DataGrid>
-
+        <ComboBox x:Name="SelecteerEvenement" Text="Selecteer Evenement" ItemsSource="{Binding UpcomingEvents}" SelectedItem="{Binding SelectedEvent}" DisplayMemberPath="name" HorizontalAlignment="Left" Width="169" Margin="10,0,0,0"/>
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <TextBlock Margin="5" Name="Availablefrom" Text="Beschikbaar van"/>
+            <TextBox Margin="5" Width="198" Text="{Binding AvailableFrom}"/>
         </StackPanel>
-       
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <TextBlock Margin="5" Name="AvailableTo" Text="Beschikbaar van"/>
+            <TextBox Margin="5" Width="198" Text="{Binding AvailableTo}"/>
+        </StackPanel>
+        <Button Content="Aanpassen" Margin="10,0,593,0" Command="{Binding UpdateAvailabilityCommand}"/>
     </StackPanel>
+
 </Window>
