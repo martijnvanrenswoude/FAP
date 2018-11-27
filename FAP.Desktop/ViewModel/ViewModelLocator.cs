@@ -52,11 +52,15 @@ namespace FAP.Desktop.ViewModel
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<TestViewModel>();
             SimpleIoc.Default.Register<TestOtherViewModel>();
+            SimpleIoc.Default.Register<EmployeeViewModel>();
+            SimpleIoc.Default.Register<EditEmployeeViewModel>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
         public TestViewModel TestView => ServiceLocator.Current.GetInstance<TestViewModel>();
         public TestOtherViewModel TestViewOther => ServiceLocator.Current.GetInstance<TestOtherViewModel>();
+        public EmployeeViewModel EmployeeView => ServiceLocator.Current.GetInstance<EmployeeViewModel>();
+        public EditEmployeeViewModel EditEmployeeView => ServiceLocator.Current.GetInstance<EditEmployeeViewModel>();
 
 
         public static void Cleanup()
