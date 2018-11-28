@@ -36,7 +36,6 @@ namespace FAP.Desktop.ViewModel
             SimpleIoc.Default.Register(_master.GetRepository<Department>);
             SimpleIoc.Default.Register(_master.GetRepository<Employee>);
             SimpleIoc.Default.Register(_master.GetRepository<Event>);
-            SimpleIoc.Default.Register(_master.GetRepository<ID>);
             SimpleIoc.Default.Register(_master.GetRepository<Inlogdata>);
             SimpleIoc.Default.Register(_master.GetRepository<Inspector>);
             SimpleIoc.Default.Register(_master.GetRepository<Inspector_shedule>);
@@ -53,14 +52,14 @@ namespace FAP.Desktop.ViewModel
             SimpleIoc.Default.Register<TestViewModel>();
             SimpleIoc.Default.Register<TestOtherViewModel>();
             SimpleIoc.Default.Register<EmployeeViewModel>();
-            SimpleIoc.Default.Register<EditEmployeeViewModel>();
+            SimpleIoc.Default.Register<CreateEmployeeViewModel>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
         public TestViewModel TestView => ServiceLocator.Current.GetInstance<TestViewModel>();
         public TestOtherViewModel TestViewOther => ServiceLocator.Current.GetInstance<TestOtherViewModel>();
         public EmployeeViewModel EmployeeView => ServiceLocator.Current.GetInstance<EmployeeViewModel>();
-        public EditEmployeeViewModel EditEmployeeView => ServiceLocator.Current.GetInstance<EditEmployeeViewModel>();
+        public CreateEmployeeViewModel EditEmployeeView => ServiceLocator.Current.GetInstance<CreateEmployeeViewModel>();
 
 
         public static void Cleanup()

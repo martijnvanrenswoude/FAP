@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace FAP.Desktop.View
 {
     /// <summary>
-    /// Interaction logic for EditEmployeeView.xaml
+    /// Interaction logic for CreateEmployeeView.xaml
     /// </summary>
-    public partial class EditEmployeeView : UserControl
+    public partial class CreateEmployeeView : UserControl
     {
-        public EditEmployeeView()
+        public CreateEmployeeView()
         {
             InitializeComponent();
         }

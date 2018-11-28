@@ -17,7 +17,7 @@ namespace FAP.Domain
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Quotation()
         {
-            this.Invoices = new HashSet<Invoice>();
+            this.Invoice = new HashSet<Invoice>();
         }
     
         public int id { get; set; }
@@ -28,12 +28,13 @@ namespace FAP.Domain
         public Nullable<decimal> sum { get; set; }
         public Nullable<System.DateTime> deadline { get; set; }
         public Nullable<System.DateTime> date { get; set; }
+        public byte[] image { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual Employee Employee { get; set; }
         public virtual Event Event { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Invoice> Invoices { get; set; }
+        public virtual ICollection<Invoice> Invoice { get; set; }
         public virtual Planning Planning { get; set; }
     }
 }

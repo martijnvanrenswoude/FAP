@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="d2c3b149-e85c-48b0-aa83-34d9d00d7fb8" ChangeDateTime="11/15/2018 08:37:04">
+    <Property Name="ElementName" Value="[dbo].[MultiplechoiceAnswers].[Answer]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[MultiplechoiceAnswers]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Answer2" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4cef647c-b375-4185-b3fe-0eaa3e33eaad" ChangeDateTime="11/15/2018 08:39:33">
+    <Property Name="ElementName" Value="[dbo].[ComboQuestion].[questionnaire_kid]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ComboQuestion]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="questionnaire_id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5d3f367c-a2a7-4bd9-a594-c92c301375ae" ChangeDateTime="11/15/2018 08:42:38">
+    <Property Name="ElementName" Value="[dbo].[MultipleChoice].[inspector]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[MultipleChoice]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="inspector_id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4272f14b-234a-4969-a4ba-280893b16a9a" ChangeDateTime="11/20/2018 14:31:01">
+    <Property Name="ElementName" Value="[dbo].[Inspector_Bank_Account].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Inspector_Bank_Account]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Inspector_ID" />
+  </Operation>
+</Operations>

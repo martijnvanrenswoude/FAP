@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="FAP.Desktop.View.CreateEmployeeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FAP.Desktop.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <Button Command="{Binding GoBack}" Width="100" Height="30" HorizontalAlignment="Left" Content="Terug"/>
+
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="300" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label>Naam:</Label>
+            <TextBox Text="{Binding Name}" Grid.Column="1" Margin="0,0,0,10" />
+            <Label Grid.Row="1">Achternaam:</Label>
+            <TextBox Text="{Binding Surname}" Grid.Row="1" Grid.Column="1" Margin="0,0,0,10" />
+            <Label Grid.Row="2">Positie</Label>
+            <TextBox Text="{Binding Position}" Grid.Row="2" Grid.Column="1" Margin="0,0,0,10" />
+            <Label Grid.Row="3">Postcode:</Label>
+            <TextBox Text="{Binding Zipcode}" Grid.Row="3" Grid.Column="1" Margin="0,0,0,10" />
+            <Label Grid.Row="4">Huisnummer:</Label>
+            <TextBox Text="{Binding Housenumber}" Grid.Row="4" Grid.Column="1" Margin="0,0,0,10" />
+            <Label Grid.Row="5">Geboortedatum:</Label>
+            <DatePicker SelectedDate="{Binding Birthdate}" DisplayDateStart="{Binding Birthdate}" DisplayDateEnd="{Binding DateEnd}" Grid.Row="5" Grid.Column="1" Margin="0,0,0,10"/>
+        </Grid>
+
+        <Button Command="{Binding AddEmployeeButton}" Width="100" Height="30" HorizontalAlignment="Left" Content="Opslaan"/>
+        
+    </StackPanel>
+</UserControl>

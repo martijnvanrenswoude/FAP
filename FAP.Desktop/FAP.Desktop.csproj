@@ -77,15 +77,15 @@
     </ApplicationDefinition>
     <Compile Include="Message\NavigationMessage.cs" />
     <Compile Include="Navigation\ViewNavigator.cs" />
-    <Compile Include="ViewModel\EditEmployeeViewModel.cs" />
+    <Compile Include="ViewModel\CreateEmployeeViewModel.cs" />
     <Compile Include="ViewModel\EmployeeViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\TestOtherViewModel.cs" />
     <Compile Include="ViewModel\TestViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Navigation\ITransitionable.cs" />
-    <Compile Include="View\EditEmployeeView.xaml.cs">
-      <DependentUpon>EditEmployeeView.xaml</DependentUpon>
+    <Compile Include="View\CreateEmployeeView.xaml.cs">
+      <DependentUpon>CreateEmployeeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\EmployeeView.xaml.cs">
       <DependentUpon>EmployeeView.xaml</DependentUpon>
@@ -96,7 +96,7 @@
     <Compile Include="View\TestView.xaml.cs">
       <DependentUpon>TestView.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\EditEmployeeView.xaml">
+    <Page Include="View\CreateEmployeeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -17,13 +17,13 @@ namespace FAP.Domain
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public StandardQuestion()
         {
-            this.StandardQuestionsLists = new HashSet<StandardQuestionsList>();
+            this.StandardQuestionsList = new HashSet<StandardQuestionsList>();
         }
     
         public int Id { get; set; }
         public string question { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<StandardQuestionsList> StandardQuestionsLists { get; set; }
+        public virtual ICollection<StandardQuestionsList> StandardQuestionsList { get; set; }
     }
 }

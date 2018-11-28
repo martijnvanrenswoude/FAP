@@ -12,11 +12,8 @@ namespace FAP.Domain
     using System;
     using System.Collections.Generic;
     
-    public partial class Bank_Account
+    public partial class C__RefactorLog
     {
-        public string account_number { get; set; }
-        public int employee_id { get; set; }
-    
-        public virtual Employee Employee { get; set; }
+        public System.Guid OperationKey { get; set; }
     }
 }

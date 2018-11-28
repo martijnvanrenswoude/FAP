@@ -12,11 +12,11 @@ namespace FAP.Domain
     using System;
     using System.Collections.Generic;
     
-    public partial class Bank_Account
+    public partial class Inspector_Bank_Account
     {
-        public string account_number { get; set; }
-        public int employee_id { get; set; }
+        public int Inspector_ID { get; set; }
+        public string Banknumber { get; set; }
     
-        public virtual Employee Employee { get; set; }
+        public virtual Inspector Inspector { get; set; }
     }
 }
