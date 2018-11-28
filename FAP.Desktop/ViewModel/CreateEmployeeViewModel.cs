@@ -37,6 +37,16 @@ namespace FAP.Desktop.ViewModel
             AddEmployeeButton = new RelayCommand(AddEmployee);
         }
 
+        private void ResetProperties()
+        {
+            Name = null;
+            Surname = null;
+            Position = null;
+            Zipcode = null;
+            Housenumber = null;
+            Birthdate = new DateTime(1900, 01, 01);
+        }
+
         private void AddEmployee()
         {
             Employee newEmployee = new Employee();
@@ -59,6 +69,7 @@ namespace FAP.Desktop.ViewModel
 
         private void GoBackCommand()
         {
+            ResetProperties();
             ViewNavigator.Navigate(nameof(EmployeeView));
         }
     }
