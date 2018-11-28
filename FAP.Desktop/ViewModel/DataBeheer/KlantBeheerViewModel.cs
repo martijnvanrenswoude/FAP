@@ -30,8 +30,16 @@ namespace FAP.Desktop.ViewModel
             set
             {
                 selectedCustomer = value;
-                repository.Update(selectedCustomer);
                 base.RaisePropertyChanged();
+            }
+        }
+
+        public Customer EditCustomer
+        {
+            set
+            {
+                selectedCustomer = value;
+                repository.Update(selectedCustomer);
             }
         }
         public ObservableCollection<Customer> AllCustomers { get; set; }
@@ -79,8 +87,8 @@ namespace FAP.Desktop.ViewModel
         }
         public void DeleteCustomer()
         {
-            repository.Delete(SelectedCustomer);
-            UpdateCustomer();       
+            repository.Delete(selectedCustomer);
+            AllCustomers.Remove(selectedCustomer);
         }
         private void NewCustomer()
         {

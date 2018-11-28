@@ -12,7 +12,7 @@
             <Button Width="100" Height="50"   Content="Back" Margin="410 10 0 0"   FontSize="30"  Command="{Binding GoBackCommand}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <DataGrid CanUserAddRows="false" AutoGenerateColumns="False" Width="710" SelectedItem="{Binding SelectedCustomer, Mode=TwoWay}" ItemsSource="{Binding AllCustomers}">
+            <DataGrid CanUserAddRows="false" AutoGenerateColumns="False" Width="710" SelectedItem="{Binding EditCustomer, Mode=TwoWay}" ItemsSource="{Binding AllCustomers}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Naam"       Binding="{Binding name}"            Width="100"/>
                     <DataGridTextColumn Header="Telefoon"   Binding="{Binding telephone_nr}"    Width="100"/>
