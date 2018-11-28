@@ -18,7 +18,8 @@ namespace FAP.Desktop.ViewModel
     {
         private readonly GenericRepository<Planning> planningRepository;
 
-        public PlanningCreateViewModel(GenericRepository<Planning> planningRepository)
+        public PlanningCreateViewModel( GenericRepository<Planning> planningRepository,
+                                        GenericRepository<Employee> employeeRepository)
         {
             this.planningRepository = planningRepository;
 
