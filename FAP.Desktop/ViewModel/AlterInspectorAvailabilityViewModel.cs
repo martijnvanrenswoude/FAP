@@ -29,7 +29,7 @@ namespace FAP.Desktop.ViewModel
         // Constructor
         public AlterInspectorAvailabilityViewModel()
         {
-            Inspector = GetInspector();
+            //Inspector = GetInspector();
             Name = Inspector.name;
             repository = new GenericRepository<Inspector_shedule>(new FAPDatabaseEntities());
             eventRepository = new GenericRepository<Event>(new FAPDatabaseEntities());
