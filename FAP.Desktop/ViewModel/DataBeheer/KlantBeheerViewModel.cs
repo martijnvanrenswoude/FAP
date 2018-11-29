@@ -18,7 +18,8 @@ namespace FAP.Desktop.ViewModel
     {
         //vars
         private Customer selectedCustomer;
-        private GenericRepository<Customer> repository;
+        private GenericRepository<Customer> customerRepository;
+        private GenericRepository<Contact> contactRepository;
         public Window addCustomerWindow;
         public Window addContactWindow;
 
@@ -34,14 +35,7 @@ namespace FAP.Desktop.ViewModel
             }
         }
 
-        public Customer EditCustomer
-        {
-            set
-            {
-                selectedCustomer = value;
-                repository.Update(selectedCustomer);
-            }
-        }
+
         public ObservableCollection<Customer> AllCustomers { get; set; }
 
         //Commands
@@ -49,32 +43,34 @@ namespace FAP.Desktop.ViewModel
         public RelayCommand ShowContactCommand { get; set; }
         public RelayCommand GoBackCommand { get; set; }
         public RelayCommand DeleteCustomerCommand { get; set; }
-        
+        public RelayCommand SaveUpdatesCommand { get; set; }
         //constructor
-        public KlantBeheerViewModel(GenericRepository<Customer> repository)
+        public KlantBeheerViewModel(GenericRepository<Customer> customerRepository, GenericRepository<Contact> contactRepository)
         {
-            this.repository = repository;
+            this.customerRepository = customerRepository;
+            this.contactRepository = contactRepository;
             GetAllCustomers();
-            
+
             //commands
-            NewCustomerCommand =        new RelayCommand(NewCustomer);
-            GoBackCommand =             new RelayCommand(GoBackView);
-            DeleteCustomerCommand =     new RelayCommand(DeleteCustomer);
-            ShowContactCommand =        new RelayCommand(ShowContactView);
+            NewCustomerCommand = new RelayCommand(NewCustomer);
+            GoBackCommand = new RelayCommand(GoBackView);
+            DeleteCustomerCommand = new RelayCommand(DeleteCustomer);
+            ShowContactCommand = new RelayCommand(ShowContactView);
+            SaveUpdatesCommand = new RelayCommand(SaveUpdates);
         }
 
         //functions
         private void GetAllCustomers()
         {
-            AllCustomers = new ObservableCollection<Customer>(repository.Get());
+            AllCustomers = new ObservableCollection<Customer>(customerRepository.Get());
         }
         public void UpdateCustomer()
         {
             AllCustomers = null;
             GetAllCustomers();
-            base.RaisePropertyChanged("AllCustomers");           
+            base.RaisePropertyChanged("AllCustomers");
         }
-        
+
         //command functions
         private void ShowContactView()
         {
@@ -87,13 +83,30 @@ namespace FAP.Desktop.ViewModel
         }
         public void DeleteCustomer()
         {
-            repository.Delete(selectedCustomer);
+            Contact SelectedContact = null;
+            List<Contact> c = new List<Contact>(contactRepository.Get());
+            foreach(Contact item in c)
+            {
+                if(item.customer_id == SelectedCustomer.id)
+                {
+                    SelectedContact = item;
+                }
+            }
+            if (SelectedContact != null)
+            {
+                contactRepository.Delete(SelectedContact);
+            }            
+            customerRepository.Delete(selectedCustomer);
             AllCustomers.Remove(selectedCustomer);
         }
         private void NewCustomer()
         {
             addCustomerWindow = new AddCustomerWindow();
             addCustomerWindow.Show();
+        }
+        private void SaveUpdates()
+        {
+            customerRepository.Update(selectedCustomer);
         }
     }
 }
