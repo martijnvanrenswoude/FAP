@@ -49,15 +49,15 @@ namespace FAP.Desktop.ViewModel
             repository.Insert(InspectorShedule);
         }
 
-        public Inspector GetInspector()
-        {
-            //dit gaat nog weg
-            using(var context = new FAPDatabaseEntities())
-            {
-                Inspector inspector = (Inspector)context.Inspectors.First(i => i.Id == 1005);
-                return inspector;
-            }
-        }
+        //public Inspector GetInspector()
+        //{
+        //    //dit gaat nog weg
+        //    using(var context = new FAPDatabaseEntities())
+        //    {
+        //        Inspector inspector = (Inspector)context.Inspectors.First(i => i.Id == 1005);
+        //        return inspector;
+        //    }
+        //}
 
         public void GetUpcomingEvents()
         {

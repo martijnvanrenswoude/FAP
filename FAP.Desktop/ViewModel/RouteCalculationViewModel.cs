@@ -23,6 +23,8 @@ namespace FAP.Desktop.ViewModel
         private string _key = "6c4c63db-de9a-11e8-8aac-005056805b87";
         private List<Inspector> inspectors;
         private List<Event> events;
+        private GenericRepository<Event> eventRepository;
+        private GenericRepository<Inspector> inspectorRepository;
 
         /*
         * 
@@ -55,7 +57,11 @@ namespace FAP.Desktop.ViewModel
         {
             Transport = new List<string> { "Auto", "Fiets" };
             Calculate = new RelayCommand(CalculateTravelTime);
-            getAllFromDatabase();
+            inspectorRepository = new GenericRepository<Inspector>(new FAPDatabaseEntities());
+            eventRepository = new GenericRepository<Event>(new FAPDatabaseEntities());
+            Inspectors = inspectorRepository.Get().ToList();
+            Events = eventRepository.Get().ToList();
+
         }
 
         /*
@@ -84,15 +90,7 @@ namespace FAP.Desktop.ViewModel
 
         }
 
-        public void getAllFromDatabase()
-        {
-            using(var context = new FAPDatabaseEntities())
-            {
 
-                Events = context.Events.ToList();
-                Inspectors = context.Inspectors.ToList();
-            }
-        }
 
     }
 

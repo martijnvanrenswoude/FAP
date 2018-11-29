@@ -14,13 +14,14 @@
             <TextBlock Text="Welkom " Width="45"/>
             <TextBlock Text="{Binding Name}"/>
         </StackPanel>
+        <TextBlock Margin="10,5,5,5" Text="Selecteer Evenement"/>
         <ComboBox x:Name="SelecteerEvenement" Text="Selecteer Evenement" ItemsSource="{Binding UpcomingEvents}" SelectedItem="{Binding SelectedEvent}" DisplayMemberPath="name" HorizontalAlignment="Left" Width="169" Margin="10,0,0,0"/>
         <StackPanel Orientation="Horizontal" Margin="5">
             <TextBlock Margin="5" Name="Availablefrom" Text="Beschikbaar van"/>
             <TextBox Margin="5" Width="198" Text="{Binding AvailableFrom}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="5">
-            <TextBlock Margin="5" Name="AvailableTo" Text="Beschikbaar van"/>
+            <TextBlock Margin="5" Name="AvailableTo" Text="Beschikbaar tot"/>
             <TextBox Margin="5" Width="198" Text="{Binding AvailableTo}"/>
         </StackPanel>
         <Button Content="Aanpassen" Margin="10,0,593,0" Command="{Binding UpdateAvailabilityCommand}"/>

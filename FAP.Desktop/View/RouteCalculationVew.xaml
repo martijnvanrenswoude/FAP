@@ -11,6 +11,7 @@
     <StackPanel Orientation="Horizontal" Margin="10">
         <StackPanel Width="616">
             <TextBlock Text="Hier komt een kaart ooit maybe" Margin="10"/>
+            
         </StackPanel>
         <StackPanel Margin="10" Width="146">
             <TextBlock Text="Selecteer Inspecteur"/>
