@@ -67,6 +67,7 @@ namespace FAP.Desktop.ViewModel
             SimpleIoc.Default.Register<LoginViewModel>();
             SimpleIoc.Default.Register<PlanningBeheerViewModel>();
             SimpleIoc.Default.Register<PlanningCreateViewModel>();
+            SimpleIoc.Default.Register<PlanningUpdateViewModel>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
@@ -77,6 +78,7 @@ namespace FAP.Desktop.ViewModel
         public KlantBeheerViewModel KlantBeheerView => ServiceLocator.Current.GetInstance<KlantBeheerViewModel>();
         public PlanningBeheerViewModel PlanningBeheerViewModel => ServiceLocator.Current.GetInstance<PlanningBeheerViewModel>();
         public PlanningCreateViewModel PlanningCreateViewModel => ServiceLocator.Current.GetInstance<PlanningCreateViewModel>();
+        public PlanningUpdateViewModel PlanningUpdateViewModel => ServiceLocator.Current.GetInstance<PlanningUpdateViewModel>();
 
         public LoginViewModel LoginView => ServiceLocator.Current.GetInstance<LoginViewModel>();
 

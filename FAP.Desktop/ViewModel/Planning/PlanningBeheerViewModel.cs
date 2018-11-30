@@ -42,8 +42,11 @@ namespace FAP.Desktop.ViewModel
             {
                 selectedPlanning = value;
                 RaisePropertyChanged(() => SelectedPlanning);
+                RaisePropertyChanged(() => SelectedPlanningNotNull);
             }
         }
+
+        public bool SelectedPlanningNotNull => SelectedPlanning != null;
 
         public string PlanningSearch
         {
@@ -62,11 +65,6 @@ namespace FAP.Desktop.ViewModel
         public RelayCommand GoToNewPlanningViewCommand { get; }
         public RelayCommand DeletePlanningCommand { get; }
         public RelayCommand GoBackCommand { get; }
-
-        public RelayCommand OpenEmployeeSelectorCommand { get; }
-        public RelayCommand OpenCustomerSelectorCommand { get; }
-        public RelayCommand OpenEventSelectorCommand { get; }
-        public RelayCommand OpenQuestionnaireSelectorCommand { get; }
 
         public PlanningBeheerViewModel(GenericRepository<Planning> repository)
         {
@@ -114,11 +112,19 @@ namespace FAP.Desktop.ViewModel
             {
                 repository.Delete(SelectedPlanning);
             }
+            
+            Plannings.Remove(SelectedPlanning);
+            SelectedPlanning = null;
         }
         
         private void GoToEditPlanning()
         {
             ViewNavigator.Navigate(nameof(PlanningUpdateView));
+            Messenger.Default.Send(new ModelMessage<Planning>
+            {
+                Model = SelectedPlanning,
+                FromWho = nameof(PlanningBeheerViewModel)
+            });
         }
         
         private void GoToCreatePlanning()

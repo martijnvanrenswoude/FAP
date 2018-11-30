@@ -5,8 +5,97 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FAP.Desktop.View.Planning"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="{Binding PlanningUpdateViewModel, Source={StaticResource Locator}}">
+
+    <StackPanel Background="DarkTurquoise">
+        <TextBlock Text="Planning aanmaken" FontSize="18" Foreground="AliceBlue" FontWeight="Bold"></TextBlock>
+
+        <Grid Margin="0 16 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Werknemer" Foreground="DarkSlateGray" FontWeight="Bold"/>
+            <Label Grid.Column="1" Content="{Binding SelectedEmployee.id}" />
+            <ComboBox Grid.Column="2"
+                      ItemsSource="{Binding Employees}" 
+                      DisplayMemberPath="name"
+                      SelectedValuePath="name"
+                      SelectedItem="{Binding SelectedEmployee}"/>
+        </Grid>
+
+        <Grid Margin="0 16 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Klant" Foreground="DarkSlateGray" FontWeight="Bold"/>
+            <Label Grid.Column="1" Content="{Binding SelectedCustomer.id}" />
+            <ComboBox Grid.Column="2"
+                      ItemsSource="{Binding Customers}" 
+                      DisplayMemberPath="name"
+                      SelectedValuePath="name"
+                      SelectedItem="{Binding SelectedCustomer}"/>
+        </Grid>
+
+        <Grid Margin="0 16 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Evenement" Foreground="DarkSlateGray" FontWeight="Bold"/>
+            <Label Grid.Column="1" Content="{Binding SelectedEvent.name}" />
+            <ComboBox Grid.Column="2"
+                      ItemsSource="{Binding Events}" 
+                      DisplayMemberPath="name"
+                      SelectedValuePath="name"
+                      SelectedItem="{Binding SelectedEvent}"/>
+        </Grid>
+
+        <Grid Margin="0 16 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Vragenlijst nummer" Foreground="DarkSlateGray" FontWeight="Bold"/>
+            <Label Grid.Column="1" Content="{Binding SelectedQuestionnaire.Id}" />
+            <ComboBox Grid.Column="2"
+                      ItemsSource="{Binding Questionnaires}" 
+                      DisplayMemberPath="Id"
+                      SelectedValuePath="Id"
+                      SelectedItem="{Binding SelectedQuestionnaire}"/>
+        </Grid>
+
+        <Grid Margin="0 16 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Start datum" Foreground="DarkSlateGray" FontWeight="Bold"/>
+            <Label Grid.Column="1" Content="{Binding SelectedDate}" />
+            <DatePicker Grid.Column="2" SelectedDate="{Binding SelectedDate, Mode=TwoWay}"></DatePicker>
+        </Grid>
+
+        <Grid Margin="0 48 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Content="Terug naar beheer" Command="{Binding BackToPlanningManagementCommand}" />
+            <Button Grid.Column="2" Content="Update" Command="{Binding UpdatePlanningCommand}" />
+        </Grid>
+    </StackPanel>
 </UserControl>
