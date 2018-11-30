@@ -8,7 +8,7 @@
              xmlns:command="http://www.galasoft.ch/mvvmlight"
              xmlns:System="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="350" d:DesignWidth="800"
              DataContext="{Binding PlanningCreateViewModel, Source={StaticResource Locator}}">
 
     <StackPanel Background="DarkTurquoise">
@@ -54,7 +54,7 @@
             </Grid.ColumnDefinitions>
 
             <Label Content="Evenement" Foreground="DarkSlateGray" FontWeight="Bold"/>
-            <Label Grid.Column="1" Content="{Binding SelectedEvent.id}" />
+            <Label Grid.Column="1" Content="{Binding SelectedEvent.name}" />
             <ComboBox Grid.Column="2"
                       ItemsSource="{Binding Events}" 
                       DisplayMemberPath="name"
@@ -70,11 +70,11 @@
             </Grid.ColumnDefinitions>
 
             <Label Content="Vragenlijst nummer" Foreground="DarkSlateGray" FontWeight="Bold"/>
-            <Label Grid.Column="1" Content="{Binding SelectedQuestionnaire.id}" />
+            <Label Grid.Column="1" Content="{Binding SelectedQuestionnaire.Id}" />
             <ComboBox Grid.Column="2"
                       ItemsSource="{Binding Questionnaires}" 
-                      DisplayMemberPath="id"
-                      SelectedValuePath="id"
+                      DisplayMemberPath="Id"
+                      SelectedValuePath="Id"
                       SelectedItem="{Binding SelectedQuestionnaire}"/>
         </Grid>
 
@@ -86,8 +86,8 @@
             </Grid.ColumnDefinitions>
 
             <Label Content="Start datum" Foreground="DarkSlateGray" FontWeight="Bold"/>
-            <Label Grid.Column="1" Content="{Binding StartDate}" />
-            <DatePicker Grid.Column="2" SelectedDate="{Binding StartDate, Mode=TwoWay, TargetNullValue={x:Static System:DateTime.Now}}"></DatePicker>
+            <Label Grid.Column="1" Content="{Binding SelectedDate}" />
+            <DatePicker Grid.Column="2" SelectedDate="{Binding SelectedDate, Mode=TwoWay}"></DatePicker>
         </Grid>
 
         <Grid Margin="0 48 0 0">

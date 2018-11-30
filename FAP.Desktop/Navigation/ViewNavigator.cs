@@ -13,6 +13,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using FAP.Desktop.View;
+using FAP.Desktop.View.Planning;
 
 namespace FAP.Desktop.Navigation
 {
@@ -101,11 +102,11 @@ namespace FAP.Desktop.Navigation
                         DataContext = SimpleIoc.Default.GetInstance<LoginViewModel>()
                     });
                     break;
-                case nameof(PlanningBeheerView):
-                    _viewHistory.Push(new PlanningBeheerView());
-                    break;
+                case nameof(PlanningBeheerView): _viewHistory.Push(new PlanningBeheerView()); break;
+                case nameof(PlanningCreateView): _viewHistory.Push(new PlanningCreateView()); break;
+                case nameof(PlanningUpdateView): _viewHistory.Push(new PlanningUpdateView()); break;
 
-                default: throw new ArgumentException("Non existend view passed in arguments.");
+                default: throw new ArgumentException("Non existend view passed in arguments. Is the requested view registered above?");
             }
 
             ShowView();

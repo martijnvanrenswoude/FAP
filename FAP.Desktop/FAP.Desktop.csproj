@@ -87,6 +87,7 @@
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\Planning\PlanningBeheerViewModel.cs" />
     <Compile Include="ViewModel\Planning\PlanningCreateViewModel.cs" />
+    <Compile Include="ViewModel\Planning\PlanningUpdateViewModel.cs" />
     <Compile Include="ViewModel\RapportagesViewModel.cs" />
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="Navigation\ITransitionable.cs" />

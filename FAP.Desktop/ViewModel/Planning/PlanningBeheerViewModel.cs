@@ -55,17 +55,18 @@ namespace FAP.Desktop.ViewModel
             }
         }
 
-        public RelayCommand<Planning>   SelectedPlanningChangedCommand      { get; }
-        public RelayCommand             ResetSearchCommand                  { get; }
-        public RelayCommand             SearchPlanningCommand               { get; }
-        public RelayCommand             GoToEditPlanningViewCommand         { get; }
-        public RelayCommand             GoToNewPlanningViewCommand          { get; }
-        public RelayCommand             GoBackCommand                       { get; }
+        public RelayCommand<Planning> SelectedPlanningChangedCommand { get; }
+        public RelayCommand ResetSearchCommand { get; }
+        public RelayCommand SearchPlanningCommand { get; }
+        public RelayCommand GoToEditPlanningViewCommand { get; }
+        public RelayCommand GoToNewPlanningViewCommand { get; }
+        public RelayCommand DeletePlanningCommand { get; }
+        public RelayCommand GoBackCommand { get; }
 
-        public RelayCommand             OpenEmployeeSelectorCommand         { get; }
-        public RelayCommand             OpenCustomerSelectorCommand         { get; }
-        public RelayCommand             OpenEventSelectorCommand            { get; }
-        public RelayCommand             OpenQuestionnaireSelectorCommand    { get; }
+        public RelayCommand OpenEmployeeSelectorCommand { get; }
+        public RelayCommand OpenCustomerSelectorCommand { get; }
+        public RelayCommand OpenEventSelectorCommand { get; }
+        public RelayCommand OpenQuestionnaireSelectorCommand { get; }
 
         public PlanningBeheerViewModel(GenericRepository<Planning> repository)
         {
@@ -77,6 +78,7 @@ namespace FAP.Desktop.ViewModel
             SearchPlanningCommand = new RelayCommand(SearchPlanning);
             GoToEditPlanningViewCommand = new RelayCommand(GoToEditPlanning);
             GoToNewPlanningViewCommand = new RelayCommand(GoToCreatePlanning);
+            DeletePlanningCommand = new RelayCommand(DeletePlanning);
             GoBackCommand = new RelayCommand(GoBack);
             ResetSearchCommand = new RelayCommand(() => PlanningSearch = string.Empty);
         }
