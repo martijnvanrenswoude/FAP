@@ -32,6 +32,10 @@ namespace FAP.Desktop.ViewModel
             {
                 selectedCustomer = value;
                 base.RaisePropertyChanged();
+                if(selectedCustomer != null)
+                {
+                    customerRepository.Update(selectedCustomer);
+                }                
             }
         }
 
@@ -43,7 +47,7 @@ namespace FAP.Desktop.ViewModel
         public RelayCommand ShowContactCommand { get; set; }
         public RelayCommand GoBackCommand { get; set; }
         public RelayCommand DeleteCustomerCommand { get; set; }
-        public RelayCommand SaveUpdatesCommand { get; set; }
+
         //constructor
         public KlantBeheerViewModel(GenericRepository<Customer> customerRepository, GenericRepository<Contact> contactRepository)
         {
@@ -56,7 +60,7 @@ namespace FAP.Desktop.ViewModel
             GoBackCommand = new RelayCommand(GoBackView);
             DeleteCustomerCommand = new RelayCommand(DeleteCustomer);
             ShowContactCommand = new RelayCommand(ShowContactView);
-            SaveUpdatesCommand = new RelayCommand(SaveUpdates);
+
         }
 
         //functions
@@ -104,9 +108,6 @@ namespace FAP.Desktop.ViewModel
             addCustomerWindow = new AddCustomerWindow();
             addCustomerWindow.Show();
         }
-        private void SaveUpdates()
-        {
-            customerRepository.Update(selectedCustomer);
-        }
+
     }
 }
