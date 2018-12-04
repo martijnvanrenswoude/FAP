@@ -131,6 +131,9 @@
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="Navigation\ITransitionable.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\AddEventView.xaml.cs">
+      <DependentUpon>AddEventView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AddInspector.xaml.cs">
       <DependentUpon>AddInspector.xaml</DependentUpon>
     </Compile>
@@ -164,6 +167,10 @@
     <Compile Include="View\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\AddEventView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\AddInspector.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

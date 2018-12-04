@@ -13,6 +13,7 @@ namespace FAP.Desktop.ViewModel
         //Variables
         private Event _event; //Not according to coding guidelines, but event is a keyword in visualstudio
         private GenericRepository<Event> repository;
+        private GenericRepository<Contact> contactRepository;
         //Properties
         public string Name { get; set; }
         public int ContactID { get; set; }
@@ -30,6 +31,7 @@ namespace FAP.Desktop.ViewModel
         public EventViewModel()
         {
             _event = new Event();
+            contactRepository = new GenericRepository<Contact>(new FAPDatabaseEntities());
             repository = new GenericRepository<Event>(new FAPDatabaseEntities());
 
         }
@@ -37,22 +39,22 @@ namespace FAP.Desktop.ViewModel
 
         private void GetAllContacts()
         {
-            
+            contactRepository.Get();
         }
 
         public void RemoveEvent()
         {
-
+            repository.Delete(SelectedEvent);
         }
 
         public void UpdateEvent()
         {
-
+            repository.Update(SelectedEvent);
         }
         
         public void InsertEvent()
         {
-
+            repository.Insert(_event);
         }
     }
 }
