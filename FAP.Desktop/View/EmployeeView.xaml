@@ -12,7 +12,7 @@
             <Button Command="{Binding search}" Width="20" Content="🔎"/>
         </StackPanel>
 
-        <DataGrid RowHeight="30" SelectedItem="{Binding EditEmployee}" ItemsSource="{Binding employees}" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="False">
+        <DataGrid Height="450" RowHeight="30" SelectedItem="{Binding EditEmployee}" ItemsSource="{Binding employees}" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naam" Binding="{Binding name}" Width="*" />
                 <DataGridTextColumn Header="Achternaam" Binding="{Binding surname}" Width="*" />
@@ -31,5 +31,6 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Command="{Binding NewEmployeeButton}" Margin="0,5,0,0" HorizontalAlignment="Left" Width="150" Height="30" Content="Nieuwe medewerker"/>
+        <Button Command="{Binding GraphWindowButton}" Margin="0,5,0,0" HorizontalAlignment="Left" Width="150" Height="30" Content="Grafiek test"/>
     </StackPanel>
 </UserControl>

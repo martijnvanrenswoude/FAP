@@ -33,7 +33,7 @@
             <Label Grid.Row="4">Huisnummer:</Label>
             <TextBox Text="{Binding Housenumber}" Grid.Row="4" Grid.Column="1" Margin="0,0,0,10" />
             <Label Grid.Row="5">Geboortedatum:</Label>
-            <DatePicker SelectedDate="{Binding Birthdate}" DisplayDateStart="{Binding Birthdate}" DisplayDateEnd="{Binding DateEnd}" Grid.Row="5" Grid.Column="1" Margin="0,0,0,10"/>
+            <DatePicker SelectedDate="{Binding Birthdate}" DisplayDateStart="{Binding DateStart}" DisplayDateEnd="{Binding DateEnd}" Grid.Row="5" Grid.Column="1" Margin="0,0,0,10"/>
         </Grid>
 
         <Button Command="{Binding AddEmployeeButton}" Width="100" Height="30" HorizontalAlignment="Left" Content="Opslaan"/>

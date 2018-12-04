@@ -21,6 +21,7 @@ namespace FAP.Desktop.ViewModel
         public string Zipcode { get; set; }
         public string Housenumber { get; set; }
         public DateTime Birthdate{ get; set; }
+        public DateTime DateStart { get; set; }
         public DateTime DateEnd { get; set; }
 
         public RelayCommand GoBack { get; set; }
@@ -30,7 +31,8 @@ namespace FAP.Desktop.ViewModel
         {
             this._repository = _repository;
 
-            Birthdate = new DateTime(1900, 01, 01);
+            DateStart = new DateTime(1900, 01, 01);
+            Birthdate = DateStart;
             DateEnd = DateTime.Now;
 
             GoBack = new RelayCommand(GoBackCommand);
@@ -44,7 +46,7 @@ namespace FAP.Desktop.ViewModel
             Position = null;
             Zipcode = null;
             Housenumber = null;
-            Birthdate = new DateTime(1900, 01, 01);
+            Birthdate = DateStart;
         }
 
         private void AddEmployee()
