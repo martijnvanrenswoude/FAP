@@ -1,4 +1,4 @@
-﻿<Window x:Class="FAP.Desktop.View.AddEventView"
+﻿<Window x:Class="FAP.Desktop.View.AlterEventView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,24 +7,24 @@
         xmlns:System="clr-namespace:System;assembly=mscorlib"
         DataContext ="{Binding EventViewModel ,Source={StaticResource Locator}}"
         mc:Ignorable="d"
-        Title="AddEventView" Height="450" Width="800">
-
-    <StackPanel Margin="0,0,0,-71">
-        <TextBlock Text="Toevoegen Evenement" HorizontalAlignment="Center" FontSize="38"/>
-        <TextBlock Margin="5" Text="Eventnaam"/>
+        Title="AlterEventView" Height="450" Width="800">
+    <StackPanel>
+        <TextBlock Margin="5" FontSize="38" HorizontalAlignment="Center" Text="Wijzig Evenement"/>
+        
+        <TextBlock Margin="5" Text="Wijzig eventnaam"/>
         <TextBox Margin="5" Text="{Binding Name}"/>
-        <TextBlock Margin="5" Text="Selecteer klant"/>
-        <ComboBox Margin="5" ItemsSource="{Binding AllCustomers}" DisplayMemberPath="name" SelectedItem="{Binding SelectedCustomer}"/>
+        <TextBlock Margin="5" Text="Wijzig klant"/>
+        <ComboBox Margin="5" ItemsSource="{Binding AllCustomers}" DisplayMemberPath="name"/>
         <TextBlock Margin="5" Text="Selecteer contactpersoon"/>
-        <ComboBox Margin="5" ItemsSource="{Binding AllContacts}" DisplayMemberPath="name" SelectedItem="{Binding SelectedContact}"/>
+        <ComboBox Margin="5" ItemsSource="{Binding AllContacts}" DisplayMemberPath="name"/>
         <TextBlock Margin="5" Text="Datum evenement"/>
-        <DatePicker SelectedDate="{Binding Path=Date, Mode=TwoWay, TargetNullValue={x:Static System:DateTime.Now}}" />
+        <DatePicker Margin="5" SelectedDate="{Binding Path=Date, Mode=TwoWay, TargetNullValue={x:Static System:DateTime.Now}}" />
         <TextBlock Margin="5" Text="Aantal bezoekers"/>
         <TextBox Margin="5" Text="{Binding AmountOfVisitors}"/>
         <TextBlock Margin="5" Text="Oppervlakte evenemententerrein in m2"/>
         <TextBox Margin="5" Text="{Binding SurfaceAreaM2}"/>
         <TextBlock Margin="5" Text="Beschrijving"/>
         <TextBox Margin="5" Text="{Binding Description}"/>
-        <Button Content="TOEVOEGEN!!!!!!!!!!!!!!!!" Command="{Binding AddEventCommand}"/>
+        <Button Content="Update Event"  Command="{Binding UpdateEventCommand}"/>
     </StackPanel>
 </Window>
