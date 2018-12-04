@@ -10,6 +10,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace FAP.Desktop.ViewModel
 {
@@ -17,55 +18,96 @@ namespace FAP.Desktop.ViewModel
     {
         //vars
         private Customer selectedCustomer;
-        public ObservableCollection<Customer> AllCustomers { get; set; }
+        private GenericRepository<Customer> customerRepository;
+        private GenericRepository<Contact> contactRepository;
+        public Window addCustomerWindow;
+        public Window addContactWindow;
 
         //properties
         public Customer SelectedCustomer
+
         {
             get { return selectedCustomer; }
             set
             {
                 selectedCustomer = value;
                 base.RaisePropertyChanged();
+                if(selectedCustomer != null)
+                {
+                    customerRepository.Update(selectedCustomer);
+                }                
             }
         }
 
+
+        public ObservableCollection<Customer> AllCustomers { get; set; }
+
         //Commands
+        public RelayCommand NewCustomerCommand { get; set; }
+        public RelayCommand ShowContactCommand { get; set; }
         public RelayCommand GoBackCommand { get; set; }
-        public RelayCommand GoToContactViewCommand { get; set; }
         public RelayCommand DeleteCustomerCommand { get; set; }
-      
+
         //constructor
-        public KlantBeheerViewModel()
+        public KlantBeheerViewModel(GenericRepository<Customer> customerRepository, GenericRepository<Contact> contactRepository)
         {
+            this.customerRepository = customerRepository;
+            this.contactRepository = contactRepository;
             GetAllCustomers();
+
             //commands
-            GoBackCommand =         new RelayCommand(GoBackView);
-            GoToContactViewCommand =    new RelayCommand(GoToContactpersoonBeheerView);
-            DeleteCustomerCommand =     new RelayCommand(DeleteCustomer);
+            NewCustomerCommand = new RelayCommand(NewCustomer);
+            GoBackCommand = new RelayCommand(GoBackView);
+            DeleteCustomerCommand = new RelayCommand(DeleteCustomer);
+            ShowContactCommand = new RelayCommand(ShowContactView);
+
         }
 
         //functions
         private void GetAllCustomers()
         {
-            using (var context = new FAPDatabaseEntities())
-            {
-                AllCustomers = new ObservableCollection<Customer>(context.Customer.ToList());
-            }
+            AllCustomers = new ObservableCollection<Customer>(customerRepository.Get());
         }
-        
+        public void UpdateCustomer()
+        {
+            AllCustomers = null;
+            GetAllCustomers();
+            base.RaisePropertyChanged("AllCustomers");
+        }
+
         //command functions
+        private void ShowContactView()
+        {
+            addContactWindow = new AddContactWindow();
+            addContactWindow.Show();
+        }
         private void GoBackView()
         {
             ViewNavigator.Navigate("back");
         }
-        private void GoToContactpersoonBeheerView()
+        public void DeleteCustomer()
         {
-            ViewNavigator.Navigate(nameof(ContactpersoonBeheerView));
+            Contact SelectedContact = null;
+            List<Contact> c = new List<Contact>(contactRepository.Get());
+            foreach(Contact item in c)
+            {
+                if(item.customer_id == SelectedCustomer.id)
+                {
+                    SelectedContact = item;
+                }
+            }
+            if (SelectedContact != null)
+            {
+                contactRepository.Delete(SelectedContact);
+            }            
+            customerRepository.Delete(selectedCustomer);
+            AllCustomers.Remove(selectedCustomer);
         }
-        private void DeleteCustomer()
+        private void NewCustomer()
         {
-            AllCustomers.Remove(SelectedCustomer);
+            addCustomerWindow = new AddCustomerWindow();
+            addCustomerWindow.Show();
         }
+
     }
 }

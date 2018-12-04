@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace FAP.Desktop.View
 {
     /// <summary>
-    /// Interaction logic for ContactpersoonBeheerView.xaml
+    /// Interaction logic for AddContactWindow.xaml
     /// </summary>
-    public partial class ContactpersoonBeheerView : UserControl
+    public partial class AddContactWindow : Window
     {
-        public ContactpersoonBeheerView()
+        public AddContactWindow()
         {
             InitializeComponent();
         }
