@@ -64,8 +64,6 @@ namespace FAP.Desktop.ViewModel
         public RapportagesViewModel RapportagesView => ServiceLocator.Current.GetInstance<RapportagesViewModel>();
         public DataBeheerViewModel NieuweDataView => ServiceLocator.Current.GetInstance<DataBeheerViewModel>();
         public KlantBeheerViewModel KlantBeheerView => ServiceLocator.Current.GetInstance<KlantBeheerViewModel>();
-       
-
         public LoginViewModel LoginView => ServiceLocator.Current.GetInstance<LoginViewModel>();
 
         public AddCustomerViewModel AddCustomer

@@ -1,4 +1,5 @@
-﻿using FAP.Desktop.Navigation;
+﻿using CommonServiceLocator;
+using FAP.Desktop.Navigation;
 using FAP.Desktop.View;
 using FAP.Domain;
 using FAP.Repository.Generic;
@@ -13,6 +14,8 @@ namespace FAP.Desktop.ViewModel
 {
     public class HomeViewModel
     {
+        //vars
+        private int accesLevel;
         //commands
         public RelayCommand GoToSettingsViewCommand { get; set; }
         public RelayCommand GoToRapportagesViewCommand { get; set; }
@@ -21,6 +24,7 @@ namespace FAP.Desktop.ViewModel
         //constructor
         public HomeViewModel(GenericRepository<Customer> repository)
         {
+            this.accesLevel = getAccesLevel();
             //commands
             GoToSettingsViewCommand =       new RelayCommand(GoToSettingsView);
             GoToRapportagesViewCommand =    new RelayCommand(GoToRapportagesView);
@@ -28,9 +32,17 @@ namespace FAP.Desktop.ViewModel
             LogoutCommand =                 new RelayCommand(Logout);
         }
 
+        //functions
+        private int getAccesLevel()
+        {
+            var g = ServiceLocator.Current.GetInstance<LoginViewModel>();
+            return g.AccesLevel;
+        }
+        
         //command functions
         private void Logout()
         {
+            accesLevel = -1;
             ViewNavigator.Navigate(nameof(LoginView));
         }
         private void GoToSettingsView()
@@ -39,7 +51,11 @@ namespace FAP.Desktop.ViewModel
         }
         private void GoToRapportagesView()
         {
-            ViewNavigator.Navigate(nameof(RapportagesView));
+            this.accesLevel = getAccesLevel();
+            if (accesLevel == 1 || accesLevel == 3)
+            {
+                ViewNavigator.Navigate(nameof(RapportagesView));
+            }            
         }
         private void GoToDataBeheerView()
         {

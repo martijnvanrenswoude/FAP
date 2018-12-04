@@ -15,6 +15,8 @@ namespace FAP.Desktop.ViewModel
     public class LoginViewModel : ViewModelBase
     {
         //vars
+        GenericRepository<Inlogdata> loginDataRepository;
+        GenericRepository<Employee> employeeRepository;
         private List<Inlogdata> inlogdata;
         private String username;
         private String password;
@@ -47,14 +49,18 @@ namespace FAP.Desktop.ViewModel
                 base.RaisePropertyChanged();
             }
         }
+        public int AccesLevel { get; set; }
         //commands
         public RelayCommand InlogAsUserCommand { get; set; }
         public RelayCommand InlogAsInspectorCommand { get; set; }
         public RelayCommand BypassLoginCommand { get; set; }
         
         //constructor
-        public LoginViewModel()
+        public LoginViewModel(GenericRepository<Inlogdata> iRepo, GenericRepository<Employee> eRepo)
         {
+            //set repos
+            loginDataRepository = iRepo;
+            employeeRepository = eRepo;
             GetAllLoginData();
             //set commands
             InlogAsInspectorCommand =   new RelayCommand(InlogAsInspector);
@@ -64,32 +70,29 @@ namespace FAP.Desktop.ViewModel
         //functions
         private void GetAllLoginData()
         {
-            using (var context = new FAPDatabaseEntities())
-            {
-
-                inlogdata = context.Inlogdata.ToList();
-            }
+            inlogdata = new List<Inlogdata>(loginDataRepository.Get());            
         }
 
         //command fuctions
         private void InlogAsUser()
         {
-            foreach(var i in inlogdata)
+            if (username != null && password != null)
             {
-                if(username != null && password != null)
+                foreach (var i in inlogdata)
                 {
                     if (username.Equals(i.username) && password.Equals(i.password))
                     {
                         username = null;
                         password = null;
+                        AccesLevel = getAccesLevel(i.Id);
                         ViewNavigator.Navigate(nameof(HomeView));
                         return;
                     }
-                    LoginMessage = "Gebruikersnaam of wachtwoord is incorrect";
-                    return;
                 }
-                LoginMessage = "Vul een Gebruikersnaam en wachtwoord in";
+                LoginMessage = "Gebruikersnaam of wachtwoord is incorrect";
+                return;
             }
+            LoginMessage = "Vul een Gebruikersnaam en wachtwoord in";
         }
         private void InlogAsInspector()
         {
@@ -97,7 +100,21 @@ namespace FAP.Desktop.ViewModel
         }
         private void BypassLogin()
         {
+            AccesLevel = 1;
             ViewNavigator.Navigate(nameof(HomeView));
+        }
+
+        private int getAccesLevel(int id)
+        {
+            List<Employee> employees = new List<Employee>(employeeRepository.Get());
+            foreach( var e in employees)
+            {
+                if(e.id == id)
+                {
+                    return (int) e.acces_level;
+                }
+            }
+            return -1;
         }
 
 
