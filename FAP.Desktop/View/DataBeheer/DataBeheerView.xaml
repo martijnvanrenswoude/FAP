@@ -14,7 +14,11 @@
         <StackPanel Orientation="Horizontal">
             <StackPanel>
                 <Button Width="350" Height="75"   Content="Klantbeheer"          Margin="0 0 0 25"   FontSize="30"  Command="{Binding GoToKlantBeheerViewCommand}"/>
-
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <Button Width="350" Height="75"   Content="Medewerkerbeheer"          Margin="0 0 0 25"   FontSize="30"  Command="{Binding GoToMedewerkerBeheerViewCommand}"/>
             </StackPanel>
         </StackPanel>
     </StackPanel>

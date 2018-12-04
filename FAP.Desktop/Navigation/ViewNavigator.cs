@@ -101,6 +101,18 @@ namespace FAP.Desktop.Navigation
                         DataContext = SimpleIoc.Default.GetInstance<LoginViewModel>()
                     });
                     break;
+                case nameof(EmployeeView):
+                    _viewHistory.Push(new EmployeeView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<EmployeeViewModel>()
+                    });
+                    break;
+                case nameof(CreateEmployeeView):
+                    _viewHistory.Push(new CreateEmployeeView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<CreateEmployeeViewModel>()
+                    });
+                    break;
 
 
                 default: throw new ArgumentException("Non existend view passed in arguments.");

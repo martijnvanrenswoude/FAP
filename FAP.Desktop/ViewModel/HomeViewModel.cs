@@ -24,7 +24,6 @@ namespace FAP.Desktop.ViewModel
         //constructor
         public HomeViewModel(GenericRepository<Customer> repository)
         {
-            this.accesLevel = getAccesLevel();
             //commands
             GoToSettingsViewCommand =       new RelayCommand(GoToSettingsView);
             GoToRapportagesViewCommand =    new RelayCommand(GoToRapportagesView);

@@ -55,7 +55,10 @@ namespace FAP.Desktop.ViewModel
             SimpleIoc.Default.Register<DataBeheerViewModel>();
             SimpleIoc.Default.Register<KlantBeheerViewModel>();
             SimpleIoc.Default.Register<LoginViewModel>();
-            
+            SimpleIoc.Default.Register<EmployeeViewModel>();
+            SimpleIoc.Default.Register<CreateEmployeeViewModel>();
+
+
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
@@ -65,6 +68,9 @@ namespace FAP.Desktop.ViewModel
         public DataBeheerViewModel NieuweDataView => ServiceLocator.Current.GetInstance<DataBeheerViewModel>();
         public KlantBeheerViewModel KlantBeheerView => ServiceLocator.Current.GetInstance<KlantBeheerViewModel>();
         public LoginViewModel LoginView => ServiceLocator.Current.GetInstance<LoginViewModel>();
+        public EmployeeViewModel EmployeeView => ServiceLocator.Current.GetInstance<EmployeeViewModel>();
+
+        public CreateEmployeeViewModel CreateEmployeeView => ServiceLocator.Current.GetInstance<CreateEmployeeViewModel>();
 
         public AddCustomerViewModel AddCustomer
         {
