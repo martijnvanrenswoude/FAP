@@ -56,19 +56,19 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar(max)" />
-          <Property Name="telephone_nr" Type="int" />
-          <Property Name="postcode" Type="nvarchar" MaxLength="6" />
-          <Property Name="house number" Type="nvarchar" MaxLength="10" />
-          <Property Name="email" Type="nvarchar(max)" />
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="telephone_nr" Type="int" Nullable="false" />
+          <Property Name="postcode" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="house number" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="email" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Department">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar(max)" />
-          <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="description" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -90,11 +90,14 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="contact_id" Type="int" Nullable="false" />
-          <Property Name="name" Type="nvarchar(max)" />
-          <Property Name="date" Type="datetime" />
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
           <Property Name="amount_visitors" Type="int" />
           <Property Name="surface area_m2" Type="int" />
           <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="postcode" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="house_number" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="customer_id" Type="int" />
         </EntityType>
         <EntityType Name="Inlogdata">
           <Key>
@@ -128,7 +131,7 @@
             <PropertyRef Name="inspector_id" />
           </Key>
           <Property Name="inspector_id" Type="int" Nullable="false" />
-          <Property Name="date" Type="date" />
+          <Property Name="date" Type="date" Nullable="false" />
           <Property Name="available_from" Type="datetime" />
           <Property Name="available_until" Type="datetime" />
         </EntityType>
@@ -137,12 +140,12 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="employee_id" Type="int" />
-          <Property Name="quotation_id" Type="int" />
-          <Property Name="payment_status" Type="int" />
-          <Property Name="sum" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="deadline" Type="datetime" />
-          <Property Name="date" Type="date" />
+          <Property Name="employee_id" Type="int" Nullable="false" />
+          <Property Name="quotation_id" Type="int" Nullable="false" />
+          <Property Name="payment_status" Type="int" Nullable="false" />
+          <Property Name="sum" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="deadline" Type="datetime" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
           <Property Name="image" Type="image" />
         </EntityType>
         <EntityType Name="MultipleChoice">
@@ -180,7 +183,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="descriptiom" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Plan_inspector">
@@ -224,13 +227,13 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="plan_id" Type="int" />
-          <Property Name="customer_id" Type="int" />
-          <Property Name="employee_id" Type="int" />
-          <Property Name="event_id" Type="int" />
-          <Property Name="sum" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="deadline" Type="datetime" />
-          <Property Name="date" Type="date" />
+          <Property Name="plan_id" Type="int" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="employee_id" Type="int" Nullable="false" />
+          <Property Name="event_id" Type="int" Nullable="false" />
+          <Property Name="sum" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="deadline" Type="datetime" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
           <Property Name="image" Type="image" />
         </EntityType>
         <EntityType Name="StandardQuestion">
@@ -346,6 +349,18 @@
         <!--Errors Found During Generation:
 warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
         <Association Name="FK__Event__contact_i__3C34F16F" />-->
+        <Association Name="FK__Event__customer___607251E5">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Inlogdata__Id__37703C52">
           <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
           <End Role="Inlogdata" Type="Self.Inlogdata" Multiplicity="0..1" />
@@ -382,8 +397,8 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Invoice__employe__2EDAF651">
-          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+        <Association Name="FK__Invoice__employe__4D5F7D71">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employee">
@@ -394,8 +409,8 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Invoice__payment__6477ECF3">
-          <End Role="Payment_status" Type="Self.Payment_status" Multiplicity="0..1" />
+        <Association Name="FK__Invoice__payment__4E53A1AA">
+          <End Role="Payment_status" Type="Self.Payment_status" Multiplicity="1" />
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Payment_status">
@@ -406,8 +421,8 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Invoice__quotati__6383C8BA">
-          <End Role="Quotation" Type="Self.Quotation" Multiplicity="0..1" />
+        <Association Name="FK__Invoice__quotati__4F47C5E3">
+          <End Role="Quotation" Type="Self.Quotation" Multiplicity="1" />
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Quotation">
@@ -562,8 +577,8 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quotation__custo__6D0D32F4">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+        <Association Name="FK__Quotation__custo__503BEA1C">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
           <End Role="Quotation" Type="Self.Quotation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
@@ -574,8 +589,8 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quotation__emplo__30C33EC3">
-          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+        <Association Name="FK__Quotation__emplo__51300E55">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
           <End Role="Quotation" Type="Self.Quotation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employee">
@@ -586,8 +601,8 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quotation__event__3E1D39E1">
-          <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
+        <Association Name="FK__Quotation__event__5224328E">
+          <End Role="Event" Type="Self.Event" Multiplicity="1" />
           <End Role="Quotation" Type="Self.Quotation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Event">
@@ -598,8 +613,8 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quotation__plan___6C190EBB">
-          <End Role="Planning" Type="Self.Planning" Multiplicity="0..1" />
+        <Association Name="FK__Quotation__plan___531856C7">
+          <End Role="Planning" Type="Self.Planning" Multiplicity="1" />
           <End Role="Quotation" Type="Self.Quotation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Planning">
@@ -689,6 +704,10 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <End Role="Department" EntitySet="Department" />
             <End Role="Employee" EntitySet="Employee" />
           </AssociationSet>
+          <AssociationSet Name="FK__Event__customer___607251E5" Association="Self.FK__Event__customer___607251E5">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
           <AssociationSet Name="FK__Inlogdata__Id__37703C52" Association="Self.FK__Inlogdata__Id__37703C52">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Inlogdata" EntitySet="Inlogdata" />
@@ -701,15 +720,15 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <End Role="Inspector" EntitySet="Inspector" />
             <End Role="Inspector_Bank_Account" EntitySet="Inspector_Bank_Account" />
           </AssociationSet>
-          <AssociationSet Name="FK__Invoice__employe__2EDAF651" Association="Self.FK__Invoice__employe__2EDAF651">
+          <AssociationSet Name="FK__Invoice__employe__4D5F7D71" Association="Self.FK__Invoice__employe__4D5F7D71">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Invoice" EntitySet="Invoice" />
           </AssociationSet>
-          <AssociationSet Name="FK__Invoice__payment__6477ECF3" Association="Self.FK__Invoice__payment__6477ECF3">
+          <AssociationSet Name="FK__Invoice__payment__4E53A1AA" Association="Self.FK__Invoice__payment__4E53A1AA">
             <End Role="Payment_status" EntitySet="Payment_status" />
             <End Role="Invoice" EntitySet="Invoice" />
           </AssociationSet>
-          <AssociationSet Name="FK__Invoice__quotati__6383C8BA" Association="Self.FK__Invoice__quotati__6383C8BA">
+          <AssociationSet Name="FK__Invoice__quotati__4F47C5E3" Association="Self.FK__Invoice__quotati__4F47C5E3">
             <End Role="Quotation" EntitySet="Quotation" />
             <End Role="Invoice" EntitySet="Invoice" />
           </AssociationSet>
@@ -761,19 +780,19 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <End Role="Questionnaire" EntitySet="Questionnaire" />
             <End Role="Question" EntitySet="Question" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quotation__custo__6D0D32F4" Association="Self.FK__Quotation__custo__6D0D32F4">
+          <AssociationSet Name="FK__Quotation__custo__503BEA1C" Association="Self.FK__Quotation__custo__503BEA1C">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Quotation" EntitySet="Quotation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quotation__emplo__30C33EC3" Association="Self.FK__Quotation__emplo__30C33EC3">
+          <AssociationSet Name="FK__Quotation__emplo__51300E55" Association="Self.FK__Quotation__emplo__51300E55">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Quotation" EntitySet="Quotation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quotation__event__3E1D39E1" Association="Self.FK__Quotation__event__3E1D39E1">
+          <AssociationSet Name="FK__Quotation__event__5224328E" Association="Self.FK__Quotation__event__5224328E">
             <End Role="Event" EntitySet="Event" />
             <End Role="Quotation" EntitySet="Quotation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quotation__plan___6C190EBB" Association="Self.FK__Quotation__plan___6C190EBB">
+          <AssociationSet Name="FK__Quotation__plan___531856C7" Association="Self.FK__Quotation__plan___531856C7">
             <End Role="Planning" EntitySet="Planning" />
             <End Role="Quotation" EntitySet="Quotation" />
           </AssociationSet>
@@ -848,22 +867,23 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="telephone_nr" Type="Int32" />
-          <Property Name="postcode" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="house_number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="telephone_nr" Type="Int32" Nullable="false" />
+          <Property Name="postcode" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="house_number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Contacts" Relationship="Self.FK__Contact__custome__5BE2A6F2" FromRole="Customer" ToRole="Contact" />
+          <NavigationProperty Name="Events" Relationship="Self.FK__Event__customer___607251E5" FromRole="Customer" ToRole="Event" />
           <NavigationProperty Name="Plannings" Relationship="Self.FK__Planning__custom__6754599E" FromRole="Customer" ToRole="Planning" />
-          <NavigationProperty Name="Quotations" Relationship="Self.FK__Quotation__custo__6D0D32F4" FromRole="Customer" ToRole="Quotation" />
+          <NavigationProperty Name="Quotations" Relationship="Self.FK__Quotation__custo__503BEA1C" FromRole="Customer" ToRole="Quotation" />
         </EntityType>
         <EntityType Name="Department">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Employees" Relationship="Self.FK__Employee__depart__395884C4" FromRole="Department" ToRole="Employee" />
         </EntityType>
         <EntityType Name="Employee">
@@ -882,9 +902,9 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
           <NavigationProperty Name="Bank_Account" Relationship="Self.FK__Bank_Acco__emplo__2CF2ADDF" FromRole="Employee" ToRole="Bank_Account" />
           <NavigationProperty Name="Department" Relationship="Self.FK__Employee__depart__395884C4" FromRole="Employee" ToRole="Department" />
           <NavigationProperty Name="Inlogdata" Relationship="Self.FK__Inlogdata__Id__37703C52" FromRole="Employee" ToRole="Inlogdata" />
-          <NavigationProperty Name="Invoices" Relationship="Self.FK__Invoice__employe__2EDAF651" FromRole="Employee" ToRole="Invoice" />
+          <NavigationProperty Name="Invoices" Relationship="Self.FK__Invoice__employe__4D5F7D71" FromRole="Employee" ToRole="Invoice" />
           <NavigationProperty Name="Plannings" Relationship="Self.FK__Planning__employ__2FCF1A8A" FromRole="Employee" ToRole="Planning" />
-          <NavigationProperty Name="Quotations" Relationship="Self.FK__Quotation__emplo__30C33EC3" FromRole="Employee" ToRole="Quotation" />
+          <NavigationProperty Name="Quotations" Relationship="Self.FK__Quotation__emplo__51300E55" FromRole="Employee" ToRole="Quotation" />
         </EntityType>
         <EntityType Name="Event">
           <Key>
@@ -892,13 +912,17 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="contact_id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="amount_visitors" Type="Int32" />
           <Property Name="surface_area_m2" Type="Int32" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="postcode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="house_number" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="customer_id" Type="Int32" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__Event__customer___607251E5" FromRole="Event" ToRole="Customer" />
           <NavigationProperty Name="Plannings" Relationship="Self.FK__Planning__event___3D2915A8" FromRole="Event" ToRole="Planning" />
-          <NavigationProperty Name="Quotations" Relationship="Self.FK__Quotation__event__3E1D39E1" FromRole="Event" ToRole="Quotation" />
+          <NavigationProperty Name="Quotations" Relationship="Self.FK__Quotation__event__5224328E" FromRole="Event" ToRole="Quotation" />
         </EntityType>
         <EntityType Name="Inlogdata">
           <Key>
@@ -941,7 +965,7 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <PropertyRef Name="inspector_id" />
           </Key>
           <Property Name="inspector_id" Type="Int32" Nullable="false" />
-          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="available_from" Type="DateTime" Precision="3" />
           <Property Name="available_until" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Inspector" Relationship="Self.FK__Inspector__inspe__3587F3E0" FromRole="Inspector_shedule" ToRole="Inspector" />
@@ -951,16 +975,16 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="employee_id" Type="Int32" />
-          <Property Name="quotation_id" Type="Int32" />
-          <Property Name="payment_status" Type="Int32" />
-          <Property Name="sum" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="deadline" Type="DateTime" Precision="3" />
-          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="employee_id" Type="Int32" Nullable="false" />
+          <Property Name="quotation_id" Type="Int32" Nullable="false" />
+          <Property Name="payment_status" Type="Int32" Nullable="false" />
+          <Property Name="sum" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="deadline" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="Employee" Relationship="Self.FK__Invoice__employe__2EDAF651" FromRole="Invoice" ToRole="Employee" />
-          <NavigationProperty Name="Payment_status1" Relationship="Self.FK__Invoice__payment__6477ECF3" FromRole="Invoice" ToRole="Payment_status" />
-          <NavigationProperty Name="Quotation" Relationship="Self.FK__Invoice__quotati__6383C8BA" FromRole="Invoice" ToRole="Quotation" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__Invoice__employe__4D5F7D71" FromRole="Invoice" ToRole="Employee" />
+          <NavigationProperty Name="Payment_status1" Relationship="Self.FK__Invoice__payment__4E53A1AA" FromRole="Invoice" ToRole="Payment_status" />
+          <NavigationProperty Name="Quotation" Relationship="Self.FK__Invoice__quotati__4F47C5E3" FromRole="Invoice" ToRole="Quotation" />
         </EntityType>
         <EntityType Name="MultipleChoice">
           <Key>
@@ -1003,9 +1027,9 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="descriptiom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Invoices" Relationship="Self.FK__Invoice__payment__6477ECF3" FromRole="Payment_status" ToRole="Invoice" />
+          <NavigationProperty Name="Invoices" Relationship="Self.FK__Invoice__payment__4E53A1AA" FromRole="Payment_status" ToRole="Invoice" />
         </EntityType>
         <EntityType Name="Planning">
           <Key>
@@ -1021,7 +1045,7 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
           <NavigationProperty Name="Employee" Relationship="Self.FK__Planning__employ__2FCF1A8A" FromRole="Planning" ToRole="Employee" />
           <NavigationProperty Name="Event" Relationship="Self.FK__Planning__event___3D2915A8" FromRole="Planning" ToRole="Event" />
           <NavigationProperty Name="Questionnaire" Relationship="Self.FK__Planning__questi__693CA210" FromRole="Planning" ToRole="Questionnaire" />
-          <NavigationProperty Name="Quotations" Relationship="Self.FK__Quotation__plan___6C190EBB" FromRole="Planning" ToRole="Quotation" />
+          <NavigationProperty Name="Quotations" Relationship="Self.FK__Quotation__plan___531856C7" FromRole="Planning" ToRole="Quotation" />
           <NavigationProperty Name="Inspectors" Relationship="Self.Plan_inspector" FromRole="Planning" ToRole="Inspector" />
         </EntityType>
         <EntityType Name="Question">
@@ -1054,19 +1078,19 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="plan_id" Type="Int32" />
-          <Property Name="customer_id" Type="Int32" />
-          <Property Name="employee_id" Type="Int32" />
-          <Property Name="event_id" Type="Int32" />
-          <Property Name="sum" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="deadline" Type="DateTime" Precision="3" />
-          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="plan_id" Type="Int32" Nullable="false" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="employee_id" Type="Int32" Nullable="false" />
+          <Property Name="event_id" Type="Int32" Nullable="false" />
+          <Property Name="sum" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="deadline" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="Customer" Relationship="Self.FK__Quotation__custo__6D0D32F4" FromRole="Quotation" ToRole="Customer" />
-          <NavigationProperty Name="Employee" Relationship="Self.FK__Quotation__emplo__30C33EC3" FromRole="Quotation" ToRole="Employee" />
-          <NavigationProperty Name="Event" Relationship="Self.FK__Quotation__event__3E1D39E1" FromRole="Quotation" ToRole="Event" />
-          <NavigationProperty Name="Invoices" Relationship="Self.FK__Invoice__quotati__6383C8BA" FromRole="Quotation" ToRole="Invoice" />
-          <NavigationProperty Name="Planning" Relationship="Self.FK__Quotation__plan___6C190EBB" FromRole="Quotation" ToRole="Planning" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__Quotation__custo__503BEA1C" FromRole="Quotation" ToRole="Customer" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__Quotation__emplo__51300E55" FromRole="Quotation" ToRole="Employee" />
+          <NavigationProperty Name="Event" Relationship="Self.FK__Quotation__event__5224328E" FromRole="Quotation" ToRole="Event" />
+          <NavigationProperty Name="Invoices" Relationship="Self.FK__Invoice__quotati__4F47C5E3" FromRole="Quotation" ToRole="Invoice" />
+          <NavigationProperty Name="Planning" Relationship="Self.FK__Quotation__plan___531856C7" FromRole="Quotation" ToRole="Planning" />
         </EntityType>
         <EntityType Name="StandardQuestion">
           <Key>
@@ -1169,6 +1193,18 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Event__customer___607251E5">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Planning__custom__6754599E">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
           <End Role="Planning" Type="Self.Planning" Multiplicity="*" />
@@ -1181,8 +1217,8 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quotation__custo__6D0D32F4">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+        <Association Name="FK__Quotation__custo__503BEA1C">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
           <End Role="Quotation" Type="Self.Quotation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
@@ -1217,8 +1253,8 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Invoice__employe__2EDAF651">
-          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+        <Association Name="FK__Invoice__employe__4D5F7D71">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employee">
@@ -1241,8 +1277,8 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quotation__emplo__30C33EC3">
-          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+        <Association Name="FK__Quotation__emplo__51300E55">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
           <End Role="Quotation" Type="Self.Quotation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employee">
@@ -1265,8 +1301,8 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quotation__event__3E1D39E1">
-          <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
+        <Association Name="FK__Quotation__event__5224328E">
+          <End Role="Event" Type="Self.Event" Multiplicity="1" />
           <End Role="Quotation" Type="Self.Quotation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Event">
@@ -1325,8 +1361,8 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Invoice__payment__6477ECF3">
-          <End Role="Payment_status" Type="Self.Payment_status" Multiplicity="0..1" />
+        <Association Name="FK__Invoice__payment__4E53A1AA">
+          <End Role="Payment_status" Type="Self.Payment_status" Multiplicity="1" />
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Payment_status">
@@ -1337,8 +1373,8 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Invoice__quotati__6383C8BA">
-          <End Role="Quotation" Type="Self.Quotation" Multiplicity="0..1" />
+        <Association Name="FK__Invoice__quotati__4F47C5E3">
+          <End Role="Quotation" Type="Self.Quotation" Multiplicity="1" />
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Quotation">
@@ -1397,8 +1433,8 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quotation__plan___6C190EBB">
-          <End Role="Planning" Type="Self.Planning" Multiplicity="0..1" />
+        <Association Name="FK__Quotation__plan___531856C7">
+          <End Role="Planning" Type="Self.Planning" Multiplicity="1" />
           <End Role="Quotation" Type="Self.Quotation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Planning">
@@ -1499,11 +1535,15 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Contact" EntitySet="Contacts" />
           </AssociationSet>
+          <AssociationSet Name="FK__Event__customer___607251E5" Association="Self.FK__Event__customer___607251E5">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Event" EntitySet="Events" />
+          </AssociationSet>
           <AssociationSet Name="FK__Planning__custom__6754599E" Association="Self.FK__Planning__custom__6754599E">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Planning" EntitySet="Plannings" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quotation__custo__6D0D32F4" Association="Self.FK__Quotation__custo__6D0D32F4">
+          <AssociationSet Name="FK__Quotation__custo__503BEA1C" Association="Self.FK__Quotation__custo__503BEA1C">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Quotation" EntitySet="Quotations" />
           </AssociationSet>
@@ -1515,7 +1555,7 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <End Role="Employee" EntitySet="Employees" />
             <End Role="Inlogdata" EntitySet="Inlogdatas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Invoice__employe__2EDAF651" Association="Self.FK__Invoice__employe__2EDAF651">
+          <AssociationSet Name="FK__Invoice__employe__4D5F7D71" Association="Self.FK__Invoice__employe__4D5F7D71">
             <End Role="Employee" EntitySet="Employees" />
             <End Role="Invoice" EntitySet="Invoices" />
           </AssociationSet>
@@ -1523,7 +1563,7 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <End Role="Employee" EntitySet="Employees" />
             <End Role="Planning" EntitySet="Plannings" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quotation__emplo__30C33EC3" Association="Self.FK__Quotation__emplo__30C33EC3">
+          <AssociationSet Name="FK__Quotation__emplo__51300E55" Association="Self.FK__Quotation__emplo__51300E55">
             <End Role="Employee" EntitySet="Employees" />
             <End Role="Quotation" EntitySet="Quotations" />
           </AssociationSet>
@@ -1531,7 +1571,7 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <End Role="Event" EntitySet="Events" />
             <End Role="Planning" EntitySet="Plannings" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quotation__event__3E1D39E1" Association="Self.FK__Quotation__event__3E1D39E1">
+          <AssociationSet Name="FK__Quotation__event__5224328E" Association="Self.FK__Quotation__event__5224328E">
             <End Role="Event" EntitySet="Events" />
             <End Role="Quotation" EntitySet="Quotations" />
           </AssociationSet>
@@ -1551,11 +1591,11 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <End Role="Inspector" EntitySet="Inspectors" />
             <End Role="OpenSubjectQuestion" EntitySet="OpenSubjectQuestions" />
           </AssociationSet>
-          <AssociationSet Name="FK__Invoice__payment__6477ECF3" Association="Self.FK__Invoice__payment__6477ECF3">
+          <AssociationSet Name="FK__Invoice__payment__4E53A1AA" Association="Self.FK__Invoice__payment__4E53A1AA">
             <End Role="Payment_status" EntitySet="Payment_status" />
             <End Role="Invoice" EntitySet="Invoices" />
           </AssociationSet>
-          <AssociationSet Name="FK__Invoice__quotati__6383C8BA" Association="Self.FK__Invoice__quotati__6383C8BA">
+          <AssociationSet Name="FK__Invoice__quotati__4F47C5E3" Association="Self.FK__Invoice__quotati__4F47C5E3">
             <End Role="Quotation" EntitySet="Quotations" />
             <End Role="Invoice" EntitySet="Invoices" />
           </AssociationSet>
@@ -1575,7 +1615,7 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <End Role="Questionnaire" EntitySet="Questionnaires" />
             <End Role="Planning" EntitySet="Plannings" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quotation__plan___6C190EBB" Association="Self.FK__Quotation__plan___6C190EBB">
+          <AssociationSet Name="FK__Quotation__plan___531856C7" Association="Self.FK__Quotation__plan___531856C7">
             <End Role="Planning" EntitySet="Plannings" />
             <End Role="Quotation" EntitySet="Quotations" />
           </AssociationSet>
@@ -1696,6 +1736,9 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
                 <ScalarProperty Name="amount_visitors" ColumnName="amount_visitors" />
                 <ScalarProperty Name="surface_area_m2" ColumnName="surface area_m2" />
                 <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+                <ScalarProperty Name="house_number" ColumnName="house_number" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

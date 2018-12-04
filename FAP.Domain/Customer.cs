@@ -18,19 +18,22 @@ namespace FAP.Domain
         public Customer()
         {
             this.Contacts = new HashSet<Contact>();
+            this.Events = new HashSet<Event>();
             this.Plannings = new HashSet<Planning>();
             this.Quotations = new HashSet<Quotation>();
         }
     
         public int id { get; set; }
         public string name { get; set; }
-        public Nullable<int> telephone_nr { get; set; }
+        public int telephone_nr { get; set; }
         public string postcode { get; set; }
         public string house_number { get; set; }
         public string email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Contact> Contacts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Event> Events { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Planning> Plannings { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

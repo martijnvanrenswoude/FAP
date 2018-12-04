@@ -9,5 +9,7 @@
     [description] NVARCHAR(MAX) NULL,
 	[postcode] NCHAR(10) NOT NULL, 
     [house_number] NCHAR(10) NOT NULL, 
-    FOREIGN KEY (contact_id) REFERENCES Contact([contact_id])
+    [customer_id] INT NULL, 
+    FOREIGN KEY (contact_id) REFERENCES Contact([contact_id]),
+	FOREIGN KEY (customer_id) References Customer(id)
 )

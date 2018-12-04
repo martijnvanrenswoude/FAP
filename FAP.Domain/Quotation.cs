@@ -21,13 +21,13 @@ namespace FAP.Domain
         }
     
         public int id { get; set; }
-        public Nullable<int> plan_id { get; set; }
-        public Nullable<int> customer_id { get; set; }
-        public Nullable<int> employee_id { get; set; }
-        public Nullable<int> event_id { get; set; }
-        public Nullable<decimal> sum { get; set; }
-        public Nullable<System.DateTime> deadline { get; set; }
-        public Nullable<System.DateTime> date { get; set; }
+        public int plan_id { get; set; }
+        public int customer_id { get; set; }
+        public int employee_id { get; set; }
+        public int event_id { get; set; }
+        public decimal sum { get; set; }
+        public System.DateTime deadline { get; set; }
+        public System.DateTime date { get; set; }
         public byte[] image { get; set; }
     
         public virtual Customer Customer { get; set; }

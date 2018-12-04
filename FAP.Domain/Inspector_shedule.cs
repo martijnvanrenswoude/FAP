@@ -15,7 +15,7 @@ namespace FAP.Domain
     public partial class Inspector_shedule
     {
         public int inspector_id { get; set; }
-        public Nullable<System.DateTime> date { get; set; }
+        public System.DateTime date { get; set; }
         public Nullable<System.DateTime> available_from { get; set; }
         public Nullable<System.DateTime> available_until { get; set; }
     

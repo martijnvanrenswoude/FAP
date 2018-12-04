@@ -22,3 +22,4 @@ C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\Model.xml
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\refactor.xml
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\postdeploy.sql
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\predeploy.sql
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\FAP.Database.sqlprojAssemblyReference.cache
