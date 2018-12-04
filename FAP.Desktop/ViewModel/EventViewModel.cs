@@ -35,10 +35,13 @@ namespace FAP.Desktop.ViewModel
         public List<Customer> AllCustomers { get; set; }
         public Customer SelectedCustomer { get {return  SelectedCustomer; } set { RaisePropertyChanged("AllContacts"); } }
 
+        public string SearchKey { get; set; }
+
         //Command properties
-        ICommand UpdateEventCommand { get; set; }
-        ICommand AddEventCommand { get; set; }
-        ICommand DeleteEventCommand { get; set; }
+        public ICommand UpdateEventCommand { get; set; }
+        public ICommand AddEventCommand { get; set; }
+        public ICommand DeleteEventCommand { get; set; }
+        public ICommand SearchEventCommand { get; set; }
         //Constructor
         public EventViewModel()
         {
@@ -50,6 +53,7 @@ namespace FAP.Desktop.ViewModel
             UpdateEventCommand = new RelayCommand(UpdateEvent);
             AddEventCommand = new RelayCommand(InsertEvent);
             DeleteEventCommand = new RelayCommand(RemoveEvent);
+            SearchEventCommand = new RelayCommand(Search);
 
 
         }
@@ -78,6 +82,12 @@ namespace FAP.Desktop.ViewModel
         public void GetAllCustomer()
         {
             customerRepository.Get();
+        }
+
+        private void Search()
+        {
+            repository.Get(e => e.name == SearchKey);
+            RaisePropertyChanged("Events");
         }
     }
 }

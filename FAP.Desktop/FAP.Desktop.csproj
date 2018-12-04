@@ -149,6 +149,9 @@
     <Compile Include="View\DataBeheerView.xaml.cs">
       <DependentUpon>DataBeheerView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DeleteEventView.xaml.cs">
+      <DependentUpon>DeleteEventView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DeleteInspectorView.xaml.cs">
       <DependentUpon>DeleteInspectorView.xaml</DependentUpon>
     </Compile>
@@ -191,6 +194,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DataBeheerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DeleteEventView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

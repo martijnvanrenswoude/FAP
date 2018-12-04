@@ -26,5 +26,6 @@
         <TextBlock Margin="5" Text="Beschrijving"/>
         <TextBox Margin="5" Text="{Binding Description}"/>
         <Button Content="TOEVOEGEN!!!!!!!!!!!!!!!!" Command="{Binding AddEventCommand}"/>
+        
     </StackPanel>
 </Window>
