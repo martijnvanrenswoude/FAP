@@ -7,10 +7,8 @@
         xmlns:System="clr-namespace:System;assembly=mscorlib"
         DataContext ="{Binding EventViewModel ,Source={StaticResource Locator}}"
         mc:Ignorable="d"
-        Title="AlterEventView" Height="450" Width="800">
+        Title="AlterEventView" Height="768" Width="1024">
     <StackPanel>
-        <TextBlock Margin="5" FontSize="38" HorizontalAlignment="Center" Text="Wijzig Evenement"/>
-        
         <TextBlock Margin="5" Text="Wijzig eventnaam"/>
         <TextBox Margin="5" Text="{Binding Name}"/>
         <TextBlock Margin="5" Text="Wijzig klant"/>
@@ -18,7 +16,7 @@
         <TextBlock Margin="5" Text="Selecteer contactpersoon"/>
         <ComboBox Margin="5" ItemsSource="{Binding AllContacts}" DisplayMemberPath="name"/>
         <TextBlock Margin="5" Text="Datum evenement"/>
-        <DatePicker Margin="5" SelectedDate="{Binding Path=Date, Mode=TwoWay, TargetNullValue={x:Static System:DateTime.Now}}" />
+        <DatePicker Margin="5" SelectedDate="{Binding Date, Mode=TwoWay}"/>
         <TextBlock Margin="5" Text="Aantal bezoekers"/>
         <TextBox Margin="5" Text="{Binding AmountOfVisitors}"/>
         <TextBlock Margin="5" Text="Oppervlakte evenemententerrein in m2"/>

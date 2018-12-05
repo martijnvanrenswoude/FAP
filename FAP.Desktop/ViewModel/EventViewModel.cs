@@ -16,6 +16,7 @@ namespace FAP.Desktop.ViewModel
     {
         //Variables
         private Event _event; //Not according to coding guidelines, but event is a keyword in visualstudio
+        private FAPDatabaseEntities dataContext;
         private GenericRepository<Event> repository;
         private GenericRepository<Contact> contactRepository;
         private GenericRepository<Customer> customerRepository;
@@ -33,7 +34,7 @@ namespace FAP.Desktop.ViewModel
         public List<Contact> AllContacts { get; set; }
         public Contact SelectedContact { get; set; }
         public List<Customer> AllCustomers { get; set; }
-        public Customer SelectedCustomer { get {return  SelectedCustomer; } set { RaisePropertyChanged("AllContacts"); } }
+        public Customer SelectedCustomer { get; set; }
 
         public string SearchKey { get; set; }
 
@@ -46,14 +47,17 @@ namespace FAP.Desktop.ViewModel
         public EventViewModel()
         {
             _event = new Event();
-            contactRepository = new GenericRepository<Contact>(new FAPDatabaseEntities());
-            customerRepository = new GenericRepository<Customer>(new FAPDatabaseEntities());
-            repository = new GenericRepository<Event>(new FAPDatabaseEntities());
+            dataContext = new FAPDatabaseEntities();
+            contactRepository = new GenericRepository<Contact>(dataContext);
+            customerRepository = new GenericRepository<Customer>(dataContext);
+            repository = new GenericRepository<Event>(dataContext);
 
             UpdateEventCommand = new RelayCommand(UpdateEvent);
             AddEventCommand = new RelayCommand(InsertEvent);
             DeleteEventCommand = new RelayCommand(RemoveEvent);
             SearchEventCommand = new RelayCommand(Search);
+            Date = DateTime.Now;
+            GetAllCustomers();
 
 
         }
@@ -79,9 +83,9 @@ namespace FAP.Desktop.ViewModel
             repository.Insert(_event);
         }
 
-        public void GetAllCustomer()
+        public void GetAllCustomers()
         {
-            customerRepository.Get();
+           AllCustomers = customerRepository.Get().ToList();
         }
 
         private void Search()

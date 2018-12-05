@@ -4,7 +4,6 @@ using Mapsui.Geometries.WellKnownText;
 using Mapsui.Projection;
 using Mapsui.Providers;
 using Mapsui.Styles;
-using Mapsui.UI.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;

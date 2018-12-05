@@ -7,9 +7,10 @@
         xmlns:System="clr-namespace:System;assembly=mscorlib"
         DataContext ="{Binding EventViewModel ,Source={StaticResource Locator}}"
         mc:Ignorable="d"
-        Title="AddEventView" Height="450" Width="800">
+        Title="AddEventView" Height="768" Width="1024">
 
     <StackPanel Margin="0,0,0,-71">
+        <ScrollViewer VerticalScrollBarVisibility="Auto"/>
         <TextBlock Text="Toevoegen Evenement" HorizontalAlignment="Center" FontSize="38"/>
         <TextBlock Margin="5" Text="Eventnaam"/>
         <TextBox Margin="5" Text="{Binding Name}"/>
