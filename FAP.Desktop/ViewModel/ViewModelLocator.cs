@@ -53,6 +53,7 @@ namespace FAP.Desktop.ViewModel
             SimpleIoc.Default.Register<TestOtherViewModel>();
             SimpleIoc.Default.Register<EmployeeViewModel>();
             SimpleIoc.Default.Register<CreateEmployeeViewModel>();
+            SimpleIoc.Default.Register<GenerateGraphViewModel>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
@@ -60,6 +61,7 @@ namespace FAP.Desktop.ViewModel
         public TestOtherViewModel TestViewOther => ServiceLocator.Current.GetInstance<TestOtherViewModel>();
         public EmployeeViewModel EmployeeView => ServiceLocator.Current.GetInstance<EmployeeViewModel>();
         public CreateEmployeeViewModel EditEmployeeView => ServiceLocator.Current.GetInstance<CreateEmployeeViewModel>();
+        public GenerateGraphViewModel GenerateGraphView => ServiceLocator.Current.GetInstance<GenerateGraphViewModel>();
 
 
         public static void Cleanup()

@@ -90,6 +90,12 @@ namespace FAP.Desktop.Navigation
                         DataContext = SimpleIoc.Default.GetInstance<CreateEmployeeViewModel>()
                     });
                     break;
+                case nameof(GenerateGraphView):
+                    _viewHistory.Push(new GenerateGraphView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<GenerateGraphViewModel>()
+                    });
+                    break;
 
                 default: throw new ArgumentException("Non existend view passed in arguments.");
             }
