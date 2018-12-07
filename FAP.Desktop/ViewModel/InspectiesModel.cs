@@ -1,4 +1,6 @@
-﻿using GalaSoft.MvvmLight;
+﻿using FAP.Desktop.Navigation;
+using FAP.Desktop.View;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
@@ -7,26 +9,31 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using FAP.Repository.Generic;
+using FAP.Domain;
+
+
 
 namespace FAP.Desktop.ViewModel
 {
     class InspectiesModel
     {
-        public ObservableCollection<InspectionVM> Inspections { get; set; }
-        public ICommand OpenInspectionCommand { get; set; }
+        public ObservableCollection<Inspection> Inspections { get; set; }
+        GenericRepository<Inspection> _repository;
         public ICommand DeleteInspectionCommand { get; set; }
         public ICommand AddInspectionCommand { get; set; }
 
+        public Inspection SelectedInspection { get; set; }
+
         public InspectiesModel()
         {
-            OpenInspectionCommand = new RelayCommand(OpenInspection);
             DeleteInspectionCommand = new RelayCommand(DeleteInspection);
             AddInspectionCommand = new RelayCommand(AddInspection);
         }
 
         private void AddInspection()
         {
-            throw new NotImplementedException();
+            ViewNavigator.Navigate(nameof(CreateInspectionView));
         }
 
         private void DeleteInspection()
@@ -34,9 +41,16 @@ namespace FAP.Desktop.ViewModel
             throw new NotImplementedException();
         }
 
-        private void OpenInspection()
+        private Inspection EditInspection()
         {
-            throw new NotImplementedException();
+            set
+            {
+                if (value != null)
+                {
+                    SelectedInspection = value;
+                    _repository.Update(value);
+                }
+            }
         }
 
         #region INotifyPropertyChanged Members

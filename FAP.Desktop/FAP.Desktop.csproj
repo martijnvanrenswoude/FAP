@@ -77,6 +77,7 @@
     </ApplicationDefinition>
     <Compile Include="Message\NavigationMessage.cs" />
     <Compile Include="Navigation\ViewNavigator.cs" />
+    <Compile Include="ViewModel\CreateInvoiceViewModel.cs" />
     <Compile Include="ViewModel\InspectiesModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\RapportenModel.cs" />
@@ -84,8 +85,17 @@
     <Compile Include="ViewModel\TestViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Navigation\ITransitionable.cs" />
+    <Compile Include="View\CreateInspectionView.xaml.cs">
+      <DependentUpon>CreateInspectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CreateInvoiceView.xaml.cs">
+      <DependentUpon>CreateInvoiceView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\InspectiesWindow.xaml.cs">
       <DependentUpon>InspectiesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InvoiceView.xaml.cs">
+      <DependentUpon>InvoiceView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RapportenWindow.xaml.cs">
       <DependentUpon>RapportenWindow.xaml</DependentUpon>
@@ -96,7 +106,19 @@
     <Compile Include="View\TestView.xaml.cs">
       <DependentUpon>TestView.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\CreateInspectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CreateInvoiceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\InspectiesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\InvoiceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
