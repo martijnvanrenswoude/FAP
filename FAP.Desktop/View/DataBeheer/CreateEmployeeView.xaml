@@ -21,19 +21,22 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Label>Naam:</Label>
             <TextBox Text="{Binding Name}" Grid.Column="1" Margin="0,0,0,10" />
             <Label Grid.Row="1">Achternaam:</Label>
             <TextBox Text="{Binding Surname}" Grid.Row="1" Grid.Column="1" Margin="0,0,0,10" />
             <Label Grid.Row="2">Positie</Label>
-            <TextBox Text="{Binding Position}" Grid.Row="2" Grid.Column="1" Margin="0,0,0,10" />
-            <Label Grid.Row="3">Postcode:</Label>
-            <TextBox Text="{Binding Zipcode}" Grid.Row="3" Grid.Column="1" Margin="0,0,0,10" />
-            <Label Grid.Row="4">Huisnummer:</Label>
-            <TextBox Text="{Binding Housenumber}" Grid.Row="4" Grid.Column="1" Margin="0,0,0,10" />
-            <Label Grid.Row="5">Geboortedatum:</Label>
-            <DatePicker SelectedDate="{Binding Birthdate}" DisplayDateStart="{Binding DateStart}" DisplayDateEnd="{Binding DateEnd}" Grid.Row="5" Grid.Column="1" Margin="0,0,0,10"/>
+            <ComboBox ItemsSource="{Binding AvailablePositions}" SelectedItem="{Binding Position}" Grid.Row="2" Grid.Column="1" Margin="0,0,0,10" />
+            <Label Grid.Row="3">Acces level</Label>
+            <ComboBox ItemsSource="{Binding AvailableAccesLevels}" SelectedItem="{Binding AccesLevel}" Grid.Row="3" Grid.Column="1" Margin="0,0,0,10" />
+            <Label Grid.Row="4">Postcode:</Label>
+            <TextBox Text="{Binding Zipcode}" Grid.Row="4" Grid.Column="1" Margin="0,0,0,10" />
+            <Label Grid.Row="5">Huisnummer:</Label>
+            <TextBox Text="{Binding Housenumber}" Grid.Row="5" Grid.Column="1" Margin="0,0,0,10" />
+            <Label Grid.Row="6">Geboortedatum:</Label>
+            <DatePicker SelectedDate="{Binding Birthdate}" DisplayDateStart="{Binding DateStart}" DisplayDateEnd="{Binding DateEnd}" Grid.Row="6" Grid.Column="1" Margin="0,0,0,10"/>
         </Grid>
 
         <Button Command="{Binding AddEmployeeButton}" Width="100" Height="30" HorizontalAlignment="Left" Content="Opslaan"/>
