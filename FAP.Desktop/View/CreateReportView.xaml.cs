@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace FAP.Desktop.View
 {
     /// <summary>
-    /// Interaction logic for InspectiesWindow.xaml
+    /// Interaction logic for CreateReportView.xaml
     /// </summary>
-    public partial class InspectiesWindow : Window
+    public partial class CreateReportView : Window
     {
-        public InspectiesWindow()
+        public CreateReportView()
         {
             InitializeComponent();
         }

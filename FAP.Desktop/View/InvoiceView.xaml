@@ -7,6 +7,28 @@
         mc:Ignorable="d"
         Title="InvoiceView" Height="450" Width="800">
     <Grid>
-        
-    </Grid>
+		<StackPanel Margin="10">
+			<Grid>
+				<Button Margin="0,0,0,10" Command="{Binding CreateNewInvoiceCommand}">New Invoice</Button>
+			</Grid>
+			<DataGrid Selected="{Binding SelectedInvoice, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Invoices, UpdateSourceTrigger=PropertyChanged}" Height="375" >
+				<DataGridTemplateColumn Width="120">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Button Command="{Binding DataContext.OpenInvoiceCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                    BorderThickness="1" BorderBrush="#FF999A9B" Foreground="White" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="30" Background="#FF6F9BDA">Open</Button>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+				<DataGridTemplateColumn Width="120">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Button Command="{Binding DataContext.DeleteInvoiceCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                    BorderThickness="1" BorderBrush="#FF999A9B" Foreground="White" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="30" Background="#FF6F9BDA">Delete</Button>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+			</DataGrid>
+		</StackPanel>
+	</Grid>
 </Window>
