@@ -13,6 +13,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using FAP.Desktop.View;
+using FAP.Desktop.View.DataBeheer.Inspector;
 
 namespace FAP.Desktop.Navigation
 {
@@ -111,6 +112,12 @@ namespace FAP.Desktop.Navigation
                     _viewHistory.Push(new CreateEmployeeView
                     {
                         DataContext = SimpleIoc.Default.GetInstance<CreateEmployeeViewModel>()
+                    });
+                    break;
+                case nameof(InspectorView):
+                    _viewHistory.Push(new InspectorView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<InspectorViewModel>()
                     });
                     break;
 

@@ -1,6 +1,7 @@
 ﻿using CommonServiceLocator;
 using FAP.Desktop.Navigation;
 using FAP.Desktop.View;
+using FAP.Desktop.View.DataBeheer.Inspector;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
@@ -18,13 +19,16 @@ namespace FAP.Desktop.ViewModel
         public RelayCommand GoBackCommand { get; set; }
         public RelayCommand GoToKlantBeheerViewCommand { get; set; }
         public RelayCommand GoToMedewerkerBeheerViewCommand { get; set; }
+        public RelayCommand GoToInspecteurBeheerViewCommand { get; set; }
         //constructor
         public DataBeheerViewModel()
         {            
             GoBackCommand =                         new RelayCommand(GoBackView);
             GoToKlantBeheerViewCommand =            new RelayCommand(GoToKlantBeheerView);
             GoToMedewerkerBeheerViewCommand =       new RelayCommand(GoToMedewerkerBeheerView);
+            GoToInspecteurBeheerViewCommand =       new RelayCommand(GoToInspecteurBeheerView);
         }
+
         //functions
         private int getAccesLevel()
         {
@@ -53,5 +57,14 @@ namespace FAP.Desktop.ViewModel
                 ViewNavigator.Navigate(nameof(EmployeeView));
             }
         }
+        private void GoToInspecteurBeheerView()
+        {
+            this.accesLevel = getAccesLevel();
+            if (accesLevel == 1 || accesLevel == 2)
+            {
+                ViewNavigator.Navigate(nameof(InspectorView));
+            }
+        }
+
     }
 }

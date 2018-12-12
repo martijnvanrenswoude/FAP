@@ -79,12 +79,13 @@
     </ApplicationDefinition>
     <Compile Include="Message\NavigationMessage.cs" />
     <Compile Include="Navigation\ViewNavigator.cs" />
-    <Compile Include="ViewModel\DataBeheer\AddContactViewModel.cs" />
-    <Compile Include="ViewModel\DataBeheer\AddCustomerViewModel.cs" />
-    <Compile Include="ViewModel\DataBeheer\CreateEmployeeViewModel.cs" />
-    <Compile Include="ViewModel\DataBeheer\EmployeeViewModel.cs" />
-    <Compile Include="ViewModel\DataBeheer\KlantBeheerViewModel.cs" />
+    <Compile Include="ViewModel\DataBeheer\Contact\AddContactViewModel.cs" />
+    <Compile Include="ViewModel\DataBeheer\Customer\AddCustomerViewModel.cs" />
+    <Compile Include="ViewModel\DataBeheer\Employee\CreateEmployeeViewModel.cs" />
+    <Compile Include="ViewModel\DataBeheer\Employee\EmployeeViewModel.cs" />
+    <Compile Include="ViewModel\DataBeheer\Customer\KlantBeheerViewModel.cs" />
     <Compile Include="ViewModel\DataBeheer\DataBeheerViewModel.cs" />
+    <Compile Include="ViewModel\DataBeheer\Inspector\InspectorViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
@@ -92,25 +93,37 @@
     <Compile Include="ViewModel\Settings\SettingsViewModel.cs" />
     <Compile Include="Navigation\ITransitionable.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Compile Include="View\DataBeheer\AddContactWindow.xaml.cs">
+    <Compile Include="View\DataBeheer\Contact\AddContactWindow.xaml.cs">
       <DependentUpon>AddContactWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\DataBeheer\AddCustomerWindow.xaml.cs">
+    <Compile Include="View\DataBeheer\Customer\AddCustomerWindow.xaml.cs">
       <DependentUpon>AddCustomerWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\DataBeheer\CreateEmployeeView.xaml.cs">
+    <Compile Include="View\DataBeheer\Employee\CreateEmployeeView.xaml.cs">
       <DependentUpon>CreateEmployeeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DataBeheer\DataBeheerView.xaml.cs">
       <DependentUpon>DataBeheerView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\DataBeheer\EmployeeView.xaml.cs">
+    <Compile Include="View\DataBeheer\Employee\EmployeeView.xaml.cs">
       <DependentUpon>EmployeeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataBeheer\Inspector\AddInspector.xaml.cs">
+      <DependentUpon>AddInspector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataBeheer\Inspector\AlterInspector.xaml.cs">
+      <DependentUpon>AlterInspector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataBeheer\Inspector\DeleteInspectorView.xaml.cs">
+      <DependentUpon>DeleteInspectorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataBeheer\Inspector\InspectorView.xaml.cs">
+      <DependentUpon>InspectorView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\DataBeheer\KlantBeheerView.xaml.cs">
+    <Compile Include="View\DataBeheer\Customer\KlantBeheerView.xaml.cs">
       <DependentUpon>KlantBeheerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LoginView.xaml.cs">
@@ -122,15 +135,15 @@
     <Compile Include="View\Settings\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\DataBeheer\AddContactWindow.xaml">
+    <Page Include="View\DataBeheer\Contact\AddContactWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\DataBeheer\AddCustomerWindow.xaml">
+    <Page Include="View\DataBeheer\Customer\AddCustomerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\DataBeheer\CreateEmployeeView.xaml">
+    <Page Include="View\DataBeheer\Employee\CreateEmployeeView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -138,15 +151,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\DataBeheer\EmployeeView.xaml">
+    <Page Include="View\DataBeheer\Employee\EmployeeView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\DataBeheer\Inspector\AddInspector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\DataBeheer\Inspector\AlterInspector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\DataBeheer\Inspector\DeleteInspectorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\DataBeheer\Inspector\InspectorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\HomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\DataBeheer\KlantBeheerView.xaml">
+    <Page Include="View\DataBeheer\Customer\KlantBeheerView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

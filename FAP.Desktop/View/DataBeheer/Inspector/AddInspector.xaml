@@ -1,0 +1,30 @@
+﻿<Window x:Class="FAP.Desktop.View.AddInspector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FAP.Desktop.View"
+        mc:Ignorable="d"
+        DataContext ="{Binding InspectorView ,Source={StaticResource Locator}}"
+        Title="AddInspector" Height="450" Width="800">
+    <StackPanel>
+        <TextBlock Text="Voeg een inspecteur toe." Margin="10" HorizontalAlignment="Center" FontSize="36" Background="CadetBlue"/>
+        <StackPanel>
+            <TextBlock Text="Vooraam"/>
+            <TextBox Name="Naam" Margin="5" Text="{Binding Name}"></TextBox>
+            <TextBlock Text="Achternaam"/>
+            <TextBox Name="Ächternaam" Margin="5" Text="{Binding Surname}"/>
+            <TextBlock Text="Telefoonnummer"/>
+            <TextBox Name="Telefoonnummer" Margin="5" Text="{Binding TelephoneNumber}"/>
+            <TextBlock Text="Huisnummer"/>
+            <TextBox Name="Huisnummer" Margin="5" Text="{Binding Housenumber}"/>
+            <TextBlock Text="Postcode"/>
+            <TextBox Name="Postcode" Margin="5" Text="{Binding Postcode}"/>
+            <TextBlock Text="Geboortedatum"/>
+            <TextBox Name="Geboortedatum" Margin="5" Text="{Binding DateOfBirth}"/>
+
+            <Button Content ="Voeg Toe" Height="25" Name="Add" Command="{Binding AddInspectorCommand}" ></Button>
+        </StackPanel>
+        
+    </StackPanel>
+</Window>
