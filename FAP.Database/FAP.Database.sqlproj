@@ -85,8 +85,8 @@
     <Build Include="db\Tables\MultipleChoice.sql" />
     <Build Include="db\Tables\MultiplechoiceAnswers.sql" />
     <Build Include="db\Tables\OpenSubjectQuestion.sql" />
-    <Build Include="db\Tables\Answers.sql" />
     <Build Include="db\Tables\Inspector_Bank_Account.sql" />
+    <Build Include="db\Tables\Answer.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FAP.Database.publish.xml" />
