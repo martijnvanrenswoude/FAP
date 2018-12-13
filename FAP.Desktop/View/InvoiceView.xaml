@@ -11,7 +11,7 @@
 			<Grid>
 				<Button Margin="0,0,0,10" Command="{Binding AddInvoiceCommand}">New Invoice</Button>
 			</Grid>
-			<DataGrid Selected="{Binding SelectedInvoice, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding invoices, UpdateSourceTrigger=PropertyChanged}" Height="375" >
+			<DataGrid SelectedItem="{Binding SelectedInvoice, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding invoices, UpdateSourceTrigger=PropertyChanged}" Height="375" >
 				<DataGridTemplateColumn Width="120">
 					<DataGridTemplateColumn.CellTemplate>
 						<DataTemplate>

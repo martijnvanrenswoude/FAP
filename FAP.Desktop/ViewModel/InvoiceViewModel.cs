@@ -1,7 +1,9 @@
 ﻿using FAP.Desktop.Navigation;
 using FAP.Desktop.View;
 using FAP.Domain;
+
 using FAP.Repository.Generic;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
@@ -14,24 +16,23 @@ using System.Windows.Input;
 
 namespace FAP.Desktop.ViewModel
 {
-    public class InvoiceViewModel
+    public class InvoiceViewModel : ViewModelBase, INotifyPropertyChanged
     {
         public ObservableCollection<Invoice> invoices { get; set; }
-        GenericRepository<Invoice> _repository;
+        public GenericRepository<Invoice> repository;
         public ICommand DeleteInvoiceCommand { get; set; }
         public ICommand AddInvoiceCommand { get; set; }
 
         public Invoice SelectedInvoice { get; set; }
 
-        public InvoiceViewModel(GenericRepository<Invoice> _repository)
+        public InvoiceViewModel()
         {
-            this._repository = _repository;
-            invoices = new ObservableCollection<Invoice>();
-            SelectedInvoice = invoices.First();
+            repository = new GenericRepository<Invoice>(new FAPEntities());
+            GetAllInvoices();
             DeleteInvoiceCommand = new RelayCommand(DeleteInvoice);
             AddInvoiceCommand = new RelayCommand(AddInvoice);
         }
-
+        
         private void AddInvoice()
         {
             ViewNavigator.Navigate(nameof(CreateInvoiceView));
@@ -41,10 +42,16 @@ namespace FAP.Desktop.ViewModel
         {
             if (SelectedInvoice != null)
             {
-                _repository.Delete(SelectedInvoice);
+                repository.Delete(SelectedInvoice);
                 invoices.Remove(SelectedInvoice);
                 SelectedInvoice = null;
+                
             }
+        }
+
+        private void GetAllInvoices()
+        {
+            invoices = new ObservableCollection<Invoice>(repository.Get());
         }
 
         private Invoice EditInspection
@@ -54,14 +61,15 @@ namespace FAP.Desktop.ViewModel
                 if (value != null)
                 {
                     SelectedInvoice = value;
-                    _repository.Update(value);
+                    repository.Update(value);
+                    RaisePropertyChanged("invoices");
                 }
             }
         }
 
         private void UpdateInvoices()
         {
-            invoices = new ObservableCollection<Invoice>(_repository.Get());
+            invoices = new ObservableCollection<Invoice>(repository.Get());
         }
 
         //#region INotifyPropertyChanged Members

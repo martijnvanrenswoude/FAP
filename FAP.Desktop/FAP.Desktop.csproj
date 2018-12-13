@@ -78,7 +78,6 @@
     <Compile Include="Message\NavigationMessage.cs" />
     <Compile Include="Navigation\ViewNavigator.cs" />
     <Compile Include="ViewModel\CreateInvoiceViewModel.cs" />
-    <Compile Include="ViewModel\InspectiesModel.cs" />
     <Compile Include="ViewModel\InvoiceViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\RapportenViewModel.cs" />
