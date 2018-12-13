@@ -45,6 +45,7 @@ namespace FAP.Desktop.ViewModel
                 repository.Delete(SelectedInvoice);
                 invoices.Remove(SelectedInvoice);
                 SelectedInvoice = null;
+                RaisePropertyChanged("invoices");
                 
             }
         }
@@ -71,16 +72,5 @@ namespace FAP.Desktop.ViewModel
         {
             invoices = new ObservableCollection<Invoice>(repository.Get());
         }
-
-        //#region INotifyPropertyChanged Members
-        //// Zorgt ervoor dat de view wordt geupdate als de methode wordt aangeroepen, met als parameter het veld dat is veranderd.
-        //public override void RaisePropertyChanged(string prop)
-        //{
-        //    if (PropertyChanged != null) { PropertyChanged(this, new PropertyChangedEventArgs(prop)); }
-        //}
-
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-        //#endregion
     }
 }
