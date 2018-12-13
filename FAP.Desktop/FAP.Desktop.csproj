@@ -79,8 +79,9 @@
     <Compile Include="Navigation\ViewNavigator.cs" />
     <Compile Include="ViewModel\CreateInvoiceViewModel.cs" />
     <Compile Include="ViewModel\InspectiesModel.cs" />
+    <Compile Include="ViewModel\InvoiceViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\RapportenModel.cs" />
+    <Compile Include="ViewModel\RapportenViewModel.cs" />
     <Compile Include="ViewModel\TestOtherViewModel.cs" />
     <Compile Include="ViewModel\TestViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />

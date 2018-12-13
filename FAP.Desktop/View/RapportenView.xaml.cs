@@ -17,9 +17,9 @@ namespace FAP.Desktop.View
     /// <summary>
     /// Interaction logic for RapportenWindow.xaml
     /// </summary>
-    public partial class RapportenWindow : Window
+    public partial class RapportenView : Window
     {
-        public RapportenWindow()
+        public RapportenView()
         {
             InitializeComponent();
         }
