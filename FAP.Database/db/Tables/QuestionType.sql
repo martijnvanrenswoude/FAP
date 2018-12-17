@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[QuestionType]
+(
+	[Name] NVARCHAR(100) NOT NULL PRIMARY KEY
+)

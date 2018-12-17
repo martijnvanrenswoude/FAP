@@ -8,27 +8,24 @@ E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Database\obj\Debug\FAP.D
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\bin\Debug\FAP.Database.dacpac
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\bin\Debug\FAP.Database.dll
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\bin\Debug\FAP.Database.pdb
-C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\FAP.Database.sqlprojAssemblyReference.cache
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\FAP.Database.dll
 C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\FAP.Database.pdb
 E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Database\bin\Debug\FAP.Database.dll
 E:\avans\Jaar 2\Periode 1\Blok 6\PROJ_FestiSpec\FAP\FAP.Database\bin\Debug\FAP.Database.pdb
-C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\Model.xml
-C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\refactor.xml
-C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\postdeploy.sql
-C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\predeploy.sql
 C:\Users\wessel\Desktop\FAP\FAP.Database\bin\Debug\FAP.Database.dacpac
 C:\Users\wessel\Desktop\FAP\FAP.Database\bin\Debug\FAP.Database.dll
 C:\Users\wessel\Desktop\FAP\FAP.Database\bin\Debug\FAP.Database.pdb
 C:\Users\wessel\Desktop\FAP\FAP.Database\obj\Debug\FAP.Database.sqlprojAssemblyReference.cache
 C:\Users\wessel\Desktop\FAP\FAP.Database\obj\Debug\FAP.Database.dll
 C:\Users\wessel\Desktop\FAP\FAP.Database\obj\Debug\FAP.Database.pdb
-C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\bin\Debug\FAP.Database.dacpac
-C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\bin\Debug\FAP.Database.dll
-C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\bin\Debug\FAP.Database.pdb
-C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\obj\Debug\FAP.Database.dll
-C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\obj\Debug\FAP.Database.pdb
-C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\obj\Debug\Model.xml
-C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\obj\Debug\refactor.xml
-C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\obj\Debug\postdeploy.sql
-C:\Users\wessel\Documents\,School\Jaar 2\Github\FAP\FAP.Database\obj\Debug\predeploy.sql
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\FAP.Database.sqlprojAssemblyReference.cache
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\Model.xml
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\refactor.xml
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\postdeploy.sql
+C:\Users\Martijn\Documents\GitHub\FAP\FAP.Database\obj\Debug\predeploy.sql
+C:\Users\steph\OneDrive\Documenten\School\Blok 6\Project 2\FAP.Database\bin\Debug\FAP.Database.dacpac
+C:\Users\steph\OneDrive\Documenten\School\Blok 6\Project 2\FAP.Database\bin\Debug\FAP.Database.dll
+C:\Users\steph\OneDrive\Documenten\School\Blok 6\Project 2\FAP.Database\bin\Debug\FAP.Database.pdb
+C:\Users\steph\OneDrive\Documenten\School\Blok 6\Project 2\FAP.Database\obj\Debug\FAP.Database.sqlprojAssemblyReference.cache
+C:\Users\steph\OneDrive\Documenten\School\Blok 6\Project 2\FAP.Database\obj\Debug\FAP.Database.dll
+C:\Users\steph\OneDrive\Documenten\School\Blok 6\Project 2\FAP.Database\obj\Debug\FAP.Database.pdb
