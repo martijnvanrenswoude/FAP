@@ -7,7 +7,36 @@
         mc:Ignorable="d"
         Title="MultipleChoiceView" Height="450" Width="800">
 
-    <StackPanel>
-        
+    <StackPanel Orientation="Vertical" Background="GreenYellow">
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Multiplechoice vraagbeheer" FontSize="50"/>
+            <Button Width="100" Height="50"   Content="Back" Margin="50 10 0 0"   FontSize="30"  Command="{Binding GoBackCommand}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <DataGrid CanUserAddRows="false" AutoGenerateColumns="False" Width="810" SelectedItem="{Binding SelectedQuestion, Mode=TwoWay}" ItemsSource="{Binding AllQuestions}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Vraag" Binding="{Binding question}" Width="100"/>
+                    <DataGridTextColumn Header="Aantal antwoorden" Binding="{Binding SelectedQuestion.amountofanswers}" Width="120"/>
+                    <DataGridTemplateColumn Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Command="{Binding DataContext.DeleteCustomerCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" >Delete</Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Command="{Binding DataContext.ShowContactCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" >Contactpersoon</Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Width="125" Height="50"   Content="Nieuwe klant" Margin="0 20 0 0"   FontSize="20"  Command="{Binding NewCustomerCommand}"/>
+        </StackPanel>
     </StackPanel>
+    
 </Window>
