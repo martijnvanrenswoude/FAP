@@ -12,16 +12,14 @@ namespace FAP.Domain
     using System;
     using System.Collections.Generic;
     
-    public partial class MultiplechoiceAnswer
+    public partial class Answer1
     {
         public int Id { get; set; }
-        public string Answer1 { get; set; }
-        public string Answer2 { get; set; }
-        public string Answer3 { get; set; }
-        public string Answer4 { get; set; }
-        public int question_id { get; set; }
-        public string Answer { get; set; }
+        public int questionId { get; set; }
+        public string Subject { get; set; }
+        public string answer1 { get; set; }
+        public byte[] Image { get; set; }
     
-        public virtual MultipleChoice MultipleChoice { get; set; }
+        public virtual Question Question { get; set; }
     }
 }

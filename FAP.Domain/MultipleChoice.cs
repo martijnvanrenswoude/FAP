@@ -24,6 +24,8 @@ namespace FAP.Domain
         public Nullable<int> questionnaire_id { get; set; }
         public string answer { get; set; }
         public Nullable<int> inspector_id { get; set; }
+        public string question { get; set; }
+        public int AmountOfAnswers { get; set; }
     
         public virtual Inspector Inspector { get; set; }
         public virtual Questionnaire Questionnaire { get; set; }

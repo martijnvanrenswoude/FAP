@@ -61,6 +61,8 @@
         <AssociationConnector Association="FAPDatabaseModel.FK__StandardQ__quest__70DDC3D8" ManuallyRouted="false" />
         <AssociationConnector Association="FAPDatabaseModel.FK__StandardQ__stand__6FE99F9F" ManuallyRouted="false" />
         <AssociationConnector Association="FAPDatabaseModel.Plan_inspector" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FAPDatabaseModel.Answer1" Width="1.5" PointX="3" PointY="35.75" />
+        <AssociationConnector Association="FAPDatabaseModel.FK__Answer__question__793DFFAF" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

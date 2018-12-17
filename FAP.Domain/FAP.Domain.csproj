@@ -55,6 +55,9 @@
     <Compile Include="Answer.cs">
       <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Answer1.cs">
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
+    </Compile>
     <Compile Include="Bank_Account.cs">
       <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>

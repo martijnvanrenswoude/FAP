@@ -4,12 +4,22 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FAPDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FAPDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__RefactorLog">
           <Key>
             <PropertyRef Name="OperationKey" />
           </Key>
           <Property Name="OperationKey" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Answer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="questionId" Type="int" Nullable="false" />
+          <Property Name="Subject" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="answer" Type="nvarchar(max)" />
+          <Property Name="Image" Type="image" />
         </EntityType>
         <EntityType Name="Answers">
           <Key>
@@ -153,20 +163,17 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="questionnaire_id" Type="int" />
-          <Property Name="answer" Type="nvarchar(max)" />
+          <Property Name="question" Type="nvarchar(max)" Nullable="false" />
           <Property Name="inspector_id" Type="int" />
+          <Property Name="AmountOfAnswers" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="MultiplechoiceAnswers">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Answer1" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Answer2" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Answer3" Type="nvarchar(max)" />
-          <Property Name="Answer4" Type="nvarchar(max)" />
           <Property Name="question_id" Type="int" Nullable="false" />
+          <Property Name="Answer" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="OpenSubjectQuestion">
           <Key>
@@ -219,8 +226,6 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="image" Type="image" />
-          <Property Name="comment" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Quotation">
           <Key>
@@ -262,6 +267,18 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <Association Name="FK__Answer__question__793DFFAF">
+          <End Role="Question" Type="Self.Question" Multiplicity="1" />
+          <End Role="Answer" Type="Self.Answer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Answer">
+              <PropertyRef Name="questionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Answers__Inspect__339FAB6E">
           <End Role="Inspector" Type="Self.Inspector" Multiplicity="1" />
           <End Role="Answers" Type="Self.Answers" Multiplicity="*" />
@@ -433,7 +450,7 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MultipleC__inspe__32AB8735">
+        <Association Name="FK__MultipleC__inspe__7755B73D">
           <End Role="Inspector" Type="Self.Inspector" Multiplicity="0..1" />
           <End Role="MultipleChoice" Type="Self.MultipleChoice" Multiplicity="*" />
           <ReferentialConstraint>
@@ -445,19 +462,7 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MultipleC__quest__17F790F9">
-          <End Role="Questionnaire" Type="Self.Questionnaire" Multiplicity="0..1" />
-          <End Role="MultipleChoice" Type="Self.MultipleChoice" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Questionnaire">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="MultipleChoice">
-              <PropertyRef Name="questionnaire_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Multiplec__quest__208CD6FA">
+        <Association Name="FK__Multiplec__quest__7849DB76">
           <End Role="MultipleChoice" Type="Self.MultipleChoice" Multiplicity="1" />
           <End Role="MultiplechoiceAnswers" Type="Self.MultiplechoiceAnswers" Multiplicity="*" />
           <ReferentialConstraint>
@@ -651,6 +656,7 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
         </Association>
         <EntityContainer Name="FAPDatabaseModelStoreContainer">
           <EntitySet Name="__RefactorLog" EntityType="Self.__RefactorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Answer" EntityType="Self.Answer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Answers" EntityType="Self.Answers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bank_Account" EntityType="Self.Bank_Account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ComboQuestion" EntityType="Self.ComboQuestion" Schema="dbo" store:Type="Tables" />
@@ -676,6 +682,10 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
           <EntitySet Name="StandardQuestion" EntityType="Self.StandardQuestion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StandardQuestionsList" EntityType="Self.StandardQuestionsList" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Answer__question__793DFFAF" Association="Self.FK__Answer__question__793DFFAF">
+            <End Role="Question" EntitySet="Question" />
+            <End Role="Answer" EntitySet="Answer" />
+          </AssociationSet>
           <AssociationSet Name="FK__Answers__Inspect__339FAB6E" Association="Self.FK__Answers__Inspect__339FAB6E">
             <End Role="Inspector" EntitySet="Inspector" />
             <End Role="Answers" EntitySet="Answers" />
@@ -732,15 +742,11 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <End Role="Quotation" EntitySet="Quotation" />
             <End Role="Invoice" EntitySet="Invoice" />
           </AssociationSet>
-          <AssociationSet Name="FK__MultipleC__inspe__32AB8735" Association="Self.FK__MultipleC__inspe__32AB8735">
+          <AssociationSet Name="FK__MultipleC__inspe__7755B73D" Association="Self.FK__MultipleC__inspe__7755B73D">
             <End Role="Inspector" EntitySet="Inspector" />
             <End Role="MultipleChoice" EntitySet="MultipleChoice" />
           </AssociationSet>
-          <AssociationSet Name="FK__MultipleC__quest__17F790F9" Association="Self.FK__MultipleC__quest__17F790F9">
-            <End Role="Questionnaire" EntitySet="Questionnaire" />
-            <End Role="MultipleChoice" EntitySet="MultipleChoice" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Multiplec__quest__208CD6FA" Association="Self.FK__Multiplec__quest__208CD6FA">
+          <AssociationSet Name="FK__Multiplec__quest__7849DB76" Association="Self.FK__Multiplec__quest__7849DB76">
             <End Role="MultipleChoice" EntitySet="MultipleChoice" />
             <End Role="MultiplechoiceAnswers" EntitySet="MultiplechoiceAnswers" />
           </AssociationSet>
@@ -805,8 +811,7 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <End Role="StandardQuestionsList" EntitySet="StandardQuestionsList" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FAPDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -997,6 +1002,8 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
           <NavigationProperty Name="Inspector" Relationship="Self.FK__MultipleC__inspe__32AB8735" FromRole="MultipleChoice" ToRole="Inspector" />
           <NavigationProperty Name="Questionnaire" Relationship="Self.FK__MultipleC__quest__17F790F9" FromRole="MultipleChoice" ToRole="Questionnaire" />
           <NavigationProperty Name="MultiplechoiceAnswers" Relationship="Self.FK__Multiplec__quest__208CD6FA" FromRole="MultipleChoice" ToRole="MultiplechoiceAnswers" />
+          <Property Name="question" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AmountOfAnswers" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="MultiplechoiceAnswer">
           <Key>
@@ -1009,6 +1016,7 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
           <Property Name="Answer4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="question_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="MultipleChoice" Relationship="Self.FK__Multiplec__quest__208CD6FA" FromRole="MultiplechoiceAnswers" ToRole="MultipleChoice" />
+          <Property Name="Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="OpenSubjectQuestion">
           <Key>
@@ -1058,6 +1066,7 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
           <Property Name="inspector_id" Type="Int32" />
           <NavigationProperty Name="Answers" Relationship="Self.FK__Answers__Questio__1CBC4616" FromRole="Question" ToRole="Answers" />
           <NavigationProperty Name="Questionnaire" Relationship="Self.FK__Question__questi__6B24EA82" FromRole="Question" ToRole="Questionnaire" />
+          <NavigationProperty Name="Answers1" Relationship="FAPDatabaseModel.FK__Answer__question__793DFFAF" FromRole="Question" ToRole="Answer1" />
         </EntityType>
         <EntityType Name="Questionnaire">
           <Key>
@@ -1635,7 +1644,35 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <End Role="Inspector" EntitySet="Inspectors" />
             <End Role="Planning" EntitySet="Plannings" />
           </AssociationSet>
+          <EntitySet Name="Answer1" EntityType="FAPDatabaseModel.Answer1" />
+          <AssociationSet Name="FK__Answer__question__793DFFAF" Association="FAPDatabaseModel.FK__Answer__question__793DFFAF">
+            <End Role="Question" EntitySet="Questions" />
+            <End Role="Answer1" EntitySet="Answer1" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Answer1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="questionId" Type="Int32" Nullable="false" />
+          <Property Name="Subject" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="answer1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Question" Relationship="FAPDatabaseModel.FK__Answer__question__793DFFAF" FromRole="Answer1" ToRole="Question" />
+        </EntityType>
+        <Association Name="FK__Answer__question__793DFFAF">
+          <End Type="FAPDatabaseModel.Question" Role="Question" Multiplicity="1" />
+          <End Type="FAPDatabaseModel.Answer1" Role="Answer1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Answer1">
+              <PropertyRef Name="questionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1799,9 +1836,9 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
           <EntitySetMapping Name="MultipleChoices">
             <EntityTypeMapping TypeName="FAPDatabaseModel.MultipleChoice">
               <MappingFragment StoreEntitySet="MultipleChoice">
+                <ScalarProperty Name="AmountOfAnswers" ColumnName="AmountOfAnswers" />
+                <ScalarProperty Name="question" ColumnName="question" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="questionnaire_id" ColumnName="questionnaire_id" />
-                <ScalarProperty Name="answer" ColumnName="answer" />
                 <ScalarProperty Name="inspector_id" ColumnName="inspector_id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1809,11 +1846,8 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
           <EntitySetMapping Name="MultiplechoiceAnswers">
             <EntityTypeMapping TypeName="FAPDatabaseModel.MultiplechoiceAnswer">
               <MappingFragment StoreEntitySet="MultiplechoiceAnswers">
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Answer1" ColumnName="Answer1" />
-                <ScalarProperty Name="Answer2" ColumnName="Answer2" />
-                <ScalarProperty Name="Answer3" ColumnName="Answer3" />
-                <ScalarProperty Name="Answer4" ColumnName="Answer4" />
                 <ScalarProperty Name="question_id" ColumnName="question_id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1864,9 +1898,7 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
             <EntityTypeMapping TypeName="FAPDatabaseModel.Questionnaire">
               <MappingFragment StoreEntitySet="Questionnaire">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="image" ColumnName="image" />
-                <ScalarProperty Name="comment" ColumnName="comment" />
-              </MappingFragment>
+                </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Quotations">
@@ -1920,6 +1952,17 @@ warning 6035: The relationship 'FK__Event__contact_i__3C34F16F' has columns that
               <ScalarProperty Name="id" ColumnName="plan_id" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="Answer1">
+            <EntityTypeMapping TypeName="FAPDatabaseModel.Answer1">
+              <MappingFragment StoreEntitySet="Answer">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="answer1" ColumnName="answer" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="questionId" ColumnName="questionId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -18,6 +18,7 @@ namespace FAP.Domain
         public Question()
         {
             this.Answers = new HashSet<Answer>();
+            this.Answers1 = new HashSet<Answer1>();
         }
     
         public int Id { get; set; }
@@ -28,5 +29,7 @@ namespace FAP.Domain
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Answer> Answers { get; set; }
         public virtual Questionnaire Questionnaire { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Answer1> Answers1 { get; set; }
     }
 }

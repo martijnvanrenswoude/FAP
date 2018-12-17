@@ -50,5 +50,6 @@ namespace FAP.Domain
         public virtual DbSet<StandardQuestion> StandardQuestions { get; set; }
         public virtual DbSet<StandardQuestionsList> StandardQuestionsLists { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Answer1> Answer1 { get; set; }
     }
 }
