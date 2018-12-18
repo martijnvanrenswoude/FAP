@@ -7,6 +7,24 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
+        <DataGrid Height="450" RowHeight="30" SelectedItem="{Binding SelectedEvent}" ItemsSource="{Binding Events}" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Evenement naam" Binding="{Binding name}" Width="*" />
+                <DataGridTextColumn Header="Datum" Binding="{Binding date}" Width="*" />
+                <DataGridTextColumn Header="Bezoekers" Binding="{Binding amount_visitors}" Width="*" />
+                <DataGridTextColumn Header="Beschrijving" Binding="{Binding description}" Width="*" />
+                <DataGridTemplateColumn Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding DataContext.GenerateButton, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                    BorderBrush="#FF999A9B" Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30">Genereer</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
         <Button Command="{Binding GenerateButton}" Margin="0,5,0,0" HorizontalAlignment="Left" Width="150" Height="30" Content="Genereer"/>
     </StackPanel>
 </UserControl>
