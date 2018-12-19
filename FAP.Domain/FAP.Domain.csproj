@@ -55,9 +55,6 @@
     <Compile Include="Answer.cs">
       <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Answer1.cs">
-      <DependentUpon>FAPDatabase.tt</DependentUpon>
-    </Compile>
     <Compile Include="Bank_Account.cs">
       <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
@@ -134,6 +131,9 @@
     <Compile Include="Questionnaire.cs">
       <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="QuestionType.cs">
+      <DependentUpon>FAPDatabase.tt</DependentUpon>
+    </Compile>
     <Compile Include="Quotation.cs">
       <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
@@ -141,9 +141,6 @@
       <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="StandardQuestionsList.cs">
-      <DependentUpon>FAPDatabase.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
       <DependentUpon>FAPDatabase.tt</DependentUpon>
     </Compile>
   </ItemGroup>

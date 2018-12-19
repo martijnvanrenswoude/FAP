@@ -21,14 +21,11 @@ namespace FAP.Domain
         }
     
         public int Id { get; set; }
-        public Nullable<int> questionnaire_id { get; set; }
-        public string answer { get; set; }
-        public Nullable<int> inspector_id { get; set; }
         public string question { get; set; }
+        public Nullable<int> inspector_id { get; set; }
         public int AmountOfAnswers { get; set; }
     
         public virtual Inspector Inspector { get; set; }
-        public virtual Questionnaire Questionnaire { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MultiplechoiceAnswer> MultiplechoiceAnswers { get; set; }
     }

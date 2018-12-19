@@ -17,11 +17,11 @@ namespace FAP.Domain
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Inspector()
         {
-            this.Answers = new HashSet<Answer>();
             this.ComboQuestions = new HashSet<ComboQuestion>();
             this.MultipleChoices = new HashSet<MultipleChoice>();
             this.OpenSubjectQuestions = new HashSet<OpenSubjectQuestion>();
             this.Plannings = new HashSet<Planning>();
+            this.Questionnaires = new HashSet<Questionnaire>();
         }
     
         public int Id { get; set; }
@@ -33,16 +33,16 @@ namespace FAP.Domain
         public Nullable<System.DateTime> date_of_birth { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Answer> Answers { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ComboQuestion> ComboQuestions { get; set; }
-        public virtual Inspector_shedule Inspector_shedule { get; set; }
         public virtual Inspector_Bank_Account Inspector_Bank_Account { get; set; }
+        public virtual Inspector_shedule Inspector_shedule { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MultipleChoice> MultipleChoices { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OpenSubjectQuestion> OpenSubjectQuestions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Planning> Plannings { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Questionnaire> Questionnaires { get; set; }
     }
 }

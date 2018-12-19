@@ -46,10 +46,9 @@ namespace FAP.Domain
         public virtual DbSet<Planning> Plannings { get; set; }
         public virtual DbSet<Question> Questions { get; set; }
         public virtual DbSet<Questionnaire> Questionnaires { get; set; }
+        public virtual DbSet<QuestionType> QuestionTypes { get; set; }
         public virtual DbSet<Quotation> Quotations { get; set; }
         public virtual DbSet<StandardQuestion> StandardQuestions { get; set; }
         public virtual DbSet<StandardQuestionsList> StandardQuestionsLists { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<Answer1> Answer1 { get; set; }
     }
 }

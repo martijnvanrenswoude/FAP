@@ -14,12 +14,12 @@ namespace FAP.Domain
     
     public partial class Answer
     {
-        public int AnswerID { get; set; }
-        public int QuestionID { get; set; }
-        public int InspectorID { get; set; }
-        public string Answer1 { get; set; }
+        public int Id { get; set; }
+        public int questionId { get; set; }
+        public string Subject { get; set; }
+        public string answer1 { get; set; }
+        public byte[] Image { get; set; }
     
-        public virtual Inspector Inspector { get; set; }
         public virtual Question Question { get; set; }
     }
 }

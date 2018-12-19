@@ -69,7 +69,6 @@
     <Build Include="db\Tables\Department.sql" />
     <Build Include="db\Tables\Employee.sql" />
     <Build Include="db\Tables\Event.sql" />
-    <Build Include="db\Tables\Inloggegevens.sql" />
     <Build Include="db\Tables\Inspector.sql" />
     <Build Include="db\Tables\Inspector_shedule.sql" />
     <Build Include="db\Tables\Invoice.sql" />
@@ -87,6 +86,10 @@
     <Build Include="db\Tables\OpenSubjectQuestion.sql" />
     <Build Include="db\Tables\Inspector_Bank_Account.sql" />
     <Build Include="db\Tables\Answer.sql" />
+    <Build Include="db\Tables\QuestionnaireQuestion.sql" />
+    <Build Include="db\Tables\QuestionType.sql" />
+    <Build Include="db\Tables\Inlogdata.sql" />
+    <Build Include="db\Tables\QuestionnaireInspector.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FAP.Database.publish.xml" />

@@ -1,6 +1,7 @@
 ﻿using FAP.Domain;
 using FAP.Repository.Generic;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,15 @@ namespace FAP.Desktop.ViewModel
     {
         //vars
         private MultipleChoice question;
+        
         private GenericRepository<MultipleChoice> repository;
         private GenericRepository<MultiplechoiceAnswer> answerRepository;
         //properties
-        public int amountOfAnswers { get; set; }
+        public int amountOfAnswers
+        {
+            get { return question.AmountOfAnswers; }
+            set { this.question.AmountOfAnswers = value; }
+        }
         public int[] PossibleAnswerAmount { get; set; }
         public string Answer { get; set; }
         public string Question
@@ -38,6 +44,7 @@ namespace FAP.Desktop.ViewModel
             PossibleAnswerAmount = new int[] { 2, 3, 4 };
             repository = new GenericRepository<MultipleChoice>(new FAPDatabaseEntities());
             answerRepository = new GenericRepository<MultiplechoiceAnswer>(new FAPDatabaseEntities());
+            AddQuestionCommand = new RelayCommand(AddQuestionToDatabase);
 
         }
         //methods

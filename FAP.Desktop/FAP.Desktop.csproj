@@ -138,6 +138,9 @@
     <Compile Include="View\AddInspector.xaml.cs">
       <DependentUpon>AddInspector.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\AddMultipleChoiceView.xaml.cs">
+      <DependentUpon>AddMultipleChoiceView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AlterEventView.xaml.cs">
       <DependentUpon>AlterEventView.xaml</DependentUpon>
     </Compile>
@@ -184,6 +187,10 @@
     <Page Include="View\AddInspector.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AddMultipleChoiceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AlterEventView.xaml">
       <SubType>Designer</SubType>
