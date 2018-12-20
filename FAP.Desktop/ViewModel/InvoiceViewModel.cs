@@ -18,6 +18,8 @@ namespace FAP.Desktop.ViewModel
 {
     public class InvoiceViewModel : ViewModelBase, INotifyPropertyChanged
     {
+        public CreateInvoiceView createInvoiceView;
+
         public ObservableCollection<Invoice> invoices { get; set; }
         public GenericRepository<Invoice> repository;
         public ICommand DeleteInvoiceCommand { get; set; }
@@ -35,7 +37,8 @@ namespace FAP.Desktop.ViewModel
         
         private void AddInvoice()
         {
-            ViewNavigator.Navigate(nameof(CreateInvoiceView));
+            createInvoiceView = new CreateInvoiceView();
+            createInvoiceView.Show();
         }
 
         private void DeleteInvoice()
@@ -50,7 +53,7 @@ namespace FAP.Desktop.ViewModel
             }
         }
 
-        private void GetAllInvoices()
+        public void GetAllInvoices()
         {
             invoices = new ObservableCollection<Invoice>(repository.Get());
         }

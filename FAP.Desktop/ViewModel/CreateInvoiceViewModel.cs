@@ -2,52 +2,61 @@
 using FAP.Desktop.View;
 using FAP.Domain;
 using FAP.Repository.Generic;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
-namespace FAP.Desktop.ViewModel
+namespace FAP.Desktop.ViewModel 
 {
-    class CreateInvoiceViewModel
+    public class CreateInvoiceViewModel : ViewModelBase
     {
-        GenericRepository<Invoice> _repository;
+        private GenericRepository<Invoice> repository;
+        private InvoiceViewModel invoiceViewModel;
 
-        
+        private int invoice_id;
+        private int employee_id;
+        private int quotation_id;
+        private int payment_status;
+        private int sum;
+        private DateTime deadline;
+        private DateTime date;
 
-        public RelayCommand GoBack { get; set; }
-        public RelayCommand AddInvoiceButton { get; set; }
-
-        public CreateInvoiceViewModel(GenericRepository<Invoice> _repository)
+        public int Employee_id
         {
-            this._repository = _repository;
-
-           
-
-            GoBack = new RelayCommand(GoBackCommand);
-            AddInvoiceButton = new RelayCommand(AddInvoice);
+            get { return employee_id}
+            set { employee_id = value
+                    base.RaisePropertyChanged("invoices"); }
         }
 
-        private void ResetProperties()
+        public CreateInvoiceViewModel(GenericRepository<Invoice> repository, InvoiceViewModel invoiceViewModel )
         {
-            
+            this.repository = repository;
+            this.invoiceViewModel = invoiceViewModel;
         }
 
-        private void AddInvoice()
+        public void Cancel()
         {
-            Invoice newInvoice = new Invoice();
-            
-
-            _repository.Insert(newInvoice);
-            GoBackCommand();
+            Application.Current.Windows[0].Close();
         }
 
-        private void GoBackCommand()
+        public void AddInvoice()
         {
-            ResetProperties();
-            ViewNavigator.Navigate(nameof(InvoiceView));
+            Invoice i = new Invoice();
+            i.id = invoice_id;
+            i.employee_id = employee_id;
+            i.quotation_id = quotation_id;
+            i.payment_status = payment_status;
+            i.sum = sum;
+            i.deadline = deadline;
+            i.date = date;
+            repository.Insert(i);
+            invoiceViewModel.GetAllInvoices();
+            invoiceViewModel.createInvoiceViewModel.Close();
         }
     }
 }
