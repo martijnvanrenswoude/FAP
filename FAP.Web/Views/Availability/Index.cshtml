@@ -1,0 +1,11 @@
+﻿@model FAP.Domain.Inspector_shedule
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm())
+{
+   @Html.EditorFor(model => model.date, new { htmlAttributes = new { @class="datepicker"} } )
+}
+

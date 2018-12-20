@@ -22,3 +22,19 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.dashboard_item {
+    font-size: 5em;
+    text-decoration: none;
+    margin-left: 1em;
+    color: black;
+}
+.dashboard {
+    margin-top: 5em;
+}
+.col-md-2 {
+    width: 14%;
+    height: 25em;
+    background: azure;
+    border: 1px solid black;
+}

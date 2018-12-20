@@ -2,13 +2,27 @@
     ViewBag.Title = "UserDashBoard";
 }
 
-<fieldset>
-    <legend> User DashBoard </legend>
+<div class="row mt-1 dashboard">
 
-    @if (Session["UserName"] != null)
-    {
-        <text>
-            Welcome @Session["UserName"].ToString()
-        </text>
-     }
-</fieldset>
+    <div class="col-md-3">
+        <a href="@Url.Action("Index", "Planning")">
+            <i class="fa fa-calendar dashboard_item" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="col-md-3">
+        <a href="@Url.Action("Index", "Beschrikbaarheid")">
+            <i class="fa fa-calendar-check-o dashboard_item" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="col-md-3">
+        <a href="@Url.Action("Index", "Klantgegevens")">
+            <i class="fa fa-address-book dashboard_item" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="col-md-3">
+        <a href="@Url.Action("Index", "Vragenlijst")">
+            <i class="fa fa-pencil-square-o dashboard_item" aria-hidden="true"></i>
+        </a>
+    </div>
+</div>
+

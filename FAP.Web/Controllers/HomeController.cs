@@ -22,7 +22,7 @@ namespace FAP.Web.Controllers
             {
                 using(FAPDatabaseEntities fapEntities = new FAPDatabaseEntities())
                 {
-                    var obj = fapEntities.Inlogdatas.FirstOrDefault(a => a.username.Equals(objUser.username));
+                    var obj = fapEntities.Inlogdatas.Where(a => a.username.Equals(objUser.username));
                     if(obj != null)
                     {
                         Session["UserID"] = objUser.Id.ToString();
@@ -32,12 +32,6 @@ namespace FAP.Web.Controllers
                 }
             }
             return View(objUser);
-        }
-
-        [Authorize]
-        public ActionResult Contact()
-        {
-            return View();
         }
 
         public ActionResult UserDashBoard()

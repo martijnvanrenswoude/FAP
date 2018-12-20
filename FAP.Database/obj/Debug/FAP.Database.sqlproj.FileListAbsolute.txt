@@ -29,3 +29,7 @@ C:\Users\steph\OneDrive\Documenten\School\Blok 6\Project 2\FAP.Database\bin\Debu
 C:\Users\steph\OneDrive\Documenten\School\Blok 6\Project 2\FAP.Database\obj\Debug\FAP.Database.sqlprojAssemblyReference.cache
 C:\Users\steph\OneDrive\Documenten\School\Blok 6\Project 2\FAP.Database\obj\Debug\FAP.Database.dll
 C:\Users\steph\OneDrive\Documenten\School\Blok 6\Project 2\FAP.Database\obj\Debug\FAP.Database.pdb
+C:\Users\steph\OneDrive\Documenten\School\Blok 6\Project 2\FAP.Database\obj\Debug\Model.xml
+C:\Users\steph\OneDrive\Documenten\School\Blok 6\Project 2\FAP.Database\obj\Debug\refactor.xml
+C:\Users\steph\OneDrive\Documenten\School\Blok 6\Project 2\FAP.Database\obj\Debug\postdeploy.sql
+C:\Users\steph\OneDrive\Documenten\School\Blok 6\Project 2\FAP.Database\obj\Debug\predeploy.sql

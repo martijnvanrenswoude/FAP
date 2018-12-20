@@ -7,15 +7,45 @@
 <h2>Rooster</h2>
 
 <div class="row">
-    <div class="col-md-12">
-        <h2>Rooster</h2>
-            @foreach (var item in Model)
-            {
-                <div>
-                    @item.start_date
-                    @item.customer_id
-                    @item.event_id
-                </div>
-            }
-    </div>
+    @{
+        var today = DateTime.Now.Date;
+
+        while (today.DayOfWeek != DayOfWeek.Monday)
+        {
+            today = today.AddDays(-1);
+        }
+
+        for (var i = 0; i < 7; i++)
+        {
+            var item = Model.FirstOrDefault(planning => planning.start_date == today);
+            if (item != null)
+        {
+            <div class="col-md-2">
+                <h3>
+                    @today.DayOfWeek <br />
+                    @today.ToShortDateString()
+                </h3>
+                <p>
+                    Gegevens Event:
+                    @item.id;
+                    @item.customer_id;
+                    @item.event_id;
+                </p>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-2">
+                <h3>
+                    @today.DayOfWeek <br />
+                    @today.ToShortDateString()
+                </h3>
+                <p>
+                    Vandaag Niks
+                </p>
+            </div>
+        }
+            today = today.AddDays(1);
+        }
+    }
 </div>
