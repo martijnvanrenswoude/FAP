@@ -17,7 +17,7 @@ namespace FAP.Domain
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Inspector()
         {
-            this.Plannings = new HashSet<Planning>();
+            this.Planning = new HashSet<Planning>();
         }
     
         public int Id { get; set; }
@@ -30,6 +30,6 @@ namespace FAP.Domain
         public virtual ID ID1 { get; set; }
         public virtual Inspector_shedule Inspector_shedule { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Planning> Plannings { get; set; }
+        public virtual ICollection<Planning> Planning { get; set; }
     }
 }
