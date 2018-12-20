@@ -79,6 +79,20 @@ namespace FAP.Desktop.Navigation
                     });
                     break;
 
+                case nameof(InvoiceView):
+                    _viewHistory.Push(new InvoiceView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<InvoiceViewModel>()
+                    });
+                    break;
+
+                case nameof(CreateInvoiceView):
+                    _viewHistory.Push(new CreateInvoiceView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<CreateInvoiceViewModel>()
+                    });
+                    break;
+
                 default: throw new ArgumentException("Non existend view passed in arguments.");
             }
 
