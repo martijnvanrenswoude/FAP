@@ -15,6 +15,7 @@ namespace FAP.Desktop.ViewModel
     {
         //vars
         private MultipleChoice question;
+        private MultiplechoiceAnswer answer;
         
         private GenericRepository<MultipleChoice> repository;
         private GenericRepository<MultiplechoiceAnswer> answerRepository;
@@ -22,7 +23,7 @@ namespace FAP.Desktop.ViewModel
         public int amountOfAnswers
         {
             get { return question.AmountOfAnswers; }
-            set { this.question.AmountOfAnswers = value; }
+            set { this.question.AmountOfAnswers = value; AddQuestionToDatabase(); }
         }
         public int[] PossibleAnswerAmount { get; set; }
         public string Answer { get; set; }
@@ -34,7 +35,11 @@ namespace FAP.Desktop.ViewModel
         public List<MultiplechoiceAnswer> AllAnswers { get; set; }
         public List<MultipleChoice> AllQuestions { get; set; }
         public MultipleChoice SelectedQuestion { get; set; }
-        public MultiplechoiceAnswer SelectedAnswer { get; set;}
+        public MultiplechoiceAnswer SelectedAnswer
+        {
+            get { return this.answer; }
+            set { this.answer = value; UpdateAnswer(); }
+        }
         //commands
         public ICommand AddQuestionCommand { get; set; }
         public ICommand DeletQuestionCommand { get; set; }
@@ -60,13 +65,16 @@ namespace FAP.Desktop.ViewModel
 
         public void AddQuestionToDatabase()
         {
+            RedefineAmountOfAnswers();
+
             MultiplechoiceAnswer[] multiplechoiceAnswers = new MultiplechoiceAnswer[amountOfAnswers];
             repository.Insert(question);
             for(int i = 0; i < multiplechoiceAnswers.Length; i++)
             {
                 answerRepository.Insert(multiplechoiceAnswers[i]);
-                break;
             }
+            RaisePropertyChanged("AllAnswers");
+
         }
 
         public void DeleteSelectedQuestionFromDatabase()
@@ -74,5 +82,23 @@ namespace FAP.Desktop.ViewModel
             repository.Delete(SelectedQuestion);
         }
 
+        public void RedefineAmountOfAnswers()
+        {
+            var list = answerRepository.Get(a => a.question_id == SelectedQuestion.Id).ToList();
+            for(int i = 0; i < list.Count; i++)
+            {
+                answerRepository.Delete(list[i]);
+            }
+            
+
+        }
+
+        public void UpdateAnswer()
+        {
+            if (SelectedAnswer != null)
+            {
+                answerRepository.Update(SelectedAnswer);
+            }
+        }
     }
 }

@@ -8,21 +8,38 @@
         DataContext="{Binding MultipleChoiceVM, Source={StaticResource Locator}}"
         Title="AddMultipleChoiceView" Height="450" Width="800">
 
-    <StackPanel Orientation="Vertical" Background="YellowGreen">
-        <StackPanel Orientation="Horizontal">
-            <Label Content="Naam:"/>
-            <TextBox Text="{Binding Name}" Width="200" Margin="62 0 0 0"/>
+    <StackPanel Orientation="Horizontal"  Background="YellowGreen">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Vraag:"/>
+                <TextBox Text="{Binding Question.question}" Width="200" Margin="62 0 0 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"> 
+                <Label Content="Aantal antwoorden"/>
+                <ComboBox ItemsSource="{Binding PossibleAnswerAmount}"/>
+            </StackPanel>
+
+
+
+            <StackPanel  Orientation="Horizontal">
+                <Button Width="125" Height="50"   Content="Bevestig" Margin="0 20 0 0"   FontSize="20"  Command="{Binding AddQuestionCommand}"/>
+                <Button Width="125" Height="50"   Content="Annuleren" Margin="0 20 0 0"   FontSize="20"  Command="{Binding CancelCommand}"/>
+            </StackPanel>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <Label Content="Aantal antwoorden"/>
-            <ComboBox ItemsSource="{Binding PossibleAnswerAmount}"/>
-        </StackPanel>
-        
-        
-        <StackPanel  Orientation="Horizontal">
-            <Button Width="125" Height="50"   Content="Toevoegen" Margin="0 20 0 0"   FontSize="20"  Command="{Binding AddQuestionCommand}"/>
-            <Button Width="125" Height="50"   Content="Annuleren" Margin="0 20 0 0"   FontSize="20"  Command="{Binding CancelCommand}"/>
-        </StackPanel>
+        <DataGrid CanUserAddRows="false" AutoGenerateColumns="False" Width="486" SelectedItem="{Binding SelectedAnswer, Mode=TwoWay}" ItemsSource="{Binding AllAnswers}" Background="GreenYellow" SelectionChanged="DataGrid_SelectionChanged">
+            <!--VERANDEREN-->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Antwoord" Binding="{Binding Answer}" Width="100"/>
+                <DataGridTemplateColumn Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding DataContext.ShowContactCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" >Contactpersoon</Button>
+                            <!--VERANDEREN-->
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </StackPanel>
 
 </Window>
