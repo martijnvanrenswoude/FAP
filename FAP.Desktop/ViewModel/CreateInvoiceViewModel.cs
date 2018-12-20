@@ -28,8 +28,9 @@ namespace FAP.Desktop.ViewModel
 
         public int Employee_id
         {
-            get { return employee_id}
-            set { employee_id = value
+            get { return employee_id; }
+            set {
+                employee_id = value;
                     base.RaisePropertyChanged("invoices"); }
         }
 
@@ -56,7 +57,7 @@ namespace FAP.Desktop.ViewModel
             i.date = date;
             repository.Insert(i);
             invoiceViewModel.GetAllInvoices();
-            invoiceViewModel.createInvoiceViewModel.Close();
+            invoiceViewModel.createInvoiceView.Close();
         }
     }
 }
