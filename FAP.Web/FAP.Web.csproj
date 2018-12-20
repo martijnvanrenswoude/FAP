@@ -146,9 +146,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AvailabilityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\QuestionnaireController.cs" />
     <Compile Include="Models\AvailabilityModel.cs" />
     <Compile Include="Repository\AvailabilityRepository.cs" />
     <Compile Include="Repository\IAvailabilityRepository.cs" />
+    <Compile Include="Repository\IQuestionnaireRepository.cs" />
     <Compile Include="Repository\IPlanningRepository.cs" />
     <Compile Include="Controllers\PlanningController.cs" />
     <Compile Include="Global.asax.cs">
@@ -156,6 +158,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\PlanningDummyRepository.cs" />
+    <Compile Include="Repository\QuestionnaireRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -248,9 +251,11 @@
     <Content Include="Views\Home\UserDashBoard.cshtml" />
     <Content Include="Views\Planning\Index.cshtml" />
     <Content Include="Views\Availability\Index.cshtml" />
+    <Content Include="Views\Questionnaire\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Vragenlijst\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
