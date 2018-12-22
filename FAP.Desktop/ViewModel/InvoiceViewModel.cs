@@ -16,7 +16,7 @@ using System.Windows.Input;
 
 namespace FAP.Desktop.ViewModel
 {
-    public class InvoiceViewModel : ViewModelBase, INotifyPropertyChanged
+    public class InvoiceViewModel : ViewModelBase, INotifyPropertyChanged, ITransitionable
     {
         public CreateInvoiceView createInvoiceView;
 
@@ -74,6 +74,16 @@ namespace FAP.Desktop.ViewModel
         private void UpdateInvoices()
         {
             invoices = new ObservableCollection<Invoice>(repository.Get());
+        }
+
+        public void Show()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Hide()
+        {
+            throw new NotImplementedException();
         }
     }
 }
