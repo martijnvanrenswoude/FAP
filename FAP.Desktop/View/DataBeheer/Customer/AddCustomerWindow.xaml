@@ -5,32 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FAP.Desktop.View"
         mc:Ignorable="d"
-        Title="AddCustomerWindow" Height="250" Width="380"
+        Title="AddCustomerWindow" Height="375" Width="570"
         DataContext="{Binding AddCustomer, Source={StaticResource Locator}}">
-    <StackPanel Orientation="Vertical" Background="YellowGreen">
-        <StackPanel Orientation="Horizontal">
+    <StackPanel Orientation="Vertical" Background="CadetBlue">
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
             <Label Content="Naam:"/>
-            <TextBox Text="{Binding Name}" Width="200" Margin="62 0 0 0"/>
+            <TextBox Text="{Binding Name}" Width="300" Margin="62 0 0 0"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
             <Label Content="Telefoon nummer:"/>
-            <TextBox Text="{Binding Telephone_nr}" Width="200"/>
+            <TextBox Text="{Binding Telephone_nr}" Width="300"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
             <Label Content="Postcode:"/>
-            <TextBox Text="{Binding Postcode}" Width="200" Margin="46 0 0 0"/>
+            <TextBox Text="{Binding Postcode}" Width="300" Margin="46 0 0 0"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
             <Label Content="Huisnummer:"/>
-            <TextBox Text="{Binding Housenumber}" Width="200" Margin="27 0 0 0"/>
+            <TextBox Text="{Binding Housenumber}" Width="300" Margin="27 0 0 0"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Email:"/>
-            <TextBox Text="{Binding Email}" Width="200" Margin="66 0 0 0"/>
+            <TextBox Text="{Binding Email}" Width="300" Margin="66 0 0 0"/>
         </StackPanel>
         <StackPanel  Orientation="Horizontal">
-            <Button Width="125" Height="50"   Content="Toevoegen" Margin="0 20 0 0"   FontSize="20"  Command="{Binding AddCustomerCommand}"/>
-            <Button Width="125" Height="50"   Content="Annuleren" Margin="0 20 0 0"   FontSize="20"  Command="{Binding CancelCommand}"/>
+            <Button Width="125" Height="50"   Content="Toevoegen" Margin="10 75 0 0"   FontSize="20"  Command="{Binding AddCustomerCommand}"/>
+            <Button Width="125" Height="50"   Content="Annuleren" Margin="30 75 0 0"   FontSize="20"  Command="{Binding CancelCommand}"/>
         </StackPanel>
     </StackPanel>
 

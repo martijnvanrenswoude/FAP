@@ -70,7 +70,6 @@ namespace FAP.Desktop.ViewModel
         public KlantBeheerViewModel KlantBeheerView => ServiceLocator.Current.GetInstance<KlantBeheerViewModel>();
         public LoginViewModel LoginView => ServiceLocator.Current.GetInstance<LoginViewModel>();
         public EmployeeViewModel EmployeeView => ServiceLocator.Current.GetInstance<EmployeeViewModel>();
-        public CreateEmployeeViewModel CreateEmployeeView => ServiceLocator.Current.GetInstance<CreateEmployeeViewModel>();
         public InspectorViewModel InspectorView => ServiceLocator.Current.GetInstance<InspectorViewModel>();
 
         public AddCustomerViewModel AddCustomer
@@ -80,6 +79,15 @@ namespace FAP.Desktop.ViewModel
                 return new AddCustomerViewModel(_master.GetRepository<Customer>() ,KlantBeheerView);
             }
         }
+
+        public CreateEmployeeViewModel CreateEmployeeView
+        {
+            get
+            {
+                return new CreateEmployeeViewModel(_master.GetRepository<Employee>(), EmployeeView);
+            }
+        }
+
         public AddContactViewModel AddContact
         {
             get

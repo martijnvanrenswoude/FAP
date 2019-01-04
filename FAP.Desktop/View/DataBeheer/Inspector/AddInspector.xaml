@@ -6,24 +6,40 @@
         xmlns:local="clr-namespace:FAP.Desktop.View"
         mc:Ignorable="d"
         DataContext ="{Binding InspectorView ,Source={StaticResource Locator}}"
-        Title="AddInspector" Height="450" Width="800">
-    <StackPanel>
-        <TextBlock Text="Voeg een inspecteur toe." Margin="10" HorizontalAlignment="Center" FontSize="36" Background="CadetBlue"/>
+        Title="AddInspector" Height="375" Width="570">
+    <StackPanel Background="CadetBlue">
         <StackPanel>
-            <TextBlock Text="Vooraam"/>
-            <TextBox Name="Naam" Margin="5" Text="{Binding Name}"></TextBox>
-            <TextBlock Text="Achternaam"/>
-            <TextBox Name="Ächternaam" Margin="5" Text="{Binding Surname}"/>
-            <TextBlock Text="Telefoonnummer"/>
-            <TextBox Name="Telefoonnummer" Margin="5" Text="{Binding TelephoneNumber}"/>
-            <TextBlock Text="Huisnummer"/>
-            <TextBox Name="Huisnummer" Margin="5" Text="{Binding Housenumber}"/>
-            <TextBlock Text="Postcode"/>
-            <TextBox Name="Postcode" Margin="5" Text="{Binding Postcode}"/>
-            <TextBlock Text="Geboortedatum"/>
-            <TextBox Name="Geboortedatum" Margin="5" Text="{Binding DateOfBirth}"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                <Label Content="Voornaam:"/>
+                <TextBox Text="{Binding Name}" Width="300" Margin="62 0 0 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                <Label Content="Achternaam:"/>
+                <TextBox Text="{Binding Surname}" Width="300" Margin="53 0 0 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                <Label Content="Telefoonnummer:"/>
+                <TextBox Text="{Binding TelephoneNumber}" Width="300" Margin="26 0 0 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                <Label Content="Huisnummer:"/>
+                <TextBox Text="{Binding Housenumber}" Width="300" Margin="50 0 0 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                <Label Content="Postcode:"/>
+                <TextBox Text="{Binding Postcode}" Width="300" Margin="70 0 0 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                <Label Content="Geboortedatum:"/>
+                <TextBox Text="{Binding DateOfBirth}" Width="300" Margin="34 0 0 0"/>
+            </StackPanel>
 
-            <Button Content ="Voeg Toe" Height="25" Name="Add" Command="{Binding AddInspectorCommand}" ></Button>
+            <StackPanel  Orientation="Horizontal" Margin="0 30 0 0" >
+                <Button Width="125" Height="50"   Content="Toevoegen" Margin="10 0 0 0"   FontSize="20"  Command="{Binding AddInspectorCommand}"/>
+                <Button Width="125" Height="50"   Content="Annuleren" Margin="30 0 0 0"   FontSize="20"  Command="{Binding CancelCommand}"/>
+            </StackPanel>
+
+            
         </StackPanel>
         
     </StackPanel>

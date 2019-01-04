@@ -108,12 +108,6 @@ namespace FAP.Desktop.Navigation
                         DataContext = SimpleIoc.Default.GetInstance<EmployeeViewModel>()
                     });
                     break;
-                case nameof(CreateEmployeeView):
-                    _viewHistory.Push(new CreateEmployeeView
-                    {
-                        DataContext = SimpleIoc.Default.GetInstance<CreateEmployeeViewModel>()
-                    });
-                    break;
                 case nameof(InspectorView):
                     _viewHistory.Push(new InspectorView
                     {

@@ -1,5 +1,6 @@
 ﻿using FAP.Desktop.Navigation;
 using FAP.Desktop.View;
+using FAP.Desktop.View.DataBeheer;
 using FAP.Domain;
 using FAP.Repository.Generic;
 using GalaSoft.MvvmLight;
@@ -16,22 +17,19 @@ namespace FAP.Desktop.ViewModel
 {
     public class EmployeeViewModel : ViewModelBase, ITransitionable
     {
-        //public string[] positions = { "Inspecteur", "Sales", "Financieel manager"};
-        //public string[] names = { "Bart", "Nick", "Rick", "Jan", "Bart", "Martijn", "Wouter", "Gijs", "Henk", "Hans", "Teun", "Daan" };
-
+        //vars
         GenericRepository<Employee> _repository;
         public ObservableCollection<Employee> employees { get; set; }
-
         public Employee SelectedEmployee { get; set; }
-
         public string SearchText { get; set; }
 
+        public CreateEmployeeView createEmployeeView;
+        
         //Commands
         public RelayCommand GoBackCommand { get; set; }
         public RelayCommand search { get; set; }
         public RelayCommand Delete { get; set; }
         public RelayCommand NewEmployeeButton { get; set; }
-        public RelayCommand GraphWindowButton { get; set; }
 
         //constructor
         public EmployeeViewModel(GenericRepository<Employee> _repository)
@@ -44,17 +42,13 @@ namespace FAP.Desktop.ViewModel
             search = new RelayCommand(Search);
             Delete = new RelayCommand(DeleteEmployee);
             NewEmployeeButton = new RelayCommand(NewEmployee);
-            GraphWindowButton = new RelayCommand(GraphWindow);
-        }
-
-        private void GraphWindow()
-        {
-          //  ViewNavigator.Navigate(nameof(GenerateGraphView));
         }
 
         private void NewEmployee()
         {
-            ViewNavigator.Navigate(nameof(CreateEmployeeView));
+            createEmployeeView = new CreateEmployeeView();
+            createEmployeeView.Show();
+            
         }
         private void GoBackView()
         {

@@ -6,13 +6,13 @@
              xmlns:local="clr-namespace:FAP.Desktop.View.DataBeheer.Inspector"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Orientation="Vertical" Background="LavenderBlush">
+    <StackPanel Orientation="Vertical" Background="CadetBlue">
         <StackPanel Orientation="Horizontal">
             <Label Content="Inspecteurbeheer" FontSize="50"/>
             <Button Width="100" Height="50"   Content="Back" Margin="300 10 0 0"   FontSize="30"  Command="{Binding GoBackCommand}"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <DataGrid CanUserAddRows="false" AutoGenerateColumns="False" Width="800" SelectedItem="{Binding SelectedInspector, Mode=TwoWay}" ItemsSource="{Binding Inspectors}">
+        <StackPanel Orientation="Horizontal" Height="420" >
+            <DataGrid  CanUserAddRows="false" AutoGenerateColumns="False" Width="800" SelectedItem="{Binding SelectedInspector, Mode=TwoWay}" ItemsSource="{Binding Inspectors}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Naam"               Binding="{Binding name}"                            Width="110"/>
                     <DataGridTextColumn Header="Surname"            Binding="{Binding surname}"                         Width="110"/>

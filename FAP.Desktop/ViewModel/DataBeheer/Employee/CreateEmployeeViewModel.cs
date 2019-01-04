@@ -13,8 +13,9 @@ namespace FAP.Desktop.ViewModel
 {
     public class CreateEmployeeViewModel
     {
+        //vars
         GenericRepository<Employee> _repository;
-
+        private EmployeeViewModel employeeViewModel;
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Position { get; set; }
@@ -27,10 +28,11 @@ namespace FAP.Desktop.ViewModel
         public RelayCommand GoBack { get; set; }
         public RelayCommand AddEmployeeButton { get; set; }
 
-        public CreateEmployeeViewModel(GenericRepository<Employee> _repository)
+
+        public CreateEmployeeViewModel(GenericRepository<Employee> _repository, EmployeeViewModel employeeViewModel)
         {
             this._repository = _repository;
-
+            this.employeeViewModel = employeeViewModel;
             DateStart = new DateTime(1900, 01, 01);
             Birthdate = DateStart;
             DateEnd = DateTime.Now;
@@ -72,7 +74,7 @@ namespace FAP.Desktop.ViewModel
         private void GoBackCommand()
         {
             ResetProperties();
-            ViewNavigator.Navigate(nameof(EmployeeView));
+            employeeViewModel.createEmployeeView.Close();
         }
     }
 }

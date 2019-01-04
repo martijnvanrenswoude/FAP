@@ -10,19 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FAP.Desktop.View
+namespace FAP.Desktop.View.DataBeheer
 {
     /// <summary>
     /// Interaction logic for CreateEmployeeView.xaml
     /// </summary>
-    public partial class CreateEmployeeView : UserControl
+    public partial class CreateEmployeeView : Window
     {
         public CreateEmployeeView()
         {
             InitializeComponent();
         }
+
     }
 }

@@ -17,7 +17,6 @@ using System.Windows.Input;
 namespace FAP.Desktop.ViewModel
 {
     public class InspectorViewModel : ViewModelBase, INotifyPropertyChanged
-
     {
         /*
          * variables 
@@ -71,7 +70,6 @@ namespace FAP.Desktop.ViewModel
         {
             set { inspector.telephone_nr = value; }
         }
-
         public DateTime DateOfBirth
         {
             set { inspector.date_of_birth = value; }
@@ -87,7 +85,8 @@ namespace FAP.Desktop.ViewModel
         /*
          * Commands
          */
-        
+
+        public RelayCommand CancelCommand { get; set; }
         public ICommand AddInspectorWindowCommand { get; set; }
         public ICommand AddInspectorCommand { get; set; }
         public ICommand DeleteInspectorCommand { get; set; }
@@ -105,6 +104,7 @@ namespace FAP.Desktop.ViewModel
             inspector = new Inspector();
             GetAllInspectors();
             //Commands voor het binden
+            CancelCommand = new RelayCommand(CancelAddInspector);
             AddInspectorWindowCommand = new RelayCommand(OpenAddInspectorWindow);
             AddInspectorCommand = new RelayCommand(AddInspector);
             DeleteInspectorCommand = new RelayCommand(DeleteInspector);
@@ -123,9 +123,18 @@ namespace FAP.Desktop.ViewModel
         }
         private void AddInspector()
         {
-            repository.Insert(inspector);
-            Inspectors.Add(inspector);
-            addInspectorWindow.Close();
+            try
+            {
+                repository.Insert(inspector);
+                Inspectors.Add(inspector);
+                addInspectorWindow.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+      
+      
         }
 
         private void DeleteInspector()
@@ -140,7 +149,10 @@ namespace FAP.Desktop.ViewModel
         {
             repository.Update(inspector);
         }
-
+        public void CancelAddInspector()
+        {
+            addInspectorWindow.Close();
+        }
         private void GetAllInspectors()
         {
            Inspectors = new ObservableCollection<Inspector>(repository.Get());

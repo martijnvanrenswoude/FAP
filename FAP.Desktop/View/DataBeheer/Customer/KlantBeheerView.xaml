@@ -6,19 +6,19 @@
              xmlns:local="clr-namespace:FAP.Desktop.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Orientation="Vertical" Background="GreenYellow">
+    <StackPanel Orientation="Vertical" Background="CadetBlue">
         <StackPanel Orientation="Horizontal">
             <Label Content="Klantbeheer" FontSize="50"/>
             <Button Width="100" Height="50"   Content="Back" Margin="410 10 0 0"   FontSize="30"  Command="{Binding GoBackCommand}"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <DataGrid CanUserAddRows="false" AutoGenerateColumns="False" Width="810" SelectedItem="{Binding SelectedCustomer, Mode=TwoWay}" ItemsSource="{Binding AllCustomers}">
+        <StackPanel Orientation="Horizontal" Height="420">
+            <DataGrid IsReadOnly="False" CanUserAddRows="false" AutoGenerateColumns="False" SelectedItem="{Binding SelectedCustomer, Mode=TwoWay}" ItemsSource="{Binding AllCustomers}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Naam"       Binding="{Binding name}"            Width="100"/>
-                    <DataGridTextColumn Header="Telefoon"   Binding="{Binding telephone_nr}"    Width="100"/>
-                    <DataGridTextColumn Header="Postcode"   Binding="{Binding postcode}"        Width="100"/>
-                    <DataGridTextColumn Header="Huisnummer" Binding="{Binding house_number}"        Width="100"/>
-                    <DataGridTextColumn Header="Email"      Binding="{Binding email}"           Width="100"/>
+                    <DataGridTextColumn Header="Naam"       Binding="{Binding name}"            Width="130"/>
+                    <DataGridTextColumn Header="Telefoon"   Binding="{Binding telephone_nr}"    Width="130"/>
+                    <DataGridTextColumn Header="Postcode"   Binding="{Binding postcode}"        Width="120"/>
+                    <DataGridTextColumn Header="Huisnummer" Binding="{Binding house_number}"    Width="100"/>
+                    <DataGridTextColumn Header="Email"      Binding="{Binding email}"           Width="130"/>
                     <DataGridTemplateColumn Width="100">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
