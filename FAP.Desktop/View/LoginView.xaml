@@ -6,25 +6,22 @@
              xmlns:local="clr-namespace:FAP.Desktop.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Background="Aqua" Orientation="Vertical">
-        <StackPanel Orientation="Horizontal">
-            <Label Content="Gebruikersnaam:"/>
-            <TextBox Width="150" Height="25" Text="{Binding Username}"  />
+    <StackPanel Background="CadetBlue" Orientation="Vertical">
+        <StackPanel Orientation="Vertical" Margin="0 50 0 0">
+            <Label FontSize="25" Content="Gebruikersnaam:" Margin="300 0 0 0"/>
+            <TextBox Width="200" Height="30" Text="{Binding Username}" Margin="0 0 0 0"  />
+            <Label FontSize="25" Content="Wachtwoord:" Margin="300 0 0 0"/>
+            <TextBox Width="200" Height="30" Text="{Binding Password}" Margin="0 0 0 10 "/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <Label Content="Wachtwoord:"/>
-            <TextBox Width="150" Height="25" Text="{Binding Password}" Margin="19 0 0 0 "/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <StackPanel Orientation="Vertical">
-                <Button Content="Login als inspecteur"  Width="150" Height="25" Margin="100 0 10 0" Command="{Binding InlogAsInspectorCommand}"/>
-                <Button Content="Login als medewerker"  Width="150" Height="25" Margin="100 5 10 0" Command="{Binding InlogAsUserCommand}"/>
-                <Button Content="Bypass"                Width="150" Height="25" Margin="100 5 10 0" Command="{Binding BypassLoginCommand}"/>
-            </StackPanel>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel/>
+            <StackPanel Margin="0 0 0 0" Orientation="Vertical">
+            <Button FontSize="18" Content="Login als inspecteur"  Width="200" Height="30" Margin="0 0 0 10" Command="{Binding InlogAsInspectorCommand}"/>
+            <Button FontSize="18" Content="Login als medewerker"  Width="200" Height="30" Margin="0 0 0 10" Command="{Binding InlogAsUserCommand}"/>
+            <Button FontSize="18" Content="Bypass"                Width="200" Height="30" Margin="0 0 0 10" Command="{Binding BypassLoginCommand}"/>
             <Label Foreground="Red" Content="{Binding LoginMessage}"/>
         </StackPanel>
+            
+           
 
     </StackPanel>
 </UserControl>

@@ -7,15 +7,15 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <StackPanel Orientation="Vertical" Background="Blue">
+    <StackPanel Orientation="Vertical" Background="CadetBlue">
         <StackPanel Orientation="Horizontal">
             <Label Content="Home" FontSize="50"/>
             <Button Width="100" Height="50"   Content="Uitloggen" Margin="550 10 0 0"   FontSize="20"  Command="{Binding LogoutCommand}"/>
         </StackPanel>    
         <StackPanel Orientation="Horizontal">
-            <Button Width="100" Height="100" Margin="25 100 25 50"  Content="Rapportages"           FontSize="16"  Command="{Binding GoToRapportagesViewCommand}"/>
-            <Button Width="100" Height="100" Margin="25 100 25 50"  Content="Settings"              FontSize="16"  Command="{Binding GoToSettingsViewCommand}"/>
-            <Button Width="100" Height="100" Margin="25 100 25 50"  Content="Databeheer"            FontSize="16"  Command="{Binding GoToDataBeheerViewCommand}"/>
+            <Button Width="150" Height="75"  Margin="25 100 25 50"  Content="Rapportages"           FontSize="22"  Command="{Binding GoToRapportagesViewCommand}"/>
+            <Button Width="150" Height="75" Margin="25 100 25 50"  Content="Settings"              FontSize="22"  Command="{Binding GoToSettingsViewCommand}"/>
+            <Button Width="150" Height="75" Margin="25 100 25 50"  Content="Databeheer"            FontSize="22"  Command="{Binding GoToDataBeheerViewCommand}"/>
         </StackPanel>
     </StackPanel>
 </UserControl>
