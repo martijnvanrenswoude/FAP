@@ -14,6 +14,7 @@ using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using FAP.Desktop.View;
 using FAP.Desktop.View.DataBeheer.Inspector;
+using FAP.Desktop.View.DataBeheer.Event;
 
 namespace FAP.Desktop.Navigation
 {
@@ -114,25 +115,32 @@ namespace FAP.Desktop.Navigation
                         DataContext = SimpleIoc.Default.GetInstance<InspectorViewModel>()
                     });
                     break;
-                case nameof(PlanningBeheerView):
-                    _viewHistory.Push(new PlanningBeheerView
+                case nameof(EventBeheer):
+                    _viewHistory.Push(new EventBeheer
                     {
-                        DataContext = SimpleIoc.Default.GetInstance<PlanningBeheerViewModel>()
+                        DataContext = SimpleIoc.Default.GetInstance<EventViewModel>()
                     });
                     break;
-                case nameof(Plan):
-                    _viewHistory.Push(new PlanningCreateView
-                    {
-                        DataContext = SimpleIoc.Default.GetInstance<PlanningCreateViewModel>()
-                    });
-                    break;
-                case nameof(PlanningUpdateView):
-                    _viewHistory.Push(new PlanningUpdateView
-                    {
-                        DataContext = SimpleIoc.Default.GetInstance<PlanningUpdateViewModel>()
-                    });
-                    break;
-                    
+                /*
+            case nameof(PlanningBeheerView):
+                _viewHistory.Push(new PlanningBeheerView
+                {
+                    DataContext = SimpleIoc.Default.GetInstance<PlanningBeheerViewModel>()
+                });
+                break;
+            case nameof(Plan):
+                _viewHistory.Push(new PlanningCreateView
+                {
+                    DataContext = SimpleIoc.Default.GetInstance<PlanningCreateViewModel>()
+                });
+                break;
+            case nameof(PlanningUpdateView):
+                _viewHistory.Push(new PlanningUpdateView
+                {
+                    DataContext = SimpleIoc.Default.GetInstance<PlanningUpdateViewModel>()
+                });
+                break;
+                */
 
 
                 default: throw new ArgumentException("Non existend view passed in arguments.");

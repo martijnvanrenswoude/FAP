@@ -1,6 +1,7 @@
 ﻿using CommonServiceLocator;
 using FAP.Desktop.Navigation;
 using FAP.Desktop.View;
+using FAP.Desktop.View.DataBeheer.Event;
 using FAP.Desktop.View.DataBeheer.Inspector;
 using GalaSoft.MvvmLight.Command;
 using System;
@@ -20,6 +21,8 @@ namespace FAP.Desktop.ViewModel
         public RelayCommand GoToKlantBeheerViewCommand { get; set; }
         public RelayCommand GoToMedewerkerBeheerViewCommand { get; set; }
         public RelayCommand GoToInspecteurBeheerViewCommand { get; set; }
+
+        public RelayCommand GoToEventBeheerViewCommand { get; set; }
         //constructor
         public DataBeheerViewModel()
         {            
@@ -27,6 +30,7 @@ namespace FAP.Desktop.ViewModel
             GoToKlantBeheerViewCommand =            new RelayCommand(GoToKlantBeheerView);
             GoToMedewerkerBeheerViewCommand =       new RelayCommand(GoToMedewerkerBeheerView);
             GoToInspecteurBeheerViewCommand =       new RelayCommand(GoToInspecteurBeheerView);
+            GoToEventBeheerViewCommand =            new RelayCommand(GoToEventBeheerView);
         }
 
         //functions
@@ -63,6 +67,14 @@ namespace FAP.Desktop.ViewModel
             if (accesLevel == 1 || accesLevel == 2)
             {
                 ViewNavigator.Navigate(nameof(InspectorView));
+            }
+        }
+        private void GoToEventBeheerView()
+        {
+            this.accesLevel = getAccesLevel();
+            if (accesLevel == 1 || accesLevel == 3)
+            {
+                ViewNavigator.Navigate(nameof(EventBeheer));
             }
         }
 
