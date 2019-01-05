@@ -46,7 +46,7 @@ namespace FAP.Desktop.ViewModel
 
         }
         public List<Inspector> SelectedInspectors { get; set; }
-        public string SearchKey { get; set; }
+        public string SearchText { get; set; }
 
         public string Name
         {
@@ -91,7 +91,7 @@ namespace FAP.Desktop.ViewModel
         public ICommand AddInspectorCommand { get; set; }
         public ICommand DeleteInspectorCommand { get; set; }
         public ICommand AlterInspectorCommand { get; set; }
-        public ICommand SearchInspectorCommand { get; set; }
+        public ICommand search { get; set; }
         public ICommand GoBackCommand { get; set; }
                 
         /*
@@ -109,7 +109,7 @@ namespace FAP.Desktop.ViewModel
             AddInspectorCommand = new RelayCommand(AddInspector);
             DeleteInspectorCommand = new RelayCommand(DeleteInspector);
             AlterInspectorCommand = new RelayCommand(AlterInspector);
-            SearchInspectorCommand = new RelayCommand(SearchInspector);
+            search = new RelayCommand(SearchInspector);
             GoBackCommand = new RelayCommand(GoBackView);
         }
 
@@ -163,16 +163,15 @@ namespace FAP.Desktop.ViewModel
         }
         public void SearchInspector()
         {
-            SearchInspector(SearchKey);
-            RaisePropertyChanged("SelectedInspectors");
-        }
-        public List<Inspector> SearchInspector(string searchkey)
-        {            
-            List<Inspector> list = new List<Inspector>(repository.Get(i => i.name == searchkey || i.surname == searchkey));
-            SelectedInspectors = list;
-            RaisePropertyChanged("SelectedInspectors");
-            
-            return list;
+            if (SearchText != null && SearchText != "")
+            {
+                Inspectors = new ObservableCollection<Inspector>(repository.Get().Where(e => e.name.ToUpper().Contains(SearchText.ToUpper()) || e.surname.ToUpper().Contains(SearchText.ToUpper())));
+            }
+            else
+            {
+                Inspectors = new ObservableCollection<Inspector>(repository.Get());
+            }
+            RaisePropertyChanged("Inspectors");            
         }
     }
 }

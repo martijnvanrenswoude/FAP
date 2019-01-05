@@ -13,7 +13,7 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal">
         <TextBox Text="{Binding SearchText}" Width="150"/>
-            <Button Command="{Binding search}" Width="20" Content="🔎"/>
+            <Button Command="{Binding search}" Width="50" Content="🔎"/>
         </StackPanel>
             <DataGrid Height="420" SelectedItem="{Binding EditEmployee}" ItemsSource="{Binding employees}" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="False">
             <DataGrid.Columns>

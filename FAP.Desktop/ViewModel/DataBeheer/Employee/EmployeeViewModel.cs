@@ -79,8 +79,8 @@ namespace FAP.Desktop.ViewModel
         private void Search()
         {
             if (SearchText != null && SearchText != "")
-            {
-                employees = new ObservableCollection<Employee>(_repository.Get().Where(e => e.name.ToUpper().Contains(SearchText.ToUpper())));
+            {            
+                employees = new ObservableCollection<Employee>(_repository.Get().Where(e => e.name.ToUpper().Contains(SearchText.ToUpper()) || e.surname.ToUpper().Contains(SearchText.ToUpper())));
             }
             else
             {

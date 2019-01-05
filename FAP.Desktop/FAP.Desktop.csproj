@@ -111,12 +111,6 @@
     <Compile Include="View\DataBeheer\Inspector\AddInspector.xaml.cs">
       <DependentUpon>AddInspector.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\DataBeheer\Inspector\AlterInspector.xaml.cs">
-      <DependentUpon>AlterInspector.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\DataBeheer\Inspector\DeleteInspectorView.xaml.cs">
-      <DependentUpon>DeleteInspectorView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\DataBeheer\Inspector\InspectorView.xaml.cs">
       <DependentUpon>InspectorView.xaml</DependentUpon>
     </Compile>
@@ -156,14 +150,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\DataBeheer\Inspector\AddInspector.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\DataBeheer\Inspector\AlterInspector.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\DataBeheer\Inspector\DeleteInspectorView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -38,7 +38,7 @@ namespace FAP.Desktop.ViewModel
                 }                
             }
         }
-
+        public string SearchText { get; set; }
 
         public ObservableCollection<Customer> AllCustomers { get; set; }
 
@@ -47,6 +47,7 @@ namespace FAP.Desktop.ViewModel
         public RelayCommand ShowContactCommand { get; set; }
         public RelayCommand GoBackCommand { get; set; }
         public RelayCommand DeleteCustomerCommand { get; set; }
+        public RelayCommand search { get; set; }
 
         //constructor
         public KlantBeheerViewModel(GenericRepository<Customer> customerRepository, GenericRepository<Contact> contactRepository)
@@ -60,6 +61,7 @@ namespace FAP.Desktop.ViewModel
             GoBackCommand = new RelayCommand(GoBackView);
             DeleteCustomerCommand = new RelayCommand(DeleteCustomer);
             ShowContactCommand = new RelayCommand(ShowContactView);
+            search = new RelayCommand(Search);
 
         }
 
@@ -108,6 +110,17 @@ namespace FAP.Desktop.ViewModel
             addCustomerWindow = new AddCustomerWindow();
             addCustomerWindow.Show();
         }
-
+        private void Search()
+        {
+            if (SearchText != null && SearchText != "")
+            {
+                AllCustomers = new ObservableCollection<Customer>(customerRepository.Get().Where(e => e.name.ToUpper().Contains(SearchText.ToUpper())));
+            }
+            else
+            {
+                GetAllCustomers();
+            }
+            RaisePropertyChanged("AllCustomers");
+        }
     }
 }

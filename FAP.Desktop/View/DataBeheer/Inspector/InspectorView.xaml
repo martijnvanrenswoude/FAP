@@ -11,6 +11,10 @@
             <Label Content="Inspecteurbeheer" FontSize="50"/>
             <Button Width="100" Height="50"   Content="Back" Margin="300 10 0 0"   FontSize="30"  Command="{Binding GoBackCommand}"/>
         </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding SearchText}" Width="150"/>
+            <Button Command="{Binding search}" Width="50" Content="🔎"/>
+        </StackPanel>
         <StackPanel Orientation="Horizontal" Height="420" >
             <DataGrid  CanUserAddRows="false" AutoGenerateColumns="False" Width="800" SelectedItem="{Binding SelectedInspector, Mode=TwoWay}" ItemsSource="{Binding Inspectors}">
                 <DataGrid.Columns>
