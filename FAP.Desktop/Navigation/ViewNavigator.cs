@@ -114,6 +114,25 @@ namespace FAP.Desktop.Navigation
                         DataContext = SimpleIoc.Default.GetInstance<InspectorViewModel>()
                     });
                     break;
+                case nameof(PlanningBeheerView):
+                    _viewHistory.Push(new PlanningBeheerView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<PlanningBeheerViewModel>()
+                    });
+                    break;
+                case nameof(Plan):
+                    _viewHistory.Push(new PlanningCreateView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<PlanningCreateViewModel>()
+                    });
+                    break;
+                case nameof(PlanningUpdateView):
+                    _viewHistory.Push(new PlanningUpdateView
+                    {
+                        DataContext = SimpleIoc.Default.GetInstance<PlanningUpdateViewModel>()
+                    });
+                    break;
+                    
 
 
                 default: throw new ArgumentException("Non existend view passed in arguments.");
