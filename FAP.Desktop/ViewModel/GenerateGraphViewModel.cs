@@ -45,6 +45,7 @@ namespace FAP.Desktop.ViewModel
         private void Generate()
         {
             SelectedPlanning = SelectedEvent.Planning;
+            Inspectors.Clear();
             foreach(var item in SelectedPlanning)
             {
                 Inspectors.Add(item.Employee);
@@ -65,12 +66,15 @@ namespace FAP.Desktop.ViewModel
         public void CreateDocument(Document document)
         {
             Section section = document.AddSection();
-            Paragraph paragraph = section.AddParagraph("Rapport van evenement: " + SelectedEvent.name);
+            Paragraph paragraph = section.AddParagraph("Rapport " + SelectedEvent.name + " " + SelectedEvent.date.ToString("dd/MM/yyyy"));
+            paragraph.Format.Font.Size = 28;
+            paragraph.Format.Font.Color = Colors.DodgerBlue;
             paragraph.Format.SpaceAfter = "1cm";
-
+           
             document.LastSection.AddParagraph("Aanwezige inspecteurs: ");
             paragraph = document.LastSection.AddParagraph();
-            foreach(var item in Inspectors)
+            
+            foreach (var item in Inspectors)
             {
                 paragraph.AddText(item.name + " " + item.surname);
                 if (!item.Equals(Inspectors.Last()))

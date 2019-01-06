@@ -6,13 +6,16 @@
              xmlns:local="clr-namespace:FAP.Desktop.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
+    <StackPanel Background="Goldenrod">
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Medewerkerbeheer" FontSize="50"/>
+            <Button Width="100" Height="50"   Content="Back" Margin="250 10 0 0"   FontSize="30"  Command="{Binding GoBackCommand}"/>
+        </StackPanel>
         <StackPanel Orientation="Horizontal">
         <TextBox Text="{Binding SearchText}" Width="150"/>
             <Button Command="{Binding search}" Width="20" Content="🔎"/>
         </StackPanel>
-
-        <DataGrid Height="450" RowHeight="30" SelectedItem="{Binding EditEmployee}" ItemsSource="{Binding employees}" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="False">
+            <DataGrid Height="400" RowHeight="30" SelectedItem="{Binding EditEmployee}" ItemsSource="{Binding employees}" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naam" Binding="{Binding name}" Width="*" />
                 <DataGridTextColumn Header="Achternaam" Binding="{Binding surname}" Width="*" />
