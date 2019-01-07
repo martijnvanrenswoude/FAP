@@ -25,19 +25,25 @@ namespace FAP.Desktop.ViewModel
         public ObservableCollection<Event> Events { get; set; }
 
         public Event SelectedEvent { get; set; }
+        public List<Questionnaire> SelectedQuestionnaires { get; set; }
         public IEnumerable<Planning> SelectedPlanning { get; set; }
+
+        public List<List<OpenSubjectQuestion>> OpenSubjectQuestions { get; set; }
+        OpenSubjectQuestion a { get; set; }
 
         public RelayCommand GenerateButton { get; set; }
         private Document document { get; set; }
 
         public GenerateGraphViewModel(GenericRepository<Event> EventRepository, GenericRepository<Employee> EmployeeRepository
-            , GenericRepository<Planning> PlanningRepository)
+            ,GenericRepository<Planning> PlanningRepository)
         {
             this.EventRepository = EventRepository;
             this.EmployeeRepository = EmployeeRepository;
             this.PlanningRepository = PlanningRepository;
             Events = new ObservableCollection<Event>(EventRepository.Get());
             Inspectors = new List<Employee>();
+            SelectedQuestionnaires = new List<Questionnaire>();
+            OpenSubjectQuestions = new List<List<OpenSubjectQuestion>>();
 
             GenerateButton = new RelayCommand(Generate);
         }
@@ -49,10 +55,18 @@ namespace FAP.Desktop.ViewModel
             foreach(var item in SelectedPlanning)
             {
                 Inspectors.Add(item.Employee);
+                SelectedQuestionnaires.Add(item.Questionnaire);
             }
+            
+            foreach(var item in SelectedQuestionnaires)
+            {
+                OpenSubjectQuestions.Add(item.OpenSubjectQuestion.ToList());
+            }
+            
 
             document = new Document();
             CreateDocument(document);
+            OpenSubjectParagraph(document);
             CreateChart(document);
 
             MigraDoc.DocumentObjectModel.IO.DdlWriter.WriteToFile(document, "MigraDoc.mdddl");
@@ -66,7 +80,7 @@ namespace FAP.Desktop.ViewModel
         public void CreateDocument(Document document)
         {
             Section section = document.AddSection();
-            Paragraph paragraph = section.AddParagraph("Rapport " + SelectedEvent.name + " " + SelectedEvent.date.ToString("dd/MM/yyyy"));
+            Paragraph paragraph = section.AddParagraph("Rapport " + SelectedEvent.name + " " + SelectedEvent.date.ToString("yyyy"));
             paragraph.Format.Font.Size = 28;
             paragraph.Format.Font.Color = Colors.DodgerBlue;
             paragraph.Format.SpaceAfter = "1cm";
@@ -85,7 +99,26 @@ namespace FAP.Desktop.ViewModel
             paragraph.Format.SpaceAfter = "1cm";
         }
 
-        public void CreateChart(Document document)
+        public void OpenSubjectParagraph(Document document)
+        {
+            Paragraph paragraph = document.LastSection.AddParagraph("Open vragen");
+            paragraph.Format.Font.Size = 14;
+
+            paragraph = document.LastSection.AddParagraph();
+
+            foreach(var o in OpenSubjectQuestions)
+            {
+                foreach(var item in o)
+                {
+                    paragraph.AddText(item.subject);
+                    paragraph.AddLineBreak();
+                    paragraph.AddText(item.answer);
+                }
+            }
+            paragraph.Format.SpaceAfter = "1cm";
+        }
+
+            public void CreateChart(Document document)
         {
             Paragraph paragraph = document.LastSection.AddParagraph("Grafiek");
             paragraph.Format.SpaceAfter = "1cm";
@@ -114,5 +147,6 @@ namespace FAP.Desktop.ViewModel
 
             document.LastSection.Add(chart);
         }
+
     }
 }
