@@ -29,7 +29,7 @@ namespace FAP.Desktop.ViewModel
         public IEnumerable<Planning> SelectedPlanning { get; set; }
 
         public List<List<OpenSubjectQuestion>> OpenSubjectQuestions { get; set; }
-        OpenSubjectQuestion a { get; set; }
+        public List<List<StandardQuestionsList>> StandardQuestions { get; set; }
 
         public RelayCommand GenerateButton { get; set; }
         private Document document { get; set; }
@@ -40,10 +40,12 @@ namespace FAP.Desktop.ViewModel
             this.EventRepository = EventRepository;
             this.EmployeeRepository = EmployeeRepository;
             this.PlanningRepository = PlanningRepository;
+
             Events = new ObservableCollection<Event>(EventRepository.Get());
-            Inspectors = new List<Employee>();
-            SelectedQuestionnaires = new List<Questionnaire>();
             OpenSubjectQuestions = new List<List<OpenSubjectQuestion>>();
+            StandardQuestions = new List<List<StandardQuestionsList>>();
+            SelectedQuestionnaires = new List<Questionnaire>();
+            Inspectors = new List<Employee>();
 
             GenerateButton = new RelayCommand(Generate);
         }
@@ -51,7 +53,7 @@ namespace FAP.Desktop.ViewModel
         private void Generate()
         {
             SelectedPlanning = SelectedEvent.Planning;
-            Inspectors.Clear();
+            ClearLists();
             foreach(var item in SelectedPlanning)
             {
                 Inspectors.Add(item.Employee);
@@ -61,11 +63,14 @@ namespace FAP.Desktop.ViewModel
             foreach(var item in SelectedQuestionnaires)
             {
                 OpenSubjectQuestions.Add(item.OpenSubjectQuestion.ToList());
+                StandardQuestions.Add(item.StandardQuestionsList.ToList());
             }
             
 
             document = new Document();
             CreateDocument(document);
+            ShowInspectors(document);
+            StandardQuestionParagraph(document);
             OpenSubjectParagraph(document);
             CreateChart(document);
 
@@ -84,10 +89,14 @@ namespace FAP.Desktop.ViewModel
             paragraph.Format.Font.Size = 28;
             paragraph.Format.Font.Color = Colors.DodgerBlue;
             paragraph.Format.SpaceAfter = "1cm";
-           
-            document.LastSection.AddParagraph("Aanwezige inspecteurs: ");
+        }
+
+        private void ShowInspectors(Document document)
+        {
+            Paragraph paragraph = document.LastSection.AddParagraph("Aanwezige inspecteurs");
+            paragraph.Format.Font.Size = 14;
+
             paragraph = document.LastSection.AddParagraph();
-            
             foreach (var item in Inspectors)
             {
                 paragraph.AddText(item.name + " " + item.surname);
@@ -99,26 +108,50 @@ namespace FAP.Desktop.ViewModel
             paragraph.Format.SpaceAfter = "1cm";
         }
 
+        private void StandardQuestionParagraph(Document document)
+        {
+            Paragraph paragraph = document.LastSection.AddParagraph("Vragen algemeen");
+            paragraph.Format.Font.Size = 14;
+
+            foreach(var o in StandardQuestions)
+            {
+                paragraph = document.LastSection.AddParagraph();
+                foreach (var item in o)
+                {
+                    paragraph.AddText(item.StandardQuestion.question);
+                    paragraph.AddLineBreak();
+                    paragraph.AddText(item.answer);
+                    paragraph.AddLineBreak();
+                    paragraph.AddLineBreak();
+                }
+                paragraph.AddLineBreak();
+            }
+
+            paragraph.Format.SpaceAfter = "1cm";
+        }
+
         public void OpenSubjectParagraph(Document document)
         {
             Paragraph paragraph = document.LastSection.AddParagraph("Open vragen");
             paragraph.Format.Font.Size = 14;
 
-            paragraph = document.LastSection.AddParagraph();
-
             foreach(var o in OpenSubjectQuestions)
             {
-                foreach(var item in o)
+                paragraph = document.LastSection.AddParagraph();
+                foreach (var item in o)
                 {
                     paragraph.AddText(item.subject);
                     paragraph.AddLineBreak();
                     paragraph.AddText(item.answer);
+                    paragraph.AddLineBreak();
+                    paragraph.AddLineBreak();
                 }
+                paragraph.AddLineBreak();
             }
             paragraph.Format.SpaceAfter = "1cm";
         }
 
-            public void CreateChart(Document document)
+        public void CreateChart(Document document)
         {
             Paragraph paragraph = document.LastSection.AddParagraph("Grafiek");
             paragraph.Format.SpaceAfter = "1cm";
@@ -146,6 +179,13 @@ namespace FAP.Desktop.ViewModel
             chart.PlotArea.LineFormat.Width = 1;
 
             document.LastSection.Add(chart);
+        }
+
+        private void ClearLists()
+        {
+            Inspectors.Clear();
+            OpenSubjectQuestions.Clear();
+            StandardQuestions.Clear();
         }
 
     }
