@@ -16,9 +16,10 @@ using System.Windows.Input;
 
 namespace FAP.Desktop.ViewModel
 {
-    public class InvoiceViewModel : ViewModelBase, INotifyPropertyChanged, ITransitionable
+    public class InvoiceViewModel : ViewModelBase, INotifyPropertyChanged
     {
         public CreateInvoiceView createInvoiceView;
+        private FAPEntities context;
 
         public ObservableCollection<Invoice> invoices { get; set; }
         public GenericRepository<Invoice> repository;
@@ -29,7 +30,6 @@ namespace FAP.Desktop.ViewModel
 
         public InvoiceViewModel()
         {
-            repository = new GenericRepository<Invoice>(new FAPEntities());
             GetAllInvoices();
             DeleteInvoiceCommand = new RelayCommand(DeleteInvoice);
             AddInvoiceCommand = new RelayCommand(AddInvoice);
@@ -43,19 +43,28 @@ namespace FAP.Desktop.ViewModel
 
         private void DeleteInvoice()
         {
-            if (SelectedInvoice != null)
+            context = new FAPEntities();
+            using (context)
             {
-                repository.Delete(SelectedInvoice);
-                invoices.Remove(SelectedInvoice);
-                SelectedInvoice = null;
-                RaisePropertyChanged("invoices");
-                
+                if (SelectedInvoice != null)
+                {
+                    context.Invoices.Remove(SelectedInvoice);
+                    context.SaveChanges();
+                    GetAllInvoices();
+                    SelectedInvoice = null;
+                    RaisePropertyChanged("invoices");
+
+                }
             }
         }
 
         public void GetAllInvoices()
         {
-            invoices = new ObservableCollection<Invoice>(repository.Get());
+            context = new FAPEntities();
+            using (context)
+            {
+                invoices = new ObservableCollection<Invoice>(context.Invoices.ToList());
+            }
         }
 
         private Invoice EditInspection
@@ -65,25 +74,12 @@ namespace FAP.Desktop.ViewModel
                 if (value != null)
                 {
                     SelectedInvoice = value;
-                    repository.Update(value);
+                    context.Invoices.Attach(value);
+                    context.SaveChanges();
+                    GetAllInvoices();
                     RaisePropertyChanged("invoices");
                 }
             }
-        }
-
-        private void UpdateInvoices()
-        {
-            invoices = new ObservableCollection<Invoice>(repository.Get());
-        }
-
-        public void Show()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Hide()
-        {
-            throw new NotImplementedException();
         }
     }
 }

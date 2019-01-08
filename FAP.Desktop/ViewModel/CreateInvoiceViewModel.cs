@@ -17,6 +17,7 @@ namespace FAP.Desktop.ViewModel
     {
         private GenericRepository<Invoice> repository;
         private InvoiceViewModel invoiceViewModel;
+        private FAPEntities context;
 
         private int invoice_id = 0;
         private int employee_id;
@@ -85,6 +86,7 @@ namespace FAP.Desktop.ViewModel
         }
         public CreateInvoiceViewModel(GenericRepository<Invoice> repository, InvoiceViewModel invoiceViewModel )
         {
+            
             this.repository = repository;
             this.invoiceViewModel = invoiceViewModel;
         }
@@ -96,15 +98,22 @@ namespace FAP.Desktop.ViewModel
 
         public void AddInvoice()
         {
+            context = new FAPEntities();
             Invoice i = new Invoice();
-            i.id = invoice_id;
+            if (context.Invoices.ToList().LastOrDefault() == null)
+            {
+                i.id = 1;
+            } else {
+                i.id = context.Invoices.ToList().LastOrDefault().id + 1;
+            }
             i.employee_id = employee_id;
             i.quotation_id = quotation_id;
             i.payment_status = payment_status;
             i.sum = sum;
             i.deadline = deadline;
             i.date = date;
-            repository.Insert(i);
+            context.Invoices.Add(i);
+            context.SaveChanges();
             invoiceViewModel.GetAllInvoices();
             invoiceViewModel.createInvoiceView.Close();
         }
